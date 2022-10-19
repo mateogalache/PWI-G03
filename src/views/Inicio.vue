@@ -40,6 +40,9 @@
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
+    padding-left: 8%;
+    
+    
     
 }
 
