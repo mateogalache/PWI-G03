@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Basket from '../views/Basket.vue'
+import Inicio from '../views/Inicio.vue'
 import Contact from '../views/Contact.vue'
 const routes = [
     {
         path: '/',
-        name: 'Basket',
-        component: Basket
+        name: 'Inicio',
+        component: Inicio
     },
     {
         path: '/contact',

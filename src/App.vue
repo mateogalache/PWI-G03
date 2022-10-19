@@ -5,7 +5,7 @@
 
 <template>
   <nav>
-    <router-link to="/">Basket</router-link>
+    <router-link to= "/">Inicio</router-link>
     <router-link to="/Contact">Contact</router-link>
   </nav>
 
