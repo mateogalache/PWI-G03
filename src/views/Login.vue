@@ -51,11 +51,6 @@ import Header from '../components/Header.vue'
 
 }
 
-    
-    
-    
-
-
 
 
 </style>
