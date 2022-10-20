@@ -1,4 +1,3 @@
-
 <script setup>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
@@ -6,12 +5,11 @@ import Footer from "../components/Footer.vue";
 
 
 <template>
-    <Header>
-        
-    </Header>
+    <Header></Header>
     <main>
-       
+        <h1>COSASASAS</h1>
     </main>
+    <Footer></Footer>
 </template>
 
 <style>
