@@ -60,8 +60,7 @@ import Header from '../components/Header.vue'
     border: none;
     border-bottom: 1px solid black;
 
- }
-    
+ }   
     
     
 
