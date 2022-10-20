@@ -75,5 +75,10 @@ import Header from '../components/Header.vue'
     padding-right: 15%;
     padding-left: 10%;
 }
+.cont{
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+}
 
 </style>
