@@ -1,11 +1,11 @@
 <script setup>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import Footer from '../components/Footer.vue'
+import Header from '../components/Header.vue'
 </script>
 <template>
-    <Header>
-       
-    </Header>
+    <header class="HContainer">
+        <h1 class="titulo">OPEN EVENTS</h1>
+    </header>
     <main>
         <br>
         <b>Iniciar sesión</b><br>                
@@ -16,11 +16,12 @@ import Footer from "./components/Footer.vue";
        <p><small>¿Has olvidado tu contraseña?</small></p>
        <br>
     
-        <div>
+        <div class="cont">
         <button class="Iniciar">
             <b><FONT COLOR="white">Iniciar Sesión</FONT></b>
         </button>
         </div>
+        <p align = "right"><small>¿No tienes cuenta? Regístrate</small></p>
        
 
         
@@ -35,12 +36,44 @@ import Footer from "./components/Footer.vue";
    display: flex;
    width:150px;
    height:50px;   
-   background-color: rgb(104, 100, 100);   
+   background-color: rgb(104, 100, 100);
+   border-radius:22px;   
    justify-self: center;
    justify-content: center;
    align-items: center;
+
    
 } 
+.HContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: cadetblue;
+}
+.FContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: cadetblue;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.Fright{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding-left: 8%;
+    
+    
+    
+}
 
+.Fleft{
+    display: flex;
+    justify-items: center;
+    padding-right: 15%;
+    padding-left: 10%;
+}
 
 </style>

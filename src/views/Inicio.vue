@@ -12,11 +12,7 @@ import Footer from "../components/Footer.vue";
     <main>
        
     </main>
-    <Footer>
-    </Footer>
-  </template>
+</template>
+
 <style>
-
-
-
 </style>
