@@ -7,14 +7,9 @@ const routes = [
         path: '/',
         name: 'Inicio',
         component: Inicio
-    }
+    },
     
 
-    /*{
-        path: '/',
-        name: 'footer',
-        component: footer,
-    }*/
 ]
 
 const router = createRouter({

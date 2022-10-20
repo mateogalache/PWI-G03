@@ -1,4 +1,7 @@
 <script setup>
+import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Footer from './components/Footer2.vue'
@@ -11,7 +14,10 @@ import Inicio from './views/Inicio.vue'
   </nav>
   
 
-  <router-view></router-view>
+  <router-view>
+  </router-view>
+
+
 
 </template>
 
