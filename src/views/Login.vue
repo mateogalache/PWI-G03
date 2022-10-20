@@ -59,26 +59,7 @@ import Header from '../components/Header.vue'
     flex-wrap: wrap;
     
 }
-.Fright{
-    display: flex;
-    justify-content: space-around;
-    flex-grow: 1;
-    padding-left: 8%;
-    
-    
-    
-}
 
-.Fleft{
-    display: flex;
-    justify-items: center;
-    padding-right: 15%;
-    padding-left: 10%;
-}
-.cont{
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-}
+
 
 </style>
