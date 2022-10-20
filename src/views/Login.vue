@@ -2,8 +2,23 @@
     <header class="HContainer">
         <h1 class="titulo">OPEN EVENTS</h1>
     </header>
-    <main >
-        
+    <main>
+        <br>
+        <b>Iniciar sesión</b><br>                
+       <p>Email*</p>
+       <hr>
+       <p>Contraseña*</p>
+       <hr>
+       <p><small>¿Has olvidado tu contraseña?</small></p>
+       <br>
+    
+        <div>
+        <button class="Iniciar">
+            <b><FONT COLOR="white">Iniciar Sesión</FONT></b>
+        </button>
+        </div>
+       
+
         
     </main>
     <footer>
@@ -22,7 +37,16 @@
   </template>
 <style>
 
- 
+.Iniciar{
+   display: flex;
+   width:150px;
+   height:50px;   
+   background-color: rgb(104, 100, 100);   
+   justify-self: center;
+   justify-content: center;
+   align-items: center;
+   
+} 
 .HContainer{
     display: flex;
     flex-direction: row;
