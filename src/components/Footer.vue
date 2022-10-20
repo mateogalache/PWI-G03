@@ -23,8 +23,6 @@
     </footer>
 </template>
 <style>
-
-
 .FContainer {
     display: flex;
     flex-direction: row;
@@ -32,7 +30,10 @@
     background-color: cadetblue;
     align-items: center;
     flex-wrap: wrap;
-
+    position:fixed;
+    bottom: 0%;
+    width: 100%;
+    
 }
 
 .Fright {
@@ -40,7 +41,7 @@
     justify-content: space-around;
     flex-grow: 1;
     padding-left: 8%;
-
+    
 
 
 }
