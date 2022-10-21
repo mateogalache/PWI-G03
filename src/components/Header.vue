@@ -1,6 +1,6 @@
 <template>
   <header class="HContainer">
-      <h1 class="titulo">OPEN EVENTS</h1>
+      <h1 class="titulo">SALLEVENTS</h1>
   </header>
   <main>
      

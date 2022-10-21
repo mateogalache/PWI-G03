@@ -7,9 +7,9 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
-        <br>
+        <br><br/><br/>
         <div class="cont">
-        <img src = "https://the-eshow.com/madrid19/wp-content/uploads/2017/03/laSalle.jpg" width = "100" height = "100" >
+        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "200" height = "100" >
         </div>
         <br>
         <h2><b>Datos personales</b></h2>                
