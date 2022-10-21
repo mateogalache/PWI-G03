@@ -23,8 +23,6 @@
     </footer>
 </template>
 <style>
-
-
 .FContainer {
     display: flex;
     position: fixed;
@@ -43,7 +41,7 @@
     justify-content: space-around;
     flex-grow: 1;
     padding-left: 8%;
-
+    
 
 
 }

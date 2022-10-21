@@ -3,29 +3,36 @@ import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 </script>
 <template>
-    <header class="HContainer">
-        <h1 class="titulo">OPEN EVENTS</h1>
-    </header>
+    <Header>
+        
+    </Header>
     <main>
         <br>
         <div class="cont">
         <img src = "https://the-eshow.com/madrid19/wp-content/uploads/2017/03/laSalle.jpg" width = "100" height = "100" >
         </div>
         <br>
-        <h2><b>Iniciar sesión</b></h2>              
+        <h2><b>Datos personales</b></h2>                
+        <p><label>Nombre*</label></p>
+        <input type="text" class = "texto">
+        <p><label>Apellidos*</label></p>
+        <input type="text" class = "texto">
         <p><label>Email*</label></p>
         <input type="text" class = "texto">
         <p><label>Contraseña*</label></p>
         <input type="text" class = "texto">
-       <p><small>¿Has olvidado tu contraseña?</small></p>
-       <br>
+        <p><label>Foto de perfil*</label></p>
+        <input type="text" class = "texto">
+        <br/><br/><br/><br/><br/>
+        
+       
     
         <div class="cont">
-            <a href = "Home"><button class="Iniciar">
-            <b><FONT COLOR="white">Iniciar Sesión</FONT></b>
+        <a href = "Home"><button class="Iniciar">
+            <b><FONT COLOR="white">Registrar</FONT></b>
         </button></a>
         </div>
-        <a HREF="Register"><p align = "right"><small>¿No tienes cuenta? Regístrate</small></p></a>
+        
        
 
         
@@ -48,20 +55,11 @@ import Header from '../components/Header.vue'
 
    
 } 
-.HContainer{
+.cont{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    background-color: cadetblue;
-}
-.FContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: cadetblue;
-    align-items: center;
-    flex-wrap: wrap;
-    
+   align-items: center;
+
 }
  .texto{
     width: 98%;

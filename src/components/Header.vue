@@ -9,15 +9,13 @@
   </footer>
 </template>
 <style>
-.body{
-    display : flex;
-    justify-content: space-between;
-}
 .HContainer{
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: cadetblue;
+    width: 100%;
+
 }
 </style>
