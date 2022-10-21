@@ -6,6 +6,7 @@ import Perfil from '../views/Perfil.vue'
 import Borrarperfil from '../views/Borrarperfil.vue'
 import Cerrarsesion from '../views/Cerrarsesion.vue'
 import Estadisticas from '../views/Estadisticas.vue'
+import Datos from '../views/Datos.vue'
 const routes = [
     
     {
@@ -38,6 +39,12 @@ const routes = [
         name: 'Estadisticas',
         component: Estadisticas
     },
+    {
+        path: '/Datos',
+        name: 'Datos',
+        component: Datos
+    },
+
 
 ]
 
