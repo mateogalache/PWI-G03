@@ -19,6 +19,8 @@
 
 .FContainer{
     display: flex;
+    position: fixed;
+    bottom: 0%;
     flex-direction: row;
     padding-left: 5%;
     padding-right: 5%;

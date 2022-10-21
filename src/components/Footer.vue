@@ -27,11 +27,14 @@
 
 .FContainer {
     display: flex;
+    position: fixed;
+    bottom: 0%;
     flex-direction: row;
     justify-content: space-between;
     background-color: cadetblue;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 
 }
 
