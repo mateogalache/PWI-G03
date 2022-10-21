@@ -33,7 +33,7 @@ import Header from '../components/Header.vue'
 
 
        
-       <div class = "cont">
+       <div  class = "cont">
         <a href = "Datos"><button class="Rectangulo">
                 <p><FONT color = "white">Datos</FONT></p>
             </button></a>
