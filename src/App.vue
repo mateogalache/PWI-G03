@@ -4,13 +4,13 @@ import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+//sdasdasd
 </script>
 
 <template>
   <nav>
     
   </nav>
-
   <router-view>
   </router-view>
 
