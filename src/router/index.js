@@ -4,6 +4,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Perfil from '../views/Perfil.vue'
 import Borrarperfil from '../views/Borrarperfil.vue'
+import Cerrarsesion from '../views/Cerrarsesion.vue'
 const routes = [
     
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/Borrarperfil',
         name: 'Borrarperfil',
         component: Borrarperfil
+    },
+    {
+        path: '/Cerrarsesion',
+        name: 'Cerrarsesion',
+        component: Cerrarsesion
     },
 
 ]
