@@ -3,7 +3,7 @@
     
     <footer>
         <article class="FContainer">
-            <div class="botones">
+            <div class="botones1">
                 <img src='src/assets/home.png' alt="home" width="25" height="25">
                 <img src='src/assets/search.png' alt="home" width="25" height="25">
                 <img src='src/assets/add.png' alt="home" width="25" height="25">
@@ -30,11 +30,11 @@
     
 }
 
-.botones{
+.botones1{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 5%;
