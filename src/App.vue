@@ -7,6 +7,7 @@ import Footer from "./components/Footer.vue";
 //sdasdasd
 import Footer2 from './components/Footer2.vue'
 import Inicio from './views/Inicio.vue'
+import Header2 from "./components/Header2.vue";
 </script>
 
 <template>

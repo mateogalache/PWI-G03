@@ -1,11 +1,11 @@
 <script setup>
-import Footer from '../components/Footer.vue'
-import Header from '../components/Header.vue'
+import Footer2 from '../components/Footer2.vue'
+import Header2 from '../components/Header2.vue'
 </script>
 <template>
-    <Header>
+    <Header2>
         
-    </Header>
+    </Header2>
     <main>
         <br>
        <b>&nbsp;&nbsp;&nbsp;Datos</b>
@@ -61,9 +61,9 @@ import Header from '../components/Header.vue'
 
         
     </main>
-    <Footer>
+    <Footer2>
         
-    </Footer>
+    </Footer2>
   </template>
 <style>
 .separacion{

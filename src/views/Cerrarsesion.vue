@@ -1,6 +1,6 @@
 <script setup>
-import Footer from '../components/Footer.vue'
-import Header from '../components/Header.vue'
+import Footer2 from '../components/Footer2.vue'
+import Header2 from '../components/Header2.vue'
 </script>
 
 <template>
@@ -9,9 +9,9 @@ import Header from '../components/Header.vue'
  </div>
 
  
-    <Header>
+    <Header2>
         
-    </Header>
+    </Header2>
     <main>
         
         <br>
@@ -98,9 +98,9 @@ import Header from '../components/Header.vue'
 
         
     </main>
-    <Footer>
+    <Footer2>
         
-    </Footer>
+    </Footer2>
  <div class = "rectanguloN">
     
  </div>

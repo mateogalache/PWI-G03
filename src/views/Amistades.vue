@@ -1,9 +1,9 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header from '../components/Header.vue'
+import Header2 from '../components/Header2.vue'
 </script>
 <template>
-    <Header></Header>
+    <Header2></Header2>
     <main>
         <h2>Amistades</h2>
         <div class="foto1">
