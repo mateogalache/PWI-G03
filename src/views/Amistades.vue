@@ -9,11 +9,13 @@ import Header from '../components/Header.vue'
         <div class="foto1">
             <img src='src/assets/FRENTE-NITIDA.webp' class="imgredonda">
         </div>
-            <li class="botones">
-               <ul><button class="boton1">Lista ></button></ul> 
-                <ul><button class="boton2">Añadir amigos ></button></ul>
-                <ul><button class="boton3">Request ></button></ul>
-            </li>
+        
+            <div class="botones">
+                <p>Nombre</p>
+                <a href="ListaAmigos"><button class="boton1">Lista ></button></a> 
+                <a href="BuscaAmigo"><button class="boton1">Añadir amigos ></button></a>
+                <a href="Pending"><button class="boton1">Request ></button></a>
+            </div>
            
     </main>
     <Footer2></Footer2>
@@ -32,16 +34,35 @@ import Header from '../components/Header.vue'
         align-items: center;
         margin-top: 5%;
     }
-    
     .botones{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        width: 100%;
-        height: 50%;
+        
+    }
+    a{
+        text-decoration: none;
+    }
+    
+    .boton1{
+        display: flex;
+        width:200px;
+        height:30px;   
+        background-color: rgb(104, 100, 100);
+        border-radius:22px;   
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20%;
+        color: white;    
+  
+    } 
+    .nombre{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         
     }
     

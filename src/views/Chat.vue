@@ -1,5 +1,5 @@
 <script setup>
-import Footer from '../components/Footer.vue'
+import Footer2 from '../components/Footer2.vue'
 import Header from '../components/Header.vue'
 
 </script>
@@ -11,51 +11,67 @@ import Header from '../components/Header.vue'
 
     <main>
         <div class = "cont">
-            <h3>Friends</h3>
+            <h3>Chats</h3>
             <div class = "BContainer">
                 <p class = "buscar">Busca</p>
             </div>
                 
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Laura</p>
+                <div class="chat">
+                    <b class = "nombre">Laura</b>
+                    <p class = "mensaje">Hola Laura vienes al cine hoy?</p>
+                </div>
+                
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Javier</p>
+                <div class="chat">
+                    <b class = "nombre">Antonio</b>
+                    <p class = "mensaje">Me debes una Antonio</p>
+                </div>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Antonio</p>
+                <div class="chat">
+                    <b class = "nombre">Javier</b>
+                    <p class = "mensaje">Ey Javi hemos quedado en media hora</p>
+                </div>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Maria</p>
+                <div class="chat">
+                    <b class = "nombre">Maria</b>
+                    <p class = "mensaje">Que tal estas Maria?</p>
+                </div>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Carlos</p>
+                <div class="chat">
+                    <b class = "nombre">Carlos</b>
+                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
+                </div>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
         </div>
     </main>
-    <Footer>
+    <Footer2>
 
-    </Footer>
+    </Footer2>
 </template>
 
 <style>
@@ -88,8 +104,7 @@ import Header from '../components/Header.vue'
     border: 1px solid black;
     border-radius: 25px;
     width: 100%;
-    justify-content: space-between;
-   
+    
     
 
 }
@@ -106,7 +121,18 @@ import Header from '../components/Header.vue'
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.perfil{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5%;
+    
+}
 .nombre{
-    padding-left: 10%;
+    display: flex;
+    margin-right: 20%;
+    margin-top: 5%;
+    
 }
 </style>

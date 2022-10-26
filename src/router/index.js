@@ -12,6 +12,8 @@ import SearchFriend from '../views/BuscaAmigo.vue'
 import ListaAmigos from '../views/ListaAmigos.vue'
 import ListaAmigosAjena from '../views/ListaAmigosAjena.vue'
 import Amistades from '../views/Amistades.vue'
+import Chat from '../views/Chat.vue'
+import PerfilAmigo from '../views/PerfilAmigo.vue'
 const routes = [
     
     {
@@ -79,6 +81,16 @@ const routes = [
         path: '/Amistades',
         name: 'Amistades',
         component: Amistades
+    },
+    {
+        path: '/Chat',
+        name: 'Chat',
+        component: Chat
+    },
+    {
+        path: '/PerfilAmigo',
+        name: 'PerfilAmigo',
+        component: PerfilAmigo
     }
 
 ]
