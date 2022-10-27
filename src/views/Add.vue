@@ -8,15 +8,16 @@ import Header3 from '../components/Header3.vue'
     <Header3>
             
     </Header3>
-
+    <main>
+        <br><br/><br/><br/>
 <div class = "container">
 
     <div class = "subtitulo">           
-            <p style="color: black">Creación Evento</p>
+            <b style="color: black">Creación Evento</b>
     </div>
-
+        <br><br/>
     <div class = "rectanguloredondeadeo">           
-            <p style="color: grey">Nombre Evento</p>
+        <p style="color: grey">Nombre Evento</p>
     </div>
 
     <div class = "rectanguloredondeadeo">           
@@ -43,7 +44,7 @@ import Header3 from '../components/Header3.vue'
             <p style="color: black">Crear</p>
     </div>
 </div>
-
+</main>
     <Footer2>
         
     </Footer2>
@@ -53,7 +54,7 @@ import Header3 from '../components/Header3.vue'
 <style scoped>
 
     .container{
-        margin: 12em;
+        
         display: flex;
         justify-content: center;
         flex-direction: column;
