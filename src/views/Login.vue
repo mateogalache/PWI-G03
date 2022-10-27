@@ -3,9 +3,9 @@ import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 </script>
 <template>
-    <header class="HContainer">
-        <h1 class="titulo">OPEN EVENTS</h1>
-    </header>
+    <Header>
+        
+    </Header>
     <main>
         <br><br/><br/>
         <div class="cont">        

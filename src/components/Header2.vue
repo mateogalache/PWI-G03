@@ -1,62 +1,55 @@
-
-
 <template>
-  
+
+  <header>
+    <div class = "HContainer">
+      <div class = space>
+      <a href = "javascript: history.go(-1)" class = "triangulo">
+        
+      </a>
+
+      <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sallevents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+      <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti"></a>
+    </div>
+  </div>
+  </header> 
+  <main>
+    
+
+      
+
+   
+  </main>
   <footer>
-      <article class="HContainer">
-          <section class="Hcenter">
-              <h1>OpenEvents</h1>
-          </section>
-          <section class="Hbotonatras">
-            <img src="src/imagenes/54476.png" 
-            width="35" height="35" alt="Botón atrás">
-          </section>
-          <section class="Hbotoncomentario">
-            <img src="src/imagenes/comentario.png" 
-            width="35" height="35" alt="Botón atrás">
-          </section>
-      </article>
   </footer>
 </template>
-
 <style>
-h1{
-  position: relative;   
-  font-size: 35px;
-  top: 15px;
-}
+
 .HContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(188, 188, 188);
+
+   
     align-items: center;
-    flex-wrap: wrap;
-    position:fixed;
-    top: 0%;
+    justify-content: space-between;
+    background-color: cadetblue;
     width: 100%;
+
 }
-.Hbotonatras{
-    position: relative; 
-    display: flex;
-    flex-grow: 1;
-    left: 100px;
-    bottom: 40px;
+.space{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.Hbotoncomentario{
-    position: relative; 
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;
-    display: flex;
-    flex-grow: 1;
-    right: -550px;
-    bottom: 40px;
+.triangulo{
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid black;
+  border-bottom: 10px solid transparent;
 }
- 
-.Hcenter{
-    display: flex;
-    justify-items: center;
-    padding-right: 50%;
-    padding-left: 45%;
+.conti{
+  display:flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
 }
 </style>
