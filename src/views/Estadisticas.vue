@@ -43,8 +43,8 @@ import Header2 from '../components/Header2.vue'
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo2">                
-                    <p><FONT color = "grey">Porcentaje <br>usuarios con menos<br>comentarios
+            <div class = "rectangulo3">                
+                <p><FONT color = "grey">Porcentaje <br>usuarios con menos<br>comentarios
                     </FONT></p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <p>48%</p>
@@ -72,7 +72,7 @@ import Header2 from '../components/Header2.vue'
     justify-content: space-around;
     border-radius: 50px;
 }
-.rectangulo2{
+.rectangulo3{
     height: 70px;
     width: 300px;
     background-color: transparent;
