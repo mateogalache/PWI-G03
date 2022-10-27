@@ -11,11 +11,10 @@ import Header3 from '../components/Header3.vue'
 </Header3>
 
 <main>
-    <div class = "container">
-        <div class = "titulo">           
-            <p>Eventos Destacados</p>
-        </div>
-      
+    <br>
+    <b>&nbsp;&nbsp;Eventos Destacados</b>
+    <div class = "container5">
+              
         <div class="eventocontainer">
             <div class = "parejas">
                 <img src="src/assets/ImagenesEventos/deporte.png" 
@@ -51,8 +50,8 @@ import Header3 from '../components/Header3.vue'
 
 <style scoped>
 
-    .container{
-        margin: 7em;
+    .container5{
+        
         display: flex;
         justify-content: center;
         flex-direction: column;
