@@ -14,13 +14,17 @@ import Header3 from '../components/Header3.vue';
     <main>
         
         <br>
-        
+
         <div class = "contI">
             <b>&nbsp;&nbsp;&nbsp;Perfil</b> 
-               
-                
+            <div class = "transparent">
+                <button class="Redondai">
+                    <p>i</p>           
+                </button>
+                <i>&nbsp;&nbsp;&nbsp;</i>    
+            </div>     
         </div>
-        <br/><br/>
+        <br/>
         <div class = "cont">
             <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
 
