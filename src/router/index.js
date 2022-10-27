@@ -16,6 +16,7 @@ import Chat from '../views/Chat.vue'
 import PerfilAmigo from '../views/PerfilAmigo.vue'
 import Event from '../views/Event.vue'
 import PerfilAjeno from '../views/PerfilAjeno.vue'
+import Add from '../views/Add.vue'
 const routes = [
     
     {
@@ -103,7 +104,13 @@ const routes = [
         path: '/PerfilAjeno',
         name: 'PerfilAjeno',
         component: PerfilAjeno
+    },
+    {
+        path: '/Add',
+        name: 'Add',
+        component: Add
     }
+
     
 
 ]
