@@ -6,9 +6,9 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<Header2>
+<Header3>
         
-</Header2>
+</Header3>
 
 <main>
     <div class = "container">
