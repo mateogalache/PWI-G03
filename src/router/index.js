@@ -17,6 +17,9 @@ import Chat from '../views/Chat.vue'
 import PerfilAmigo from '../views/PerfilAmigo.vue'
 import Event from '../views/Event.vue'
 import PerfilAjeno from '../views/PerfilAjeno.vue'
+import Add from '../views/Add.vue'
+import Search from '../views/Search.vue'
+import Home from '../views/Home.vue'
 import TimeLineEvent from '../views/TimeLineEvent.vue'
 const routes = [
     
@@ -112,10 +115,27 @@ const routes = [
         component: PerfilAjeno
     },
     {
+        path: '/Add',
+        name: 'Add',
+        component: Add
+    },
+    {
+        path: '/Search',
+        name: 'Search',
+        component: Search
+    },
+    {
+        path: '/Home',
+        name: 'Home',
+        component: Home
+    },
+    {
         path: '/TimeLineEvent',
         name: 'TimeLineEvent',
         component: TimeLineEvent
     }
+
+
     
 
 ]
