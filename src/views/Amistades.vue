@@ -3,7 +3,9 @@ import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
 <template>
-    <Header2></Header2>
+    <Header2>
+
+    </Header2>
     <main>
         <h2>Amistades</h2>
         <div class="foto1">
@@ -18,7 +20,9 @@ import Header2 from '../components/Header2.vue'
             </div>
            
     </main>
-    <Footer2></Footer2>
+    <Footer2>
+        
+    </Footer2>
 </template>
 <style>
     .imgredonda{        

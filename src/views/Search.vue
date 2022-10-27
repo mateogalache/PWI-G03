@@ -1,14 +1,15 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
+
 import Header3 from '../components/Header3.vue'
 </script>
 
 
 <template>
 
-<Header2>
+<Header3>
         
-</Header2>
+</Header3>
 
 <main>
     <div class = "container">
@@ -26,7 +27,7 @@ import Header3 from '../components/Header3.vue'
             <div class = "parejas">
                 <img src="src/assets/ImagenesEventos/deporte.png" 
                 width="35" height="35" alt="Botón atrás">
-                <img src="src/assets/ImagenesEventosgenes/vino.png" 
+                <img src="src/assets/ImagenesEventos/vino.png" 
                 width="35" height="35" alt="Botón atrás">
             </div>
 
@@ -60,7 +61,7 @@ import Header3 from '../components/Header3.vue'
 <style scoped>
 
     .container{
-        margin: 7em;
+       
         display: flex;
         justify-content: center;
         flex-direction: column;
