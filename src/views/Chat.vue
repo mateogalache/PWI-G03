@@ -1,13 +1,13 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header from '../components/Header.vue'
+import Header2 from '../components/Header2.vue'
 
 </script>
 <template>
 
-    <Header>
+    <Header2>
         
-    </Header>
+    </Header2>
 
     <main>
         <div class = "cont">

@@ -14,6 +14,7 @@ import ListaAmigosAjena from '../views/ListaAmigosAjena.vue'
 import Amistades from '../views/Amistades.vue'
 import Chat from '../views/Chat.vue'
 import PerfilAmigo from '../views/PerfilAmigo.vue'
+import PerfilAjeno from '../views/PerfilAjeno.vue'
 const routes = [
     
     {
@@ -91,6 +92,11 @@ const routes = [
         path: '/PerfilAmigo',
         name: 'PerfilAmigo',
         component: PerfilAmigo
+    },
+    {
+        path: '/PerfilAjeno',
+        name: 'PerfilAjeno',
+        component: PerfilAjeno
     }
 
 ]
