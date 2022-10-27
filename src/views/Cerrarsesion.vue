@@ -86,30 +86,34 @@ import Header2 from '../components/Header2.vue'
             </button></a>
        </div>
        <br/><br/>
-       
-       
-
-    
-        
-   
-        
-      
+      <div class = "transparent2">
+      </div>     
        
 
         
     </main>
+    
+
     <Footer2>
         
     </Footer2>
  <div class = "rectanguloN">
-    
- </div>
+
+    </div>
   </template>
  
 <style>
 
+.transparent2{
+    display:flex;
+    width: 100%;
+    height: 183px;
+    background-color: white;
+}
+
 .transparent{
     display:flex;
+    
 }
 .Redondap{
     display:flex;
@@ -166,6 +170,7 @@ import Header2 from '../components/Header2.vue'
     opacity: 70%;
     
 }
+
 
 .rectanguloB{
    

@@ -86,7 +86,9 @@ import Header2 from '../components/Header2.vue'
             </button></a>
        </div>
        <br/><br/>
-       
+       <div class = "transparent2">
+
+       </div>
        
 
     
@@ -107,7 +109,12 @@ import Header2 from '../components/Header2.vue'
   </template>
  
 <style>
-
+.transparent2{
+    display:flex;
+    width: 100%;
+    height: 183px;
+    background-color: white;
+}
 .transparent{
     display:flex;
 }
