@@ -13,14 +13,14 @@ import Header2 from '../components/Header2.vue'
         <div class = "cont">
             <div class = "BContainer">
                 <button class="Send">
-                    <b>Send request</b>
+                    <a href = "Sending"><b>Send request</b></a>
                 </button>
 
                 <button class="Pending">
-                    <b>Pending request</b>
+                    <a href = "Pending"><b>Pending request</b></a>
                 </button>
-                
             </div >
+                
                 
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
