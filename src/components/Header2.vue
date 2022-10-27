@@ -8,7 +8,7 @@
       </a>
 
       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sallevents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-      <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti"></a>
+      <a href = "Chat"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti"></a>
     </div>
   </div>
   </header> 
