@@ -3,7 +3,7 @@
 <template>
   
   <footer>
-      <article class="HContainer">
+      <article class="HContainer2">
           <section class="Hcenter">
               <h1>OpenEvents</h1>
           </section>
@@ -25,7 +25,7 @@ h1{
   font-size: 35px;
   top: 15px;
 }
-.HContainer{
+.HContainer2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
