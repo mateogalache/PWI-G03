@@ -1,139 +1,140 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header from '../components/Header.vue'
-import Header3 from '../components/Header3.vue';
+import Header2 from '../components/Header2.vue'
 
 </script>
 <template>
+    <Header2>
 
-    <Header>
-        
-    </Header>
-
+    </Header2>
     <main>
-        <div class = "cont">
-            <h3>Chats</h3>
-            <div class = "BContainer">
-                <p class = "buscar">Busca</p>
-            </div>
-                
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Laura</b>
-                    <p class = "mensaje">Hola Laura vienes al cine hoy?</p>
-                </div>
-                
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Antonio</b>
-                    <p class = "mensaje">Me debes una Antonio</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Javier</b>
-                    <p class = "mensaje">Ey Javi hemos quedado en media hora</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Maria</b>
-                    <p class = "mensaje">Que tal estas Maria?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Carlos</b>
-                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
+        <div class="nomchat">
+            <img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
+            <h3>Antonio99</h3>
         </div>
+        
+        <div class="box">
+			<div class="item left">
+				<img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
+				<span class = "message"> Que me cuentas </span>
+			</div>
+			<div class="chart-timer">
+				2022-10-17
+			</div>
+			<div class="item right">
+				<img class="header-img" src="src/assets/usuario.png" />
+				 <span class = "message"> Jajajajaja </span>
+			</div>
+			<div class="item left">
+				<img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
+				 <span class = "message"> ¿Qué estás haciendo </span>
+			</div>
+	
+			<div class="item right">
+				<img class="header-img" src="src/assets/usuario.png" />
+				 <span class = "message"> Comidas </span>
+			</div>
+            <div class="item right">
+				<img class="header-img" src="src/assets/usuario.png" />
+				 <span class = "message"> Y tu? </span>
+			</div>
+            
+		</div>
+
+		<div class="input-box">
+			<input type="text" />
+			 <button> Enviar </button>
+		</div>
     </main>
     <Footer2>
 
     </Footer2>
-</template>
-
-<style>
-.cont{
-
-    padding-left: 2%;
-    padding-right: 2%;
-    display: flex;
-    flex-direction: column;
     
+</template>
+<style>
+.box{
+    margin-top: 10%;
 }
-
-.BContainer{
-    margin-bottom: 5%;
-    display: flex;
-    border: 1px solid black;
-    border-radius: 25px;
-    width: 100%;
-
-}
-.buscar{
-    display: flex;
-    padding-left: 5%;
-}
-.PContainer{
-    margin-top: 5%;
+.nomchat{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 25px;
-    width: 100%;
-    
-    
-
-}
-.Clogo{
-    display: flex;
-    justify-content: end;
-    justify-content: space-around;
-    margin-right: 5%;
-}
-.icon{
-    
-    width: 16px;
-    height: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.perfil{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    margin-top: 5%;
     margin-left: 5%;
     
 }
-.nombre{
-    display: flex;
-    margin-right: 20%;
+.item {
+	display: flex;
+	margin-bottom: 10px;
     margin-top: 5%;
-    
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.left {
+	flex-direction: row;
+}
+
+.right {
+	flex-direction: row-reverse;
+}
+
+.right .message {
+	margin-right: 10px;
+}
+.left .message{
+	margin-left: 10px;
+}
+
+
+.header-img {
+	width: 42px;
+	height: 42px;
+	border-radius: 100px;
+}
+
+.message {
+	border-radius: 10px;
+	display: flex;
+	background: #efefef;
+	min-height: 25px;
+	padding: 9px 10px;
+	align-items: center;
+	color: #222121;
+}
+
+.input-box {
+	position: absolute;
+	
+	left: 0;
+	right: 0;
+	display: flex;
+	padding: 4px 6px;
+	box-sizing: border-box;
+    margin-top: 3%;
+}
+
+.input-box input {
+	flex: 1;
+	border-radius: 10px;
+	border: 1px #cecece solid;
+	padding: 3px 4px;
+    outline: none;
+}
+
+.input-box button {
+	width: 80px;
+	background: #2196F4;
+	border-radius: 21px;
+	border: 1px #fffa solid;
+	color: #ffffff;
+	margin: 0px 6px;
+	outline: none;
+}
+button:active{}
+
+.chart-timer{
+	text-align: center;
+    color: #616161;
+    font-size: 13px;
 }
 </style>

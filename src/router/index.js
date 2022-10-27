@@ -12,10 +12,12 @@ import SearchFriend from '../views/BuscaAmigo.vue'
 import ListaAmigos from '../views/ListaAmigos.vue'
 import ListaAmigosAjena from '../views/ListaAmigosAjena.vue'
 import Amistades from '../views/Amistades.vue'
+import Chats from '../views/Chats.vue'
 import Chat from '../views/Chat.vue'
 import PerfilAmigo from '../views/PerfilAmigo.vue'
 import Event from '../views/Event.vue'
 import PerfilAjeno from '../views/PerfilAjeno.vue'
+import TimeLineEvent from '../views/TimeLineEvent.vue'
 const routes = [
     
     {
@@ -85,6 +87,11 @@ const routes = [
         component: Amistades
     },
     {
+        path: '/Chats',
+        name: 'Chats',
+        component: Chats
+    },
+    {
         path: '/Chat',
         name: 'Chat',
         component: Chat
@@ -103,6 +110,11 @@ const routes = [
         path: '/PerfilAjeno',
         name: 'PerfilAjeno',
         component: PerfilAjeno
+    },
+    {
+        path: '/TimeLineEvent',
+        name: 'TimeLineEvent',
+        component: TimeLineEvent
     }
     
 
