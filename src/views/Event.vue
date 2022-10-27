@@ -47,10 +47,10 @@ import Header2 from '../components/Header2.vue'
 .FCont{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
+    margin-right: 2%;
     
 }
 .First{
@@ -67,10 +67,11 @@ import Header2 from '../components/Header2.vue'
 
 }
 .Second{
-    width: 75%;
+    width: 90%;
     padding: 4%;
     border-radius: 150px;
     border: 1px solid black;
+    
     
 
 }
