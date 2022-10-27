@@ -23,6 +23,7 @@ import Header2 from '../components/Header2.vue'
             </div >
                 
             <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
                 <p class = "nombre">Nombre</p>
                 <div class = "Clogo">
                     <img src="src\assets\tick.png" class = "icon" alt="tick">
@@ -30,6 +31,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
             </div>
             <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
                 <p class = "nombre">Nombre</p>
                 <div class = "Clogo">
                     <img src="src\assets\tick.png" class = "icon" alt="tick">
@@ -37,6 +39,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
             </div>
             <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
                 <p class = "nombre">Nombre</p>
                 <div class = "Clogo">
                     <img src="src\assets\tick.png" class = "icon" alt="tick">
