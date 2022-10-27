@@ -7,16 +7,13 @@ import Header2 from '../components/Header2.vue'
 
     </Header2>
     <main>
-
-        <br><b class="amistad">Amistades</b>
-        <h2>Antonio</h2>
-
+        <h2>Amistades</h2>
         <div class="foto1">
             <img src='src/assets/FRENTE-NITIDA.webp' class="imgredonda">
         </div>
         
             <div class="botones">
-                <p>Nombre</p>
+                <p>Antonio</p>
                 <a href="ListaAmigos"><button class="boton1">Lista ></button></a> 
                 <a href="BuscaAmigo"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>

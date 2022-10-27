@@ -38,6 +38,14 @@ import Header2 from '../components/Header2.vue'
 				<img class="header-img" src="src/assets/usuario.png" />
 				 <span class = "message"> Y tu? </span>
 			</div>
+            <div class="item left">
+				<img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
+				 <span class = "message"> Estoy creando un evento para el lunes</span>
+			</div>
+            <div class="item left">
+				<img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
+				 <span class = "message"> Vas a venir? </span>
+			</div>
             
 		</div>
 
@@ -54,6 +62,9 @@ import Header2 from '../components/Header2.vue'
 <style>
 .box{
     margin-top: 10%;
+}
+h3{
+    margin-left: 5%;
 }
 .nomchat{
     display: flex;
@@ -110,7 +121,7 @@ import Header2 from '../components/Header2.vue'
 	display: flex;
 	padding: 4px 6px;
 	box-sizing: border-box;
-    margin-top: 3%;
+    margin-top: 10%;
 }
 
 .input-box input {
