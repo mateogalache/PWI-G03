@@ -21,6 +21,7 @@ import Add from '../views/Add.vue'
 import Search from '../views/Search.vue'
 import Home from '../views/Home.vue'
 import TimeLineEvent from '../views/TimeLineEvent.vue'
+import Events from '../views/Events.vue'
 const routes = [
     
     {
@@ -133,6 +134,11 @@ const routes = [
         path: '/TimeLineEvent',
         name: 'TimeLineEvent',
         component: TimeLineEvent
+    },
+    {
+        path: '/Events',
+        name: 'Events',
+        component: Events
     }
 
 
