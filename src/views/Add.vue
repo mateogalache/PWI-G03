@@ -49,3 +49,62 @@ import Header3 from '../components/Header3.vue'
     </Footer2>
     
 </template>
+
+<style scoped>
+
+    .container{
+        margin: 12em;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rectanguloredondeadeo{
+    height: 30px;
+    width: 300px;
+    background-color: transparent;
+    border: 1px solid grey;
+    display: flex;
+    align-items:center;
+    justify-content: left;
+    padding: 5px;
+    text-align: center;
+    border-radius: 50px;
+    margin: 25px;
+    }
+    .reiniciar{
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+    border: 1px solid grey;
+    align-items:center;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    border-radius: 50px;
+    margin: 25px;
+    margin-right: 225px;
+    }
+    .crear{
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+    border: 1px solid grey;
+    align-items:center;
+    justify-content: center;
+    padding: 5px;
+    display: flex;
+    text-align: center;
+    border-radius: 50px;
+    margin: 25px;
+    margin-left: 225px;
+    margin-top: -67px;
+    }
+
+    .subtitulo{
+        margin-right: 250px;
+        margin-top: -40px;
+    }
+</style>
