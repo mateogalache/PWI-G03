@@ -5,7 +5,7 @@ import Header2 from '../components/Header2.vue'
 <template>
     <Header2></Header2>
     <main>
-        <h2>Amistades</h2>
+        <h2>Antonio</h2>
         <div class="foto1">
             <img src='src/assets/FRENTE-NITIDA.webp' class="imgredonda">
         </div>

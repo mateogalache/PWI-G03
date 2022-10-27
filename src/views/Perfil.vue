@@ -17,14 +17,10 @@ import Header3 from '../components/Header3.vue';
         
         <div class = "contI">
             <b>&nbsp;&nbsp;&nbsp;Perfil</b> 
-            <div class = "transparent">
-                <button class="Redondai">
-                    <p>i</p>           
-                </button>
-                <i>&nbsp;&nbsp;&nbsp;</i>    
-            </div>     
+               
+                
         </div>
-        <br/>
+        <br/><br/>
         <div class = "cont">
             <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
 
@@ -51,6 +47,12 @@ import Header3 from '../components/Header3.vue';
        <div class = "cont">
             <a href = "Amistades"><button class="Rectangulo">
                 <p><FONT color = "white">Amistades</FONT></p>
+            </button></a>
+       </div>
+       <br/>
+       <div class = "cont">
+            <a href = "Events"><button class="Rectangulo">
+                <p><FONT color = "white">Mis eventos</FONT></p>
             </button></a>
        </div>
        <br/>
