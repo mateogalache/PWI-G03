@@ -17,6 +17,8 @@ import PerfilAmigo from '../views/PerfilAmigo.vue'
 import Event from '../views/Event.vue'
 import PerfilAjeno from '../views/PerfilAjeno.vue'
 import Add from '../views/Add.vue'
+import Events from '../views/Events.vue'
+import Home from '../views/Home.vue'
 const routes = [
     
     {
@@ -114,7 +116,13 @@ const routes = [
         path: '/Events',
         name: 'Events',
         component: Events
+    },
+    {
+        path: '/Home',
+        name: 'Home',
+        component: Home
     }
+
 
     
 
