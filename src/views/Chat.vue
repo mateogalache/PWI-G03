@@ -5,9 +5,9 @@ import Header from '../components/Header.vue'
 </script>
 <template>
 
-    <Header>
+    <Header3>
         
-    </Header>
+    </Header3>
 
     <main>
         <div class = "cont">
