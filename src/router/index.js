@@ -109,6 +109,11 @@ const routes = [
         path: '/Add',
         name: 'Add',
         component: Add
+    },
+    {
+        path: '/Events',
+        name: 'Events',
+        component: Events
     }
 
     
