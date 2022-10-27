@@ -35,7 +35,7 @@ import Header3 from '../components/Header3.vue';
                     <p class = "mensaje">Me debes una Antonio</p>
                 </div>
                 <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                    <a href='Chat'><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                 </div>
             </div>
             <div class = "PContainer">
