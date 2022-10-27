@@ -17,7 +17,7 @@ import Header2 from '../components/Header2.vue'
         <p class = "cont">Cambiar foto de perfil</p>
         <br/>
         <div class = "cont">
-            <div class = "rectangulo1">
+            <div class = "rectangulo5">
                                     
                     <p><FONT color = "grey">Nombre</FONT></p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -28,7 +28,7 @@ import Header2 from '../components/Header2.vue'
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
+            <div class = "rectangulo5">                
                     <p><FONT color = "grey">Apellidos</FONT></p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <div class = "rectangulo2">
@@ -38,7 +38,7 @@ import Header2 from '../components/Header2.vue'
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
+            <div class = "rectangulo5">                
                     <p><FONT color = "grey">Email</FONT></p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <div class = "rectangulo2">
@@ -48,7 +48,7 @@ import Header2 from '../components/Header2.vue'
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
+            <div class = "rectangulo5">                
                     <p><FONT color = "grey">Contraseña</FONT></p>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <div class = "rectangulo2">
@@ -69,7 +69,7 @@ import Header2 from '../components/Header2.vue'
 .separacion{
     display:flex;
 }
-.rectangulo1{
+.rectangulo5{
     height: 30px;
     width: 300px;
     background-color: transparent;

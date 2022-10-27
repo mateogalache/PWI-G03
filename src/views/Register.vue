@@ -23,7 +23,7 @@ import Header from '../components/Header.vue'
         <input type="text" class = "texto">
         <p><label>Foto de perfil*</label></p>
         <input type="text" class = "texto">
-        <br/><br/><br/><br/><br/>
+        <br/><br/><br/>
         
        
     

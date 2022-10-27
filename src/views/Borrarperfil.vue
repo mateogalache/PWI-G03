@@ -39,7 +39,7 @@ import Header2 from '../components/Header2.vue'
         
             <div class = "rectanguloB">
                 <br/>
-                <p>¿Seguro que quieres borrar el perfil?</p><br/>
+                <div class = cont> <p>¿Seguro que quieres borrar el perfil? </p> </div><br/>
                 <div class = "contI2">
                     <a href = "."><button class = "rectanguloC">
                         <p><FONT color = "white">Borrar perfil</FONT></p>
@@ -86,7 +86,9 @@ import Header2 from '../components/Header2.vue'
             </button></a>
        </div>
        <br/><br/>
-       
+       <div class = "transparent2">
+
+       </div>
        
 
     
@@ -107,7 +109,12 @@ import Header2 from '../components/Header2.vue'
   </template>
  
 <style>
-
+.transparent2{
+    display:flex;
+    width: 100%;
+    height: 183px;
+    background-color: white;
+}
 .transparent{
     display:flex;
 }
@@ -168,11 +175,12 @@ import Header2 from '../components/Header2.vue'
 }
 
 .rectanguloB{
-   
+    
     width: 250px;
     height: 180px;
     background-color: white;
     border-radius: 30px;
+   
 
 }
 .encima{
