@@ -3,10 +3,14 @@ import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
 <template>
-    <Header2></Header2>
+    <Header2>
+
+    </Header2>
     <main>
+
         <br><b class="amistad">Amistades</b>
-        
+        <h2>Antonio</h2>
+
         <div class="foto1">
             <img src='src/assets/FRENTE-NITIDA.webp' class="imgredonda">
         </div>
@@ -19,7 +23,9 @@ import Header2 from '../components/Header2.vue'
             </div>
            
     </main>
-    <Footer2></Footer2>
+    <Footer2>
+        
+    </Footer2>
 </template>
 <style>
     .imgredonda{        
