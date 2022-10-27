@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
-    padding-left: 8%;
+    padding-right: 8%;
     
 
 
@@ -50,6 +50,6 @@
     display: flex;
     justify-items: center;
     padding-right: 15%;
-    padding-left: 10%;
+    
 }
 </style>
