@@ -17,8 +17,8 @@ import Header2 from '../components/Header3.vue'
               
         <div class="eventocontainer">
             <div class = "parejas">
-                <img src="src/assets/ImagenesEventos/deporte.png" 
-                width="35" height="35" alt="Botón atrás">
+            <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png"
+                width="35" height="35" alt="Botón atrás"></a>
                 <img src="src/assets/ImagenesEventos/vino.png" 
                 width="35" height="35" alt="Botón atrás">
             </div>
