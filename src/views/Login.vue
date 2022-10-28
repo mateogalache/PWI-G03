@@ -7,6 +7,9 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
+        <div class = "recuadro">
+
+</div>
         <br><br/>
         <div class="contlogin">        
         <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "200" height = "100" >
@@ -44,7 +47,20 @@ import Header from '../components/Header.vue'
     </Footer>
   </template>
 <style>
-
+.recuadro{
+    top: 15%;
+    left: 33.3%;
+    position: absolute;
+    width: 510px;
+    height: 500px;
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 5px 2px 2px black;
+    z-index: -2;
+    background-color: white;
+    
+}
 .center0{
    display: block;
    width: 100%;
@@ -84,12 +100,22 @@ import Header from '../components/Header.vue'
         width: 500px;
         
     }
-    
-
-
-    
-    
+    body{
+       background-image: url("src/assets/fondo.png");
+        
+    }
 }
+@media (max-width: 850px){
+    .recuadro{
+        display: none;
+    }
+    
+}  
+
+
+    
+    
+
 
 
 
