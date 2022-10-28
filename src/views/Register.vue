@@ -24,7 +24,7 @@ import Header from '../components/Header.vue'
         <p><label>Email*</label></p>
         <input type="text" class = "texto">
         <p><label>Contraseña*</label></p>
-        <input type="text" class = "texto">
+        <input type="password" class = "texto">
         <p><label>Foto de perfil*</label></p>
         <input type="text" class = "texto">
         <br/><br/>
