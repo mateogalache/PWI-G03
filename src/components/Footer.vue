@@ -52,4 +52,15 @@
     padding-right: 15%;
     
 }
+
+@media (min-width: 850px){
+    .FContainer{
+        height: 80px;
+    }
+    .Fright{
+        position: fixed;
+        width: 50%;
+        right: 0px;
+    }
+}
 </style>
