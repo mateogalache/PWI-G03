@@ -7,11 +7,15 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
-        <br><br/><br/>
-        <div class="cont">
-        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "200" height = "100" >
-        </div>
+      <div class = "background"></div>
+      <div class = "recuadro2"></div>
         <br>
+        <div class="cont">
+        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "150" height = "75" >
+        </div>
+        
+        <div class = "cont">
+        <div class = "centro1">
         <h2><b>Datos personales</b></h2>                
         <p><label>Nombre*</label></p>
         <input type="text" class = "texto">
@@ -23,16 +27,18 @@ import Header from '../components/Header.vue'
         <input type="text" class = "texto">
         <p><label>Foto de perfil*</label></p>
         <input type="text" class = "texto">
-        <br/><br/><br/>
-        
-       
+        <br/><br/>
+        </div>
+        </div>
     
         <div class="cont">
         <a href = "Home"><button class="Iniciar">
             <b><FONT COLOR="white">Registrar</FONT></b>
         </button></a>
         </div>
-        
+        <div class = "transparent9">
+
+        </div>
        
 
         
@@ -42,7 +48,40 @@ import Header from '../components/Header.vue'
     </Footer>
   </template>
 <style>
+.background{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("src/assets/fondo.png");
+    z-index: -3;
+}
 
+
+.recuadro2{
+    top: 12%;
+    left: 33.3%;
+    position: absolute;
+    width: 510px;
+    height: 565px;
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 5px 2px 2px black;
+    z-index: -2;
+    background-color: white;
+    
+}
+.transparent9{
+    display:flex;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    
+}
+.centro1{
+  display:block;
+  width: 100%;
+}
 .Iniciar{
    display: flex;
    width:150px;
@@ -69,8 +108,20 @@ import Header from '../components/Header.vue'
 
   }   
     
+  @media (min-width: 850px){
+    .centro1{
+      width: 500px;
+    }
+  }
+  @media (max-width: 850px){
+    .recuadro2{
+        display: none;
+    }
+    .background{
+        display:none;
+    }
     
-
+}  
 
 
 
