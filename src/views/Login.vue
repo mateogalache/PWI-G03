@@ -2,14 +2,17 @@
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 </script>
-<template>
+<template >
     <Header>
         
     </Header>
-    <main>
+    <main id="Login">
+        <div class = "background">
+
+        </div>
         <div class = "recuadro">
 
-</div>
+        </div>
         <br><br/>
         <div class="contlogin">        
         <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "200" height = "100" >
@@ -38,8 +41,9 @@ import Header from '../components/Header.vue'
          <a HREF="Register"><p align = "right"><small>¿No tienes cuenta? Regístrate</small></p></a>
         </div>
        </div>
-        
-       
+      <div class = "transparent9">
+
+      </div>
         
     </main>
     <Footer>
@@ -47,6 +51,20 @@ import Header from '../components/Header.vue'
     </Footer>
   </template>
 <style>
+.background{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("src/assets/fondo.png");
+    z-index: -3;
+}
+.transparent9{
+    display:flex;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    
+}
 .recuadro{
     top: 15%;
     left: 33.3%;
@@ -100,14 +118,14 @@ import Header from '../components/Header.vue'
         width: 500px;
         
     }
-    body{
-       background-image: url("src/assets/fondo.png");
-        
-    }
+    
 }
 @media (max-width: 850px){
     .recuadro{
         display: none;
+    }
+    .background{
+        display:none;
     }
     
 }  
