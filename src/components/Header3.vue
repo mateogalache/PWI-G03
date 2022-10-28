@@ -1,14 +1,14 @@
 <template>
 
-    <header>
-      <div class = "HContainer">
-        
+    <header class  = "HContainer0">
+        <h1>Sallevents</h1>
         
   
-        <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sallevents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-        <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti"></a>
-      
-    </div>
+        
+        <div class = "right">
+        <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti2" ></a>
+      </div>
+    
     </header> 
     <main>
       
@@ -21,23 +21,27 @@
     </footer>
   </template>
   <style>
+  .right{
+    display:flex;
+    justify-content: end;
+  }
+  .HContainer0{
   
-  .HContainer{
-  
-     
+      display:flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       background-color: cadetblue;
       width: 100%;
   
   }
   
   
-  .conti{
+  .conti2{
+    position: absolute;
     display:flex;
     width: 25px;
     height: 25px;
-    align-items: center;
-    justify-content: center;
+    top: 30px;
+    right: 30px;
   }
   </style>
