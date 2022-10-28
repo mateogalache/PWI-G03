@@ -14,7 +14,7 @@ import Header2 from '../components/Header2.vue'
        <b>&nbsp;&nbsp;&nbsp;Estadísticas</b>
        <br/><br/>
        <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
+            <img src = "src/assets/usuario.png" class = "Redondap">
             
         </div>
         <p class = "cont">Nombre</p>
@@ -22,8 +22,8 @@ import Header2 from '../components/Header2.vue'
         <div class = "cont">
             <div class = "rectangulo4">
                                     
-                    <p><FONT color = "grey">Puntuación</FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</FONT></p>
+                    
                     <div class = "estrellas">
                         <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
                         <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
@@ -36,18 +36,21 @@ import Header2 from '../components/Header2.vue'
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo4">                
-                    <p><FONT color = "grey">Num. comentarios</FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    <p>156</p>
+                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num. comentarios</FONT></p>
+                    
+                    <p class = "separacion2">156</p>
                 </div>    
             </div>
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo3">                
-                <p><FONT color = "grey">Porcentaje <br>usuarios con menos<br>comentarios
+                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcentaje <br
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usuarios con menos<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comentarios
                     </FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class = "separacion2">
                     <p>48%</p>
+                </div>
                 </div>    
             </div>
        
@@ -59,8 +62,9 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
   </template>
 <style>
-.separacion{
+.separacion2{
     display:flex;
+    margin-right: 20px;
 }
 .rectangulo4{
     height: 30px;
@@ -69,7 +73,7 @@ import Header2 from '../components/Header2.vue'
     border: 1px solid black;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 50px;
 }
 .rectangulo3{
@@ -79,7 +83,7 @@ import Header2 from '../components/Header2.vue'
     border: 1px solid black;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 25px;
 }
 
@@ -106,8 +110,17 @@ import Header2 from '../components/Header2.vue'
     justify-content: space-around;
     display: flex;
     background-color: transparent;
+    margin-right: 40px;
 }  
-    
+
+@media (min-width: 850px){
+    .rectangulo4{
+        width: 800px;
+    }
+    .rectangulo3{
+        width:800px;
+    }
+}
 
 
 
