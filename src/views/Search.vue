@@ -1,6 +1,6 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header3 from '../components/Header3.vue'
+import Header2 from '../components/Header2.vue'
 </script>
 
 

@@ -21,6 +21,8 @@ import Add from '../views/Add.vue'
 import Search from '../views/Search.vue'
 import Home from '../views/Home.vue'
 import TimeLineEvent from '../views/TimeLineEvent.vue'
+import CalendarioEvento from '../views/CalendarioEvento.vue'
+
 const routes = [
     
     {
@@ -133,6 +135,11 @@ const routes = [
         path: '/TimeLineEvent',
         name: 'TimeLineEvent',
         component: TimeLineEvent
+    },
+    {
+        path: '/CalendarioEvento',
+        name: 'CalendarioEvento',
+        component: CalendarioEvento
     }
 
 
