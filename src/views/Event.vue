@@ -14,13 +14,13 @@ import Header2 from '../components/Header2.vue'
 
         <section class = "First">
             
-            <img src="https://images.squarespace-cdn.com/content/v1/5f7b618b9a735b31389fb9d9/1602110375241-7DCPDD2U2OL94082FNE9/Fiestas-Universitarias_01.jpg?format=1000w" alt="Fiesta" width="400" height="300">
+            <img src="src/assets/ImagenesEventos/deporte.png" alt="Fiesta" width="400" height="300">
             <h2>Descripcion</h2>
         </section>
 
         <section class = "Second">
             
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quaerat non quidem cupiditate, voluptates explicabo aliquid voluptatibus enim ab aspernatur repudiandae necessitatibus magni voluptate saepe possimus fugit? Reprehenderit, quas labore!</p>
+            <p>Competición de atletismo, donde podemos ver a los mejores corredores de catalunya pelera por una posición para los campeonatos de españa.</p>
         </section >
 
         <section class = "Third">
@@ -72,8 +72,6 @@ import Header2 from '../components/Header2.vue'
     border-radius: 150px;
     border: 1px solid black;
     
-    
-
 }
 
 

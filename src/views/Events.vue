@@ -1,23 +1,23 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header3 from '../components/Header3.vue'
+import Header2 from '../components/Header3.vue'
 </script>
 
 
 <template>
 
-<Header3>
+<Header2>
         
-</Header3>
+</Header2>
 
 <main>
     <br>
-    <b>&nbsp;&nbsp;Eventos Destacados</b>
+    <b>&nbsp;&nbsp;Mis eventos</b>
     <div class = "container5">
               
         <div class="eventocontainer">
             <div class = "parejas">
-            <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png" 
+            <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png"
                 width="35" height="35" alt="Botón atrás"></a>
                 <img src="src/assets/ImagenesEventos/vino.png" 
                 width="35" height="35" alt="Botón atrás">

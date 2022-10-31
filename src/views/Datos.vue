@@ -11,7 +11,7 @@ import Header2 from '../components/Header2.vue'
        <b>&nbsp;&nbsp;&nbsp;Datos</b>
        <br/><br/>
        <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
+            <img src = "src/assets/usuario.png" class = "Redondap">
             
         </div>
         <p class = "cont">Cambiar foto de perfil</p>
@@ -19,8 +19,8 @@ import Header2 from '../components/Header2.vue'
         <div class = "cont">
             <div class = "rectangulo5">
                                     
-                    <p><FONT color = "grey">Nombre</FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</FONT></p>
+                    
                     <div class = "rectangulo2">
                     <p><FONT color = "white">Editar</FONT></p>
                     </div>
@@ -29,8 +29,8 @@ import Header2 from '../components/Header2.vue'
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo5">                
-                    <p><FONT color = "grey">Apellidos</FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apellidos</FONT></p>
+                    
                     <div class = "rectangulo2">
                     <p><FONT color = "white">Editar</FONT></p>
                     </div>
@@ -39,8 +39,8 @@ import Header2 from '../components/Header2.vue'
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo5">                
-                    <p><FONT color = "grey">Email</FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</FONT></p>
+                    
                     <div class = "rectangulo2">
                     <p><FONT color = "white">Editar</FONT></p>
                     </div>
@@ -49,8 +49,8 @@ import Header2 from '../components/Header2.vue'
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo5">                
-                    <p><FONT color = "grey">Contraseña</FONT></p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contraseña</FONT></p>
+                    
                     <div class = "rectangulo2">
                     <p><FONT color = "white">Editar</FONT></p>
                     </div>
@@ -68,6 +68,7 @@ import Header2 from '../components/Header2.vue'
 <style>
 .separacion{
     display:flex;
+    
 }
 .rectangulo5{
     height: 30px;
@@ -76,7 +77,7 @@ import Header2 from '../components/Header2.vue'
     border: 1px solid black;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 50px;
 }
 .rectangulo2{
@@ -86,7 +87,8 @@ import Header2 from '../components/Header2.vue'
     border: 1px solid black;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: center;
+    margin-right: 20px;
     border-radius: 25px;
 }
 
@@ -115,7 +117,16 @@ import Header2 from '../components/Header2.vue'
     background-color: transparent;
 }  
     
-
+@media (min-width:850px){
+    .rectangulo5{
+        width: 1000px;
+        justify-content: space-between;
+               
+    }
+    .rectangulo2{
+        margin-right: 20px;
+    }
+}
 
 
 

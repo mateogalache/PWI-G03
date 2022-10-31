@@ -35,7 +35,7 @@ import Header3 from '../components/Header3.vue';
                     <p class = "mensaje">Me debes una Antonio</p>
                 </div>
                 <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                    <a href='Chat'><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                 </div>
             </div>
             <div class = "PContainer">
@@ -68,7 +68,54 @@ import Header3 from '../components/Header3.vue';
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
+            <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
+                <div class="chat">
+                    <b class = "nombre">Carlos</b>
+                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
+                </div>
+                <div class = "Clogo">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                </div>
+            </div>
+            <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
+                <div class="chat">
+                    <b class = "nombre">Carlos</b>
+                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
+                </div>
+                <div class = "Clogo">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                </div>
+            </div>
+            <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
+                <div class="chat">
+                    <b class = "nombre">Carlos</b>
+                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
+                </div>
+                <div class = "Clogo">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                </div>
+            </div>
+            <div class = "PContainer">
+                <img src="src/assets/usuario.png" class = "perfil">
+                <div class="chat">
+                    <b class = "nombre">Carlos</b>
+                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
+                </div>
+                <div class = "Clogo">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                </div>
+            </div>
+
+
+
         </div>
+       
+        
+        <div class = "transparent6"></div>
+        
     </main>
     <Footer2>
 
@@ -76,6 +123,12 @@ import Header3 from '../components/Header3.vue';
 </template>
 
 <style>
+.transparent6{
+    display:flex;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+}
 .cont{
 
     padding-left: 2%;

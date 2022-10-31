@@ -42,5 +42,14 @@
 
 }
 
+@media (min-width: 850px){
+    .FContainer{
+        height: 80px;
+    }
+    .botones1{
+        position: fixed;
+
+    }
+}
 
 </style>
