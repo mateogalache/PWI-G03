@@ -23,6 +23,7 @@ import Home from '../views/Home.vue'
 import TimeLineEvent from '../views/TimeLineEvent.vue'
 import CalendarioEvento from '../views/CalendarioEvento.vue'
 import MisEventos from '../views/MisEventos.vue'
+import Events from '../views/Events.vue'
 
 const routes = [
     
