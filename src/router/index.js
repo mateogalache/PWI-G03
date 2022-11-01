@@ -24,6 +24,7 @@ import TimeLineEvent from '../views/TimeLineEvent.vue'
 import CalendarioEvento from '../views/CalendarioEvento.vue'
 import MisEventos from '../views/MisEventos.vue'
 import Events from '../views/Events.vue'
+import Contactanos from '../views/Contactanos.vue'
 
 const routes = [
     
@@ -153,6 +154,12 @@ const routes = [
         path: '/MisEventos',
         name: 'MisEventos',
         component: MisEventos
+    },
+
+    {
+        path: '/Contactanos',
+        name: 'Contactanos',
+        component: Contactanos
     }
 
 
