@@ -52,10 +52,10 @@ import Header3 from '../components/Header3.vue';
                     <br>
                     <br>
                     <br>
-                    <br>
-                    <br>
+                
+        
                     
-                    <div class="eventocontainer2">
+                    <div id="eventocontainer2">
                             <div id="izquierda">
                                 
                                 <b>SallEvents</b><br>
@@ -75,6 +75,8 @@ import Header3 from '../components/Header3.vue';
 
                           
                     </div>
+                    <br>
+                    <br>
             </div>
             <br><br/>     
         </div>  
@@ -109,7 +111,8 @@ import Header3 from '../components/Header3.vue';
 
     #eventocontainer2{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-bottom: 2%;
         width: 100%;
     }
 
