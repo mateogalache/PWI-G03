@@ -11,7 +11,7 @@ import Header3 from '../components/Header3.vue';
             
     </Header3>
 
-    <div class="container1">
+    <div class="containercontactanos">
         <div class="eventocontainer1">
 
             <h1 class = "titulo">Contacta con nuestro equipo</h1>
@@ -43,23 +43,23 @@ import Header3 from '../components/Header3.vue';
                     Contactar
                 </div>
             </div>
-
+            <br><br/>
             <div class="container2">
-                <div class = "parejas">
+                
                     <div>
                         <b>SallEvents</b><br>
-                    </div>
-                    <div>
+                    
+                    
                         Diagonal, 108, 5to 2nd
-                    </div>
-                    <div>
+                    
+                    
                         <img src="src/assets/ImagenesEventos/redes_sociales.png" 
                         width="100" height="20" alt="RedesSociales">
                     </div>
                     <img src="src/assets/ImagenesEventos/mapa.png" 
                     width="200" height="200" alt="Mapa">
                 </div>
-            </div>
+            
         </div>
     </div>
     
@@ -98,7 +98,7 @@ import Header3 from '../components/Header3.vue';
         margin: 15px;
     }
 
-    .container1{
+    .containercontactanos{
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -110,9 +110,10 @@ import Header3 from '../components/Header3.vue';
         display: flex;
         flex-direction: column;
         padding: 1em;
-        margin-top: 40px;
+        margin-top: 10px;
         width: 350px;
         align-items: center;
+        height: 100%;
     }
 
     .popup{
@@ -143,8 +144,7 @@ import Header3 from '../components/Header3.vue';
     .container2{
 
         display: flex;
-        justify-content: center;
-        flex-direction: column;
+        
         align-items: center;
     }
 
