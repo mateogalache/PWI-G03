@@ -68,9 +68,12 @@ import Header3 from '../components/Header3.vue'
                         <b>Cancelar</b>
                     </div>
                 </div>
-                
+                <div>
+                    <img class="calendario" src = "src/assets/calendario.png">
+                </div>      
+   
         </div>
-
+        
     </div>
 
 </main>
@@ -208,6 +211,14 @@ import Header3 from '../components/Header3.vue'
 	.imga{
         height: 190%;
         width: 20%;
+    }
+
+    .calendario{
+        height: 10px;
+        width: 10px;
+        display: flex;
+        position: absolute;
+        z-index: -1;
     }
 
     .botones2{
