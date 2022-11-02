@@ -8,7 +8,9 @@ import Header from '../components/Header.vue'
     </Header>
     <main>
       <div class = "background"></div>
+      
       <div class = "recuadro2"></div>
+      <div class = "registercentro">
         <br>
         <div class="cont">
         <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "150" height = "75" >
@@ -39,7 +41,7 @@ import Header from '../components/Header.vue'
         <div class = "transparent9">
 
         </div>
-       
+      </div> 
 
         
     </main>
@@ -48,6 +50,8 @@ import Header from '../components/Header.vue'
     </Footer>
   </template>
 <style>
+
+
 .background{
     position:fixed;
     width: 100%;
@@ -58,11 +62,12 @@ import Header from '../components/Header.vue'
 
 
 .recuadro2{
-    top: 12%;
-    left: 33.3%;
+    top: 50%;
+    left: 50%;
     position: absolute;
+    transform: translate(-50%,-50%);
     width: 510px;
-    height: 565px;
+    height: 570px;
     border: 2px solid black;
     justify-content: center;
     border-radius: 50px;
@@ -106,11 +111,21 @@ import Header from '../components/Header.vue'
     border: none;
     border-bottom: 1px solid black;
 
-  }   
+ }
+ .registercentro{
+  display:block;
+ } 
     
   @media (min-width: 850px){
     .centro1{
       width: 500px;
+    }
+    .registercentro{
+      
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%,-50%);
     }
   }
   @media (max-width: 850px){

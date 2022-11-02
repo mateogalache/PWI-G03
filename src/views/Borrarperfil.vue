@@ -4,9 +4,7 @@ import Header2 from '../components/Header2.vue'
 </script>
 
 <template>
- <div class = "rectanguloN">
-
- </div>
+ 
 
  
     <Header2>
@@ -106,12 +104,13 @@ import Header2 from '../components/Header2.vue'
 
         
     </main>
+    
     <Footer2>
         
     </Footer2>
- <div class = "rectanguloN">
+    <div class = "rectanguloNfooter">
     
- </div>
+</div>
   </template>
  
 <style>
@@ -173,7 +172,7 @@ import Header2 from '../components/Header2.vue'
 .rectanguloN{
       
     width: 100%;
-    height: 100%;
+    height: 80px;
     position: fixed;
     background-color: black;
     opacity: 70%;
@@ -190,7 +189,7 @@ import Header2 from '../components/Header2.vue'
 
 }
 .encima{
-       
+    z-index: 2;
     position: fixed;
 }    
 
@@ -202,6 +201,15 @@ import Header2 from '../components/Header2.vue'
     border-radius: 20px;
     justify-content: center;
     align-items:center;
+}
+
+.rectanguloNfooter{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    opacity: 70%;
+    bottom: 0%;
 }
 @media (min-width:850px){
     .Rectanguloborrar{

@@ -4,9 +4,7 @@ import Header2 from '../components/Header2.vue'
 </script>
 
 <template>
- <div class = "rectanguloN">
-
- </div>
+ 
 
  
     <Header2>
@@ -92,9 +90,7 @@ import Header2 from '../components/Header2.vue'
             </button></a>
        </div>
        <br/><br/>
-       <div class = "transparent10">
-
-       </div>
+      
        
 
     
@@ -177,6 +173,7 @@ import Header2 from '../components/Header2.vue'
     position: fixed;
     background-color: black;
     opacity: 70%;
+    bottom: 0;
     
 }
 
