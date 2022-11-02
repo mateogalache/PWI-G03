@@ -18,9 +18,9 @@ import Header3 from '../components/Header3.vue';
         <div class = "contI">
             <b>&nbsp;&nbsp;&nbsp;Perfil</b> 
             <div class = "transparent">
-                <button class="Redondai">
+                <a href = "Contactanos"><button class="Redondai">
                     <p>i</p>           
-                </button>
+                </button></a>
                 <i>&nbsp;&nbsp;&nbsp;</i>    
             </div>     
         </div>
