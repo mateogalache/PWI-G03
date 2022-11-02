@@ -36,7 +36,7 @@ import Header2 from '../components/Header2.vue'
             <div class = "rectangulo1">                
                 <p><FONT color = "grey">Amistades</FONT></p>
                 <div class = "Clogo">
-                <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                 </div>
                 
             </div>    
@@ -46,7 +46,7 @@ import Header2 from '../components/Header2.vue'
             <div class = "rectangulo1">                
                 <p><FONT color = "grey">Eventos</FONT></p>
                 <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                 </div>    
             </div>    
             </div>

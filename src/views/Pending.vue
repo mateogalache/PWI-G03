@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont">
-            <div class = "BContainer">
+        <div class = "cont2">
+            <div class = "BContainer3">
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -22,28 +22,28 @@ import Header2 from '../components/Header2.vue'
             </div >
                 
                 
-            <div class = "PContainer">
+            <div class = "PContainer3">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
-                <div class = "Clogo">
-                    <img src="src\assets\tick.png" class = "icon" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
+                <div class = "Clogo2">
+                    <img src="src\assets\tick.png" class = "icon2" alt="tick">
+                    <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer3">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
-                <div class = "Clogo">
-                    <img src="src\assets\tick.png" class = "icon" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
+                <div class = "Clogo2">
+                    <img src="src\assets\tick.png" class = "icon2" alt="tick">
+                    <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer3">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
-                <div class = "Clogo">
-                    <img src="src\assets\tick.png" class = "icon" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
+                <div class = "Clogo2">
+                    <img src="src\assets\tick.png" class = "icon2" alt="tick">
+                    <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style>
-.cont{
+.cont2{
 
     padding-left: 2%;
     padding-right: 2%;
@@ -63,7 +63,7 @@ import Header2 from '../components/Header2.vue'
     
     
 }
-.BContainer{
+.BContainer3{
     margin-top: 2%;
     display: flex;
     flex-direction: row;
@@ -78,8 +78,8 @@ import Header2 from '../components/Header2.vue'
 .Pending{
     width: 100%;
 }
-.PContainer{
-    margin-top: 5%;
+.PContainer3{
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,20 +91,18 @@ import Header2 from '../components/Header2.vue'
     
 
 }
-.Clogo{
+.Clogo2{
     display: flex;
     justify-content: end;
     justify-content: space-around;
     margin-right: 5%;
 }
-.icon{
+.icon2{
     
     width: 16px;
     height: 16px;
     margin-left: 10%;
     margin-right: 10%;
 }
-.nombre{
-    padding-left: 10%;
-}
+
 </style>

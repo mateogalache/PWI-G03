@@ -10,45 +10,45 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont">
+        <div class = "cont6">
             <h3>Friends</h3>
-            <div class = "BContainer">
-                <p class = "buscar">Busca</p>
+            <div class = "BContainer6">
+                <p class = "buscar6">Busca</p>
             </div>
                 
-            <div class = "PContainer">
+            <div class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Laura</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre6">Laura</p></a>
+                <div class = "Clogo6">
+                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Javier</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre6">Javier</p></a>
+                <div class = "Clogo6">
+                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Antonio</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre6">Antonio</p></a>
+                <div class = "Clogo6">
+                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Maria</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre6">Maria</p></a>
+                <div class = "Clogo6">
+                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Carlos</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAjeno"><p class = "nombre6">Carlos</p></a>
+                <div class = "Clogo6">
+                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style>
-.cont{
+.cont6{
 
     padding-left: 2%;
     padding-right: 2%;
@@ -68,7 +68,7 @@ import Header2 from '../components/Header2.vue'
     
 }
 
-.BContainer{
+.BContainer6{
     margin-bottom: 5%;
     display: flex;
     border: 1px solid black;
@@ -76,11 +76,11 @@ import Header2 from '../components/Header2.vue'
     width: 100%;
 
 }
-.buscar{
+.buscar6{
     display: flex;
     padding-left: 5%;
 }
-.PContainer{
+.PContainer6{
     margin-top: 5%;
     display: flex;
     flex-direction: row;
@@ -93,20 +93,18 @@ import Header2 from '../components/Header2.vue'
     
 
 }
-.Clogo{
+.Clogo6{
     display: flex;
     justify-content: end;
     justify-content: space-around;
     margin-right: 5%;
 }
-.icon{
+.icon6{
     
     width: 16px;
     height: 16px;
     margin-left: 10%;
     margin-right: 10%;
 }
-.nombre{
-    padding-left: 10%;
-}
+
 </style>
