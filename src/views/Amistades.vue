@@ -3,7 +3,9 @@ import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
 <template>
-    <Header2></Header2>
+    <Header2>
+
+    </Header2>
     <main>
         <h2>Amistades</h2>
         <div class="foto1">
@@ -11,14 +13,16 @@ import Header2 from '../components/Header2.vue'
         </div>
         
             <div class="botones">
-                <p>Nombre</p>
+                <p>Antonio</p>
                 <a href="ListaAmigos"><button class="boton1">Lista ></button></a> 
                 <a href="BuscaAmigo"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
             </div>
            
     </main>
-    <Footer2></Footer2>
+    <Footer2>
+        
+    </Footer2>
 </template>
 <style>
     .imgredonda{        

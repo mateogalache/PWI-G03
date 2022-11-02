@@ -14,7 +14,7 @@ import Header3 from '../components/Header3.vue';
     <main>
         
         <br>
-        
+
         <div class = "contI">
             <b>&nbsp;&nbsp;&nbsp;Perfil</b> 
             <div class = "transparent">
@@ -26,7 +26,7 @@ import Header3 from '../components/Header3.vue';
         </div>
         <br/>
         <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
+            <img src = "src/assets/usuario.png" class = "Redondap">
 
         </div>
         <p class = cont>Nombre</p>
@@ -35,34 +35,40 @@ import Header3 from '../components/Header3.vue';
 
        
        <div  class = "cont">
-        <a href = "Datos"><button class="Rectangulo">
+        <a href = "Datos"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Datos</FONT></p>
             </button></a>
        </div>
        
        <br/>
        <div class = "cont">
-           <a href = "Estadisticas"><button class="Rectangulo">
+           <a href = "Estadisticas"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Estadísticas</FONT></p>
             </button></a>
        </div>
        
        <br/>
        <div class = "cont">
-            <a href = "Amistades"><button class="Rectangulo">
+            <a href = "Amistades"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Amistades</FONT></p>
             </button></a>
        </div>
        <br/>
        <div class = "cont">
-            <a href = "Borrarperfil"><button class="Rectangulo">
+            <a href = "Events"><button class="Rectanguloperfil">
+                <p><FONT color = "white">Mis eventos</FONT></p>
+            </button></a>
+       </div>
+       <br/>
+       <div class = "cont">
+            <a href = "Borrarperfil"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Borrar perfil</FONT></p>
             </button></a>
        </div>
        <br/>
        <div class = "cont">
         
-            <a href = "Cerrarsesion"><button class="Rectangulo">
+            <a href = "Cerrarsesion"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Cerrar sesión</FONT></p>
             </button></a>
        </div>
@@ -107,9 +113,9 @@ import Header3 from '../components/Header3.vue';
     justify-content: center;
     align-items: center;
 }
-.Rectangulo{
+.Rectanguloperfil{
    display: flex;
-   width:200px;
+   width: 200px;
    height:30px;   
    background-color: rgb(104, 100, 100);
    border-radius:22px;   
@@ -132,7 +138,12 @@ import Header3 from '../components/Header3.vue';
    
 }
 
-
+@media (min-width:850px){
+    .Rectanguloperfil{
+        width: 1000px;
+        
+    }
+}
 
 
 

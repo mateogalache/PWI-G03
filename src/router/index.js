@@ -12,9 +12,20 @@ import SearchFriend from '../views/BuscaAmigo.vue'
 import ListaAmigos from '../views/ListaAmigos.vue'
 import ListaAmigosAjena from '../views/ListaAmigosAjena.vue'
 import Amistades from '../views/Amistades.vue'
+import Chats from '../views/Chats.vue'
 import Chat from '../views/Chat.vue'
 import PerfilAmigo from '../views/PerfilAmigo.vue'
 import Event from '../views/Event.vue'
+import PerfilAjeno from '../views/PerfilAjeno.vue'
+import Add from '../views/Add.vue'
+import Search from '../views/Search.vue'
+import Home from '../views/Home.vue'
+import TimeLineEvent from '../views/TimeLineEvent.vue'
+import CalendarioEvento from '../views/CalendarioEvento.vue'
+import MisEventos from '../views/MisEventos.vue'
+import Events from '../views/Events.vue'
+import Contactanos from '../views/Contactanos.vue'
+
 const routes = [
     
     {
@@ -84,6 +95,11 @@ const routes = [
         component: Amistades
     },
     {
+        path: '/Chats',
+        name: 'Chats',
+        component: Chats
+    },
+    {
         path: '/Chat',
         name: 'Chat',
         component: Chat
@@ -97,7 +113,56 @@ const routes = [
         path: '/PerfilAmigo',
         name: 'PerfilAmigo',
         component: PerfilAmigo
+    },
+    {
+        path: '/PerfilAjeno',
+        name: 'PerfilAjeno',
+        component: PerfilAjeno
+    },
+    {
+        path: '/Add',
+        name: 'Add',
+        component: Add
+    },
+    {
+        path: '/Search',
+        name: 'Search',
+        component: Search
+    },
+    {
+        path: '/Home',
+        name: 'Home',
+        component: Home
+    },
+    {
+        path: '/TimeLineEvent',
+        name: 'TimeLineEvent',
+        component: TimeLineEvent
+    },
+    {
+        path: '/CalendarioEvento',
+        name: 'CalendarioEvento',
+        component: CalendarioEvento
+    },
+    {
+        path: '/Events',
+        name: 'Events',
+        component: Events
+    },
+
+    {
+        path: '/MisEventos',
+        name: 'MisEventos',
+        component: MisEventos
+    },
+
+    {
+        path: '/Contactanos',
+        name: 'Contactanos',
+        component: Contactanos
     }
+
+
     
 
 ]

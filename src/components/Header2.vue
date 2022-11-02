@@ -1,44 +1,35 @@
 <template>
 
   <header>
-    <div class = "HContainer">
-      <div class = space>
-      <a href = "javascript: history.go(-1)" class = "triangulo">
+    <div class = "HContainer7">
+      
+      <a href = "javascript: history.go(-1)" class = "triangulo"> </a>
         
-      </a>
-
-      <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SallEvents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-      <a href = "Chat"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti"></a>
+      <h1>Sallevents</h1>
+      <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti" ></a>
+   
     </div>
-  </div>
   </header> 
   <main>
     
-
-      
-
-   
   </main>
   <footer>
   </footer>
 </template>
 <style>
 
-.HContainer{
+.HContainer7{
 
-   
+    display:flex;
     align-items: center;
     justify-content: space-between;
     background-color: cadetblue;
     width: 100%;
 
 }
-.space{
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .triangulo{
+  margin-left:20px;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -46,6 +37,7 @@
   border-bottom: 10px solid transparent;
 }
 .conti{
+  margin-right: 20px;
   display:flex;
   width: 25px;
   height: 25px;

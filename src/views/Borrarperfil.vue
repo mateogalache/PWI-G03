@@ -27,7 +27,7 @@ import Header2 from '../components/Header2.vue'
         </div>
         <br/>
         <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
+            <img src = "src/assets/usuario.png" class = "Redondap">
 
         </div>
         <p class = cont>Nombre</p>
@@ -39,7 +39,7 @@ import Header2 from '../components/Header2.vue'
         
             <div class = "rectanguloB">
                 <br/>
-                <p>¿Seguro que quieres borrar el perfil?</p><br/>
+                <div class = cont> <p>¿Seguro que quieres borrar el perfil? </p> </div><br/>
                 <div class = "contI2">
                     <a href = "."><button class = "rectanguloC">
                         <p><FONT color = "white">Borrar perfil</FONT></p>
@@ -54,39 +54,47 @@ import Header2 from '../components/Header2.vue'
 
 
        <div class = "cont">
-        <a href = "Datos"><button class="Rectangulo">
+        <a href = "Datos"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Datos</FONT></p>
             </button></a>
        </div>
        
        <br/>
        <div class = "cont">
-           <a href = "Estadisticas"><button class="Rectangulo">
+           <a href = "Estadisticas"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Estadísticas</FONT></p>
             </button></a>
        </div>
        
        <br/>
        <div class = "cont">
-            <a href = "Amistades"><button class="Rectangulo">
+            <a href = "Amistades"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Amistades</FONT></p>
             </button></a>
        </div>
        <br/>
        <div class = "cont">
-            <a href = "Borrarperfil"><button class="Rectangulo">
+            <a href = "Events"><button class="Rectanguloborrar">
+                <p><FONT color = "white">Mis eventos</FONT></p>
+            </button></a>
+       </div>
+       <br/>
+       <div class = "cont">
+            <a href = "Borrarperfil"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Borrar perfil</FONT></p>
             </button></a>
        </div>
        <br/>
        <div class = "cont">
         
-            <a href = "Cerrarsesion"><button class="Rectangulo">
+            <a href = "Cerrarsesion"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Cerrar sesión</FONT></p>
             </button></a>
        </div>
        <br/><br/>
-       
+       <div class = "transparent10">
+
+       </div>
        
 
     
@@ -107,7 +115,12 @@ import Header2 from '../components/Header2.vue'
   </template>
  
 <style>
-
+.transparent10{
+    display:flex;
+    width: 100%;
+    height: 135px;
+    background-color: transparent;
+}
 .transparent{
     display:flex;
 }
@@ -128,7 +141,7 @@ import Header2 from '../components/Header2.vue'
     justify-content: center;
     align-items: center;
 }
-.Rectangulo{
+.Rectanguloborrar{
    display: flex;
    width:200px;
    height:30px;   
@@ -168,11 +181,12 @@ import Header2 from '../components/Header2.vue'
 }
 
 .rectanguloB{
-   
+    
     width: 250px;
     height: 180px;
     background-color: white;
     border-radius: 30px;
+   
 
 }
 .encima{
@@ -189,7 +203,15 @@ import Header2 from '../components/Header2.vue'
     justify-content: center;
     align-items:center;
 }
-
+@media (min-width:850px){
+    .Rectanguloborrar{
+        width: 1000px;
+        
+    }
+    .transparent10{
+        height: 24.5px;
+    }
+}
 
 
 </style>

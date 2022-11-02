@@ -12,7 +12,7 @@ import Header2 from '../components/Header2.vue'
        <br/><br/>
        <div class = "cont">
             <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
-            
+            <button class = "boton">Añadir amigo</button>
         </div>
         
         <br/>
