@@ -7,12 +7,17 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main id="Login">
+        
         <div class = "background">
 
         </div>
-        <div class = "recuadro">
-
+        <div class = "iniciarsesioncontainer">
+        <div class = "recuadrocentro">
+            <div class = "recuadro"></div>
         </div>
+        
+
+        
         <br><br/>
         <div class="contlogin">        
         <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "200" height = "100" >
@@ -44,7 +49,7 @@ import Header from '../components/Header.vue'
       <div class = "transparent9">
 
       </div>
-        
+    </div>
     </main>
     <Footer>
         
@@ -65,12 +70,18 @@ import Header from '../components/Header.vue'
     background-color: transparent;
     
 }
+.recuadrocentro{
+    display:grid;    
+    place-content: center;
+}
+
 .recuadro{
-    top: 15%;
-    left: 33.3%;
+    top: 50%;
+    left: 50%;
     position: absolute;
+    transform: translate(-50%,-50%);
     width: 510px;
-    height: 500px;
+    height: 550px;
     border: 2px solid black;
     justify-content: center;
     border-radius: 50px;
@@ -113,10 +124,19 @@ import Header from '../components/Header.vue'
 
 }
     
+.iniciarsesioncontainer{
+    display: block;
+}
 @media (min-width: 850px){
     .center0{
         width: 500px;
         
+    }
+    .iniciarsesioncontainer{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
     
 }
@@ -129,6 +149,7 @@ import Header from '../components/Header.vue'
     }
     
 }  
+
 
 
     
