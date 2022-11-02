@@ -15,7 +15,7 @@ import Header2 from '../components/Header2.vue'
             <div class="botones">
                 <p>Antonio</p>
                 <a href="ListaAmigos"><button class="boton1">Lista ></button></a> 
-                <a href="BuscaAmigo"><button class="boton1">Añadir amigos ></button></a>
+                <a href="SearchFriend"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
             </div>
            

@@ -11,7 +11,7 @@ import Header2 from '../components/Header2.vue'
 
     <main>
         <div class = "cont">
-            <div class = "BContainer">
+            <div class = "BContainer2">
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -21,23 +21,23 @@ import Header2 from '../components/Header2.vue'
                 </button>
             </div >
                 
-            <div class = "PContainer">
+            <div class = "PContainer2">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
+                <a href="PerfilAjeno"><p class = "nombre2">Nombre</p></a>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer2">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
+                <a href="PerfilAjeno"><p class = "nombre2">Nombre</p></a>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer2">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
+                <a href="PerfilAjeno"><p class = "nombre2">Nombre</p></a>
                 <div class = "Clogo">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
@@ -59,7 +59,7 @@ import Header2 from '../components/Header2.vue'
     
     
 }
-.BContainer{
+.BContainer2{
     margin-top: 2%;
     display: flex;
     flex-direction: row;
@@ -74,8 +74,8 @@ import Header2 from '../components/Header2.vue'
 .Pending{
     width: 100%;
 }
-.PContainer{
-    margin-top: 5%;
+.PContainer2{
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
     align-items: center;

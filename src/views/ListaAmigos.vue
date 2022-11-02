@@ -10,34 +10,31 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <br><b>Friends</b>
-        <div class = "cont">
-           
-            
-            
-            <div class = "BContainer">
-                <p class = "buscar">Busca</p>
+        <br><b class="titulo34">Friends</b>
+        <div class = "cont5">
+            <div class = "BContainer5">
+                <p class = "buscar5">Busca</p>
             </div>
                 
-            <div class = "PContainer">
+            <div class = "PContainer5">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
+                <div class = "Clogo5">
+                    <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer5">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
+                <div class = "Clogo5">
+                    <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
+            <div class = "PContainer5">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <p class = "nombre">Nombre</p>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
+                <div class = "Clogo5">
+                    <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
             </div>
         </div>
@@ -48,8 +45,11 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style>
-.cont{
-
+.titulo34{
+    padding-left: 2%;
+}
+.cont5{
+    margin-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
     display: flex;
@@ -57,20 +57,20 @@ import Header2 from '../components/Header2.vue'
     
 }
 
-.BContainer{
-    margin-bottom: 5%;
+.BContainer5{
+    margin-bottom: 2%;
     display: flex;
     border: 1px solid black;
     border-radius: 25px;
     width: 100%;
 
 }
-.buscar{
+.buscar5{
     display: flex;
     padding-left: 5%;
 }
-.PContainer{
-    margin-top: 5%;
+.PContainer5{
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -82,20 +82,17 @@ import Header2 from '../components/Header2.vue'
     
 
 }
-.Clogo{
+.Clogo5{
     display: flex;
     justify-content: end;
     justify-content: space-around;
     margin-right: 5%;
 }
-.icon{
+.icon5{
     
     width: 16px;
     height: 16px;
     margin-left: 10%;
     margin-right: 10%;
-}
-.nombre{
-    padding-left: 10%;
 }
 </style>

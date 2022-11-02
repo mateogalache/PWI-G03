@@ -5,7 +5,6 @@
       
       <a href = "javascript: history.go(-1)" class = "triangulo"> </a>
         
-
       <h1>Sallevents</h1>
       <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti" ></a>
    
@@ -13,10 +12,6 @@
   </header> 
   <main>
     
-
-      
-
-   
   </main>
   <footer>
   </footer>
@@ -32,11 +27,7 @@
     width: 100%;
 
 }
-.space{
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .triangulo{
   margin-left:20px;
   width: 0;
