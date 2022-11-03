@@ -7,7 +7,7 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
-      <div class = "background"></div>
+      <div class = "background2"></div>
       <div class = "recuadro2"></div>
         <br>
         <div class="cont">
@@ -48,7 +48,7 @@ import Header from '../components/Header.vue'
     </Footer>
   </template>
 <style>
-.background{
+.background2{
     position:fixed;
     width: 100%;
     height: 100%;
@@ -112,7 +112,7 @@ import Header from '../components/Header.vue'
     .recuadro2{
         display: none;
     }
-    .background{
+    .background2{
         display:none;
     }
     
