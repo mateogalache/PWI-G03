@@ -6,6 +6,7 @@ import Header from '../components/Header.vue'
     <Header>
         
     </Header>
+    
     <main>
       <div class = "background"></div>
       
@@ -52,13 +53,7 @@ import Header from '../components/Header.vue'
 <style>
 
 
-.background{
-    
-    width: 100%;
-    height: 100%;
-    background-image: url("src/assets/fondo.png");
-    
-}
+
 
 
 
@@ -106,7 +101,7 @@ import Header from '../components/Header.vue'
     margin-top: 15%;
   }
     
-  @media (min-width: 850px){
+  @media (min-width: 1080px){
     .centro1{
       width: 500px;
     }
@@ -137,6 +132,15 @@ import Header from '../components/Header.vue'
     margin-top: 10%;
     
 }
+.background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("src/assets/fondo.png");
+    z-index: -3;
+    
+}
+
     
   }
  

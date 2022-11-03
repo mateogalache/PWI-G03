@@ -113,7 +113,7 @@ import Header2 from '../components/Header2.vue'
     margin-right: 40px;
 }  
 
-@media (min-width: 850px){
+@media (min-width: 1080px){
     .rectangulo4{
         width: 800px;
     }

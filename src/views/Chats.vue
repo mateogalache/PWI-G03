@@ -190,7 +190,7 @@ import Header3 from '../components/Header3.vue';
     margin-top: 5%;
     
 }
-@media (min-width: 850px){
+@media (min-width: 1080px){
     .BContainer p{
     font-size: 20px;
     }

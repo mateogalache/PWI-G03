@@ -121,7 +121,7 @@ import Header3 from '../components/Header3.vue'
         justify-content: space-around;
     }
 
-    @media (min-width:850px){
+    @media (min-width:1080px){
 
         .container{
             display: flex;

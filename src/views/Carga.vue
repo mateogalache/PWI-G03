@@ -35,7 +35,7 @@
     transition-duration: 2s;
 }
 
-@media(min-width: 850px){
+@media(min-width: 1080px){
     .imagencentro{
         width: 100%;
         height: 100%;

@@ -117,7 +117,7 @@ import Header2 from '../components/Header2.vue'
     background-color: transparent;
 }  
     
-@media (min-width:850px){
+@media (min-width:1080px){
     .rectangulo5{
         width: 1000px;
         justify-content: space-between;

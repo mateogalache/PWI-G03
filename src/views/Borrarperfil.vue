@@ -211,7 +211,7 @@ import Header2 from '../components/Header2.vue'
     opacity: 70%;
     bottom: 0%;
 }
-@media (min-width:850px){
+@media (min-width:1080px){
     .Rectanguloborrar{
         width: 1000px;
         

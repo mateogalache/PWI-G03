@@ -200,7 +200,7 @@ import Header2 from '../components/Header2.vue'
     justify-content: center;
     align-items:center;
 }
-@media (min-width:850px){
+@media (min-width:1080px){
     .Rectanguloborrar{
         width: 1000px;
         
