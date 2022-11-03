@@ -201,5 +201,119 @@ import Header3 from '../components/Header3.vue';
         float: right;
     }
 
+
+    @media (min-width:1080px){
+        
+        #containercontactanos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #eventocontainer1{
+        background-color: lightgrey;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        justify-content: center;
+        width: 95%;
+        height: 95%;
+        align-items: center;
+    }
+
+    #eventocontainer2{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 2%;
+        width: 100%;
+    }
+
+    #titulo{
+        display: flex;
+        font-size: xx-large;
+        justify-content: center;
+    }
+
+    #textoo{
+        display: flex;
+        font-size: large;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #textoo2{
+        display: flex;
+        font-size: x-small;
+        justify-content: center;
+        text-align: center;
+        margin: 10px;
+    }
+
+    #textoo3{
+        display: flex;
+        font-size: x-small;
+        justify-content: center;
+        text-align: center;
+        margin: 15px;
+    }
+
+    #textoo4{
+        display: flex;
+        font-size: small;
+        text-align: left;
+    }
+
+    #textoo5{
+        display: flex;
+        font-size: x-small;
+        justify-content: left;
+    }
+
+    #popup{
+        background-color: white;
+        height: 125px;
+        width: 200px;
+        border-radius: 10px;
+        margin: 8px;
+        border: 1px solid grey;
+    }
+
+    #botones{
+        height: 12px;
+        width: 68px;
+        background-color: grey;
+        border: 1px solid grey;
+        align-items:center;
+        justify-content: center;
+        padding: 5px;
+        text-align: center;
+        display: flex;
+        border-radius: 50px;
+        font-size: small;
+        color: #F3F3F3;
+        margin: 0 auto;
+    }
+
+    #img1{
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        margin-left: 0 auto;
+    }
+
+    #img2{
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    #izquierda{
+        float: left;
+    }
+
+    #derecha{
+        float: right;
+    }
+    }
  
 </style>

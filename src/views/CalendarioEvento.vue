@@ -7,9 +7,7 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<div class="rectanguloopacidad">
 
-</div>
 <Header3>
         
 </Header3>
@@ -161,16 +159,17 @@ import Header3 from '../components/Header3.vue'
     }
 
     .rectanguloopacidad{
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      background-color: black;
-      opacity: 70%;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: black;
+        opacity: 70%;
+        bottom: 0;
     }
 
     .popup{
         background-color: white;
-        height: 60px;
+        height: 100px;
         width: 220px;
         padding: 2em;
         border-radius: 30px;
@@ -179,6 +178,7 @@ import Header3 from '../components/Header3.vue'
         display: flex;
         flex-direction: column;
         position: absolute;
+        z-index: 1;
     }
 
     .popup2{
