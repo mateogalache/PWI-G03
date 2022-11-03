@@ -7,7 +7,7 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<div class="rectanguloopacidad">
+<div class="rectanguloopacidad2">
 
 </div>
 <Header3>
@@ -50,28 +50,29 @@ import Header3 from '../components/Header3.vue'
             
         </div>
         
-        <div class="popup"> 
-                <div class="popup2">
+        <div class="popupcalendario"> 
+                <div class="popup2calendario">
                     <p>Lugar...</p>
                 </div>
-                <div class="popup2">
+                <div class="popup2calendario">
                     <p>Fecha Inicio...</p>
                         <div class="imga">
                             <img src = "src/assets/calendar.png" style="width:15px !important; height:15px !important;">
                         </div>
                 </div>
-                <div class="botones2">
-                    <div class="popup3">
+                <div class="botones2calendario">
+                    <div class="popup3calendario">
                         <b>Aplicar</b>
                     </div>
-                    <div class="popup3">
+                    <div class="popup3calendario">
                         <b>Cancelar</b>
                     </div>
-                </div> 
+                </div>       
         </div>
+
         <div>
-            <img class="calendario" src = "src/assets/calendario.png" style="width:100px !important; height:100px !important;">
-        </div>     
+                <img class="calendario" src = "src/assets/calendario.jpeg" style="width:175px !important; height:175px !important;">
+        </div> 
         
     </div>
 
@@ -82,7 +83,7 @@ import Header3 from '../components/Header3.vue'
         
 </Footer2>
 
-<div class="rectanguloopacidad">
+<div class="rectanguloopacidad2">
     
 </div>
 
@@ -160,7 +161,7 @@ import Header3 from '../components/Header3.vue'
     margin-top: -10px;
     }
 
-    .rectanguloopacidad{
+    .rectanguloopacidad2{
       width: 100%;
       height: 100%;
       position: fixed;
@@ -168,7 +169,7 @@ import Header3 from '../components/Header3.vue'
       opacity: 70%;
     }
 
-    .popup{
+    .popupcalendario{
         background-color: white;
         height: 60px;
         width: 200px;
@@ -179,10 +180,11 @@ import Header3 from '../components/Header3.vue'
         display: flex;
         flex-direction: column;
         position: absolute;
+        z-index: 1;
         
     }
 
-    .popup2{
+    .popup2calendario{
         color: gray;
         height: 25px;
         width: 200px;
@@ -195,7 +197,7 @@ import Header3 from '../components/Header3.vue'
         justify-content: space-between;
     }
 
-    .popup3{
+    .popup3calendario{
         color: black;
         height: 25px;
         width: 75px;
@@ -215,14 +217,14 @@ import Header3 from '../components/Header3.vue'
     
 
     .calendario{
-        height: 10px;
-        width: 10px;
         display: flex;
         position: absolute;
-        z-index: -1;
+        top: 65%;
+        left: 25%;
+        z-index: 2;
     }
 
-    .botones2{
+    .botones2calendario{
         display: flex;
         justify-content: space-around;
     }
