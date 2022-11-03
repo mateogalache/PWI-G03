@@ -10,7 +10,7 @@ import Header2 from '../components/Header2.vue'
     <main>
         <div class="nomchat">
             <img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
-            <h3>Antonio99</h3>
+            <h2>Antonio99</h2>
         </div>
         
         <div class="box">
@@ -54,9 +54,10 @@ import Header2 from '../components/Header2.vue'
 			 <button> Enviar </button>
 		</div>
     </main>
-    <Footer2>
+	<Footer2>
 
-    </Footer2>
+	</Footer2>
+   
     
 </template>
 <style>
@@ -147,5 +148,40 @@ button:active{}
 	text-align: center;
     color: #616161;
     font-size: 13px;
+}
+
+@media (min-width: 850px){
+	.box{
+		margin-top: 5%;
+	}
+	.nomchat{
+		margin-top: 2%;
+	}
+	.input-box{
+		margin-top: 5%;
+	}
+	.header-img{
+		width: 100px;
+		height: 100px;
+	}
+	.message{
+		font-size: 20px;
+	}
+	.input-box input{
+		font-size: 30px;
+		
+	}
+
+	.input-box button{
+		font-size: 30px;
+		width: 150px;
+	}
+	.chart-timer{
+	text-align: center;
+    color: #616161;
+    font-size: 20px;
+}
+
+
 }
 </style>

@@ -18,7 +18,7 @@ import Header2 from '../components/Header2.vue'
                 <a href="SearchFriend"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
             </div>
-           
+        <div class="transparent6"></div>
     </main>
     <Footer2>
         
@@ -69,6 +69,46 @@ import Header2 from '../components/Header2.vue'
         align-items: center;
         
     }
+    @media (min-width: 850px){
+    h2{
+        font-size: 50px;
+    }
+    
+    .botones p{
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+    .botones{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        
+        
+
+    }
+    .boton1{
+        width: 700px;
+        height: 50px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0%;
+
+
+
+    }
+    }
+
     
    
 

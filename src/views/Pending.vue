@@ -47,6 +47,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
             </div>
         </div>
+    <div class="transparent6"></div>
     </main>
     <Footer2>
 

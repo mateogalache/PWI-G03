@@ -8,7 +8,7 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     <main>
         <br>
-       <b>Datos</b>
+       <h2>Datos</h2>
        <br/><br/>
        <div class = "cont">
             <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
@@ -53,12 +53,12 @@ import Header2 from '../components/Header2.vue'
             
        
 
-        
-    </main>
-    <Footer2>
-        
-    </Footer2>
-  </template>
+  <div class="transparent6"></div>
+  </main>
+  <Footer2>
+      
+  </Footer2>
+</template>
 <style>
 .separacion{
     display:flex;
@@ -114,7 +114,49 @@ import Header2 from '../components/Header2.vue'
     font-weight: bold;
     margin-top: 5%;
 }
+@media (min-width: 850px){
+    h2{
+        font-size: 50px;
+    }
+    .Redondap{
+        width: 200px;
+        height: 200px;
+        border-radius: 150px;
+        border: 1px solid black;
+    }
+    .Clogo{
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
 
+    }
+    .cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+    .icon{
+        width: 20px;
+        height: 20px;
+        padding: auto;
+    }
+   
+   
+    .rectangulo1{
+        width: 700px;
+        height: 50px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+
+
+
+    }
+}
 
 
 
