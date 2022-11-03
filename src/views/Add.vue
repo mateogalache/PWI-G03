@@ -35,7 +35,7 @@ import Header3 from '../components/Header3.vue'
     <div class = "rectanguloredondeadeo">
         <input type="text" class="sinborde" name="Descripción" placeholder="Descripción">                     
     </div>
-    <br><br>
+    <br>
     <div class="parejabotones">
 
         </div>
@@ -138,8 +138,8 @@ import Header3 from '../components/Header3.vue'
         }
 
         .rectanguloredondeadeo{
-            height: 30px;
-            width: 450px;
+            height: 40px;
+            width: 550px;
             background-color: transparent;
             border: 1px solid grey;
             display: flex;
@@ -153,7 +153,7 @@ import Header3 from '../components/Header3.vue'
 
         .reiniciar{
             height: 30px;
-            width: 150px;
+            width: 200px;
             background-color: transparent;
             border: 1px solid grey;
             align-items:center;
@@ -162,11 +162,11 @@ import Header3 from '../components/Header3.vue'
             text-align: center;
             display: flex;
             border-radius: 50px;
-            margin-right: 225px;
+            margin-right: 350px;
         }
     .crear{
             height: 30px;
-            width: 150px;
+            width: 200px;
             background-color: transparent;
             border: 1px solid grey;
             align-items:center;
@@ -175,7 +175,7 @@ import Header3 from '../components/Header3.vue'
             display: flex;
             text-align: center;
             border-radius: 50px;
-            margin-left: 225px;
+            margin-left: 350px;
         }
     }
 </style>
