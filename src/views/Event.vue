@@ -30,6 +30,14 @@ import Header2 from '../components/Header2.vue'
             </div>
         </section>
 
+        <section class = "Four">
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
+        </section>
+
         <section class ="Last">
             <img class ="IC" src="\src\assets\chat.png" alt="chat" width="25" height="25">
             <img class ="IC" src="\src\assets\add.png" alt="add" width="25" height="25">
@@ -72,6 +80,12 @@ import Header2 from '../components/Header2.vue'
     border-radius: 150px;
     border: 1px solid black;
     
+}
+.Four{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+
 }
 
 
