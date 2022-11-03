@@ -67,12 +67,11 @@ import Header3 from '../components/Header3.vue'
                     <div class="popup3">
                         <b>Cancelar</b>
                     </div>
-                </div>
-                <div>
-                    <img class="calendario" src = "src/assets/calendario.png">
-                </div>      
-   
+                </div> 
         </div>
+        <div>
+            <img class="calendario" src = "src/assets/calendario.png" style="width:100px !important; height:100px !important;">
+        </div>     
         
     </div>
 
@@ -180,6 +179,7 @@ import Header3 from '../components/Header3.vue'
         display: flex;
         flex-direction: column;
         position: absolute;
+        
     }
 
     .popup2{
@@ -212,6 +212,7 @@ import Header3 from '../components/Header3.vue'
         height: 190%;
         width: 20%;
     }
+    
 
     .calendario{
         height: 10px;

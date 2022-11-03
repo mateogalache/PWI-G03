@@ -69,7 +69,21 @@ import Header from '../components/Header.vue'
     place-content: center;
 }
 
-
+.recuadro{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 550px;
+    height: 600px;
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 5px 2px 2px black;
+    z-index: -2;
+    background-color: white;
+    
+}
 .center0{
    display: block;
    width: 100%;
