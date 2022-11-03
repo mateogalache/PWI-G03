@@ -10,7 +10,7 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <br><b class="titulo34">Friends</b>
+        <br><h2 class="titulo34">Friends</h2>
         <div class = "cont5">
             <div class = "BContainer5">
                 <p class = "buscar5">Busca</p>
