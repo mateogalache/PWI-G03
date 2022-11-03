@@ -26,11 +26,12 @@ import MisEventos from '../views/MisEventos.vue'
 import Events from '../views/Events.vue'
 import Contactanos from '../views/Contactanos.vue'
 import Calendario from '../views/Calendario.vue'
+import Carga from '../views/Carga.vue'
 
 const routes = [
     
     {
-        path: '/',
+        path: '/Login',
         name: 'Login',
         component: Login
     },
@@ -167,6 +168,11 @@ const routes = [
         path: '/Calendario',
         name: 'Calendario',
         component: Calendario
+    },
+    {
+        path: '/',
+        name: 'Carga',
+        component: Carga
     }
 
 

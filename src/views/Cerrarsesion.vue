@@ -39,7 +39,7 @@ import Header2 from '../components/Header2.vue'
                 <br/>
                 <div class = cont> <p>¿Seguro que quieres cerrar la sesión? </p> </div><br/>
                 <div class = "contI2">
-                    <a href = "."><button class = "rectanguloC">
+                    <a href = "Login"><button class = "rectanguloC">
                         <p><FONT color = "white">Cerrar sesión</FONT></p>
                     </button></a>
                     <a href = "Perfil"><button class = "rectanguloC">
