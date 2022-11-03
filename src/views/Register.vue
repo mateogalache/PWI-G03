@@ -101,7 +101,7 @@ import Header from '../components/Header.vue'
     margin-top: 15%;
   }
     
-  @media (min-width: 850px){
+  @media (min-width: 1080px){
     .centro1{
       width: 500px;
     }

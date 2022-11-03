@@ -157,7 +157,7 @@ import Header3 from '../components/Header3.vue'
        margin-top: -10px;
    }
 
-   @media (min-width:850px){
+   @media (min-width:1080px){
        
        .eventocontainer{
            background-color: lightgrey;

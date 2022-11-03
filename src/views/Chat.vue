@@ -150,7 +150,7 @@ button:active{}
     font-size: 13px;
 }
 
-@media (min-width: 850px){
+@media (min-width: 1080px){
 	.box{
 		margin-top: 5%;
 	}

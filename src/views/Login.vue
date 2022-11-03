@@ -69,23 +69,8 @@ import Header from '../components/Header.vue'
     place-content: center;
 }
 
-.recuadro{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    width: 550px;
-    height: 600px;
-    border: 2px solid black;
-    justify-content: center;
-    border-radius: 50px;
-    box-shadow: 5px 2px 2px black;
-    z-index: -2;
-    background-color: white;
-    
-}
+
 .center0{
-   display: block;
    width: 100%;
    
 }
@@ -125,7 +110,7 @@ import Header from '../components/Header.vue'
     width : 300px;
     margin-top: 5%;
 }
-@media (min-width: 850px){
+@media (min-width: 1080px){
     .center0{
         width: 500px;
         

@@ -69,7 +69,7 @@ import Header2 from '../components/Header2.vue'
         align-items: center;
         
     }
-    @media (min-width: 850px){
+    @media (min-width: 1080px){
     h2{
         font-size: 50px;
     }
