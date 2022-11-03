@@ -17,16 +17,18 @@ import Header3 from '../components/Header3.vue'
 <main>
     <div class = "container">
         <div class = "rectanguloredondeadeo2">           
-            Buscar Evento
+            <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
         </div>
         <div class = "rectanguloredondeadeo3">           
             Filtro
         </div>
         <div class = "rectanguloredondeadeo4">           
-            Historial
+            <input type="text" class="sinborde" name="Historial" placeholder="Historial">
         </div>
         <div class="eventocontainer">
-
+            <div class="subtitulo">
+                En tu zona
+            </div>
             <div class = "parejas">
             <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
                 width="35" height="35" alt="Botón atrás"></a>
@@ -52,12 +54,12 @@ import Header3 from '../components/Header3.vue'
         
         <div class="popup"> 
                 <div class="popup2">
-                    <p>Lugar...</p>
+                    <input type="text" class="sinborde" name="Lugar" placeholder="Lugar">
                 </div>
                 <div class="popup2">
-                    <p>Fecha Inicio...</p>
+                    <input type="text" class="sinborde" name="Fecha Inicio" placeholder="Fecha Inicio">
                         <div class="imga">
-                            <img src = "src/assets/calendar.png" style="width:15px !important; height:15px !important;">
+                            <img src = "src/assets/calendar.png" style="width:20px !important; height:20px !important;">
                         </div>
                 </div>
                 <div class="botones2">
@@ -169,7 +171,7 @@ import Header3 from '../components/Header3.vue'
     .popup{
         background-color: white;
         height: 60px;
-        width: 200px;
+        width: 220px;
         padding: 2em;
         border-radius: 30px;
         justify-content: center;
@@ -206,13 +208,79 @@ import Header3 from '../components/Header3.vue'
     }
 
 	.imga{
-        height: 190%;
-        width: 20%;
+        height: 200%;
+        width: 10%;
     }
 
     .botones2{
         display: flex;
         justify-content: space-around;
+    }
+
+    .sinborde {
+        border: 0;
+        background-color: transparent;
+    }
+
+    @media (min-width:850px){
+        .rectanguloredondeadeo2{
+            color: gray;
+            height: 25px;
+            width: 700px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:center;
+            padding: 5px;
+            border-radius: 50px;
+            margin: 25px;
+            margin-right: 100px;
+        }
+
+        .rectanguloredondeadeo3{
+                color: white;
+                height: 25px;
+                width: 75px;
+                background-color: grey;
+                border: 1px solid grey;
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                border-radius: 50px;
+                margin: 25px;
+                margin-left: 775px;
+                margin-top: -57px;
+        }
+
+        .rectanguloredondeadeo4{
+            color: gray;
+            height: 50px;
+            width: 700px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:top;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 25px;
+            margin-right: 100px;
+            margin-top: -10px;
+        }
+        .eventocontainer{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            margin-top: -5px;
+            width: 675px;
+            margin-left: -75px;
+            text-align: center;
+        }
+
+        .parejas{
+            display: flex;
+            justify-content: space-around;
+        }
     }
 
 
