@@ -17,18 +17,16 @@ import Header3 from '../components/Header3.vue'
 <main>
     <div class = "container">
         <div class = "rectanguloredondeadeo2">           
-            <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
+            Buscar Evento
         </div>
         <div class = "rectanguloredondeadeo3">           
             Filtro
         </div>
         <div class = "rectanguloredondeadeo4">           
-            <input type="text" class="sinborde" name="Historial" placeholder="Historial">
+            Historial
         </div>
         <div class="eventocontainer">
-            <div class="subtitulo">
-                En tu zona
-            </div>
+
             <div class = "parejas">
             <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
                 width="35" height="35" alt="Botón atrás"></a>
@@ -54,12 +52,12 @@ import Header3 from '../components/Header3.vue'
         
         <div class="popup"> 
                 <div class="popup2">
-                    <input type="text" class="sinborde" name="Lugar" placeholder="Lugar">
+                    <p>Lugar...</p>
                 </div>
                 <div class="popup2">
-                    <input type="text" class="sinborde" name="Fecha Inicio" placeholder="Fecha Inicio">
+                    <p>Fecha Inicio...</p>
                         <div class="imga">
-                            <img src = "src/assets/calendar.png" style="width:20px !important; height:20px !important;">
+                            <img src = "src/assets/calendar.png" style="width:15px !important; height:15px !important;">
                         </div>
                 </div>
                 <div class="botones2">
@@ -70,9 +68,12 @@ import Header3 from '../components/Header3.vue'
                         <b>Cancelar</b>
                     </div>
                 </div>
-                
+                <div>
+                    <img class="calendario" src = "src/assets/calendario.png">
+                </div>      
+   
         </div>
-
+        
     </div>
 
 </main>
@@ -171,7 +172,7 @@ import Header3 from '../components/Header3.vue'
     .popup{
         background-color: white;
         height: 60px;
-        width: 220px;
+        width: 200px;
         padding: 2em;
         border-radius: 30px;
         justify-content: center;
@@ -208,79 +209,21 @@ import Header3 from '../components/Header3.vue'
     }
 
 	.imga{
-        height: 200%;
-        width: 10%;
+        height: 190%;
+        width: 20%;
+    }
+
+    .calendario{
+        height: 10px;
+        width: 10px;
+        display: flex;
+        position: absolute;
+        z-index: -1;
     }
 
     .botones2{
         display: flex;
         justify-content: space-around;
-    }
-
-    .sinborde {
-        border: 0;
-        background-color: transparent;
-    }
-
-    @media (min-width:850px){
-        .rectanguloredondeadeo2{
-            color: gray;
-            height: 25px;
-            width: 700px;
-            background-color: transparent;
-            border: 1px solid grey;
-            display: flex;
-            align-items:center;
-            padding: 5px;
-            border-radius: 50px;
-            margin: 25px;
-            margin-right: 100px;
-        }
-
-        .rectanguloredondeadeo3{
-                color: white;
-                height: 25px;
-                width: 75px;
-                background-color: grey;
-                border: 1px solid grey;
-                display: flex;
-                align-items:center;
-                justify-content: center;
-                border-radius: 50px;
-                margin: 25px;
-                margin-left: 775px;
-                margin-top: -57px;
-        }
-
-        .rectanguloredondeadeo4{
-            color: gray;
-            height: 50px;
-            width: 700px;
-            background-color: transparent;
-            border: 1px solid grey;
-            display: flex;
-            align-items:top;
-            padding: 5px;
-            border-radius: 5px;
-            margin: 25px;
-            margin-right: 100px;
-            margin-top: -10px;
-        }
-        .eventocontainer{
-            background-color: lightgrey;
-            display: flex;
-            flex-direction: column;
-            padding: 1em;
-            margin-top: -5px;
-            width: 675px;
-            margin-left: -75px;
-            text-align: center;
-        }
-
-        .parejas{
-            display: flex;
-            justify-content: space-around;
-        }
     }
 
 

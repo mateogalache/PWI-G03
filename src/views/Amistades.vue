@@ -18,7 +18,7 @@ import Header2 from '../components/Header2.vue'
                 <a href="SearchFriend"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
             </div>
-           
+        <div class="transparent6"></div>
     </main>
     <Footer2>
         

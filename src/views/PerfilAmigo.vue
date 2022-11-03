@@ -53,12 +53,12 @@ import Header2 from '../components/Header2.vue'
             
        
 
-        
-    </main>
-    <Footer2>
-        
-    </Footer2>
-  </template>
+  <div class="transparent6"></div>
+  </main>
+  <Footer2>
+      
+  </Footer2>
+</template>
 <style>
 .separacion{
     display:flex;
