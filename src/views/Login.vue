@@ -130,8 +130,8 @@ import Header from '../components/Header.vue'
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    width: 510px;
-    height: 550px;
+    width: 540px;
+    height: 590px;
     border: 2px solid black;
     justify-content: center;
     border-radius: 50px;
