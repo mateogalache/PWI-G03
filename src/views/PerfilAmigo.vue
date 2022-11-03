@@ -3,62 +3,62 @@ import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
 <template>
-    <Header2>
-        
-    </Header2>
-    <main>
-        <br>
-       <b>Datos</b>
-       <br/><br/>
-       <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
-            
-        </div>
-        
-        <br/>
-        <div class = "cont">
-            
-            <div class = "rectangulo1">
-                                    
-                    <p><FONT color = "grey">Laura</FONT></p>
-                    
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo1">                
-                    <p><FONT color = "grey">Garcia Cortes</FONT></p>
-                   
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo1">                
-                <p><FONT color = "grey">Amistades</FONT></p>
-                <div class = "Clogo">
-                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>
-                
-            </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo1">                
-                <p><FONT color = "grey">Eventos</FONT></p>
-                <div class = "Clogo">
-                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>    
-            </div>    
-            </div>
-            
-       
+  <Header2>
+      
+  </Header2>
+  <main>
+      <br>
+     <b>Datos</b>
+     <br/><br/>
+     <div class = "cont">
+          <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
+          
+      </div>
+      
+      <br/>
+      <div class = "cont">
+          
+          <div class = "rectangulo1">
+                                  
+                  <p><FONT color = "grey">Laura</FONT></p>
+                  
+              </div>    
+          </div>
+          <br><br/>
+          <div class = "cont">
+          <div class = "rectangulo1">                
+                  <p><FONT color = "grey">Garcia Cortes</FONT></p>
+                 
+              </div>    
+          </div>
+          <br><br/>
+          <div class = "cont">
+          <div class = "rectangulo1">                
+              <p><FONT color = "grey">Amistades</FONT></p>
+              <div class = "Clogo">
+                  <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+              </div>
+              
+          </div>    
+          </div>
+          <br><br/>
+          <div class = "cont">
+          <div class = "rectangulo1">                
+              <p><FONT color = "grey">Eventos</FONT></p>
+              <div class = "Clogo">
+                  <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+              </div>    
+          </div>    
+          </div>
+          
+     
 
-        
-    </main>
-    <Footer2>
-        
-    </Footer2>
-  </template>
+  <div class="transparent6"></div>
+  </main>
+  <Footer2>
+      
+  </Footer2>
+</template>
 <style>
 .separacion{
     display:flex;
