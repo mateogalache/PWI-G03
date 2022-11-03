@@ -11,7 +11,7 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     <main>
         <br>
-       <b>&nbsp;&nbsp;&nbsp;Estadísticas</b>
+       <h2>Estadísticas</h2>
        <br/><br/>
        <div class = "cont">
             <img src = "src/assets/usuario.png" class = "Redondap">
