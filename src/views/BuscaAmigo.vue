@@ -11,7 +11,7 @@ import Header2 from '../components/Header2.vue'
 
     <main>
         <div class = "cont4">
-            <h3 class = "titulo4">Buscar Amigos</h3>
+            <h2 class = "titulo4">Buscar Amigos</h2>
             <div class = "BContainer4">
                 <p class = "buscar">Buscar amigo....</p>
             </div>

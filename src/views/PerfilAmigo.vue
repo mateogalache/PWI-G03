@@ -115,9 +115,7 @@ import Header2 from '../components/Header2.vue'
     margin-top: 5%;
 }
 @media (min-width: 1080px){
-    h2{
-        font-size: 50px;
-    }
+   
     .Redondap{
         width: 200px;
         height: 200px;

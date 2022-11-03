@@ -13,7 +13,7 @@ import Header3 from '../components/Header3.vue'
 <div class = "container">
 
     <div class = "subtitulo">           
-            <b style="color: black">Crear Evento</b>
+            <h2 style="color: black">Crear Evento</h2>
     </div>
         <br><br/>
     <div class = "rectanguloredondeadeo">

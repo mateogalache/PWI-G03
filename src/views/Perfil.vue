@@ -73,6 +73,7 @@ import Header3 from '../components/Header3.vue';
             </button></a>
        </div>
        <br/><br/>
+       <div class = "transparent6"></div>
        
        
 
@@ -92,6 +93,7 @@ import Header3 from '../components/Header3.vue';
   </template>
  
 <style>
+
 
 .transparent{
     display:flex;
