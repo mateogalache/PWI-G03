@@ -16,7 +16,7 @@ import Header3 from '../components/Header3.vue';
         <br>
 
         <div class = "contI">
-            <b>&nbsp;&nbsp;&nbsp;Perfil</b> 
+            <h2>Perfil</h2> 
             <div class = "transparent">
                 <a href = "Contactanos"><button class="Redondai">
                     <p>i</p>           
@@ -140,7 +140,7 @@ import Header3 from '../components/Header3.vue';
 
 @media (min-width:850px){
     .Rectanguloperfil{
-        width: 1000px;
+        width: 700px;
         
     }
 }

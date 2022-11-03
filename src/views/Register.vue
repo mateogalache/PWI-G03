@@ -11,9 +11,9 @@ import Header from '../components/Header.vue'
       
       <div class = "recuadro2"></div>
       <div class = "registercentro">
-        <br>
+        
         <div class="cont">
-        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "150" height = "75" >
+        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" class= "imglogo2" >
         </div>
         
         <div class = "cont">
@@ -53,29 +53,15 @@ import Header from '../components/Header.vue'
 
 
 .background{
-    position:fixed;
+    
     width: 100%;
     height: 100%;
     background-image: url("src/assets/fondo.png");
-    z-index: -3;
-}
-
-
-.recuadro2{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    width: 510px;
-    height: 570px;
-    border: 2px solid black;
-    justify-content: center;
-    border-radius: 50px;
-    box-shadow: 5px 2px 2px black;
-    z-index: -2;
-    background-color: white;
     
 }
+
+
+
 .transparent9{
     display:flex;
     width: 100%;
@@ -115,6 +101,10 @@ import Header from '../components/Header.vue'
  .registercentro{
   display:block;
  } 
+ .imglogo2{
+    width : 300px;
+    margin-top: 15%;
+  }
     
   @media (min-width: 850px){
     .centro1{
@@ -127,16 +117,29 @@ import Header from '../components/Header.vue'
       left: 50%;
       transform: translate(-50%,-50%);
     }
-  }
-  @media (max-width: 850px){
+    .imglogo2{
+    width : 300px;
+    margin-top: 80%;
+    }
     .recuadro2{
-        display: none;
-    }
-    .background{
-        display:none;
-    }
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 510px;
+    height: 700px;
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 5px 2px 2px black;
+    z-index: -2;
+    background-color: white;
+    margin-top: 10%;
     
-}  
+}
+    
+  }
+ 
 
 
 

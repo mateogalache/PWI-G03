@@ -18,9 +18,9 @@ import Header from '../components/Header.vue'
         
 
         
-        <br><br/>
+        
         <div class="contlogin">        
-        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "200" height = "100" >
+        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" class= "imglogo" >
         </div>
 
         <br>
@@ -127,6 +127,10 @@ import Header from '../components/Header.vue'
 .iniciarsesioncontainer{
     display: block;
 }
+.imglogo{
+    width : 300px;
+    margin-top: 5%;
+}
 @media (min-width: 850px){
     .center0{
         width: 500px;
@@ -137,6 +141,10 @@ import Header from '../components/Header.vue'
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+    }
+    .imglogo{
+    width : 300px;
+    margin-top: 25%;
     }
     
 }
