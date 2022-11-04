@@ -97,9 +97,8 @@ import Header3 from '../components/Header3.vue';
 
 
 .redondacolocacion{
-    position: absolute;
-    top: 14%;
-    right: 8%;
+    display: block;
+    margin-top: 20px;
 }
 .Redondap{
     display:flex;
