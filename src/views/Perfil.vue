@@ -15,13 +15,14 @@ import Header3 from '../components/Header3.vue';
         
         <br>
 
-        <div class = "contI">
+        <div class = "contperfil">
             <h2>Perfil</h2> 
-            <div class = "transparent">
-                <a href = "Contactanos"><button class="Redondai">
+            <div class = "redondacolocacion">
+                
+                <a href = "Contactanos"><button class="Redondaperfil">
                     <p>i</p>           
                 </button></a>
-                <i>&nbsp;&nbsp;&nbsp;</i>    
+                   
             </div>     
         </div>
         <br/>
@@ -95,8 +96,10 @@ import Header3 from '../components/Header3.vue';
 <style>
 
 
-.transparent{
-    display:flex;
+.redondacolocacion{
+    position: absolute;
+    top: 14%;
+    right: 8%;
 }
 .Redondap{
     display:flex;
@@ -106,7 +109,7 @@ import Header3 from '../components/Header3.vue';
     border: 1px solid black;
     
 }
-.Redondai{
+.Redondaperfil{
     display:flex;
     width: 25px;
     height: 25px;
@@ -134,9 +137,11 @@ import Header3 from '../components/Header3.vue';
 
 }
 
-.contI{
+.contperfil{
     display: flex;
     justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 8%;
    
 }
 
@@ -144,6 +149,10 @@ import Header3 from '../components/Header3.vue';
     .Rectanguloperfil{
         width: 700px;
         
+    }
+    .Redondaperfil{
+        width: 50px;
+        height: 50px;
     }
 }
 

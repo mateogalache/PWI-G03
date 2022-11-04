@@ -219,6 +219,9 @@ import Header2 from '../components/Header2.vue'
     .transparent10{
         height: 24.5px;
     }
+    .rectanguloB{
+        width: 500px;
+    }
 }
 
 
