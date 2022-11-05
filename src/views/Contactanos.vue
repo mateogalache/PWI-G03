@@ -235,7 +235,7 @@ import Header3 from '../components/Header3.vue';
             display: flex;
             justify-content: space-around;
             width: 100%;
-            margin: 5px;
+            margin-bottom: -40px;
         }
 
         #titulo{
@@ -332,7 +332,8 @@ import Header3 from '../components/Header3.vue';
         #izquierda{
             float: center;
             margin-left: 350px;
-            margin-top: -30 px;
+            font-size: x-large ; 
+            margin-top: -50px;           
         }
 
         #derecha{
