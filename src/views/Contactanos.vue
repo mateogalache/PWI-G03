@@ -27,7 +27,7 @@ import Header3 from '../components/Header3.vue';
                         contacto con nosotros
                     </div>        
 
-                    <div id ="popup">
+                    <div id ="popup1">
                         <h2 id = "textoo">Reportar<br> un problema</h2>
                         <div id = textoo2>
                              Deje aquí su sugerencia o problema<br>
@@ -39,7 +39,7 @@ import Header3 from '../components/Header3.vue';
                         </div>
                     </div>
 
-                    <div id ="popup">
+                    <div id ="popup2">
                         <h3 id = "textoo">Contactar con el servicio<br>de atención al cliente</h3>
                         <div id = textoo2>
                              Estamos esperando para ayudarle a<br>
@@ -77,8 +77,7 @@ import Header3 from '../components/Header3.vue';
                     </div>
                     <br>
                     <br>
-            </div>
-            <br><br/>     
+            </div>  
         </div>  
     </main>
     
@@ -157,7 +156,16 @@ import Header3 from '../components/Header3.vue';
         justify-content: left;
     }
 
-    #popup{
+    #popup1{
+        background-color: white;
+        height: 125px;
+        width: 200px;
+        border-radius: 10px;
+        margin: 8px;
+        border: 1px solid grey;
+    }
+
+    #popup2{
         background-color: white;
         height: 125px;
         width: 200px;
@@ -205,115 +213,131 @@ import Header3 from '../components/Header3.vue';
     @media (min-width:1080px){
         
         #containercontactanos{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    #eventocontainer1{
-        background-color: lightgrey;
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-        justify-content: center;
-        width: 95%;
-        height: 95%;
-        align-items: center;
-    }
+        #eventocontainer1{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            justify-content: center;
+            width: 95%;
+            height: 95%;
+            align-items: center;
+        }
 
-    #eventocontainer2{
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 2%;
-        width: 100%;
-    }
+        #eventocontainer2{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin: 5px;
+        }
 
-    #titulo{
-        display: flex;
-        font-size: xx-large;
-        justify-content: center;
-    }
+        #titulo{
+            display: flex;
+            font-size: xx-large;
+            justify-content: center;
+        }
 
-    #textoo{
-        display: flex;
-        font-size: large;
-        justify-content: center;
-        text-align: center;
-    }
+        #textoo{
+            display: flex;
+            font-size: large;
+            justify-content: center;
+            text-align: center;
+        }
 
-    #textoo2{
-        display: flex;
-        font-size: x-small;
-        justify-content: center;
-        text-align: center;
-        margin: 10px;
-    }
+        #textoo2{
+            display: flex;
+            font-size: small;
+            justify-content: center;
+            text-align: center;
+            margin: 10px;
+        }
 
-    #textoo3{
-        display: flex;
-        font-size: x-small;
-        justify-content: center;
-        text-align: center;
-        margin: 15px;
-    }
+        #textoo3{
+            display: flex;
+            font-size: x-small;
+            justify-content: center;
+            text-align: center;
+            margin: 15px;
+        }
 
-    #textoo4{
-        display: flex;
-        font-size: small;
-        text-align: left;
-    }
+        #textoo4{
+            display: flex;
+            font-size: small;
+            text-align: left;
+        }
 
-    #textoo5{
-        display: flex;
-        font-size: x-small;
-        justify-content: left;
-    }
+        #textoo5{
+            display: flex;
+            font-size: x-small;
+            justify-content: left;
+        }
 
-    #popup{
-        background-color: white;
-        height: 125px;
-        width: 200px;
-        border-radius: 10px;
-        margin: 8px;
-        border: 1px solid grey;
-    }
+        #popup1{
+            background-color: white;
+            height: 175px;
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            margin-right: 500px;
+            margin-top: 50px;
+        }
 
-    #botones{
-        height: 12px;
-        width: 68px;
-        background-color: grey;
-        border: 1px solid grey;
-        align-items:center;
-        justify-content: center;
-        padding: 5px;
-        text-align: center;
-        display: flex;
-        border-radius: 50px;
-        font-size: small;
-        color: #F3F3F3;
-        margin: 0 auto;
-    }
+        #popup2{
+            background-color: white;
+            height: 175px;
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            margin-left: 500px;
+            margin-top: -185px;
+            padding: 1px;
+        }
 
-    #img1{
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-        margin-left: 0 auto;
-    }
+        #botones{
+            height: 22px;
+            width: 88px;
+            background-color: grey;
+            border: 1px solid grey;
+            align-items:center;
+            justify-content: center;
+            padding: 5px;
+            text-align: center;
+            display: flex;
+            border-radius: 50px;
+            font-size: large;
+            color: #F3F3F3;
+            margin-top: 20px;
+        }
 
-    #img2{
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-    }
+        #img1{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            margin-left: -330px;
+            width: 150px;
+            height: 30px;
+        }
 
-    #izquierda{
-        float: left;
-    }
+        #img2{
+            -webkit-filter: grayscale(100%);
+            filter: opacity(0%);
+        }
 
-    #derecha{
-        float: right;
-    }
+        #izquierda{
+            float: center;
+            margin-left: 350px;
+            margin-top: -30 px;
+        }
+
+        #derecha{
+            float: right;
+        }
     }
  
 </style>
