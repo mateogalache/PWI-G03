@@ -229,6 +229,7 @@ import Header3 from '../components/Header3.vue';
             width: 95%;
             height: 95%;
             align-items: center;
+            text-align: center;
         }
 
         #eventocontainer2{
@@ -319,7 +320,7 @@ import Header3 from '../components/Header3.vue';
         #img1{
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
-            margin-left: -330px;
+            margin-left: -650px;
             width: 150px;
             height: 30px;
         }
@@ -331,9 +332,10 @@ import Header3 from '../components/Header3.vue';
 
         #izquierda{
             float: center;
-            margin-left: 350px;
+            margin-left: 330px;
             font-size: x-large ; 
-            margin-top: -50px;           
+            margin-top: -50px; 
+                   
         }
 
         #derecha{
