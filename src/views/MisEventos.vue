@@ -12,10 +12,10 @@ import Header3 from '../components/Header3.vue'
 
 <main>
     <br>
-    <b>&nbsp;&nbsp;Mis </b>
+    <b>&nbsp;&nbsp;Mis Eventos </b>
     <div class = "container5">
               
-        <div class="eventocontainer">
+        <div class="eventocontainer5">
             <div class = "parejas">
             <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png" 
                 width="35" height="35" alt="Botón atrás"></a>
@@ -51,19 +51,18 @@ import Header3 from '../components/Header3.vue'
 <style scoped>
 
     .container5{
-        
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
 
-    .eventocontainer{
+    .eventocontainer5{
         background-color: lightgrey;
         display: flex;
         flex-direction: column;
         padding: 1em;
-        margin-top: 40px;
+        margin-top: 50px;
     }
 
     img{
