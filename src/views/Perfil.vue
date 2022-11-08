@@ -11,89 +11,78 @@ import Header3 from '../components/Header3.vue';
     <Header3>
         
     </Header3>
-    <main>
-        
+    <main>        
         <br>
-
-        <div class = "contperfil">
+        <article class = "contperfil">
             <h2>Perfil</h2> 
-            <div class = "redondacolocacion">
-                
+            <section class = "redondacolocacion">
                 <a href = "Contactanos"><button class="Redondaperfil">
-                    <p>i</p>           
-                </button></a>
-                   
-            </div>     
-        </div>
+                    <p class = "igrande">i</p>           
+                </button></a>                   
+            </section>     
+        </article>
         <br/>
-        <div class = "cont">
-            <img src = "src/assets/usuario.png" class = "Redondap">
 
-        </div>
+        <section class = "cont">
+            <img src = "src/assets/usuario.png" class = "Redondap">
+        </section>
+
         <p class = cont>Nombre</p>
         <br/>
-
-
        
-       <div  class = "cont">
-        <a href = "Datos"><button class="Rectanguloperfil">
+        <section  class = "cont">
+            <a href = "Datos"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Datos</FONT></p>
             </button></a>
-       </div>
+        </section>
        
        <br/>
-       <div class = "cont">
+       <section class = "cont">
            <a href = "Estadisticas"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Estadísticas</FONT></p>
             </button></a>
-       </div>
+        </section>
        
        <br/>
-       <div class = "cont">
+       <section class = "cont">
             <a href = "Amistades"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Amistades</FONT></p>
             </button></a>
-       </div>
+        </section>
+
        <br/>
-       <div class = "cont">
+       <section class = "cont">
             <a href = "Events"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Mis eventos</FONT></p>
             </button></a>
-       </div>
+        </section>
+
        <br/>
-       <div class = "cont">
+       <section class = "cont">
             <a href = "Borrarperfil"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Borrar perfil</FONT></p>
             </button></a>
-       </div>
+        </section>
+
        <br/>
-       <div class = "cont">
-        
+       <section class = "cont">        
             <a href = "Cerrarsesion"><button class="Rectanguloperfil">
                 <p><FONT color = "white">Cerrar sesión</FONT></p>
             </button></a>
-       </div>
+        </section>
        <br/><br/>
-       <div class = "transparent6"></div>
-       
-       
 
-    
-        
-   
-        
-      
-       
-
+       <section class = "transparent6"></section>
         
     </main>
+
     <Footer2>
         
     </Footer2>
  
   </template>
  
-<style>
+<style scoped>
 
 
 .redondacolocacion{
@@ -150,9 +139,21 @@ import Header3 from '../components/Header3.vue';
         
     }
     .Redondaperfil{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        border-color: black;
     }
+    .redondacolocacion{
+        margin-top: 40px;
+    }
+    .igrande{
+        font-size:x-large;
+    }
+    .Redondap{
+        height: 200px;
+        width: 200px;
+    }
+   
 }
 
 

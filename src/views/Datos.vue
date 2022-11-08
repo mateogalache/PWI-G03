@@ -8,63 +8,64 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     <main>
         <br>
-       <h2>Datos</h2>
-       <br/><br/>
-       <div class = "cont">
-            <img src = "src/assets/usuario.png" class = "Redondap">
-            
-        </div>
+        <h2>Datos</h2>
+        <br/><br/>
+
+        <article class = "cont">
+            <img src = "src/assets/usuario.png" class = "Redondap">            
+        </article>
+
         <p class = "cont">Cambiar foto de perfil</p>
         <br/>
-        <div class = "cont">
-            <div class = "rectangulo5">
-                                    
-                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</FONT></p>
-                    
-                    <div class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
-                    </div>
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo5">                
-                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apellidos</FONT></p>
-                    
-                    <div class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
-                    </div>
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo5">                
-                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</FONT></p>
-                    
-                    <div class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
-                    </div>
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo5">                
-                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contraseña</FONT></p>
-                    
-                    <div class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
-                    </div>
-                </div>    
-            </div>
-            
-       
 
-        
+        <article class = "cont">
+            <section class = "rectangulo5">
+                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</FONT></p>                    
+                <nav class = "rectangulo2">
+                    <p><FONT color = "white">Editar</FONT></p>
+                </nav>
+            </section>    
+        </article>
+
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo5">                
+                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apellidos</FONT></p>
+                <nav class = "rectangulo2">
+                    <p><FONT color = "white">Editar</FONT></p>
+                </nav>
+            </section>    
+        </article>
+
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo5">                
+                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</FONT></p>                    
+                <nav class = "rectangulo2">
+                    <p><FONT color = "white">Editar</FONT></p>
+                </nav>
+            </section>    
+        </article>
+            
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo5">                
+                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contraseña</FONT></p>                    
+                <nav class = "rectangulo2">
+                    <p><FONT color = "white">Editar</FONT></p>
+                </nav>
+            </section>    
+        </article>     
     </main>
+
     <Footer2>
         
     </Footer2>
-  </template>
+</template>
+
 <style>
 .separacion{
     display:flex;

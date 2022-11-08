@@ -11,48 +11,48 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     <main>
         <br>
-       <h2>Estadísticas</h2>
-       <br/><br/>
-       <div class = "cont">
+        <h2>Estadísticas</h2>
+        <br/><br/>
+        <article class = "cont">
             <img src = "src/assets/usuario.png" class = "Redondap">
             
-        </div>
+        </article>
         <p class = "cont">Nombre</p>
         <br/>
-        <div class = "cont">
-            <div class = "rectangulo4">
-                                    
-                    <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</FONT></p>
-                    
-                    <div class = "estrellas">
-                        <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                        <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                        <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                        <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                        <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">            
-                    </div>
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo4">                
+        <article class = "cont">
+            <section class = "rectangulo4">
+                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</FONT></p>
+                <aside class = "estrellas">
+                    <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
+                    <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
+                    <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
+                    <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
+                    <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">            
+                </aside>
+            </section>    
+        </article>
+
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo4">                
                     <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num. comentarios</FONT></p>
-                    
                     <p class = "separacion2">156</p>
-                </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo3">                
+            </section>    
+        </article>
+        
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo3">                
                 <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcentaje <br
                     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usuarios con menos<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comentarios
-                    </FONT></p>
-                    <div class = "separacion2">
-                    <p>48%</p>
-                </div>
-                </div>    
-            </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comentarios</FONT></p>
+                <aside class = "separacion2">
+                <p>48%</p>
+                </aside>
+            </section>    
+        </article>
        
 
         
