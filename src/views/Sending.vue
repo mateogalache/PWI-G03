@@ -24,21 +24,21 @@ import Header2 from '../components/Header2.vue'
             <div class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo">
+                <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
             <div class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo">
+                <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
             <div class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo">
+                <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
@@ -50,7 +50,7 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
+<style scoped>
 .cont23{
 
     padding-left: 2%;
@@ -88,7 +88,7 @@ import Header2 from '../components/Header2.vue'
     
 
 }
-.Clogo{
+.Clogo2{
     display: flex;
     justify-content: end;
     justify-content: space-around;
