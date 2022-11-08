@@ -10,107 +10,114 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
-    <main>
-        
+    <main>        
         <br>
         
-        <div class = "contI">
-            <b>&nbsp;&nbsp;&nbsp;Perfil</b> 
-            <div class = "transparent">
+        <article class = "contperfil">
+            <h2>Perfil</h2> 
+            <section class = "redondacolocacion">
                 <button class="Redondai">
-                    <p>i</p>           
+                    <p class = igrande>i</p>           
                 </button>
                 <i>&nbsp;&nbsp;&nbsp;</i>    
-            </div>     
-        </div>
-        <br/>
-        <div class = "cont">
-            <img src = "src/assets/usuario.png" class = "Redondap">
+            </section>     
+        </article>
 
-        </div>
+        <br/>
+
+        <section class = "cont">
+            <img src = "src/assets/usuario.png" class = "Redondap">
+        </section>
+
         <p class = cont>Nombre</p>
         <br/>
 
-
-        <div class = "cont">
-       <div class = "encima">
+        <article class = "cont">
+            <section class = "encima">
         
-            <div class = "rectanguloB">
-                <br/>
-                <div class = cont> <p>¿Seguro que quieres cerrar la sesión? </p> </div><br/>
-                <div class = "contI2">
-                    <a href = "Login"><button class = "rectanguloC">
-                        <p><FONT color = "white">Cerrar sesión</FONT></p>
-                    </button></a>
-                    <a href = "Perfil"><button class = "rectanguloC">
-                        <p><FONT color = "white">Cancelar</FONT></p>
-                    </button></a>
-                </div>
-            </div>
-        </div>
-        </div>
+                <section class = "rectanguloB">
+                    <br/>
+                    <aside class = cont> <p>¿Seguro que quieres cerrar la sesión? </p> </aside><br/>
+                        <nav class = "contI2">
+                            <a href = "Login"><button class = "rectanguloC">
+                            <p><FONT color = "white">Cerrar sesión</FONT></p>
+                            </button></a>
+                            <a href = "Perfil"><button class = "rectanguloC">
+                            <p><FONT color = "white">Cancelar</FONT></p>
+                            </button></a>
+                        </nav>
+                    </section>
+            </section>
+        </article>
 
 
-       <div class = "cont">
+       <section class = "cont">
         <a href = "Datos"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Datos</FONT></p>
             </button></a>
-       </div>
+        </section>
        
        <br/>
-       <div class = "cont">
+       <section class = "cont">
            <a href = "Estadisticas"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Estadísticas</FONT></p>
             </button></a>
-       </div>
+        </section>
        
        <br/>
-       <div class = "cont">
+       <section class = "cont">
             <a href = "Amistades"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Amistades</FONT></p>
             </button></a>
-       </div>
+        </section>
        <br/>
-       <div class = "cont">
+
+       <section class = "cont">
             <a href = "Events"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Mis eventos</FONT></p>
             </button></a>
-       </div>
+        </section>
        <br/>
-       <div class = "cont">
+
+       <section class = "cont">
             <a href = "Borrarperfil"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Borrar perfil</FONT></p>
             </button></a>
-       </div>
+        </section>
        <br/>
-       <div class = "cont">
-        
+
+       <section class = "cont">        
             <a href = "Cerrarsesion"><button class="Rectanguloborrar">
                 <p><FONT color = "white">Cerrar sesión</FONT></p>
             </button></a>
-       </div>
+        </section>
+
        <br/><br/>
-      
-       
 
-    
-        
-   
-        
-      
-       
-
-        
     </main>
+
     <Footer2>
         
     </Footer2>
- <div class = "rectanguloN">
     
- </div>
+    <section class = "rectanguloN"></section>
+  
   </template>
  
-<style>
+<style scoped>
+
+.contperfil{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 8%;
+   
+}
+
+.redondacolocacion{
+    display: block;
+    margin-top: 20px;
+}
 .transparent10{
     display:flex;
     width: 100%;
@@ -156,11 +163,7 @@ import Header2 from '../components/Header2.vue'
 
 }
 
-.contI{
-    display: flex;
-    justify-content: space-between;
-   
-}
+
 .contI2{
     display: flex;
     justify-content: space-around;
@@ -187,7 +190,7 @@ import Header2 from '../components/Header2.vue'
 
 }
 .encima{
-       
+    z-index: 5;
     position: fixed;
 }    
 
@@ -202,7 +205,7 @@ import Header2 from '../components/Header2.vue'
 }
 @media (min-width:1080px){
     .Rectanguloborrar{
-        width: 1000px;
+        width: 700px;
         
     }
     .transparent10{
@@ -210,6 +213,21 @@ import Header2 from '../components/Header2.vue'
     }
     .rectanguloB{
         width: 500px;
+    }
+    .Redondai{
+        width: 40px;
+        height: 40px;
+        border-color: black;
+    }
+    .redondacolocacion{
+        margin-top: 40px;
+    }
+    .igrande{
+        font-size:x-large;
+    }
+    .Redondap{
+        height: 200px;
+        width: 200px;
     }
 }
 

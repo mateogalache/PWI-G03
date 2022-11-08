@@ -8,7 +8,7 @@ import Header from '../components/Header.vue'
     </Header>
     <main id="Login">
         
-        <section class = "background"> </section>
+        <picture class = "background"> </picture>
 
         <body class = "iniciarsesioncontainer">
             <article class = "recuadrocentro">
@@ -49,7 +49,7 @@ import Header from '../components/Header.vue'
         </body>
 
     </main>
-    
+
     <Footer>
         
     </Footer>

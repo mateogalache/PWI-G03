@@ -7,44 +7,44 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
-      <div class = "background"></div>
+      <picture class = "background2"></picture>
       
-      <div class = "recuadro2"></div>
-      <div class = "registercentro">
+      <section class = "recuadro2"></section>
+      <body class = "registercentro">
         <br>
-        <div class="cont">
+        <section class="cont">
         <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "150" height = "75" >
-        </div>
+        </section>
         
-        <div class = "cont">
-        <div class = "centro1">
-        <h2><b>Datos personales</b></h2>                
-        <p><label>Nombre*</label></p>
-        <input type="text" class = "texto">
-        <p><label>Apellidos*</label></p>
-        <input type="text" class = "texto">
-        <p><label>Email*</label></p>
-        <input type="text" class = "texto">
-        <p><label>Contraseña*</label></p>
-        <input type="password" class = "texto">
-        <p><label>Foto de perfil*</label></p>
-        <input type="text" class = "texto">
-        <br/><br/>
-        </div>
-        </div>
+        <article class = "cont">
+          <section class = "centro1">
+            <h2><b>Datos personales</b></h2>                
+            <p><label>Nombre*</label></p>
+            <input type="text" class = "texto">
+            <p><label>Apellidos*</label></p>
+            <input type="text" class = "texto">
+            <p><label>Email*</label></p>
+            <input type="text" class = "texto">
+            <p><label>Contraseña*</label></p>
+            <input type="password" class = "texto">
+            <p><label>Foto de perfil*</label></p>
+            <input type="text" class = "texto">
+            <br/><br/>
+          </section>
+        </article>
     
-        <div class="cont">
+        <article class="cont">
         <a href = "Home"><button class="Iniciar">
             <b><FONT COLOR="white">Registrar</FONT></b>
         </button></a>
-        </div>
-        <div class = "transparent9">
+      </article>
 
-        </div>
-      </div> 
-
+      <section class = "transparent9"></section>
+      
+      </body>
         
     </main>
+    
     <Footer>
         
     </Footer>
