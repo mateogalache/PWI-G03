@@ -12,7 +12,8 @@ import Header3 from '../components/Header3.vue'
 
 <main>
     <br>
-    <h2>Eventos Destacados</h2>
+    <p><b>Eventos Destacados</b></p>
+    <br><br><br>
     <div class = "container5">
               
         <div class="eventocontainer">
@@ -84,15 +85,6 @@ import Header3 from '../components/Header3.vue'
     }
 
 
-
-    .container{
-       
-       display: flex;
-       justify-content: center;
-       flex-direction: column;
-       align-items: center;
-   }
-
    .eventocontainer{
        background-color: lightgrey;
        display: flex;
@@ -159,21 +151,30 @@ import Header3 from '../components/Header3.vue'
 
    @media (min-width:1080px){
        
+        .container5{
+            
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
        .eventocontainer{
            background-color: lightgrey;
            display: flex;
            flex-direction: column;
            padding: 1em;
-           margin-top: -5px;
-           width: 575px;
+           width: 90%;
+           height: 550px;
            margin-left: -10px;
+           margin-top: -50px;
            text-align: center;
-           margin-top: 60px;
        }
 
        .parejas{
            display: flex;
            justify-content: space-around;
+           margin-bottom: 50px;
        }
    }
 </style>
