@@ -13,9 +13,9 @@ import Header3 from '../components/Header3.vue'
 <div class = "container">
 
     <div class = "subtitulo">           
-            <h2 style="color: black">Crear Evento</h2>
+        <p><b>Crear Evento</b></p>
     </div>
-        <br><br/>
+        
     <div class = "rectanguloredondeadeo">
         <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento">           
     </div>
