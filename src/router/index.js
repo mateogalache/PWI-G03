@@ -27,6 +27,7 @@ import Events from '../views/Events.vue'
 import Contactanos from '../views/Contactanos.vue'
 import Calendario from '../views/Calendario.vue'
 import Carga from '../views/Carga.vue'
+import CompartirEventoAmigos from '../views/CompartirEventoAmigos.vue'
 
 const routes = [
     
@@ -169,13 +170,17 @@ const routes = [
         name: 'Calendario',
         component: Calendario
     },
+
+    {
+        path: '/CompartirEventoAmigos',
+        name: 'CompartirEventoAmigos',
+        component: CompartirEventoAmigos
+    },
     {
         path: '/',
         name: 'Carga',
         component: Carga
     }
-
-
     
 
 ]

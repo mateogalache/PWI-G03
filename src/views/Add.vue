@@ -46,7 +46,7 @@ import Header3 from '../components/Header3.vue'
         <div class = "crear">           
                 <p style="color: black">Crear</p>
         </div>
-</div>
+    </div>
 </main>
     <Footer2>
         
