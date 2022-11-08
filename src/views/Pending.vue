@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont2">
-            <div class = "BContainer3">
+        <div class = "cont24">
+            <div class = "BContainer33">
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -22,7 +22,7 @@ import Header2 from '../components/Header2.vue'
             </div >
                 
                 
-            <div class = "PContainer3">
+            <div class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
@@ -30,7 +30,7 @@ import Header2 from '../components/Header2.vue'
                     <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer3">
+            <div class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
@@ -38,7 +38,7 @@ import Header2 from '../components/Header2.vue'
                     <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer3">
+            <div class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
@@ -55,7 +55,7 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style>
-.cont2{
+.cont24{
 
     padding-left: 2%;
     padding-right: 2%;
@@ -64,7 +64,7 @@ import Header2 from '../components/Header2.vue'
     
     
 }
-.BContainer3{
+.BContainer33{
     margin-top: 2%;
     display: flex;
     flex-direction: row;
@@ -79,7 +79,7 @@ import Header2 from '../components/Header2.vue'
 .Pending{
     width: 100%;
 }
-.PContainer3{
+.PContainer33{
     margin-top: 3%;
     display: flex;
     flex-direction: row;
