@@ -11,33 +11,33 @@ import Header2 from '../components/Header2.vue'
 
     <main>
         <br><h2 class="titulo34">Friends</h2>
-        <div class = "cont5">
-            <div class = "BContainer5">
+        <article class = "cont5">
+            <section class = "BContainer5">
                 <p class = "buscar5">Busca</p>
-            </div>
+            </section>
                 
-            <div class = "PContainer5">
+            <section class = "PContainer5">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
                 <div class = "Clogo5">
                     <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer5">
+            </section>
+            <section class = "PContainer5">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
                 <div class = "Clogo5">
                     <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer5">
+            </section>
+            <section class = "PContainer5">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
                 <div class = "Clogo5">
                     <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
-            </div>
-            <div class="PContainer5">
+            </section>
+            <section class="PContainer5">
                 <img src="src/assets/usuario.png" class="perfil">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
@@ -45,8 +45,8 @@ import Header2 from '../components/Header2.vue'
                 <div class="Clogo5">
                     <img src="src\assets\flecha.png" class="icon5" alt="tick">
                 </div>
-            </div>
-            <div class="PContainer5">
+            </section>
+            <section class="PContainer5">
                 <img src="src/assets/usuario.png" class="perfil">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
@@ -54,8 +54,8 @@ import Header2 from '../components/Header2.vue'
                 <div class="Clogo5">
                     <img src="src\assets\flecha.png" class="icon5" alt="tick">
                 </div>
-            </div>
-            <div class="PContainer5">
+            </section>
+            <section class="PContainer5">
                 <img src="src/assets/usuario.png" class="perfil">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
@@ -63,8 +63,8 @@ import Header2 from '../components/Header2.vue'
                 <div class="Clogo5">
                     <img src="src\assets\flecha.png" class="icon5" alt="tick">
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
         <div class="transparent6"></div>
     </main>
 
@@ -73,7 +73,7 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
+<style scoped>
 .titulo34{
     padding-left: 2%;
 }

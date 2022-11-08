@@ -49,7 +49,7 @@ import Header from '../components/Header.vue'
         
     </Footer>
   </template>
-<style>
+<style scoped>
 .background2{
     position:fixed;
     width: 100%;

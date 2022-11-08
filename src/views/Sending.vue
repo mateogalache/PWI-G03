@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont23">
-            <div class = "BContainer22">
+        <article class = "cont23">
+            <section class = "BContainer22">
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -19,30 +19,30 @@ import Header2 from '../components/Header2.vue'
                 <button class="Pending">
                     <a href = "Pending"><b>Pending request</b></a>
                 </button>
-            </div >
+            </section >
                 
-            <div class = "PContainer22">
+            <section class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer22">
+            </section>
+            <section class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer22">
+            </section>
+            <section class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     <div class="transparent6"></div>
     </main>
     <Footer2>

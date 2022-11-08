@@ -1,14 +1,14 @@
 <template>
 
   <header>
-    <div class = "HContainer7">
+    <section class = "HContainer7">
       
       <a href = "javascript: history.go(-1)" class = "triangulo"> </a>
         
       <h1>Sallevents</h1>
       <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti" ></a>
    
-    </div>
+    </section>
   </header> 
   <main>
     

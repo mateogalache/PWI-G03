@@ -20,7 +20,7 @@
     
 </template>
 
-<style>
+<style scoped>
 .imagencentro{
     display: flex;
     width: 150px;
