@@ -52,7 +52,7 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
+<style scoped>
 .FCont{
     display: flex;
     flex-direction: column;

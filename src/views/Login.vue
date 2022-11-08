@@ -54,7 +54,7 @@ import Header from '../components/Header.vue'
         
     </Footer>
   </template>
-<style>
+<style scoped>
 
 .transparent9{
     display:flex;

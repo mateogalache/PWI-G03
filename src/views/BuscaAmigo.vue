@@ -10,41 +10,41 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont4">
+        <article class = "cont4">
             <h2 class = "titulo4">Buscar Amigos</h2>
-            <div class = "BContainer4">
+            <section class = "BContainer4">
                 <p class = "buscar">Buscar amigo....</p>
-            </div>
+            </section>
                 
-            <div class = "PContainer4">
+            <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
                     <img src="src\assets\flecha.png" class = "icon4" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer4">
+            </section>
+            <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
                     <img src="src\assets\flecha.png" class = "icon4" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer4">
+            </section>
+            <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
                     <img src="src\assets\flecha.png" class = "icon4" alt="tick">
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     </main>
     <Footer2>
 
     </Footer2>
 </template>
 
-<style>
+<style scoped>
 
 .cont4{
 

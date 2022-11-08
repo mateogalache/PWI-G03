@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont24">
-            <div class = "BContainer33">
+        <article class = "cont24">
+            <section class = "BContainer33">
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -19,34 +19,34 @@ import Header2 from '../components/Header2.vue'
                 <button class="Pending">
                     <a href = "Pending"><b>Pending request</b></a>
                 </button>
-            </div >
+            </section >
                 
                 
-            <div class = "PContainer33">
+            <section class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
                     <img src="src\assets\tick.png" class = "icon2" alt="tick">
                     <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer33">
+            </section>
+            <section class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
                     <img src="src\assets\tick.png" class = "icon2" alt="tick">
                     <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer33">
+            </section>
+            <section class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
                     <img src="src\assets\tick.png" class = "icon2" alt="tick">
                     <img src="src\assets\cross.png" class = "icon2" alt="tick">
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     <div class="transparent6"></div>
     </main>
     <Footer2>
@@ -54,7 +54,7 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
+<style scoped>
 .cont24{
 
     padding-left: 2%;

@@ -108,7 +108,7 @@ import Header3 from '../components/Header3.vue';
                 </div>
             </div>
 
-
+            
 
         </div>
        
@@ -121,13 +121,8 @@ import Header3 from '../components/Header3.vue';
     </Footer2>
 </template>
 
-<style>
-.transparent6{
-    display:flex;
-    width: 100%;
-    height: 90px;
-    background-color: white;
-}
+<style scoped >
+
 .cont{
 
     padding-left: 2%;

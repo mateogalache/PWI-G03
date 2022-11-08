@@ -78,7 +78,8 @@ import Header3 from '../components/Header3.vue';
                     <br>
                     <br>
             </div>  
-        </div>  
+        </div> 
+        <div class="transparent6"></div>
     </main>
     
     

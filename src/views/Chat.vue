@@ -60,7 +60,7 @@ import Header2 from '../components/Header2.vue'
    
     
 </template>
-<style>
+<style scoped>
 .box{
     margin-top: 10%;
 }

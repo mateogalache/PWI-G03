@@ -10,48 +10,48 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont6">
+        <article class = "cont6">
             <h3>Friends</h3>
             <div class = "BContainer6">
                 <p class = "buscar6">Busca</p>
             </div>
                 
-            <div class = "PContainer6">
+            <section class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre6">Laura</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer6">
+            </section>
+            <section class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre6">Javier</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer6">
+            </section>
+            <section class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre6">Antonio</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer6">
+            </section>
+            <section class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre6">Maria</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
-            </div>
-            <div class = "PContainer6">
+            </section>
+            <section class = "PContainer6">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre6">Carlos</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
         <div class="transparent6"></div>
     </main>
     <Footer2>
@@ -59,7 +59,7 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
+<style scoped>
 .cont6{
 
     padding-left: 2%;
