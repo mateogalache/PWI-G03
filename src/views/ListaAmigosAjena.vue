@@ -17,35 +17,35 @@ import Header2 from '../components/Header2.vue'
             </div>
                 
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAjeno"><p class = "nombre6">Laura</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAjeno"><p class = "nombre6">Javier</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAjeno"><p class = "nombre6">Antonio</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAjeno"><p class = "nombre6">Maria</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAjeno"><p class = "nombre6">Carlos</p></a>
                 <div class = "Clogo6">
                     <img src="src\assets\flecha.png" class = "icon6" alt="tick">
@@ -82,7 +82,7 @@ import Header2 from '../components/Header2.vue'
     padding-left: 5%;
 }
 .PContainer6{
-    margin-top: 5%;
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,6 +90,7 @@ import Header2 from '../components/Header2.vue'
     border-radius: 25px;
     width: 100%;
     justify-content: space-between;
+    padding-left: 2%;
    
     
 
@@ -107,5 +108,4 @@ import Header2 from '../components/Header2.vue'
     margin-left: 10%;
     margin-right: 10%;
 }
-
 </style>

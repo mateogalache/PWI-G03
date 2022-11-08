@@ -17,28 +17,28 @@ import Header2 from '../components/Header2.vue'
             </section>
                 
             <section class = "PContainer5">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
                 <div class = "Clogo5">
                     <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
             </section>
             <section class = "PContainer5">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35" >
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
                 <div class = "Clogo5">
-                    <img src="src\assets\flecha.png" class = "icon5" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon5"  alt="tick">
                 </div>
             </section>
             <section class = "PContainer5">
-                <img src="src/assets/usuario.png" class = "perfil">
+                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
                 <div class = "Clogo5">
-                    <img src="src\assets\flecha.png" class = "icon5" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon5"  alt="tick">
                 </div>
             </section>
             <section class="PContainer5">
-                <img src="src/assets/usuario.png" class="perfil">
+                <img src="src/assets/usuario.png" class="perfil" width="35" height="35">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
                 </a>
@@ -47,7 +47,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
             </section>
             <section class="PContainer5">
-                <img src="src/assets/usuario.png" class="perfil">
+                <img src="src/assets/usuario.png" class="perfil" width="35" height="35">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
                 </a>
@@ -56,7 +56,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
             </section>
             <section class="PContainer5">
-                <img src="src/assets/usuario.png" class="perfil">
+                <img src="src/assets/usuario.png" class="perfil" width="35" height="35">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
                 </a>
@@ -107,6 +107,7 @@ import Header2 from '../components/Header2.vue'
     border-radius: 25px;
     width: 100%;
     justify-content: space-between;
+    padding-left: 2%;
    
     
 
