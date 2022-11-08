@@ -13,16 +13,21 @@ import Header3 from '../components/Header3.vue'
 
 <main>
     <div class = "container">
+
         <div class = "rectanguloredondeadeo2">           
-            Buscar Evento
-        </div>
+            <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
+        </div>           
         <div class = "rectanguloredondeadeo3">           
-            Filtro
+              Filtro
         </div>
-        <div class = "rectanguloredondeadeo4">           
-            Historial
-        </div>
+        <div class = "rectanguloredondeadeo4"> 
+            <input type="text" class="sinborde" name="Historial" placeholder="Historial">
+       </div>
+        
         <div class="eventocontainer">
+            <div class="subtitulo">
+                En tu zona
+            </div>
 
             <div class = "parejas">
             <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
@@ -73,7 +78,8 @@ import Header3 from '../components/Header3.vue'
         display: flex;
         flex-direction: column;
         padding: 2em;
-        margin-top: 20px;
+        margin-top: -15px;
+        text-align: center;
     }
 
     img{
@@ -88,47 +94,113 @@ import Header3 from '../components/Header3.vue'
     }
 
     .rectanguloredondeadeo2{
-    color: gray;
-    height: 25px;
-    width: 275px;
-    background-color: transparent;
-    border: 1px solid grey;
-    display: flex;
-    align-items:center;
-    padding: 5px;
-    border-radius: 50px;
-    margin: 25px;
-    margin-right: 100px;
+        color: gray;
+        height: 25px;
+        width: 275px;
+        background-color: transparent;
+        border: 1px solid grey;
+        display: flex;
+        align-items:center;
+        padding: 5px;
+        border-radius: 50px;
+        margin: 25px;
+        margin-right: 100px;
     }
 
     .rectanguloredondeadeo3{
-    color: white;
-    height: 25px;
-    width: 75px;
-    background-color: grey;
-    border: 1px solid grey;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    border-radius: 50px;
-    margin: 25px;
-    margin-right: -275px;
-    margin-top: -57px;
+        color: white;
+        height: 25px;
+        width: 75px;
+        background-color: grey;
+        border: 1px solid grey;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        border-radius: 50px;
+        margin: 25px;
+        margin-right: -275px;
+        margin-top: -57px;
     }
 
     .rectanguloredondeadeo4{
-    color: gray;
-    height: 50px;
-    width: 275px;
-    background-color: transparent;
-    border: 1px solid grey;
-    display: flex;
-    align-items:top;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 25px;
-    margin-right: 100px;
-    margin-top: -10px;
+        color: gray;
+        height: 50px;
+        width: 275px;
+        background-color: transparent;
+        border: 1px solid grey;
+        display: flex;
+        align-items:top;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 25px;
+        margin-right: 100px;
+        margin-top: -10px;
+    }
+
+    .sinborde {
+        border: 0;
+        background-color: transparent;
+    }
+
+    @media (min-width:1080px){
+        .rectanguloredondeadeo2{
+            color: gray;
+            height: 25px;
+            width: 700px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:center;
+            padding: 5px;
+            border-radius: 50px;
+            margin: 25px;
+            margin-right: 100px;
+        }
+
+        .rectanguloredondeadeo3{
+                color: white;
+                height: 25px;
+                width: 75px;
+                background-color: grey;
+                border: 1px solid grey;
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                border-radius: 50px;
+                margin: 25px;
+                margin-left: 775px;
+                margin-top: -57px;
+        }
+
+        .rectanguloredondeadeo4{
+            color: gray;
+            height: 50px;
+            width: 700px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:top;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 25px;
+            margin-right: 100px;
+            margin-top: -10px;
+        }
+        .eventocontainer{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            margin-top: -5px;
+            width: 675px;
+            margin-left: -75px;
+            text-align: center;
+        }
+
+        .parejas{
+            display: flex;
+            justify-content: space-around;
+        }
     }
 
 </style>

@@ -11,7 +11,7 @@ import Header3 from '../components/Header3.vue';
 
     <main>
         <div class = "cont">
-            <h3>Chats</h3>
+            <h2>Chats</h2>
             <div class = "BContainer">
                 <p class = "buscar">Busca</p>
             </div>
@@ -125,7 +125,7 @@ import Header3 from '../components/Header3.vue';
 .transparent6{
     display:flex;
     width: 100%;
-    height: 80px;
+    height: 90px;
     background-color: white;
 }
 .cont{
@@ -136,6 +136,7 @@ import Header3 from '../components/Header3.vue';
     flex-direction: column;
     
 }
+
 
 .BContainer{
     margin-bottom: 5%;
@@ -187,5 +188,50 @@ import Header3 from '../components/Header3.vue';
     margin-right: 20%;
     margin-top: 5%;
     
+}
+@media (min-width: 1080px){
+    .BContainer p{
+    font-size: 20px;
+    }
+    .chat{
+        margin: auto;
+        font-size: 20px;
+    }
+    .cont{
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .buscar{
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .BContainer{
+        width: 600PX;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .PContainer{
+        width: 700px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .Clogo{
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .icon{
+        width: 20px;
+        height: 20px;
+    }
+    .perfil{
+        width: 40px;
+        height: 40px;
+    }
+    .nombre{
+        margin-right: 10%;
+    }
 }
 </style>

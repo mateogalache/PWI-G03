@@ -12,7 +12,7 @@ import Header2 from '../components/Header3.vue'
 
 <main>
     <br>
-    <b>&nbsp;&nbsp;Mis eventos</b>
+    <h2>Mis eventos</h2>
     <div class = "container5">
               
         <div class="eventocontainer">

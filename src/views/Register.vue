@@ -50,24 +50,20 @@ import Header from '../components/Header.vue'
     </Footer>
   </template>
 <style>
-
-
-.background{
+.background2{
     position:fixed;
     width: 100%;
     height: 100%;
     background-image: url("src/assets/fondo.png");
     z-index: -3;
 }
-
-
 .recuadro2{
     top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    width: 510px;
-    height: 570px;
+    width: 600px;
+    height: 700px;
     border: 2px solid black;
     justify-content: center;
     border-radius: 50px;
@@ -96,27 +92,24 @@ import Header from '../components/Header.vue'
    justify-self: center;
    justify-content: center;
    align-items: center;
-
    
 } 
 .cont{
     display: flex;
     justify-content: center;
    align-items: center;
-
 }
  .texto{
     width: 98%;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid black;
-
  }
  .registercentro{
   display:block;
  } 
     
-  @media (min-width: 850px){
+  @media (min-width: 1080px){
     .centro1{
       width: 500px;
     }
@@ -128,16 +121,13 @@ import Header from '../components/Header.vue'
       transform: translate(-50%,-50%);
     }
   }
-  @media (max-width: 850px){
+  @media (max-width: 1080px){
     .recuadro2{
         display: none;
     }
-    .background{
+    .background2{
         display:none;
     }
     
 }  
-
-
-
 </style>

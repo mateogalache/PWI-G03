@@ -39,7 +39,7 @@ import Header2 from '../components/Header2.vue'
                 <br/>
                 <div class = cont> <p>¿Seguro que quieres cerrar la sesión? </p> </div><br/>
                 <div class = "contI2">
-                    <a href = "."><button class = "rectanguloC">
+                    <a href = "Login"><button class = "rectanguloC">
                         <p><FONT color = "white">Cerrar sesión</FONT></p>
                     </button></a>
                     <a href = "Perfil"><button class = "rectanguloC">
@@ -200,13 +200,16 @@ import Header2 from '../components/Header2.vue'
     justify-content: center;
     align-items:center;
 }
-@media (min-width:850px){
+@media (min-width:1080px){
     .Rectanguloborrar{
         width: 1000px;
         
     }
     .transparent10{
         height: 24.5px;
+    }
+    .rectanguloB{
+        width: 500px;
     }
 }
 

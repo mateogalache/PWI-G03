@@ -10,7 +10,7 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <br><b class="titulo34">Friends</b>
+        <br><h2 class="titulo34">Friends</h2>
         <div class = "cont5">
             <div class = "BContainer5">
                 <p class = "buscar5">Busca</p>
@@ -37,8 +37,37 @@ import Header2 from '../components/Header2.vue'
                     <img src="src\assets\flecha.png" class = "icon5" alt="tick">
                 </div>
             </div>
+            <div class="PContainer5">
+                <img src="src/assets/usuario.png" class="perfil">
+                <a href="PerfilAmigo">
+                    <p class="nombre5">Nombre</p>
+                </a>
+                <div class="Clogo5">
+                    <img src="src\assets\flecha.png" class="icon5" alt="tick">
+                </div>
+            </div>
+            <div class="PContainer5">
+                <img src="src/assets/usuario.png" class="perfil">
+                <a href="PerfilAmigo">
+                    <p class="nombre5">Nombre</p>
+                </a>
+                <div class="Clogo5">
+                    <img src="src\assets\flecha.png" class="icon5" alt="tick">
+                </div>
+            </div>
+            <div class="PContainer5">
+                <img src="src/assets/usuario.png" class="perfil">
+                <a href="PerfilAmigo">
+                    <p class="nombre5">Nombre</p>
+                </a>
+                <div class="Clogo5">
+                    <img src="src\assets\flecha.png" class="icon5" alt="tick">
+                </div>
+            </div>
         </div>
+        <div class="transparent6"></div>
     </main>
+
     <Footer2>
 
     </Footer2>

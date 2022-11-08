@@ -13,36 +13,39 @@ import Header3 from '../components/Header3.vue'
 <div class = "container">
 
     <div class = "subtitulo">           
-            <b style="color: black">Creación Evento</b>
+            <h2 style="color: black">Crear Evento</h2>
     </div>
         <br><br/>
-    <div class = "rectanguloredondeadeo">           
-        <p style="color: grey">Nombre Evento</p>
+    <div class = "rectanguloredondeadeo">
+        <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento">           
     </div>
 
-    <div class = "rectanguloredondeadeo">           
-            <p style="color: grey">Tipo Evento</p>
+    <div class = "rectanguloredondeadeo"> 
+        <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento">           
     </div>
 
-    <div class = "rectanguloredondeadeo">           
-            <p style="color: grey">Dia Evento</p>
+    <div class = "rectanguloredondeadeo"> 
+        <input type="text" class="sinborde" name="Dia Evento" placeholder="Dia Evento">                     
     </div>
 
-    <div class = "rectanguloredondeadeo">           
-            <p style="color: grey">Localización</p>
+    <div class = "rectanguloredondeadeo">
+        <input type="text" class="sinborde" name="Localización" placeholder="Localización">                     
     </div>
 
-    <div class = "rectanguloredondeadeo">           
-            <p style="color: grey">Descripción</p>
+    <div class = "rectanguloredondeadeo">
+        <input type="text" class="sinborde" name="Descripción" placeholder="Descripción">                     
     </div>
+    <br>
+    <div class="parejabotones">
 
-    <div class = "reiniciar">           
-            <p style="color: black">Reiniciar</p>
-    </div>
+        </div>
+        <div class = "reiniciar">           
+                <p style="color: black">Reiniciar</p>
+        </div>
 
-    <div class = "crear">           
-            <p style="color: black">Crear</p>
-    </div>
+        <div class = "crear">           
+                <p style="color: black">Crear</p>
+        </div>
 </div>
 </main>
     <Footer2>
@@ -54,7 +57,6 @@ import Header3 from '../components/Header3.vue'
 <style scoped>
 
     .container{
-        
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -107,5 +109,73 @@ import Header3 from '../components/Header3.vue'
     .subtitulo{
         margin-right: 250px;
         margin-top: -40px;
+    }
+
+    .sinborde {
+        border: 0;
+        background-color: transparent;
+    }
+
+    .parejabotones{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    @media (min-width:1080px){
+
+        .container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .subtitulo{
+            display: flex;
+            margin: 0 auto;
+            margin-top: -30px;
+            font-size: x-large;
+        }
+
+        .rectanguloredondeadeo{
+            height: 40px;
+            width: 550px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:center;
+            justify-content: left;
+            padding: 5px;
+            text-align: center;
+            border-radius: 50px;
+            margin: 20px;
+        }
+
+        .reiniciar{
+            height: 30px;
+            width: 200px;
+            background-color: transparent;
+            border: 1px solid grey;
+            align-items:center;
+            justify-content: center;
+            padding: 4px;
+            text-align: center;
+            display: flex;
+            border-radius: 50px;
+            margin-right: 350px;
+        }
+    .crear{
+            height: 30px;
+            width: 200px;
+            background-color: transparent;
+            border: 1px solid grey;
+            align-items:center;
+            justify-content: center;
+            padding: 4px;
+            display: flex;
+            text-align: center;
+            border-radius: 50px;
+            margin-left: 350px;
+        }
     }
 </style>
