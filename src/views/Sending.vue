@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <div class = "cont">
-            <div class = "BContainer2">
+        <div class = "cont23">
+            <div class = "BContainer22">
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -21,24 +21,24 @@ import Header2 from '../components/Header2.vue'
                 </button>
             </div >
                 
-            <div class = "PContainer2">
+            <div class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre2">Nombre</p></a>
-                <div class = "Clogo">
+                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
+                <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer2">
+            <div class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre2">Nombre</p></a>
-                <div class = "Clogo">
+                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
+                <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer2">
+            <div class = "PContainer22">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre2">Nombre</p></a>
-                <div class = "Clogo">
+                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
+                <div class = "Clogo2">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </div>
@@ -50,8 +50,8 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
-.cont{
+<style scoped>
+.cont23{
 
     padding-left: 2%;
     padding-right: 2%;
@@ -60,7 +60,7 @@ import Header2 from '../components/Header2.vue'
     
     
 }
-.BContainer2{
+.BContainer22{
     margin-top: 2%;
     display: flex;
     flex-direction: row;
@@ -75,7 +75,7 @@ import Header2 from '../components/Header2.vue'
 .Pending{
     width: 100%;
 }
-.PContainer2{
+.PContainer22{
     margin-top: 3%;
     display: flex;
     flex-direction: row;
@@ -88,7 +88,7 @@ import Header2 from '../components/Header2.vue'
     
 
 }
-.Clogo{
+.Clogo2{
     display: flex;
     justify-content: end;
     justify-content: space-around;

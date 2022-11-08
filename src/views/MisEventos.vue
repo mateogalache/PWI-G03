@@ -83,4 +83,27 @@ import Header3 from '../components/Header3.vue'
     }
 
 
+    @media (min-width:1080px){
+ 
+        .container5{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+       
+        .eventocontainer5{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .parejas{
+            display: flex;
+            justify-content: space-around;
+        }
+
+}
 </style>

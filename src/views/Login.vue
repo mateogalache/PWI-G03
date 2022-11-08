@@ -8,49 +8,48 @@ import Header from '../components/Header.vue'
     </Header>
     <main id="Login">
         
-        <div class = "background">
+        <section class = "background"> </section>
 
-        </div>
-        <div class = "iniciarsesioncontainer">
-        <div class = "recuadrocentro">
-            <div class = "recuadro"></div>
-        </div>
-        
+        <body class = "iniciarsesioncontainer">
+            <article class = "recuadrocentro">
+                <section class = "recuadro"></section>
+            </article> 
 
+            <article class="contlogin">        
+                <img src = "https://i.ibb.co/80sWyBS/sallevents.png" class= "imglogo">
+            </article>
+            <br>
         
-        
-        <div class="contlogin">        
-        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" class= "imglogo" >
-        </div>
-
-        <br>
-        <div class="contlogin">
-        <div class = "center0">
-            <h2><b>Iniciar sesión</b></h2>              
-            <p><label>Email*</label></p>
-            <input type="text" class = "texto">
-            <p><label>Contraseña*</label></p>
-            <input type="password" class = "texto">
-            <p><small>¿Has olvidado tu contraseña?</small></p>
-        </div>
-       </div>
-       <br>
+            <article class="contlogin">        
+                <section class = "center0">
+                    <h2><b>Iniciar sesión</b></h2>              
+                    <p><label>Email*</label></p>
+                    <input type="text" class = "texto">
+                    <p><label>Contraseña*</label></p>
+                    <input type="password" class = "texto">
+                    <p><small>¿Has olvidado tu contraseña?</small></p>
+                </section>
+            </article>
+            <br>
     
-       <div class="contlogin"> 
-            <a href = "Home"><button class="Iniciar">
-            <b><FONT COLOR="white">Iniciar Sesión</FONT></b>
-            </button></a>
-        </div>
-        <div class="contlogin">
-        <div class = "center0">
-         <a HREF="Register"><p align = "right"><small>¿No tienes cuenta? Regístrate</small></p></a>
-        </div>
-       </div>
-      <div class = "transparent9">
+            <article class="contlogin"> 
+                <a href = "Home"><button class="Iniciar">
+                <b><FONT COLOR="white">Iniciar Sesión</FONT></b>
+                </button></a>
+            </article>
 
-      </div>
-    </div>
+            <article class="contlogin">
+                <section class = "center0">
+                    <a HREF="Register"><p align = "right"><small>¿No tienes cuenta? Regístrate</small></p></a>
+                </section>
+            </article>
+      
+            <section class = "transparent9"></section>
+
+        </body>
+
     </main>
+    
     <Footer>
         
     </Footer>
