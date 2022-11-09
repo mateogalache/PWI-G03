@@ -18,23 +18,23 @@ import Header3 from '../components/Header3.vue'
         <div class="eventocontainer5">
             <div class = "parejas">
             <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png" 
-                width="35" height="35" alt="Botón atrás"></a>
+                alt="Botón atrás"></a>
                 <img src="src/assets/ImagenesEventos/vino.png" 
-                width="35" height="35" alt="Botón atrás">
+               alt="Botón atrás">
             </div>
 
             <div class = "parejas">
                 <img src="src/assets/ImagenesEventos/teatro.png" 
-                width="35" height="35" alt="Botón atrás">
+                alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/libro.png" 
-                width="35" height="35" alt="Botón atrás">
+                alt="Botón atrás">
             </div>
 
             <div class = "parejas">
                 <img src="src/assets/ImagenesEventos/comida.png" 
-                width="35" height="35" alt="Botón atrás">
+                alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/viajes.png" 
-                width="35" height="35" alt="Botón atrás">
+                alt="Botón atrás">
             </div>
         </div>
     </div>

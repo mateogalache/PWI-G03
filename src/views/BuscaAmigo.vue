@@ -20,21 +20,21 @@ import Header2 from '../components/Header2.vue'
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
-                    <img src="src\assets\flecha.png" class = "icon4" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
-                    <img src="src\assets\flecha.png" class = "icon4" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
-                    <img src="src\assets\flecha.png" class = "icon4" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
         </article>
@@ -80,8 +80,6 @@ import Header2 from '../components/Header2.vue'
     width: 100%;
     justify-content: space-between;
    
-    
-
 }
 .Clogo4{
     display: flex;
@@ -89,12 +87,6 @@ import Header2 from '../components/Header2.vue'
     justify-content: space-around;
     margin-right: 5%;
 }
-.icon4{
-    
-    width: 16px;
-    height: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
+
 
 </style>

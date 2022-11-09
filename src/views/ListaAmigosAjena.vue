@@ -10,45 +10,45 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
+        <br><h2 class="titulo34">Friends</h2>
         <article class = "cont6">
-            <h3>Friends</h3>
             <div class = "BContainer6">
                 <p class = "buscar6">Busca</p>
             </div>
                 
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
+                <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Laura</p></a>
                 <div class = "Clogo6">
-                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
+                <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Javier</p></a>
                 <div class = "Clogo6">
-                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
+                <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Antonio</p></a>
                 <div class = "Clogo6">
-                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
+                <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Maria</p></a>
                 <div class = "Clogo6">
-                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer6">
-                <img src="src/assets/usuario.png" class = "perfil" width="35" height="35">
+                <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Carlos</p></a>
                 <div class = "Clogo6">
-                    <img src="src\assets\flecha.png" class = "icon6" alt="tick">
+                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
         </article>
@@ -60,8 +60,12 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
+.titulo34{
+    padding-left: 2%;
+    padding-right: 2%;
+}
 .cont6{
-
+    margin-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
     display: flex;
@@ -88,9 +92,10 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
     border: 1px solid black;
     border-radius: 25px;
-    width: 100%;
+    width: 98%;
     justify-content: space-between;
     padding-left: 2%;
+    
    
     
 
@@ -100,12 +105,5 @@ import Header2 from '../components/Header2.vue'
     justify-content: end;
     justify-content: space-around;
     margin-right: 5%;
-}
-.icon6{
-    
-    width: 16px;
-    height: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 </style>

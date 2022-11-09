@@ -94,12 +94,6 @@ import Header2 from '../components/Header2.vue'
     justify-content: space-around;
     margin-right: 5%;
 }
-.icon{
-    
-    width: 16px;
-    height: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
+
 
 </style>

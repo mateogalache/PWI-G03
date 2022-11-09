@@ -26,24 +26,24 @@ import Header2 from '../components/Header2.vue'
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
-                    <img src="src\assets\tick.png" class = "icon2" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon2" alt="tick">
+                    <img src="src\assets\tick.png" class = "icon" alt="tick">
+                    <img src="src\assets\cross.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
-                    <img src="src\assets\tick.png" class = "icon2" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon2" alt="tick">
+                    <img src="src\assets\tick.png" class = "icon" alt="tick">
+                    <img src="src\assets\cross.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer33">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
                 <div class = "Clogo2">
-                    <img src="src\assets\tick.png" class = "icon2" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon2" alt="tick">
+                    <img src="src\assets\tick.png" class = "icon" alt="tick">
+                    <img src="src\assets\cross.png" class = "icon" alt="tick">
                 </div>
             </section>
         </article>
@@ -98,12 +98,6 @@ import Header2 from '../components/Header2.vue'
     justify-content: space-around;
     margin-right: 5%;
 }
-.icon2{
-    
-    width: 16px;
-    height: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
+
 
 </style>
