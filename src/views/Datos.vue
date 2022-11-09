@@ -66,11 +66,8 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
-.separacion{
-    display:flex;
-    
-}
+<style scoped>
+
 .rectangulo5{
     height: 30px;
     width: 300px;
@@ -110,13 +107,7 @@ import Header2 from '../components/Header2.vue'
    align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
+ 
     
 @media (min-width:1080px){
     .rectangulo5{

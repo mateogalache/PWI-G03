@@ -5,9 +5,7 @@ import Header3 from '../components/Header3.vue';
 </script>
 
 <template>
- 
 
- 
     <Header3>
         
     </Header3>

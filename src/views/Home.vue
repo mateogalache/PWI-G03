@@ -74,13 +74,6 @@ import Header3 from '../components/Header3.vue'
         flex-direction: row;
     }
 
-    .titulo{
-        margin-top: 30px;
-        display: flex;
-       
-    }
-
-
    .eventocontainer{
        background-color: lightgrey;
        display: flex;
@@ -101,49 +94,6 @@ import Header3 from '../components/Header3.vue'
        flex-direction: row;
    }
 
-   .rectanguloredondeadeo2{
-       color: gray;
-       height: 25px;
-       width: 275px;
-       background-color: transparent;
-       border: 1px solid grey;
-       display: flex;
-       align-items:center;
-       padding: 5px;
-       border-radius: 50px;
-       margin: 25px;
-       margin-right: 100px;
-   }
-
-   .rectanguloredondeadeo3{
-       color: white;
-       height: 25px;
-       width: 75px;
-       background-color: grey;
-       border: 1px solid grey;
-       display: flex;
-       align-items:center;
-       justify-content: center;
-       border-radius: 50px;
-       margin: 25px;
-       margin-right: -275px;
-       margin-top: -57px;
-   }
-
-   .rectanguloredondeadeo4{
-       color: gray;
-       height: 50px;
-       width: 275px;
-       background-color: transparent;
-       border: 1px solid grey;
-       display: flex;
-       align-items:top;
-       padding: 5px;
-       border-radius: 5px;
-       margin: 25px;
-       margin-right: 100px;
-       margin-top: -10px;
-   }
 
    @media (min-width:1080px){
        

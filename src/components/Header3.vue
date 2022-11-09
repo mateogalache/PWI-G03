@@ -11,11 +11,6 @@
     
     </header> 
     <main>
-      
-  
-        
-  
-     
     </main>
     <footer>
     </footer>

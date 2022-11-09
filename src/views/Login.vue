@@ -86,7 +86,7 @@ import Header from '../components/Header.vue'
    
 } 
 
- .texto{
+.texto{
     width: 98%;
     background-color: transparent;
     border: none;
@@ -94,7 +94,7 @@ import Header from '../components/Header.vue'
 
   }   
 
-  .contlogin{
+.contlogin{
     display: flex;
     justify-content: center;
    align-items: center;

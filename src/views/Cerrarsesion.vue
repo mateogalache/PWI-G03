@@ -124,9 +124,6 @@ import Header2 from '../components/Header2.vue'
     height: 135px;
     background-color: transparent;
 }
-.transparent{
-    display:flex;
-}
 .Redondap{
     display:flex;
     width: 120px;
