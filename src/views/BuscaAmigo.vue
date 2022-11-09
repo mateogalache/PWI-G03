@@ -66,10 +66,7 @@ import Header2 from '../components/Header2.vue'
     width: 100%;
     margin-bottom: 2%;
 }
-.buscar4{
-    display: flex;
-    padding-left: 5%;
-}
+
 .PContainer4{
     margin-top: 3%;
     display: flex;

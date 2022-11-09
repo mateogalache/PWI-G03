@@ -13,7 +13,7 @@ import Header2 from '../components/Header2.vue'
         <br><h2 class="titulo34">Friends</h2>
         <article class = "cont6">
             <div class = "BContainer6">
-                <p class = "buscar6">Busca</p>
+                <p class = "buscar">Busca</p>
             </div>
                 
             <section class = "PContainer6">
@@ -81,10 +81,7 @@ import Header2 from '../components/Header2.vue'
     width: 100%;
 
 }
-.buscar6{
-    display: flex;
-    padding-left: 5%;
-}
+
 .PContainer6{
     margin-top: 3%;
     display: flex;
