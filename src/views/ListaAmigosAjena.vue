@@ -92,9 +92,6 @@ import Header2 from '../components/Header2.vue'
     width: 98%;
     justify-content: space-between;
     padding-left: 2%;
-    
-   
-    
 
 }
 .Clogo6{
