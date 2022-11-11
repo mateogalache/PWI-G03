@@ -9,6 +9,11 @@ import Header3 from '../components/Header3.vue';
     <Header3>
         
     </Header3>
+    <!--Ponemos article para separar los diferentes contenidos dentro de la página, dentro de cada article tenemos el contenido donde las palabras están en p o h2 según su importancia
+        como por ejemplo el título "Perfil" que está en h2. Además para separar los contenidos dentro del article ponemos section porque dentro de cada article era necesario separar 
+        por secciones. Y como último tenemos los botones que nos sirven para representar botones donde el ususario puede "clickar".
+        Al estar toda la página dividida de la misma manera no hacia falta comentar cada tag sino que hemos hecho un comentario general que define todas las partes de la página.-->
+    
     <main>        
         <br>
         <article class = "contperfil">

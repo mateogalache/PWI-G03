@@ -6,9 +6,11 @@ import Header2 from '../components/Header2.vue'
     <head>
         
     </head>
+    
     <Header2>
         
     </Header2>
+    <!--Otra página con uns estructura muy marcada que se divide en article y section.-->
     <main>
         <br>
         <h2>Estadísticas</h2>
@@ -22,6 +24,7 @@ import Header2 from '../components/Header2.vue'
         <article class = "cont">
             <section class = "rectangulo4">
                 <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</FONT></p>
+                <!--En este caso hemos utilizado aside ya que simplemente hemos utilizado este tag para colocar y dimensionar unas imagenes-->
                 <aside class = "estrellas">
                     <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
                     <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">

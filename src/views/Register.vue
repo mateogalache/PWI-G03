@@ -7,9 +7,9 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
-      <picture class = "background2"></picture>
+      <picture class = "background2"></picture> <!--Ponemos el tag de picture para definir una imagen-->
       
-      <section class = "recuadro2"></section>
+      <section class = "recuadro2"></section> <!-- Al estar todo dentro de un recuadro lo identificamos como body-->
       <body class = "registercentro">
         <br>
         <section class="cont">

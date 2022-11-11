@@ -4,8 +4,10 @@ import Header2 from '../components/Header2.vue'
 </script>
 <template>
     <Header2>
-        
+    
     </Header2>
+    <!-- Al igual que el perfil esta página tiene una estructura muy parecida en todas las partes por lo que se divide en article, section y en este caso en vez de botones ponemos nav
+        ya que nos servirá para poder navegar por las diferentes opciones de cada dato-->
     <main>
         <br>
         <h2>Datos</h2>

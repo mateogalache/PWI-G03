@@ -8,9 +8,9 @@ import Header from '../components/Header.vue'
     </Header>
     <main id="Login">
         
-        <picture class = "background"> </picture>
+        <picture class = "background"> </picture> <!--Ponemos el tag de picture para definir una imagen-->
 
-        <body class = "iniciarsesioncontainer">
+        <body class = "iniciarsesioncontainer"> <!-- Al estar todo dentro de un recuadro lo identificamos como body-->
             <article class = "recuadrocentro">
                 <section class = "recuadro"></section>
             </article> 
