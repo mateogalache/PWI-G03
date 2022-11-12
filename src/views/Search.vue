@@ -15,10 +15,11 @@ import Header3 from '../components/Header3.vue'
 
         <div class = "rectanguloredondeadeo2">           
             <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
-        </div>           
-        <a href = "calendarioevento"><div class = "rectanguloredondeadeo3">           
+            <a href = "calendarioevento"><div class = "rectanguloredondeadeo3">           
               Filtro
-        </div></a>
+            </div></a>
+        </div>           
+        
         <div class = "rectanguloredondeadeo4"> 
             <input type="text" class="sinborde" name="Historial" placeholder="Historial">
        </div>
@@ -80,6 +81,7 @@ import Header3 from '../components/Header3.vue'
         padding: 2em;
         margin-top: -15px;
         text-align: center;
+        
     }
 
     img{
@@ -96,15 +98,17 @@ import Header3 from '../components/Header3.vue'
     .rectanguloredondeadeo2{
         color: gray;
         height: 25px;
-        width: 275px;
+        width: 80%;
         background-color: transparent;
         border: 1px solid grey;
         display: flex;
         align-items:center;
         padding: 5px;
         border-radius: 50px;
-        margin: 25px;
-        margin-right: 100px;
+        margin: 5%;
+        margin-top: 5%;
+        justify-content: space-between;
+       
     }
 
     .rectanguloredondeadeo3{
@@ -117,24 +121,21 @@ import Header3 from '../components/Header3.vue'
         align-items:center;
         justify-content: center;
         border-radius: 50px;
-        margin: 25px;
-        margin-right: -275px;
-        margin-top: -57px;
+        
+       
     }
 
     .rectanguloredondeadeo4{
         color: gray;
         height: 50px;
-        width: 275px;
+        width: 80%;
         background-color: transparent;
         border: 1px solid grey;
         display: flex;
         align-items:top;
         padding: 5px;
         border-radius: 5px;
-        margin: 25px;
-        margin-right: 100px;
-        margin-top: -10px;
+        margin-bottom: 10%;
     }
 
     .sinborde {
@@ -174,9 +175,7 @@ import Header3 from '../components/Header3.vue'
             align-items:center;
             justify-content: center;
             border-radius: 50px;
-            margin: 25px;
-            margin-left: 775px;
-            margin-top: -57px;
+            
         }
 
         .rectanguloredondeadeo4{
@@ -198,8 +197,11 @@ import Header3 from '../components/Header3.vue'
             flex-direction: column;
             margin: 0 auto;
             padding: 1em;
-            width: 90%;
+            width: 89%;
             text-align: center;
+            margin-left: 3%;
+            
+
         }
 
         .parejas{
