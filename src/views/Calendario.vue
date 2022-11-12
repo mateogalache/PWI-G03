@@ -7,27 +7,29 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<div class="rectanguloopacidad2"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos-->
 
-</div>
 <Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
         
 </Header3>
 
 <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
-    <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
+    <section class = "container">
 
-        <div class = "rectanguloredondeadeo2"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos--> 
-            Buscar Evento
+        <div class = "rectanguloredondeadeo2">  <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
+            Buscar Evento         
+            <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
         </div>
         <div class = "rectanguloredondeadeo3">           
             Filtro
         </div>
         <div class = "rectanguloredondeadeo4">           
-            Historial
+            <input type="text" class="sinborde" name="Historial" placeholder="Historial">
         </div>
-        
-        <section class="eventocontainer"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar div o article-->
+
+        <section class="eventocontainer"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
+            <div class="subtitulo">
+                En tu zona
+            </div>
 
             <section class = "parejas">
             <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
@@ -52,31 +54,34 @@ import Header3 from '../components/Header3.vue'
             
         </section>
         
-        <section class="popupcalendario"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar div o article-->
-                <div class="popup2calendario">
-                    <p>Lugar...</p>
+        <section class="popup">  <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
+                
+                <div class="popup2"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
+                    <input type="text" class="sinborde" name="Lugar" placeholder="Lugar">
                 </div>
-                <section class="popup2calendario">
-                    <p>Fecha Inicio...</p>
-                        <div class="imga">
-                            <img src = "src/assets/calendar.png" style="width:15px !important; height:15px !important;">
-                        </div>
-                </section>
-                <section class="botones2calendario">
-                    <div class="popup3calendario">
-                        <b>Aplicar</b>
-                    </div>
-                    <div class="popup3calendario">
-                        <b>Cancelar</b>
-                    </div>
-                </section>       
-        </section>
 
-        <div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos--> 
-                <img class="calendario" src = "src/assets/calendario.jpeg" style="width:175px !important; height:175px !important;">
-        </div> 
-        
+                <section class="popup2">
+                    <input type="text" class="sinborde" name="Fecha Inicio" placeholder="Fecha Inicio">
+                        <a href = "calendario"><div class="imga">
+                            <img src = "src/assets/calendar.png" style="width:20px !important; height:20px !important;">
+                        </div></a>
+                </section>
+
+                <section class="botones2">
+                    <a href = "search"><div class="popup3">
+                        <b>Aplicar</b>
+                    </div></a>
+                    <a href = "search"><div class="popup3">
+                        <b>Cancelar</b>
+                    </div></a>
+                
+        </section>
+        </section>
+                <div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos--> 
+                <img class="calendario" src = "src/assets/calendario.jpeg" style="width:300px !important; height:300px !important; ">
+                </div> 
     </section>
+           
 
 </main>
 
@@ -85,13 +90,21 @@ import Header3 from '../components/Header3.vue'
         
 </Footer2>
 
-<div class="rectanguloopacidad2">
+<a href = "calendarioevento"><div class="rectanguloopacidad"></div></a>
     
-</div>
+
 
 </template>
 
 <style scoped>
+    .calendario{
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top:60%;
+        left: 49.25%;
+        z-index: 5;
+        
+    }
 
     .container{
         display: flex;
@@ -163,18 +176,19 @@ import Header3 from '../components/Header3.vue'
     margin-top: -10px;
     }
 
-    .rectanguloopacidad2{
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      background-color: black;
-      opacity: 70%;
+    .rectanguloopacidad{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: black;
+        opacity: 70%;
+        bottom: 0;
     }
 
-    .popupcalendario{
+    .popup{
         background-color: white;
-        height: 60px;
-        width: 200px;
+        height: 100px;
+        width: 220px;
         padding: 2em;
         border-radius: 30px;
         justify-content: center;
@@ -182,11 +196,13 @@ import Header3 from '../components/Header3.vue'
         display: flex;
         flex-direction: column;
         position: absolute;
-        z-index: 1;
+        top:40%;
+        left:50%;
+        transform: translate(-50%,-50%);
         
     }
 
-    .popup2calendario{
+    .popup2{
         color: gray;
         height: 25px;
         width: 200px;
@@ -199,7 +215,7 @@ import Header3 from '../components/Header3.vue'
         justify-content: space-between;
     }
 
-    .popup3calendario{
+    .popup3{
         color: black;
         height: 25px;
         width: 75px;
@@ -213,22 +229,79 @@ import Header3 from '../components/Header3.vue'
     }
 
 	.imga{
-        height: 190%;
-        width: 20%;
-    }
-    
-
-    .calendario{
-        display: flex;
-        position: absolute;
-        top: 65%;
-        left: 25%;
-        z-index: 2;
+        height: 200%;
+        width: 10%;
     }
 
-    .botones2calendario{
+    .botones2{
         display: flex;
         justify-content: space-around;
+    }
+
+    .sinborde {
+        border: 0;
+        background-color: transparent;
+    }
+
+    @media (min-width:1080px){
+        .rectanguloredondeadeo2{
+            color: gray;
+            height: 25px;
+            width: 700px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:center;
+            padding: 5px;
+            border-radius: 50px;
+            margin: 25px;
+            margin-right: 100px;
+        }
+
+        .rectanguloredondeadeo3{
+                color: white;
+                height: 25px;
+                width: 75px;
+                background-color: grey;
+                border: 1px solid grey;
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                border-radius: 50px;
+                margin: 25px;
+                margin-left: 775px;
+                margin-top: -57px;
+        }
+
+        .rectanguloredondeadeo4{
+            color: gray;
+            height: 50px;
+            width: 700px;
+            background-color: transparent;
+            border: 1px solid grey;
+            display: flex;
+            align-items:top;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 25px;
+            margin-right: 100px;
+            margin-top: -10px;
+        }
+        .eventocontainer{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            margin-top: -5px;
+            width: 675px;
+            margin-left: -75px;
+            text-align: center;
+        }
+
+        .parejas{
+            display: flex;
+            justify-content: space-around;
+        }
     }
 
 

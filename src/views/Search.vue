@@ -16,9 +16,9 @@ import Header3 from '../components/Header3.vue'
         <div class = "rectanguloredondeadeo2">           
             <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
         </div>           
-        <div class = "rectanguloredondeadeo3">           
+        <a href = "calendarioevento"><div class = "rectanguloredondeadeo3">           
               Filtro
-        </div>
+        </div></a>
         <div class = "rectanguloredondeadeo4"> 
             <input type="text" class="sinborde" name="Historial" placeholder="Historial">
        </div>

@@ -62,18 +62,18 @@ import Header3 from '../components/Header3.vue'
 
                 <section class="popup2">
                     <input type="text" class="sinborde" name="Fecha Inicio" placeholder="Fecha Inicio">
-                        <div class="imga">
+                        <a href = "calendario"><div class="imga">
                             <img src = "src/assets/calendar.png" style="width:20px !important; height:20px !important;">
-                        </div>
+                        </div></a>
                 </section>
 
                 <section class="botones2">
-                    <div class="popup3">
+                    <a href = "search"><div class="popup3">
                         <b>Aplicar</b>
-                    </div>
-                    <div class="popup3">
+                    </div></a>
+                    <a href = "search"><div class="popup3">
                         <b>Cancelar</b>
-                    </div>
+                    </div></a>
                 </section>
                 
         </section>
@@ -185,7 +185,11 @@ import Header3 from '../components/Header3.vue'
         display: flex;
         flex-direction: column;
         position: absolute;
-        z-index: 1;
+        top:40%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        z-index:5;
+        
     }
 
     .popup2{
