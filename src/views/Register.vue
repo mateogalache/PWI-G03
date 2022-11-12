@@ -107,6 +107,7 @@ import Header from '../components/Header.vue'
   }
   .registercentro{
     display:block;
+    margin: 2%;
   } 
       
     @media (min-width: 1080px){
@@ -114,7 +115,7 @@ import Header from '../components/Header.vue'
         width: 500px;
       }
       .registercentro{
-        
+        margin: 0;
         position: absolute;
         top: 53%;
         left: 50%;

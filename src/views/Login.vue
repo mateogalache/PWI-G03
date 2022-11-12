@@ -104,6 +104,7 @@ import Header from '../components/Header.vue'
     
 .iniciarsesioncontainer{
     display: block;
+    margin: 2%;
 }
 .imglogo{
     width : 300px;

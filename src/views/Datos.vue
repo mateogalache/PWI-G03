@@ -10,7 +10,9 @@ import Header2 from '../components/Header2.vue'
         ya que nos servirá para poder navegar por las diferentes opciones de cada dato-->
     <main>
         <br>
-        <h2>Datos</h2>
+        <section class = margendatos>
+            <h2>Datos</h2>
+        </section>
         <br/><br/>
 
         <article class = "cont">
@@ -70,6 +72,9 @@ import Header2 from '../components/Header2.vue'
 
 <style scoped>
 
+.margendatos{
+    margin-left: 2%;
+}
 .rectangulo5{
     height: 30px;
     width: 300px;
@@ -113,12 +118,16 @@ import Header2 from '../components/Header2.vue'
     
 @media (min-width:1080px){
     .rectangulo5{
-        width: 1000px;
+        width: 800px;
         justify-content: space-between;
                
     }
     .rectangulo2{
         margin-right: 20px;
+    }
+    .Redondap{
+        width: 200px;
+        height: 200px;
     }
 }
 
