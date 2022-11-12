@@ -24,7 +24,7 @@ import Header2 from '../components/Header2.vue'
         
     </Footer2>
 </template>
-<style>
+<style scoped>
     .imgredonda{        
     width:40%;
     height:40%;
@@ -62,13 +62,7 @@ import Header2 from '../components/Header2.vue'
         color: white;    
   
     } 
-    .nombre{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        
-    }
+   
     @media (min-width: 1080px){
 
     h2{
@@ -108,8 +102,7 @@ import Header2 from '../components/Header2.vue'
 
 
     }
-    }
-
+}
     
    
 

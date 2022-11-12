@@ -24,7 +24,7 @@
     flex-direction: row;
     padding-left: 5%;
     padding-right: 5%;
-    background-color: cadetblue;
+    background-color:var(--main-bg-color);
     align-items: center;
     flex-wrap: wrap;
     

@@ -77,11 +77,7 @@ import Header2 from '../components/Header3.vue'
         flex-direction: row;
     }
 
-    .titulo{
-        margin-top: 30px;
-        display: flex;
-       
-    }
+
 
 
 </style>

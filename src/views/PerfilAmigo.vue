@@ -60,9 +60,6 @@ import Header2 from '../components/Header2.vue'
   </Footer2>
 </template>
 <style scoped>
-.separacion{
-    display:flex;
-}
 .rectangulo1{
     height: 30px;
     width: 300px;
@@ -92,28 +89,7 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
-.boton{
-    display: flex;
-    width: 120px;
-    height: 20px;
-    background-color: rgb(104, 100, 100);
-    border-radius: 22px;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 5%;
-}
+
 @media (min-width: 1080px){
    
     .Redondap{
@@ -155,8 +131,6 @@ import Header2 from '../components/Header2.vue'
 
     }
 }
-
-
 
 
 </style>

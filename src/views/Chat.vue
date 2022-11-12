@@ -53,6 +53,7 @@ import Header2 from '../components/Header2.vue'
 			<input type="text" />
 			 <button> Enviar </button>
 		</div>
+		<div class="transparent6"></div>
     </main>
 	<Footer2>
 
@@ -115,7 +116,7 @@ h3{
 }
 
 .input-box {
-	position: absolute;
+	
 	
 	left: 0;
 	right: 0;

@@ -4,8 +4,10 @@ import Header2 from '../components/Header2.vue'
 </script>
 <template>
     <Header2>
-        
+    
     </Header2>
+    <!-- Al igual que el perfil esta página tiene una estructura muy parecida en todas las partes por lo que se divide en article, section y en este caso en vez de botones ponemos nav
+        ya que nos servirá para poder navegar por las diferentes opciones de cada dato-->
     <main>
         <br>
         <h2>Datos</h2>
@@ -66,11 +68,8 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 
-<style>
-.separacion{
-    display:flex;
-    
-}
+<style scoped>
+
 .rectangulo5{
     height: 30px;
     width: 300px;
@@ -110,13 +109,7 @@ import Header2 from '../components/Header2.vue'
    align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
+ 
     
 @media (min-width:1080px){
     .rectangulo5{

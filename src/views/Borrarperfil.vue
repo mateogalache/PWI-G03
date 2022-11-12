@@ -10,6 +10,8 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
+    <!--Esta página es la misma que la de perfil pero añadiendo una seccion de un rectangulo negro que nos servira para oscurecer la página y ponemos por encima de todo
+        un article idependiente que muestra el "pop up" BORRAR PERFIL donde el coontenido está dividio en sections y botones-->
     <main>        
         <br>
         
@@ -118,15 +120,8 @@ import Header2 from '../components/Header2.vue'
     display: block;
     margin-top: 20px;
 }
-.transparent10{
-    display:flex;
-    width: 100%;
-    height: 135px;
-    background-color: transparent;
-}
-.transparent{
-    display:flex;
-}
+
+
 .Redondap{
     display:flex;
     width: 120px;
@@ -208,9 +203,7 @@ import Header2 from '../components/Header2.vue'
         width: 700px;
         
     }
-    .transparent10{
-        height: 24.5px;
-    }
+
     .rectanguloB{
         width: 500px;
     }

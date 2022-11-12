@@ -10,9 +10,12 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
+    <!--Esta página es la misma que la de perfil pero añadiendo una seccion de un rectangulo negro que nos servira para oscurecer la página y ponemos por encima de todo
+        un article idependiente que muestra el "pop up" CERRAR SESIÓN donde el coontenido está dividio en sections y botones-->
+
     <main>        
         <br>
-        
+               
         <article class = "contperfil">
             <h2>Perfil</h2> 
             <section class = "redondacolocacion">
@@ -123,9 +126,6 @@ import Header2 from '../components/Header2.vue'
     width: 100%;
     height: 135px;
     background-color: transparent;
-}
-.transparent{
-    display:flex;
 }
 .Redondap{
     display:flex;

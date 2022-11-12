@@ -92,13 +92,6 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
 .boton{
     display: flex;
     width: 120px;
