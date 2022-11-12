@@ -6,6 +6,7 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
+    <!--Pagina cuandro entras al perfil de un amigo-->
     <main>
         <br>
        <h2>Datos</h2>
@@ -53,7 +54,7 @@ import Header2 from '../components/Header2.vue'
             
        
 
-  <div class="transparent6"></div>
+  <div class="transparent6"></div><!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
   </main>
   <Footer2>
       
@@ -101,8 +102,7 @@ import Header2 from '../components/Header2.vue'
     .Clogo{
         width: 20px;
         height: 20px;
-        margin-left: auto;
-
+        margin-left: 50%
     }
     .cont{
         display: flex;
@@ -122,7 +122,7 @@ import Header2 from '../components/Header2.vue'
         height: 50px;
         font-size: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         

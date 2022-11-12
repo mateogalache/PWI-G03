@@ -7,13 +7,14 @@ import Header2 from '../components/Header2.vue'
     <Header2>
 
     </Header2>
+	<!--Chat con una persona-->
     <main>
         <div class="nomchat">
             <img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
             <h2>Antonio99</h2>
         </div>
         
-        <div class="box">
+        <div class="box"><!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article-->
 			<div class="item left">
 				<img class="header-img" src="src/assets/FRENTE-NITIDA.webp" />
 				<span class = "message"> Que me cuentas </span>
