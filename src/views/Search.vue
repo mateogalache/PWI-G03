@@ -26,7 +26,7 @@ import Header3 from '../components/Header3.vue'
         
         <div class="eventocontainer">
             <div class="subtitulo">
-                En tu zona
+                <b>En tu zona</b>
             </div>
 
             <div class = "parejas">
@@ -144,10 +144,18 @@ import Header3 from '../components/Header3.vue'
     }
 
     @media (min-width:1080px){
+
+        .container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
         .rectanguloredondeadeo2{
             color: gray;
             height: 25px;
-            width: 700px;
+            width: 90%;
             background-color: transparent;
             border: 1px solid grey;
             display: flex;
@@ -159,29 +167,27 @@ import Header3 from '../components/Header3.vue'
         }
 
         .rectanguloredondeadeo3{
-                color: white;
-                height: 25px;
-                width: 75px;
-                background-color: grey;
-                border: 1px solid grey;
-                display: flex;
-                align-items:center;
-                justify-content: center;
-                border-radius: 50px;
-                margin: 25px;
-                margin-left: 775px;
-                margin-top: -57px;
+            height: 25px;
+            width: 75px;
+            background-color: grey;
+            border: 1px solid grey;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border-radius: 50px;
+            margin: 25px;
+            margin-left: 775px;
+            margin-top: -57px;
         }
 
         .rectanguloredondeadeo4{
             color: gray;
             height: 50px;
-            width: 700px;
+            width: 90%;
             background-color: transparent;
             border: 1px solid grey;
             display: flex;
             align-items:top;
-            padding: 5px;
             border-radius: 5px;
             margin: 25px;
             margin-right: 100px;
@@ -191,10 +197,9 @@ import Header3 from '../components/Header3.vue'
             background-color: lightgrey;
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
             padding: 1em;
-            margin-top: -5px;
-            width: 675px;
-            margin-left: -75px;
+            width: 90%;
             text-align: center;
         }
 

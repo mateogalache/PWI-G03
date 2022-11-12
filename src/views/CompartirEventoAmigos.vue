@@ -9,10 +9,10 @@ import Header3 from '../components/Header3.vue'
             
     </Header3>
 
-        <main>
-            <div class = "containercea">
+        <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
+            <article class = "containercea"> <!--Usamos article porque varios items representan un listado-->
 
-                <div class="eventocontainercea">
+                <article class="eventocontainercea">
                     <h1>Amistades</h1>
 
                         <ul>
@@ -48,14 +48,13 @@ import Header3 from '../components/Header3.vue'
                         </ul>
                         
                         <br>
-                        <div class = "botonenviar">           
+                        <section class = "botonenviar"> <!--Usamos section porque  su contenido está relacionado y forma parte de un mismo significado. También podríamos usar div-->
                                     <p style="color: black">Enviar</p>
-                            
-                        </div>
+                        </section>
                         <br>
-                </div>
+                </article>
                     
-            </div>
+            </article>
         </main>
 
 

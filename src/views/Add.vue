@@ -5,50 +5,50 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-    <Header3>
+    <Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
             
     </Header3>
-    <main>
+    <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
         <br><br/><br/><br/>
-<div class = "container">
+        <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
 
-    <div class = "subtitulo">           
-        <p><b>Crear Evento</b></p>
-    </div>
-        
-    <div class = "rectanguloredondeadeo">
-        <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento">           
-    </div>
+            <div class = "subtitulo"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos,
+                                        es la herramienta para unir elementos cuando no podemos asociar significado semántico a este conjunto.-->       
+                <p><b>Crear Evento</b></p>
+            </div>
+                
+            <div class = "rectanguloredondeadeo">
+                <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento">           
+            </div>
 
-    <div class = "rectanguloredondeadeo"> 
-        <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento">           
-    </div>
+            <div class = "rectanguloredondeadeo"> 
+                <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento">           
+            </div>
 
-    <div class = "rectanguloredondeadeo"> 
-        <input type="text" class="sinborde" name="Dia Evento" placeholder="Dia Evento">                     
-    </div>
+            <div class = "rectanguloredondeadeo"> 
+                <input type="text" class="sinborde" name="Dia Evento" placeholder="Dia Evento">                     
+            </div>
 
-    <div class = "rectanguloredondeadeo">
-        <input type="text" class="sinborde" name="Localización" placeholder="Localización">                     
-    </div>
+            <div class = "rectanguloredondeadeo">
+                <input type="text" class="sinborde" name="Localización" placeholder="Localización">                     
+            </div>
 
-    <div class = "rectanguloredondeadeo">
-        <input type="text" class="sinborde" name="Descripción" placeholder="Descripción">                     
-    </div>
-    <br>
-    <div class="parejabotones">
+            <div class = "rectanguloredondeadeo">
+                <input type="text" class="sinborde" name="Descripción" placeholder="Descripción">                     
+            </div>
+            <br>
+            <section class="parejabotones">
+            </section>
+                    <div class = "reiniciar">           
+                            <p style="color: black">Reiniciar</p>
+                    </div>
 
-        </div>
-        <div class = "reiniciar">           
-                <p style="color: black">Reiniciar</p>
-        </div>
-
-        <div class = "crear">           
-                <p style="color: black">Crear</p>
-        </div>
-    </div>
-</main>
-    <Footer2>
+                    <div class = "crear">           
+                            <p style="color: black">Crear</p>
+                    </div>
+        </section> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
+    </main>
+    <Footer2> <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
         
     </Footer2>
     

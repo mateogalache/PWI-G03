@@ -7,16 +7,17 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<div class="rectanguloopacidad2">
+<div class="rectanguloopacidad2"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos-->
 
 </div>
-<Header3>
+<Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
         
 </Header3>
 
-<main>
-    <div class = "container">
-        <div class = "rectanguloredondeadeo2">           
+<main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
+    <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
+
+        <div class = "rectanguloredondeadeo2"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos--> 
             Buscar Evento
         </div>
         <div class = "rectanguloredondeadeo3">           
@@ -25,61 +26,62 @@ import Header3 from '../components/Header3.vue'
         <div class = "rectanguloredondeadeo4">           
             Historial
         </div>
-        <div class="eventocontainer">
+        
+        <section class="eventocontainer"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar div o article-->
 
-            <div class = "parejas">
+            <section class = "parejas">
             <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
                 width="35" height="35" alt="Botón atrás"></a>
                 <img src="src/assets/ImagenesEventos/vino.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/teatro.png" 
                 width="35" height="35" alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/libro.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/comida.png" 
                 width="35" height="35" alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/viajes.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
             
-        </div>
+        </section>
         
-        <div class="popupcalendario"> 
+        <section class="popupcalendario"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar div o article-->
                 <div class="popup2calendario">
                     <p>Lugar...</p>
                 </div>
-                <div class="popup2calendario">
+                <section class="popup2calendario">
                     <p>Fecha Inicio...</p>
                         <div class="imga">
                             <img src = "src/assets/calendar.png" style="width:15px !important; height:15px !important;">
                         </div>
-                </div>
-                <div class="botones2calendario">
+                </section>
+                <section class="botones2calendario">
                     <div class="popup3calendario">
                         <b>Aplicar</b>
                     </div>
                     <div class="popup3calendario">
                         <b>Cancelar</b>
                     </div>
-                </div>       
-        </div>
+                </section>       
+        </section>
 
-        <div>
+        <div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos--> 
                 <img class="calendario" src = "src/assets/calendario.jpeg" style="width:175px !important; height:175px !important;">
         </div> 
         
-    </div>
+    </section>
 
 </main>
 
         
-<Footer2>
+<Footer2> <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
         
 </Footer2>
 
