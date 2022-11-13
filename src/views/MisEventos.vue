@@ -13,8 +13,10 @@ import Header3 from '../components/Header3.vue'
 <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
 
     <br>
-    <b>&nbsp;&nbsp;Mis Eventos </b>
-    <section class = "container5"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
+    <section class = "margenmis">
+        <h2>Mis Eventos </h2>
+    </section>
+    <section class = "container5">
               
         <section class="eventocontainer5">
             <section class = "parejas">
@@ -51,6 +53,9 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+    .margenmis{
+        margin-left: 2%;
+    }
 
     .container5{
         display: flex;
@@ -86,6 +91,9 @@ import Header3 from '../components/Header3.vue'
 
 
     @media (min-width:1080px){
+        h2{
+            font-size: 40px;
+        }
  
         .container5{
             display: flex;

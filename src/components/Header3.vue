@@ -1,7 +1,7 @@
 <template>
 
     <header class  = "HContainer0">
-        <h1>Sallevents</h1>
+        <h1>SALLEVENTS</h1>
         
   
         

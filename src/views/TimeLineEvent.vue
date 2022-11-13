@@ -36,4 +36,10 @@ import Header2 from '../components/Header2.vue'
     height: 100%;
 }
 
+@Media (min-width: 1080px){
+    h2{
+        font-size: 40px;
+    }
+}
+
 </style>

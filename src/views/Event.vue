@@ -10,12 +10,14 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
+    <section class = "margenevento">
+    <h2>Nombre del evento</h2></section>
     <article class="FCont">
 
         <section class = "First">
             
             <img src="src/assets/ImagenesEventos/deporte.png" alt="Fiesta" width="400" height="300">
-            <h2>Descripcion</h2>
+            <h2>Descripción</h2>
         </section>
 
         <section class = "Second">
@@ -25,7 +27,7 @@ import Header2 from '../components/Header2.vue'
 
         <section class = "Third">
             <div>
-                <h2>Puntualo</h2>
+                <h2>Puntúalo</h2>
 
             </div>
         </section>
@@ -53,6 +55,10 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
+.margenevento{
+    margin-left: 2%;
+    margin-top: 2%;
+}
 .FCont{
     display: flex;
     flex-direction: column;
@@ -80,7 +86,8 @@ import Header2 from '../components/Header2.vue'
     padding: 4%;
     border-radius: 150px;
     border: 1px solid black;
-    
+    display:flex;
+    justify-content: center;
 }
 .Four{
     display: flex;
@@ -89,6 +96,17 @@ import Header2 from '../components/Header2.vue'
 
 }
 
+@Media (min-width: 1080px){
+    h2{
+        font-size: 40px;
+    }
+    p{
+        font-size: 30px;
+    }
+    .Second{
+        width:80%;
+    }
+}
 
 
 </style>

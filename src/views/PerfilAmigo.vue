@@ -9,10 +9,13 @@ import Header2 from '../components/Header2.vue'
     <!--Pagina cuandro entras al perfil de un amigo-->
     <main>
         <br>
-       <h2>Datos</h2>
-       <br/><br/>
+        <section class = "margenamigo">
+            <h2>Datos</h2>
+        </section>
+       
+       
        <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
+            <img src = "src/assets/usuario.png" class = "Redondap">
             
         </div>
         
@@ -44,10 +47,11 @@ import Header2 from '../components/Header2.vue'
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
+            <div class = "rectangulo1"> 
+                               
                 <p><FONT color = "grey">Eventos</FONT></p>
                 <div class = "Clogo">
-                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+                    <a href="Events"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                 </div>    
             </div>    
             </div>
@@ -61,6 +65,10 @@ import Header2 from '../components/Header2.vue'
   </Footer2>
 </template>
 <style scoped>
+
+.margenamigo{
+    margin-left: 2%;
+}
 .rectangulo1{
     height: 30px;
     width: 300px;
@@ -68,7 +76,7 @@ import Header2 from '../components/Header2.vue'
     border: 1px solid black;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: center;
     border-radius: 50px;
     
 }
@@ -90,31 +98,29 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
 
 }
+.Clogo{
+    margin-left: 5%;
+}
 
 @media (min-width: 1080px){
    
+    h2{
+        font-size: 40px;
+    }
     .Redondap{
         width: 200px;
         height: 200px;
         border-radius: 150px;
         border: 1px solid black;
     }
-    .Clogo{
-        width: 20px;
-        height: 20px;
-        margin-left: 50%
-    }
+    
     .cont{
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 5%;
     }
-    .icon{
-        width: 20px;
-        height: 20px;
-        padding: auto;
-    }
+    
    
    
     .rectangulo1{
@@ -122,7 +128,7 @@ import Header2 from '../components/Header2.vue'
         height: 50px;
         font-size: 20px;
         display: flex;
-        flex-direction: row;
+        
         justify-content: center;
         align-items: center;
         

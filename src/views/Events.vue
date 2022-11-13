@@ -12,10 +12,12 @@ import Header2 from '../components/Header3.vue'
 
 <main>
     <br>
-    <h2>Mis eventos</h2>
+    <section class = "margenmis">
+        <h2>Lista de eventos</h2> 
+    </section>    
     <div class = "container5">
               
-        <div class="eventocontainer">
+        <div class="eventocontainer5">
             <div class = "parejas">
             <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png"
                 width="35" height="35" alt="Botón atrás"></a>
@@ -50,6 +52,10 @@ import Header2 from '../components/Header3.vue'
 
 <style scoped>
 
+    .margenmis{
+        margin-left: 2%;
+    }
+
     .container5{
         
         display: flex;
@@ -58,7 +64,7 @@ import Header2 from '../components/Header3.vue'
         align-items: center;
     }
 
-    .eventocontainer{
+    .eventocontainer5{
         background-color: lightgrey;
         display: flex;
         flex-direction: column;
@@ -76,6 +82,32 @@ import Header2 from '../components/Header3.vue'
         display: flex;
         flex-direction: row;
     }
+    @media (min-width:1080px){
+        h2{
+            font-size: 40px;
+        }
+ 
+        .container5{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+       
+        .eventocontainer5{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+        }
+
+        .parejas{
+            display: flex;
+            justify-content: space-around;
+        }
+
+}
 
 
 

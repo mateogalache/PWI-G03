@@ -12,8 +12,10 @@ import Header3 from '../components/Header3.vue'
 
 <main>
     <br>
-    <p><b>Eventos Destacados</b></p>
-    <br><br><br>
+    <section class = "margenhome">
+        <p><h2>Eventos Destacados</h2></p>
+    </section>
+    <br>
     <div class = "container5">
               
         <div class="eventocontainer">
@@ -52,8 +54,12 @@ import Header3 from '../components/Header3.vue'
 
 <style scoped>
 
+    .margenhome{
+        margin-left: 2%;
+    }
+
     .container5{
-        
+       
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -96,6 +102,10 @@ import Header3 from '../components/Header3.vue'
 
 
    @media (min-width:1080px){
+        
+        h2{
+            font-size: 40px;
+        }
        
         .container5{
             
@@ -110,10 +120,10 @@ import Header3 from '../components/Header3.vue'
            display: flex;
            flex-direction: column;
            padding: 1em;
-           width: 90%;
-           height: 550px;
-           margin-left: -10px;
-           margin-top: -50px;
+           width: 95%;
+           
+           
+           
            text-align: center;
        }
 

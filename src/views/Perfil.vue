@@ -137,6 +137,9 @@ import Header3 from '../components/Header3.vue';
 }
 
 @media (min-width:1080px){
+    h2{
+        font-size: 40px;
+    }
     .Rectanguloperfil{
         width: 700px;
         
