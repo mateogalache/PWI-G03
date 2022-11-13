@@ -9,13 +9,15 @@ import Header3 from '../components/Header3.vue'
             
     </Header3>
     <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
-        <br><br/><br/><br/>
+        
+        <div class = "subtitulo"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos,
+                                        es la herramienta para unir elementos cuando no podemos asociar significado semántico a este conjunto.-->       
+            <h2>Crear Evento</h2>
+                
+        </div>
         <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
 
-            <div class = "subtitulo"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos,
-                                        es la herramienta para unir elementos cuando no podemos asociar significado semántico a este conjunto.-->       
-                <p><b>Crear Evento</b></p>
-            </div>
+            
                 
             <div class = "rectanguloredondeadeo">
                 <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento">           
@@ -55,6 +57,8 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+
+    
 
     .container{
         display: flex;
@@ -107,8 +111,8 @@ import Header3 from '../components/Header3.vue'
     }
 
     .subtitulo{
-        margin-right: 250px;
-        margin-top: -40px;
+        margin-left: 2%;
+        
     }
 
     .sinborde {
@@ -122,6 +126,9 @@ import Header3 from '../components/Header3.vue'
     }
 
     @media (min-width:1080px){
+        h2{
+            font-size: 40px;
+        }
 
         .container{
             display: flex;
@@ -129,13 +136,9 @@ import Header3 from '../components/Header3.vue'
             flex-direction: column;
             align-items: center;
             text-align: center;
+            margin-top: 5%;
         }
-        .subtitulo{
-            display: flex;
-            margin: 0 auto;
-            margin-top: -30px;
-            font-size: x-large;
-        }
+        
 
         .rectanguloredondeadeo{
             height: 40px;

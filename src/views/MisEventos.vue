@@ -12,7 +12,9 @@ import Header3 from '../components/Header3.vue'
 
 <main>
     <br>
-    <b>&nbsp;&nbsp;Mis Eventos </b>
+    <section class = "margenmis">
+        <h2>Mis Eventos </h2>
+    </section>
     <div class = "container5">
               
         <div class="eventocontainer5">
@@ -50,6 +52,9 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+    .margenmis{
+        margin-left: 2%;
+    }
 
     .container5{
         display: flex;
@@ -85,6 +90,9 @@ import Header3 from '../components/Header3.vue'
 
 
     @media (min-width:1080px){
+        h2{
+            font-size: 40px;
+        }
  
         .container5{
             display: flex;

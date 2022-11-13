@@ -5,7 +5,7 @@
       
       <a href = "javascript: history.go(-1)" class = "triangulo"> </a>
         
-      <h1>Sallevents</h1>
+      <h1>SALLEVENTS</h1>
       <a href = "Chats"><img src = "https://cdn-icons-png.flaticon.com/512/61/61516.png" class = "conti" ></a>
    
     </section>

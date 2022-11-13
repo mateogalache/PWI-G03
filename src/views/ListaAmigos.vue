@@ -10,7 +10,7 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <br><h2 class="titulo34">Friends</h2>
+        <br><h2 class="titulo34">Amigos</h2>
         <article class = "cont5">
             <section class = "BContainer5">
                 <p class = "buscar">Busca</p>
@@ -117,5 +117,11 @@ import Header2 from '../components/Header2.vue'
     justify-content: end;
     justify-content: space-around;
     margin-right: 5%;
+}
+
+@Media (min-width: 1080px){
+    h2{
+        font-size: 40px;
+    }
 }
 </style>

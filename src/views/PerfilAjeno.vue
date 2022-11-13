@@ -8,11 +8,18 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     <main>
         <br>
-       <h2>Datos</h2>
-       <br/><br/>
+        <section class = "margenamigo">
+            <h2>Datos</h2>
+        </section>
+       
+        
+       
        <div class = "cont">
-            <img src = "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png" class = "Redondap">
-            <button class = "boton">Añadir amigo</button>
+            <img src = "src/assets/usuario.png" class = "Redondap">
+            
+        </div>
+        <div class = "cont">
+          <button class = "boton">Añadir amigo</button>  
         </div>
         
         <br/>
@@ -43,25 +50,43 @@ import Header2 from '../components/Header2.vue'
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
+            <div class = "rectangulo1"> 
+                               
                 <p><FONT color = "grey">Eventos</FONT></p>
                 <div class = "Clogo">
-                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+                    <a href="Events"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                 </div>    
             </div>    
             </div>
             
        
 
-        
-    </main>
-    <Footer2>
-        
-    </Footer2>
-  </template>
+  <div class="transparent6"></div>
+  </main>
+  <Footer2>
+      
+  </Footer2>
+</template>
 <style scoped>
-.separacion{
-    display:flex;
+.boton{
+    display: flex;
+    width: 120px;
+    height: 20px;
+    background-color: rgb(104, 100, 100);
+    border-radius: 22px;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+
+.margenamigo{
+    margin-left: 2%;
 }
 .rectangulo1{
     height: 30px;
@@ -70,7 +95,7 @@ import Header2 from '../components/Header2.vue'
     border: 1px solid black;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: center;
     border-radius: 50px;
     
 }
@@ -92,72 +117,46 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
 
 }
-.boton{
-    display: flex;
-    width: 120px;
-    height: 20px;
-    background-color: rgb(104, 100, 100);
-    border-radius: 22px;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 5%;
+.Clogo{
+    margin-left: 5%;
 }
 
 @media (min-width: 1080px){
    
+    h2{
+        font-size: 40px;
+    }
     .Redondap{
         width: 200px;
         height: 200px;
         border-radius: 150px;
         border: 1px solid black;
     }
-    .Clogo{
-        width: 20px;
-        height: 20px;
-        margin-left: auto;
-
-    }
+    
     .cont{
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 1%;
     }
+    
    
-    .boton{
-        width: 180px;
-        height: 30px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        margin: auto;
-        
-        
-
-    }
+   
     .rectangulo1{
         width: 700px;
         height: 50px;
         font-size: 20px;
         display: flex;
-        flex-direction: column;
+        
         justify-content: center;
-        align-items: center;
-        margin-top: 0%;
-
-
-
+        align-items: center;     
     }
+
+    .boton{
+        width: 350px;
+        height: 40px;
+    }   
 }
-
-
-
 
 
 </style>

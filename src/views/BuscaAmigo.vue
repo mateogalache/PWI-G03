@@ -18,21 +18,21 @@ import Header2 from '../components/Header2.vue'
                 
             <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
+                <a href="PerfilAjeno"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
+                <a href="PerfilAjeno"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
             </section>
             <section class = "PContainer4">
                 <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAmigo"><p class = "nombre4">Nombre</p></a>
+                <a href="PerfilAjeno"><p class = "nombre4">Nombre</p></a>
                 <div class = "Clogo4">
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
                 </div>
@@ -46,8 +46,9 @@ import Header2 from '../components/Header2.vue'
 
 <style scoped>
 
-.cont4{
 
+.cont4{
+    margin-top: 1%;
     padding-left: 2%;
     padding-right: 2%;
     display: flex;
@@ -83,6 +84,12 @@ import Header2 from '../components/Header2.vue'
     justify-content: end;
     justify-content: space-around;
     margin-right: 5%;
+}
+
+@Media (min-width: 1080px){
+    h2{
+        font-size: 40px;
+    }
 }
 
 

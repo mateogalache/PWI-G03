@@ -7,7 +7,10 @@ import Header2 from '../components/Header2.vue'
 
     </Header2>
     <main>
-        <h2>Amistades</h2>
+        <section class = "margenamistades">
+           <h2>Amistades</h2> 
+        </section>
+        
         <div class="foto1">
             <img src='src/assets/FRENTE-NITIDA.webp' class="imgredonda">
         </div>
@@ -25,6 +28,9 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 <style scoped>
+    .margenamistades{
+        margin-left: 2%;
+    }
     .imgredonda{        
     width:40%;
     height:40%;

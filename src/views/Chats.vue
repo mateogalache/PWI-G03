@@ -10,8 +10,11 @@ import Header3 from '../components/Header3.vue';
     </Header3>
 
     <main>
-        <div class = "cont">
+        <section class = "margenchats">
             <h2>Chats</h2>
+        </section>
+        <div class = "cont">
+            
             <div class = "BContainer">
                 <p class = "buscar">Busca</p>
             </div>
@@ -122,6 +125,9 @@ import Header3 from '../components/Header3.vue';
 </template>
 
 <style scoped >
+.margenchats{
+    margin-left: 2%;
+}
 
 .cont{
 
@@ -185,6 +191,9 @@ import Header3 from '../components/Header3.vue';
     
 }
 @media (min-width: 1080px){
+    h2{
+        font-size: 40px;
+    }
     .BContainer p{
     font-size: 20px;
     }
@@ -194,8 +203,7 @@ import Header3 from '../components/Header3.vue';
     }
     .cont{
         width: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
+        
     }
     .buscar{
         width: 100%;
@@ -208,7 +216,7 @@ import Header3 from '../components/Header3.vue';
         margin-right: 5%;
     }
     .PContainer{
-        width: 700px;
+       width: 100%;
         margin-left: 5%;
         margin-right: 5%;
     }
