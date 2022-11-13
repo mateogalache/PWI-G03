@@ -24,7 +24,7 @@ import Header2 from '../components/Header2.vue'
         
     </Footer2>
 </template>
-<style>
+<style scoped>
     .imgredonda{        
     width:40%;
     height:40%;
