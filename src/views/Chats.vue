@@ -8,7 +8,7 @@ import Header3 from '../components/Header3.vue';
     <Header3>
         
     </Header3>
-
+<!--Chats con diferentes persona-->
     <main>
         <section class = "margenchats">
             <h2>Chats</h2>
@@ -19,47 +19,6 @@ import Header3 from '../components/Header3.vue';
                 <p class = "buscar">Busca</p>
             </div>
                 
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Laura</b>
-                    <p class = "mensaje">Hola Laura vienes al cine hoy?</p>
-                </div>
-                
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Antonio</b>
-                    <p class = "mensaje">Me debes una Antonio</p>
-                </div>
-                <div class = "Clogo">
-                    <a href='Chat'><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Javier</b>
-                    <p class = "mensaje">Ey Javi hemos quedado en media hora</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Maria</b>
-                    <p class = "mensaje">Que tal estas Maria?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
             <div class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <div class="chat">
@@ -116,7 +75,7 @@ import Header3 from '../components/Header3.vue';
         </div>
        
         
-        <div class = "transparent6"></div>
+        <div class = "transparent6"></div><!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
         
     </main>
     <Footer2>
@@ -136,6 +95,9 @@ import Header3 from '../components/Header3.vue';
     display: flex;
     flex-direction: column;
     
+}
+.chat{
+    margin-left: 10%;
 }
 
 
@@ -164,10 +126,10 @@ import Header3 from '../components/Header3.vue';
 
 }
 .Clogo{
-    display: flex;
-    justify-content: end;
-    justify-content: space-around;
-    margin-right: 5%;
+    position:absolute;
+    right: 10%;
+    
+    
 }
 .icon{
     
@@ -216,14 +178,17 @@ import Header3 from '../components/Header3.vue';
         margin-right: 5%;
     }
     .PContainer{
+<<<<<<< HEAD
        width: 100%;
+=======
+        width: 800px;
+>>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
         margin-left: 5%;
         margin-right: 5%;
     }
     .Clogo{
-        width: 100%;
-        margin-left: 5%;
-        margin-right: 5%;
+        
+        right: 10%;
     }
     .icon{
         width: 20px;

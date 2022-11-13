@@ -6,6 +6,7 @@ import Header2 from '../components/Header2.vue'
     <Header2>
 
     </Header2>
+<!--Pagina para las amistades del usuario -->
     <main>
         <section class = "margenamistades">
            <h2>Amistades</h2> 
@@ -21,7 +22,7 @@ import Header2 from '../components/Header2.vue'
                 <a href="SearchFriend"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
             </div>
-        <div class="transparent6"></div>
+        <div class="transparent6"></div> <!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
     </main>
     <Footer2>
         

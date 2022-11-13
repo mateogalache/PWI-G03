@@ -6,59 +6,59 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<Header3>
+<Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
         
 </Header3>
 
 <main>
-    <div class = "container">
+    <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
 
-        <div class = "rectanguloredondeadeo2">           
+        <section class = "rectanguloredondeadeo2">           
             <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
             <a href = "calendarioevento"><div class = "rectanguloredondeadeo3">           
               Filtro
             </div></a>
-        </div>           
+        </section>           
         
-        <div class = "rectanguloredondeadeo4"> 
+        <section class = "rectanguloredondeadeo4"> 
             <input type="text" class="sinborde" name="Historial" placeholder="Historial">
-       </div>
+        </section>
         
-        <div class="eventocontainer">
+        <section class="eventocontainer"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
             <div class="subtitulo">
                 <b>En tu zona</b>
             </div>
 
-            <div class = "parejas">
-            <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
-                width="35" height="35" alt="Botón atrás"></a>
-                <img src="src/assets/ImagenesEventos/vino.png" 
-                width="35" height="35" alt="Botón atrás">
-            </div>
+            <section class = "parejas">
+                <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
+                    width="35" height="35" alt="Botón atrás"></a>
+                    <img src="src/assets/ImagenesEventos/vino.png" 
+                    width="35" height="35" alt="Botón atrás">
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/teatro.png" 
                 width="35" height="35" alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/libro.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/comida.png" 
                 width="35" height="35" alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/viajes.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
             
-        </div>
+        </section>
         
-    </div>
-    <div class="transparent6"></div>
+    </section>
+    <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
 
 </main>
 
         
-<Footer2>
+<Footer2>  <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
         
 </Footer2>
 

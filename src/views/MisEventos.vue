@@ -6,46 +6,52 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<Header3>
+<Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
         
 </Header3>
 
-<main>
+<main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
+
     <br>
+<<<<<<< HEAD
     <section class = "margenmis">
         <h2>Mis Eventos </h2>
     </section>
     <div class = "container5">
+=======
+    <b>&nbsp;&nbsp;Mis Eventos </b>
+    <section class = "container5"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
+>>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
               
-        <div class="eventocontainer5">
-            <div class = "parejas">
+        <section class="eventocontainer5">
+            <section class = "parejas">
             <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png" 
                 alt="Botón atrás"></a>
                 <img src="src/assets/ImagenesEventos/vino.png" 
                alt="Botón atrás">
-            </div>
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/teatro.png" 
                 alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/libro.png" 
                 alt="Botón atrás">
-            </div>
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/comida.png" 
                 alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/viajes.png" 
                 alt="Botón atrás">
-            </div>
-        </div>
-    </div>
-    <div class="transparent6"></div>
+            </section>
+        </section>
+    </section>
+    <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
 
 </main>
 
         
-<Footer2>
+<Footer2> <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
         
 </Footer2>
 

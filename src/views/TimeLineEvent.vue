@@ -8,7 +8,7 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
-
+<!--Pagina para ver el calendario de eventos-->
     <main>
         <div class = "cont">
             <h2>Calendar</h2>
