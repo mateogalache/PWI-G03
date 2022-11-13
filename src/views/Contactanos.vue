@@ -67,8 +67,10 @@ import Header3 from '../components/Header3.vue';
                                 <small>SallEvents@gmail.com</small><br><br>
                                 <small>679456280</small><br>
                                 <br>
-                                <img id = img1 src="src/assets/ImagenesEventos/redes_sociales.png" 
-                                width="100" height="20" alt="RedesSociales">
+                                <section class = "RedesSociales">
+                                   <img id = img1 src="src/assets/ImagenesEventos/redes_sociales.png" 
+                                    width="100" height="20" alt="RedesSociales"> 
+                                </section>                 
 
                             </section>
                             
@@ -169,6 +171,7 @@ import Header3 from '../components/Header3.vue';
         border-radius: 10px;
         margin: 8px;
         border: 1px solid grey;
+        
     }
 
     #popup2{
@@ -217,6 +220,10 @@ import Header3 from '../components/Header3.vue';
 
 
     @media (min-width:1080px){
+
+        .RedesSociales{
+            display:none;
+        }
         
         #containercontactanos{
             display: flex;
@@ -224,6 +231,7 @@ import Header3 from '../components/Header3.vue';
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            
         }
 
         #eventocontainer1{
@@ -240,15 +248,19 @@ import Header3 from '../components/Header3.vue';
 
         #eventocontainer2{
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            margin-bottom: -40px;
+            margin-top: 2%;
+            margin-right: 15%;
+            
         }
 
         #titulo{
             display: flex;
             font-size: xx-large;
             justify-content: center;
+            margin-top: 3%;
         }
 
         #textoo{
@@ -293,7 +305,7 @@ import Header3 from '../components/Header3.vue';
             border-radius: 10px;
             border: 1px solid grey;
             margin-right: 500px;
-            margin-top: 50px;
+            margin-top: 3%;
         }
 
         #popup2{
@@ -339,13 +351,13 @@ import Header3 from '../components/Header3.vue';
         #izquierda{
             float: center;
             margin-left: 330px;
-            font-size: x-large ; 
+            font-size: 35px ; 
             margin-top: -50px; 
                    
         }
 
         #derecha{
-            float: right;
+            display:none;
         }
     }
  
