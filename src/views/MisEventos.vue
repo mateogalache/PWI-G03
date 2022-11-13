@@ -13,15 +13,10 @@ import Header3 from '../components/Header3.vue'
 <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
 
     <br>
-<<<<<<< HEAD
     <section class = "margenmis">
         <h2>Mis Eventos </h2>
     </section>
-    <div class = "container5">
-=======
-    <b>&nbsp;&nbsp;Mis Eventos </b>
-    <section class = "container5"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
->>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
+    <section class = "container5">
               
         <section class="eventocontainer5">
             <section class = "parejas">

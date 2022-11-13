@@ -134,19 +134,9 @@ import Header2 from '../components/Header2.vue'
         border-radius: 150px;
         border: 1px solid black;
         justify-content: center;
-        margin-left: 30%;
-    }
-<<<<<<< HEAD
-    
-=======
-    .Clogo{
-        width: 20px;
-        height: 20px;
-        margin-left: 50%;
         
-
     }
->>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
+    
     .cont{
         display: flex;
         justify-content: center;
@@ -162,20 +152,9 @@ import Header2 from '../components/Header2.vue'
         height: 50px;
         font-size: 20px;
         display: flex;
-<<<<<<< HEAD
         
         justify-content: center;
         align-items: center;     
-=======
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0%;
-        
-
-
-
->>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
     }
 
     .boton{

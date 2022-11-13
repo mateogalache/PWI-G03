@@ -113,15 +113,7 @@ import Header2 from '../components/Header2.vue'
         border-radius: 150px;
         border: 1px solid black;
     }
-<<<<<<< HEAD
     
-=======
-    .Clogo{
-        width: 20px;
-        height: 20px;
-        margin-left: 50%
-    }
->>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
     .cont{
         display: flex;
         justify-content: center;
@@ -136,11 +128,7 @@ import Header2 from '../components/Header2.vue'
         height: 50px;
         font-size: 20px;
         display: flex;
-<<<<<<< HEAD
         
-=======
-        flex-direction: row;
->>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
         justify-content: center;
         align-items: center;
         

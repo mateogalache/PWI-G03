@@ -178,11 +178,7 @@ import Header3 from '../components/Header3.vue';
         margin-right: 5%;
     }
     .PContainer{
-<<<<<<< HEAD
        width: 100%;
-=======
-        width: 800px;
->>>>>>> 85236e52b84bf31dc771ccf80f50ec00be20e899
         margin-left: 5%;
         margin-right: 5%;
     }
