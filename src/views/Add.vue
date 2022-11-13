@@ -5,7 +5,7 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-    <Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
+    <Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)---> 
             
     </Header3>
     <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
