@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <article class = "cont23">
-            <section class = "BContainer22">
+        <article class = "cont23"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
+            <section class = "BContainer22"><!--Con el secction separamos las secciones que no interesan-->
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -21,26 +21,26 @@ import Header2 from '../components/Header2.vue'
                 </button>
             </section >
                 
-            <section class = "PContainer22">
+            <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo2">
+                <nav class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer22">
+            <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo2">
+                <nav class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer22">
+            <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo2">
+                <nav class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
         </article>
     <div class="transparent6"></div>

@@ -1,3 +1,5 @@
+/*En este Css declaramos las custom propertie del color de la pagina para no tener que ponerlo cada ve<.
+Tambien algunos diseños estandard para todas las pagina los hacemos aqui, asi podemos acceder desde cualquier .vue*/
 :root {
     --main-bg-color: cadetblue;
   }

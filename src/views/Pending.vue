@@ -10,8 +10,8 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 
     <main>
-        <article class = "cont24">
-            <section class = "BContainer33">
+        <article class = "cont24"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
+            <section class = "BContainer33"><!--Con el secction separamos las secciones que no interesan-->
                 <button class="Send">
                     <a href = "Sending"><b>Send request</b></a>
                 </button>
@@ -22,29 +22,29 @@ import Header2 from '../components/Header2.vue'
             </section >
                 
                 
-            <section class = "PContainer33">
+            <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo2">
+                <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
                     <img src="src\assets\tick.png" class = "icon" alt="tick">
                     <img src="src\assets\cross.png" class = "icon" alt="tick">
-                </div>
+                </aside>
             </section>
-            <section class = "PContainer33">
+            <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo2">
+                <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
                     <img src="src\assets\tick.png" class = "icon" alt="tick">
                     <img src="src\assets\cross.png" class = "icon" alt="tick">
-                </div>
+                </aside>
             </section>
-            <section class = "PContainer33">
+            <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <div class = "Clogo2">
+                <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
                     <img src="src\assets\tick.png" class = "icon" alt="tick">
                     <img src="src\assets\cross.png" class = "icon" alt="tick">
-                </div>
+                </aside>
             </section>
         </article>
     <div class="transparent6"></div>

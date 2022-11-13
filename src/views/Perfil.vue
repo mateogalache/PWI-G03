@@ -6,84 +6,84 @@ import Header3 from '../components/Header3.vue';
 
 <template>
 
-    <Header3>
-        
-    </Header3>
-    <!--Ponemos article para separar los diferentes contenidos dentro de la página, dentro de cada article tenemos el contenido donde las palabras están en p o h2 según su importancia
-        como por ejemplo el título "Perfil" que está en h2. Además para separar los contenidos dentro del article ponemos section porque dentro de cada article era necesario separar 
-        por secciones. Y como último tenemos los botones que nos sirven para representar botones donde el ususario puede "clickar".
-        Al estar toda la página dividida de la misma manera no hacia falta comentar cada tag sino que hemos hecho un comentario general que define todas las partes de la página.-->
-    
-    <main>        
-        <br>
-        <article class = "contperfil">
-            <h2>Perfil</h2> 
-            <section class = "redondacolocacion">
-                <a href = "Contactanos"><button class="Redondaperfil">
-                    <p class = "igrande">i</p>           
-                </button></a>                   
-            </section>     
-        </article>
-        <br/>
+  <Header3>
+      
+  </Header3>
+  <!--Ponemos article para separar los diferentes contenidos dentro de la página, dentro de cada article tenemos el contenido donde las palabras están en p o h2 según su importancia
+      como por ejemplo el título "Perfil" que está en h2. Además para separar los contenidos dentro del article ponemos section porque dentro de cada article era necesario separar 
+      por secciones. Y como último tenemos los botones que nos sirven para representar botones donde el ususario puede "clickar".
+      Al estar toda la página dividida de la misma manera no hacia falta comentar cada tag sino que hemos hecho un comentario general que define todas las partes de la página.-->
+  
+  <main>        
+      <br>
+      <article class = "contperfil">
+          <h2>Perfil</h2> 
+          <section class = "redondacolocacion">
+              <a href = "Contactanos"><button class="Redondaperfil">
+                  <p class = "igrande">i</p>           
+              </button></a>                   
+          </section>     
+      </article>
+      <br/>
 
-        <section class = "cont">
-            <img src = "src/assets/usuario.png" class = "Redondap">
-        </section>
+      <section class = "cont">
+          <img src = "src/assets/usuario.png" class = "Redondap">
+      </section>
 
-        <p class = cont>Nombre</p>
-        <br/>
-       
-        <section  class = "cont">
-            <a href = "Datos"><button class="Rectanguloperfil">
-                <p><FONT color = "white">Datos</FONT></p>
-            </button></a>
-        </section>
-       
-       <br/>
-       <section class = "cont">
-           <a href = "Estadisticas"><button class="Rectanguloperfil">
-                <p><FONT color = "white">Estadísticas</FONT></p>
-            </button></a>
-        </section>
-       
-       <br/>
-       <section class = "cont">
-            <a href = "Amistades"><button class="Rectanguloperfil">
-                <p><FONT color = "white">Amistades</FONT></p>
-            </button></a>
-        </section>
+      <p class = cont>Nombre</p>
+      <br/>
+     
+      <section  class = "cont">
+          <a href = "Datos"><button class="Rectanguloperfil">
+              <p><FONT color = "white">Datos</FONT></p>
+          </button></a>
+      </section>
+     
+     <br/>
+     <section class = "cont">
+         <a href = "Estadisticas"><button class="Rectanguloperfil">
+              <p><FONT color = "white">Estadísticas</FONT></p>
+          </button></a>
+      </section>
+     
+     <br/>
+     <section class = "cont">
+          <a href = "Amistades"><button class="Rectanguloperfil">
+              <p><FONT color = "white">Amistades</FONT></p>
+          </button></a>
+      </section>
 
-       <br/>
-       <section class = "cont">
-            <a href = "Events"><button class="Rectanguloperfil">
-                <p><FONT color = "white">Mis eventos</FONT></p>
-            </button></a>
-        </section>
+     <br/>
+     <section class = "cont">
+          <a href = "MisEventos"><button class="Rectanguloperfil">
+              <p><FONT color = "white">Mis eventos</FONT></p>
+          </button></a>
+      </section>
 
-       <br/>
-       <section class = "cont">
-            <a href = "Borrarperfil"><button class="Rectanguloperfil">
-                <p><FONT color = "white">Borrar perfil</FONT></p>
-            </button></a>
-        </section>
+     <br/>
+     <section class = "cont">
+          <a href = "Borrarperfil"><button class="Rectanguloperfil">
+              <p><FONT color = "white">Borrar perfil</FONT></p>
+          </button></a>
+      </section>
 
-       <br/>
-       <section class = "cont">        
-            <a href = "Cerrarsesion"><button class="Rectanguloperfil">
-                <p><FONT color = "white">Cerrar sesión</FONT></p>
-            </button></a>
-        </section>
-       <br/><br/>
+     <br/>
+     <section class = "cont">        
+          <a href = "Cerrarsesion"><button class="Rectanguloperfil">
+              <p><FONT color = "white">Cerrar sesión</FONT></p>
+          </button></a>
+      </section>
+     <br/><br/>
 
-       <section class = "transparent6"></section>
-        
-    </main>
+     <section class = "transparent6"></section>
+      
+  </main>
 
-    <Footer2>
-        
-    </Footer2>
+  <Footer2>
+      
+  </Footer2>
  
-  </template>
+</template>
  
 <style scoped>
 

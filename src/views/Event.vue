@@ -12,35 +12,37 @@ import Header2 from '../components/Header2.vue'
     <main>
     <section class = "margenevento">
     <h2>Nombre del evento</h2></section>
-    <article class="FCont">
+    <article class="FCont"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
 
-        <section class = "First">
+        <section class = "First"><!--Con el secction separamos las secciones que no interesan-->
             
             <img src="src/assets/ImagenesEventos/deporte.png" alt="Fiesta" width="400" height="300">
             <h2>Descripción</h2>
         </section>
 
-        <section class = "Second">
+        <section class = "Second"><!--Con el secction separamos las secciones que no interesan-->
             
             <p>Competición de atletismo, donde podemos ver a los mejores corredores de catalunya pelear por una posición para los campeonatos de españa.</p>
         </section >
 
-        <section class = "Third">
-            <div>
+        <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                 <h2>Puntúalo</h2>
-
-            </div>
         </section>
 
-        <section class = "Four">
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
+        <section class = "Four"><!--Con el secction separamos las secciones que no interesan-->
+            <table> <!--Usamos una tabla ya que queremos listar las 5 estrellas en fila asi que hacemos una tabla de 1 fila y 5 columnas-->
+                <tr>
+                    <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
+                    <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
+                    <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
+                    <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
+                    <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
+                </tr>
+            </table>
         </section>
+      
 
-        <section class ="Last">
+        <section class ="Last"><!--Con el secction separamos las secciones que no interesan-->
             <img class ="IC" src="\src\assets\chat.png" alt="chat" >
             <img class ="IC" src="\src\assets\add.png" alt="add" >
             <a href="CompartirEventoAmigos"><img src="\src\assets\renviar.png" alt="share" width="45" height="25"></a>
@@ -90,8 +92,7 @@ import Header2 from '../components/Header2.vue'
     justify-content: center;
 }
 .Four{
-    display: flex;
-    flex-direction: row;
+    
     padding-bottom: 2%;
 
 }

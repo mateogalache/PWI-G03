@@ -5,13 +5,13 @@
 
     </main>
     <footer>
-        <article class="FContainer">
-            <section class="Fleft">
+        <article class="FContainer"><!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
+            <section class="Fleft"> <!--Con el secction separamos las secciones que no interesan-->
                 <h4>Contactanos</h4>
             </section>
             <section class="Fright">
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c3562d74-90e7-4ea1-9e9c-b32b4439764e/d6ftmoc-e174faa4-ddb3-4e24-87a4-cefac32ac521.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MzNTYyZDc0LTkwZTctNGVhMS05ZTljLWIzMmI0NDM5NzY0ZVwvZDZmdG1vYy1lMTc0ZmFhNC1kZGIzLTRlMjQtODdhNC1jZWZhYzMyYWM1MjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.HzEiweWFXW7uCRi6DkUwDGyFaE5PGz8dJv4ogOqQrPs"
-                    width="25" height="26" alt="Facebook">
+                    width="25" height="26" alt="Facebook"> 
                 <img src="https://cdn.icon-icons.com/icons2/1231/PNG/512/1492693505-1-twitter_83571.png" width="25"
                     height="25" alt="Instagram">
                 <img src="https://cdn.pixabay.com/photo/2021/06/25/04/20/youtube-6362801_960_720.png"

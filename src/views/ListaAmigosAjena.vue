@@ -11,45 +11,45 @@ import Header2 from '../components/Header2.vue'
 
     <main>
         <br><h2 class="titulo34">Amigos</h2>
-        <article class = "cont6">
-            <div class = "BContainer6">
+        <article class = "cont6"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
+            <aside class = "BContainer6"><!--Usamos aside ya que no pertence a las secciones, pero si que esta relacionado con la pagina-->
                 <p class = "buscar">Busca</p>
-            </div>
+            </aside>
                 
-            <section class = "PContainer6">
+            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Laura</p></a>
-                <div class = "Clogo6">
+                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer6">
+            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Javier</p></a>
-                <div class = "Clogo6">
+                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer6">
+            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Antonio</p></a>
-                <div class = "Clogo6">
+                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer6">
+            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Maria</p></a>
-                <div class = "Clogo6">
+                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer6">
+            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAjeno"><p class = "nombre6">Carlos</p></a>
-                <div class = "Clogo6">
+                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
         </article>
         <div class="transparent6"></div>

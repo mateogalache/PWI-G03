@@ -12,7 +12,7 @@ import Header3 from '../components/Header3.vue'
         <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
             <article class = "containercea"> <!--Usamos article porque varios items representan un listado-->
 
-                <article class="eventocontainercea">
+                <section class="eventocontainercea"><!--Con el secction separamos las secciones que no interesan-->
                     <h1>Amistades</h1>
 
                         <ul>
@@ -52,9 +52,11 @@ import Header3 from '../components/Header3.vue'
                                     <p style="color: black">Enviar</p>
                         </section>
                         <br>
-                </article>
+                </section>
                     
             </article>
+            <div class="transparent6"></div><!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
+
         </main>
 
 

@@ -43,6 +43,7 @@ import Header3 from '../components/Header3.vue'
     </section>
     <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
 
+    
 </main>
 
         

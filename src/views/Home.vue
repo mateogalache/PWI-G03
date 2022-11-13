@@ -13,7 +13,7 @@ import Header3 from '../components/Header3.vue'
 <main>
     <br>
     <section class = "margenhome">
-        <p><h2>Eventos Destacados</h2></p>
+        <h2>Eventos Destacados</h2>
     </section>
     <br>
     <div class = "container5">

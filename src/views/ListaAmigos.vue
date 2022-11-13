@@ -11,58 +11,58 @@ import Header2 from '../components/Header2.vue'
 
     <main>
         <br><h2 class="titulo34">Amigos</h2>
-        <article class = "cont5">
-            <section class = "BContainer5">
+        <article class = "cont5"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
+            <aside class = "BContainer5"> <!--Usamos aside ya que no pertence a las secciones, pero si que esta relacionado con la pagina-->
                 <p class = "buscar">Busca</p>
-            </section>
+            </aside>
                 
-            <section class = "PContainer5">
+            <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
-                <div class = "Clogo5">
+                <nav class = "Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer5">
+            <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil">
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
-                <div class = "Clogo5">
+                <nav class = "Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon"  alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class = "PContainer5">
+            <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class = "perfil" >
                 <a href="PerfilAmigo"><p class = "nombre5">Nombre</p></a>
-                <div class = "Clogo5">
+                <nav class = "Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class = "icon"  alt="tick">
-                </div>
+                </nav>
             </section>
             <section class="PContainer5">
                 <img src="src/assets/usuario.png" class="perfil">
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
                 </a>
-                <div class="Clogo5">
+                <nav class="Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class="icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class="PContainer5">
+            <section class="PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class="perfil" >
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
                 </a>
-                <div class="Clogo5">
+                <nav class="Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class="icon" alt="tick">
-                </div>
+                </nav>
             </section>
-            <section class="PContainer5">
+            <section class="PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                 <img src="src/assets/usuario.png" class="perfil" >
                 <a href="PerfilAmigo">
                     <p class="nombre5">Nombre</p>
                 </a>
-                <div class="Clogo5">
+                <nav class="Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                     <img src="src\assets\flecha.png" class="icon" alt="tick">
-                </div>
+                </nav>
             </section>
         </article>
         <div class="transparent6"></div>

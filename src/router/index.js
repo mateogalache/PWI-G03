@@ -29,6 +29,7 @@ import Calendario from '../views/Calendario.vue'
 import Carga from '../views/Carga.vue'
 import CompartirEventoAmigos from '../views/CompartirEventoAmigos.vue'
 
+/*Declaramos todas las vistas, para poder navegar por la web sin problemas y les ponemos nombre a las paginas.*/
 const routes = [
     
     {
