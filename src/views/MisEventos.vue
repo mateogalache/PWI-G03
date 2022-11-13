@@ -6,44 +6,45 @@ import Header3 from '../components/Header3.vue'
 
 <template>
 
-<Header3>
+<Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
         
 </Header3>
 
-<main>
+<main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
+
     <br>
     <b>&nbsp;&nbsp;Mis Eventos </b>
-    <div class = "container5">
+    <section class = "container5"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
               
-        <div class="eventocontainer5">
-            <div class = "parejas">
+        <section class="eventocontainer5">
+            <section class = "parejas">
             <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png" 
-                width="35" height="35" alt="Botón atrás"></a>
+                alt="Botón atrás"></a>
                 <img src="src/assets/ImagenesEventos/vino.png" 
-                width="35" height="35" alt="Botón atrás">
-            </div>
+               alt="Botón atrás">
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/teatro.png" 
-                width="35" height="35" alt="Botón atrás">
+                alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/libro.png" 
-                width="35" height="35" alt="Botón atrás">
-            </div>
+                alt="Botón atrás">
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/comida.png" 
-                width="35" height="35" alt="Botón atrás">
+                alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/viajes.png" 
-                width="35" height="35" alt="Botón atrás">
-            </div>
-        </div>
-    </div>
-    <div class="transparent6"></div>
+                alt="Botón atrás">
+            </section>
+        </section>
+    </section>
+    <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
 
 </main>
 
         
-<Footer2>
+<Footer2> <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
         
 </Footer2>
 

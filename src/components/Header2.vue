@@ -23,7 +23,7 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
-    background-color: cadetblue;
+    background-color: var(--main-bg-color);
     width: 100%;
 
 }

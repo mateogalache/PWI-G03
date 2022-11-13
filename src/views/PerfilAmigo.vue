@@ -6,6 +6,7 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
+    <!--Pagina cuandro entras al perfil de un amigo-->
     <main>
         <br>
        <h2>Datos</h2>
@@ -53,16 +54,13 @@ import Header2 from '../components/Header2.vue'
             
        
 
-  <div class="transparent6"></div>
+  <div class="transparent6"></div><!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
   </main>
   <Footer2>
       
   </Footer2>
 </template>
 <style scoped>
-.separacion{
-    display:flex;
-}
 .rectangulo1{
     height: 30px;
     width: 300px;
@@ -92,28 +90,7 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
-.boton{
-    display: flex;
-    width: 120px;
-    height: 20px;
-    background-color: rgb(104, 100, 100);
-    border-radius: 22px;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 5%;
-}
+
 @media (min-width: 1080px){
    
     .Redondap{
@@ -125,8 +102,7 @@ import Header2 from '../components/Header2.vue'
     .Clogo{
         width: 20px;
         height: 20px;
-        margin-left: auto;
-
+        margin-left: 50%
     }
     .cont{
         display: flex;
@@ -146,7 +122,7 @@ import Header2 from '../components/Header2.vue'
         height: 50px;
         font-size: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         
@@ -155,8 +131,6 @@ import Header2 from '../components/Header2.vue'
 
     }
 }
-
-
 
 
 </style>

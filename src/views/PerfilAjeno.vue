@@ -6,6 +6,7 @@ import Header2 from '../components/Header2.vue'
     <Header2>
         
     </Header2>
+    <!--Pagina igual que la del perfil amigo pero con el boton de añadir amigo -->
     <main>
         <br>
        <h2>Datos</h2>
@@ -83,6 +84,7 @@ import Header2 from '../components/Header2.vue'
     height: 120px;
     border-radius: 150px;
     border: 1px solid black;
+    justify-content: center;
     
 }
 
@@ -92,13 +94,6 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
 .boton{
     display: flex;
     width: 120px;
@@ -122,11 +117,14 @@ import Header2 from '../components/Header2.vue'
         height: 200px;
         border-radius: 150px;
         border: 1px solid black;
+        justify-content: center;
+        margin-left: 30%;
     }
     .Clogo{
         width: 20px;
         height: 20px;
-        margin-left: auto;
+        margin-left: 50%;
+        
 
     }
     .cont{
@@ -134,6 +132,7 @@ import Header2 from '../components/Header2.vue'
         justify-content: center;
         align-items: center;
         margin-top: 1%;
+        
     }
    
     .boton{
@@ -153,10 +152,11 @@ import Header2 from '../components/Header2.vue'
         height: 50px;
         font-size: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         margin-top: 0%;
+        
 
 
 

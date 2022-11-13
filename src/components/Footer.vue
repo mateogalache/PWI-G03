@@ -29,7 +29,7 @@
     bottom: 0%;
     flex-direction: row;
     justify-content: space-between;
-    background-color: cadetblue;
+    background-color: var(--main-bg-color);
     align-items: center;
     flex-wrap: wrap;
     width: 100%;

@@ -20,7 +20,7 @@ import Header2 from '../components/Header2.vue'
 
         <section class = "Second">
             
-            <p>Competición de atletismo, donde podemos ver a los mejores corredores de catalunya pelera por una posición para los campeonatos de españa.</p>
+            <p>Competición de atletismo, donde podemos ver a los mejores corredores de catalunya pelear por una posición para los campeonatos de españa.</p>
         </section >
 
         <section class = "Third">
@@ -31,17 +31,17 @@ import Header2 from '../components/Header2.vue'
         </section>
 
         <section class = "Four">
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
-            <img class = "star" src="\src\assets\estrella.png" alt = "chat" width="35" height="25">
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
+            <img class = "star" src="\src\assets\estrella.png" alt = "chat" >
         </section>
 
         <section class ="Last">
-            <img class ="IC" src="\src\assets\chat.png" alt="chat" width="25" height="25">
-            <img class ="IC" src="\src\assets\add.png" alt="add" width="25" height="25">
-            <img class ="IC" src="\src\assets\renviar.png" alt="share" width="45" height="25">
+            <img class ="IC" src="\src\assets\chat.png" alt="chat" >
+            <img class ="IC" src="\src\assets\add.png" alt="add" >
+            <a href="CompartirEventoAmigos"><img src="\src\assets\renviar.png" alt="share" width="45" height="25"></a>
         </section>
 
     </article>

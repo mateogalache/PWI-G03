@@ -7,14 +7,18 @@ import Header3 from '../components/Header3.vue';
 
 <template>
     
-    <Header3>
+    <Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
             
     </Header3>
-    <main>
-        <div id="containercontactanos">
-            <div id="eventocontainer1">
+
+    <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
+
+        <section id="containercontactanos"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
+
+            <section id="eventocontainer1"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
                     <br>
-                    <div id="titulo">
+
+                    <div id="titulo"> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
                         <b>Contacta con nuestro equipo</b>
                         <br>
                         <br>
@@ -27,7 +31,7 @@ import Header3 from '../components/Header3.vue';
                         contacto con nosotros
                     </div>        
 
-                    <div id ="popup1">
+                    <section id ="popup1"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
                         <h2 id = "textoo">Reportar<br> un problema</h2>
                         <div id = textoo2>
                              Deje aquí su sugerencia o problema<br>
@@ -37,9 +41,9 @@ import Header3 from '../components/Header3.vue';
                         <div id = "botones">           
                             Reportar
                         </div>
-                    </div>
+                    </section>
 
-                    <div id ="popup2">
+                    <section id ="popup2"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
                         <h3 id = "textoo">Contactar con el servicio<br>de atención al cliente</h3>
                         <div id = textoo2>
                              Estamos esperando para ayudarle a<br>
@@ -48,15 +52,15 @@ import Header3 from '../components/Header3.vue';
                         <div id = "botones">           
                             Contactar
                         </div>
-                    </div>
+                    </section>
                     <br>
                     <br>
                     <br>
                 
         
                     
-                    <div id="eventocontainer2">
-                            <div id="izquierda">
+                    <section id="eventocontainer2"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
+                            <section id="izquierda">
                                 
                                 <b>SallEvents</b><br>
                                 <small>Diagonal, 108, 5to 2nd</small><br><br>
@@ -66,24 +70,25 @@ import Header3 from '../components/Header3.vue';
                                 <img id = img1 src="src/assets/ImagenesEventos/redes_sociales.png" 
                                 width="100" height="20" alt="RedesSociales">
 
-                            </div>
+                            </section>
                             
-                            <div id="derecha">
+                            <section id="derecha"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
                                 <img id = img2 src="src/assets/ImagenesEventos/mapa.png" 
                                  width="150" height="150" alt="Mapa">
-                            </div>
+                            </section>
 
                           
-                    </div>
+                    </section>
                     <br>
                     <br>
-            </div>  
-        </div> 
-        <div class="transparent6"></div>
+            </section>  
+        </section>
+
+        <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
     </main>
     
     
-    <Footer2>
+    <Footer2> <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
     </Footer2>
 
 </template>

@@ -4,11 +4,15 @@ import Header2 from '../components/Header2.vue'
 </script>
 <template>
     <Header2>
-        
+    
     </Header2>
+    <!-- Al igual que el perfil esta página tiene una estructura muy parecida en todas las partes por lo que se divide en article, section y en este caso en vez de botones ponemos nav
+        ya que nos servirá para poder navegar por las diferentes opciones de cada dato-->
     <main>
         <br>
-        <h2>Datos</h2>
+        <section class = margendatos>
+            <h2>Datos</h2>
+        </section>
         <br/><br/>
 
         <article class = "cont">
@@ -67,9 +71,9 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
-.separacion{
-    display:flex;
-    
+
+.margendatos{
+    margin-left: 2%;
 }
 .rectangulo5{
     height: 30px;
@@ -110,22 +114,20 @@ import Header2 from '../components/Header2.vue'
    align-items: center;
 
 }
-.estrellas{
-    width: 10px;
-    height: 10px;
-    justify-content: space-around;
-    display: flex;
-    background-color: transparent;
-}  
+ 
     
 @media (min-width:1080px){
     .rectangulo5{
-        width: 1000px;
+        width: 800px;
         justify-content: space-between;
                
     }
     .rectangulo2{
         margin-right: 20px;
+    }
+    .Redondap{
+        width: 200px;
+        height: 200px;
     }
 }
 

@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: cadetblue;
+    background-color: var(--main-bg-color);
     width: 100%;
 
 }

@@ -7,9 +7,9 @@ import Header from '../components/Header.vue'
         
     </Header>
     <main>
-      <picture class = "background2"></picture>
+      <picture class = "background2"></picture> <!--Ponemos el tag de picture para definir una imagen-->
       
-      <section class = "recuadro2"></section>
+      <section class = "recuadro2"></section> <!-- Al estar todo dentro de un recuadro lo identificamos como body-->
       <body class = "registercentro">
         <br>
         <section class="cont">
@@ -48,86 +48,87 @@ import Header from '../components/Header.vue'
     <Footer>
         
     </Footer>
-  </template>
+</template>
 <style scoped>
-.background2{
-    position:fixed;
-    width: 100%;
-    height: 100%;
-    background-image: url("src/assets/fondo.png");
-    z-index: -3;
-}
-.recuadro2{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    width: 600px;
-    height: 700px;
-    border: 2px solid black;
-    justify-content: center;
-    border-radius: 50px;
-    box-shadow: 5px 2px 2px black;
-    z-index: -2;
-    background-color: white;
-    
-}
-.transparent9{
-    display:flex;
-    width: 100%;
-    height: 80px;
-    background-color: transparent;
-    
-}
-.centro1{
-  display:block;
-  width: 100%;
-}
-.Iniciar{
-   display: flex;
-   width:150px;
-   height:50px;   
-   background-color: rgb(104, 100, 100);
-   border-radius:22px;   
-   justify-self: center;
-   justify-content: center;
-   align-items: center;
-   
-} 
-.cont{
-    display: flex;
-    justify-content: center;
-   align-items: center;
-}
- .texto{
-    width: 98%;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid black;
- }
- .registercentro{
-  display:block;
- } 
-    
-  @media (min-width: 1080px){
-    .centro1{
-      width: 500px;
-    }
-    .registercentro{
-      
-      position: absolute;
-      top: 53%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
+  .background2{
+      position:fixed;
+      width: 100%;
+      height: 100%;
+      background-image: url("src/assets/fondo.png");
+      z-index: -3;
   }
-  @media (max-width: 1080px){
-    .recuadro2{
-        display: none;
-    }
-    .background2{
-        display:none;
-    }
+  .recuadro2{
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      width: 600px;
+      height: 700px;
+      border: 2px solid black;
+      justify-content: center;
+      border-radius: 50px;
+      box-shadow: 5px 2px 2px black;
+      z-index: -2;
+      background-color: white;
+      
+  }
+  .transparent9{
+      display:flex;
+      width: 100%;
+      height: 80px;
+      background-color: transparent;
+      
+  }
+  .centro1{
+    display:block;
+    width: 100%;
+  }
+  .Iniciar{
+    display: flex;
+    width:150px;
+    height:50px;   
+    background-color: rgb(104, 100, 100);
+    border-radius:22px;   
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
     
-}  
+  } 
+  .cont{
+      display: flex;
+      justify-content: center;
+    align-items: center;
+  }
+  .texto{
+      width: 98%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid black;
+  }
+  .registercentro{
+    display:block;
+    margin: 2%;
+  } 
+      
+    @media (min-width: 1080px){
+      .centro1{
+        width: 500px;
+      }
+      .registercentro{
+        margin: 0;
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+    @media (max-width: 1080px){
+      .recuadro2{
+          display: none;
+      }
+      .background2{
+          display:none;
+      }
+      
+  }  
 </style>

@@ -1,64 +1,64 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-
 import Header3 from '../components/Header3.vue'
 </script>
 
 
 <template>
 
-<Header3>
+<Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
         
 </Header3>
 
 <main>
-    <div class = "container">
+    <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
 
-        <div class = "rectanguloredondeadeo2">           
+        <section class = "rectanguloredondeadeo2">           
             <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento">
-        </div>           
-        <div class = "rectanguloredondeadeo3">           
+            <a href = "calendarioevento"><div class = "rectanguloredondeadeo3">           
               Filtro
-        </div>
-        <div class = "rectanguloredondeadeo4"> 
-            <input type="text" class="sinborde" name="Historial" placeholder="Historial">
-       </div>
+            </div></a>
+        </section>           
         
-        <div class="eventocontainer">
+        <section class = "rectanguloredondeadeo4"> 
+            <input type="text" class="sinborde" name="Historial" placeholder="Historial">
+        </section>
+        
+        <section class="eventocontainer"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
             <div class="subtitulo">
-                En tu zona
+                <b>En tu zona</b>
             </div>
 
-            <div class = "parejas">
-            <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
-                width="35" height="35" alt="Botón atrás"></a>
-                <img src="src/assets/ImagenesEventos/vino.png" 
-                width="35" height="35" alt="Botón atrás">
-            </div>
+            <section class = "parejas">
+                <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
+                    width="35" height="35" alt="Botón atrás"></a>
+                    <img src="src/assets/ImagenesEventos/vino.png" 
+                    width="35" height="35" alt="Botón atrás">
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/teatro.png" 
                 width="35" height="35" alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/libro.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
 
-            <div class = "parejas">
+            <section class = "parejas">
                 <img src="src/assets/ImagenesEventos/comida.png" 
                 width="35" height="35" alt="Botón atrás">
                 <img src="src/assets/ImagenesEventos/viajes.png" 
                 width="35" height="35" alt="Botón atrás">
-            </div>
+            </section>
             
-        </div>
+        </section>
         
-    </div>
-    <div class="transparent6"></div>
+    </section>
+    <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
 
 </main>
 
         
-<Footer2>
+<Footer2>  <!--Nos permite identificar al pie de la página (que no forma parte del contenido único)-->
         
 </Footer2>
 
@@ -81,6 +81,7 @@ import Header3 from '../components/Header3.vue'
         padding: 2em;
         margin-top: -15px;
         text-align: center;
+        
     }
 
     img{
@@ -97,15 +98,17 @@ import Header3 from '../components/Header3.vue'
     .rectanguloredondeadeo2{
         color: gray;
         height: 25px;
-        width: 275px;
+        width: 80%;
         background-color: transparent;
         border: 1px solid grey;
         display: flex;
         align-items:center;
         padding: 5px;
         border-radius: 50px;
-        margin: 25px;
-        margin-right: 100px;
+        margin: 5%;
+        margin-top: 5%;
+        justify-content: space-between;
+       
     }
 
     .rectanguloredondeadeo3{
@@ -118,24 +121,21 @@ import Header3 from '../components/Header3.vue'
         align-items:center;
         justify-content: center;
         border-radius: 50px;
-        margin: 25px;
-        margin-right: -275px;
-        margin-top: -57px;
+        
+       
     }
 
     .rectanguloredondeadeo4{
         color: gray;
         height: 50px;
-        width: 275px;
+        width: 80%;
         background-color: transparent;
         border: 1px solid grey;
         display: flex;
         align-items:top;
         padding: 5px;
         border-radius: 5px;
-        margin: 25px;
-        margin-right: 100px;
-        margin-top: -10px;
+        margin-bottom: 10%;
     }
 
     .sinborde {
@@ -144,10 +144,18 @@ import Header3 from '../components/Header3.vue'
     }
 
     @media (min-width:1080px){
+
+        .container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
         .rectanguloredondeadeo2{
             color: gray;
             height: 25px;
-            width: 700px;
+            width: 90%;
             background-color: transparent;
             border: 1px solid grey;
             display: flex;
@@ -159,29 +167,25 @@ import Header3 from '../components/Header3.vue'
         }
 
         .rectanguloredondeadeo3{
-                color: white;
-                height: 25px;
-                width: 75px;
-                background-color: grey;
-                border: 1px solid grey;
-                display: flex;
-                align-items:center;
-                justify-content: center;
-                border-radius: 50px;
-                margin: 25px;
-                margin-left: 775px;
-                margin-top: -57px;
+            height: 25px;
+            width: 75px;
+            background-color: grey;
+            border: 1px solid grey;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border-radius: 50px;
+            
         }
 
         .rectanguloredondeadeo4{
             color: gray;
             height: 50px;
-            width: 700px;
+            width: 90%;
             background-color: transparent;
             border: 1px solid grey;
             display: flex;
             align-items:top;
-            padding: 5px;
             border-radius: 5px;
             margin: 25px;
             margin-right: 100px;
@@ -191,11 +195,13 @@ import Header3 from '../components/Header3.vue'
             background-color: lightgrey;
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
             padding: 1em;
-            margin-top: -5px;
-            width: 675px;
-            margin-left: -75px;
+            width: 89%;
             text-align: center;
+            margin-left: 3%;
+            
+
         }
 
         .parejas{

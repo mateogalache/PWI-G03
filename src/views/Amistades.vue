@@ -6,6 +6,7 @@ import Header2 from '../components/Header2.vue'
     <Header2>
 
     </Header2>
+<!--Pagina para las amistades del usuario -->
     <main>
         <h2>Amistades</h2>
         <div class="foto1">
@@ -18,7 +19,7 @@ import Header2 from '../components/Header2.vue'
                 <a href="SearchFriend"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
             </div>
-        <div class="transparent6"></div>
+        <div class="transparent6"></div> <!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
     </main>
     <Footer2>
         
@@ -62,13 +63,7 @@ import Header2 from '../components/Header2.vue'
         color: white;    
   
     } 
-    .nombre{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        
-    }
+   
     @media (min-width: 1080px){
 
     h2{
@@ -108,8 +103,7 @@ import Header2 from '../components/Header2.vue'
 
 
     }
-    }
-
+}
     
    
 
