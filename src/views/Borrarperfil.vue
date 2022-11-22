@@ -3,7 +3,7 @@ import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
 
-<template>
+<template scoped>
  
 
  
@@ -12,9 +12,10 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     <!--Esta página es la misma que la de perfil pero añadiendo una seccion de un rectangulo negro que nos servira para oscurecer la página y ponemos por encima de todo
         un article idependiente que muestra el "pop up" BORRAR PERFIL donde el coontenido está dividio en sections y botones-->
+
     <main>        
         <br>
-        
+               
         <article class = "contperfil">
             <h2>Perfil</h2> 
             <section class = "redondacolocacion">
@@ -39,13 +40,13 @@ import Header2 from '../components/Header2.vue'
         
                 <section class = "rectanguloB">
                     <br/>
-                    <aside class = cont> <p>¿Seguro que quieres borrar el perfil? </p> </aside><br/>
+                    <aside class = cont> <h3>¿Seguro que quieres borrar el perfil? </h3> </aside><br/>
                         <nav class = "contI2">
                             <a href = "Login"><button class = "rectanguloC">
-                            <p><FONT color = "white">BORRAR</FONT></p>
+                            <p>Borrar perfil</p>
                             </button></a>
                             <a href = "Perfil"><button class = "rectanguloC">
-                            <p><FONT color = "white">Cancelar</FONT></p>
+                            <p>Cancelar</p>
                             </button></a>
                         </nav>
                     </section>
@@ -55,42 +56,42 @@ import Header2 from '../components/Header2.vue'
 
        <section class = "cont">
         <a href = "Datos"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Datos</FONT></p>
+                <p>Datos</p>
             </button></a>
         </section>
        
        <br/>
        <section class = "cont">
            <a href = "Estadisticas"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Estadísticas</FONT></p>
+                <p>Estadísticas</p>
             </button></a>
         </section>
        
        <br/>
        <section class = "cont">
             <a href = "Amistades"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Amistades</FONT></p>
+                <p>Amistades</p>
             </button></a>
         </section>
        <br/>
 
        <section class = "cont">
             <a href = "Events"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Mis eventos</FONT></p>
+                <p>Mis eventos</p>
             </button></a>
         </section>
        <br/>
 
        <section class = "cont">
             <a href = "Borrarperfil"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Borrar perfil</FONT></p>
+                <p>Borrar perfil</p>
             </button></a>
         </section>
        <br/>
 
        <section class = "cont">        
             <a href = "Cerrarsesion"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Cerrar sesión</FONT></p>
+                <p>Cerrar sesión</p>
             </button></a>
         </section>
 
@@ -108,6 +109,9 @@ import Header2 from '../components/Header2.vue'
  
 <style scoped>
 
+.cont p{
+    color: white;
+}
 .contperfil{
     display: flex;
     justify-content: space-between;
@@ -120,8 +124,12 @@ import Header2 from '../components/Header2.vue'
     display: block;
     margin-top: 20px;
 }
-
-
+.transparent10{
+    display:flex;
+    width: 100%;
+    height: 135px;
+    background-color: transparent;
+}
 .Redondap{
     display:flex;
     width: 120px;
@@ -206,7 +214,9 @@ import Header2 from '../components/Header2.vue'
         width: 700px;
         
     }
-
+    .transparent10{
+        height: 24.5px;
+    }
     .rectanguloB{
         width: 500px;
     }

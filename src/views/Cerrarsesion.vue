@@ -40,13 +40,13 @@ import Header2 from '../components/Header2.vue'
         
                 <section class = "rectanguloB">
                     <br/>
-                    <aside class = cont> <p>¿Seguro que quieres cerrar la sesión? </p> </aside><br/>
+                    <aside class = cont> <h3>¿Seguro que quieres cerrar la sesión? </h3> </aside><br/>
                         <nav class = "contI2">
                             <a href = "Login"><button class = "rectanguloC">
-                            <p><FONT color = "white">Cerrar sesión</FONT></p>
+                            <p>Cerrar sesión</p>
                             </button></a>
                             <a href = "Perfil"><button class = "rectanguloC">
-                            <p><FONT color = "white">Cancelar</FONT></p>
+                            <p>Cancelar</p>
                             </button></a>
                         </nav>
                     </section>
@@ -56,42 +56,42 @@ import Header2 from '../components/Header2.vue'
 
        <section class = "cont">
         <a href = "Datos"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Datos</FONT></p>
+                <p>Datos</p>
             </button></a>
         </section>
        
        <br/>
        <section class = "cont">
            <a href = "Estadisticas"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Estadísticas</FONT></p>
+                <p>Estadísticas</p>
             </button></a>
         </section>
        
        <br/>
        <section class = "cont">
             <a href = "Amistades"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Amistades</FONT></p>
+                <p>Amistades</p>
             </button></a>
         </section>
        <br/>
 
        <section class = "cont">
             <a href = "Events"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Mis eventos</FONT></p>
+                <p>Mis eventos</p>
             </button></a>
         </section>
        <br/>
 
        <section class = "cont">
             <a href = "Borrarperfil"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Borrar perfil</FONT></p>
+                <p>Borrar perfil</p>
             </button></a>
         </section>
        <br/>
 
        <section class = "cont">        
             <a href = "Cerrarsesion"><button class="Rectanguloborrar">
-                <p><FONT color = "white">Cerrar sesión</FONT></p>
+                <p>Cerrar sesión</p>
             </button></a>
         </section>
 
@@ -109,6 +109,9 @@ import Header2 from '../components/Header2.vue'
  
 <style scoped>
 
+.cont p{
+    color: white;
+}
 .contperfil{
     display: flex;
     justify-content: space-between;

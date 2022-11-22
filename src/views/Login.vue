@@ -34,13 +34,13 @@ import Header from '../components/Header.vue'
     
             <article class="contlogin"> 
                 <a href = "Home"><button class="Iniciar">
-                <b><FONT COLOR="white">Iniciar Sesión</FONT></b>
+                <b class = white>Iniciar Sesión</b>
                 </button></a>
             </article>
 
             <article class="contlogin">
                 <section class = "center0">
-                    <a HREF="Register"><p align = "right"><small>¿No tienes cuenta? Regístrate</small></p></a>
+                    <a HREF="Register"><p class = "ntc"><small>¿No tienes cuenta? Regístrate</small></p></a>
                 </section>
             </article>
       
@@ -56,6 +56,11 @@ import Header from '../components/Header.vue'
   </template>
 <style scoped>
 
+.ntc{
+    display: flex;
+    justify-content: end;
+    
+}
 .transparent9{
     display:flex;
     width: 100%;

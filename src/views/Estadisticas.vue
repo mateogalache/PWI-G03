@@ -25,7 +25,7 @@ import Header2 from '../components/Header2.vue'
       <br/>
       <article class = "cont">
           <section class = "rectangulo4">
-              <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</FONT></p>
+              <p class = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</p>
               <!--En este caso hemos utilizado aside ya que simplemente hemos utilizado este tag para colocar y dimensionar unas imagenes-->
               <aside class = "estrellas">
                   <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
@@ -41,7 +41,7 @@ import Header2 from '../components/Header2.vue'
 
       <article class = "cont">
           <section class = "rectangulo4">                
-                  <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num. comentarios</FONT></p>
+                  <p class = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num. comentarios</p>
                   <p class = "separacion2">156</p>
           </section>    
       </article>
@@ -50,9 +50,9 @@ import Header2 from '../components/Header2.vue'
 
       <article class = "cont">
           <section class = "rectangulo3">                
-              <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcentaje <br
+              <p class = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcentaje <br
                   >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usuarios con menos<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comentarios</FONT></p>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comentarios</p>
               <aside class = "separacion2">
               <p>48%</p>
               </aside>
@@ -70,6 +70,8 @@ import Header2 from '../components/Header2.vue'
   </Footer2>
 </template>
 <style scoped>
+
+
 
 .margenestadistica{
     margin-left: 2%;

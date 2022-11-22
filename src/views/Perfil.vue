@@ -35,42 +35,42 @@ import Header3 from '../components/Header3.vue';
      
       <section  class = "cont">
           <a href = "Datos"><button class="Rectanguloperfil">
-              <p><FONT color = "white">Datos</FONT></p>
+              <p>Datos</p>
           </button></a>
       </section>
      
      <br/>
      <section class = "cont">
          <a href = "Estadisticas"><button class="Rectanguloperfil">
-              <p><FONT color = "white">Estadísticas</FONT></p>
+              <p>Estadísticas</p>
           </button></a>
       </section>
      
      <br/>
      <section class = "cont">
           <a href = "Amistades"><button class="Rectanguloperfil">
-              <p><FONT color = "white">Amistades</FONT></p>
+              <p>Amistades</p>
           </button></a>
       </section>
 
      <br/>
      <section class = "cont">
           <a href = "MisEventos"><button class="Rectanguloperfil">
-              <p><FONT color = "white">Mis eventos</FONT></p>
+              <p>Mis eventos</p>
           </button></a>
       </section>
 
      <br/>
      <section class = "cont">
           <a href = "Borrarperfil"><button class="Rectanguloperfil">
-              <p><FONT color = "white">Borrar perfil</FONT></p>
+              <p>Borrar perfil</p>
           </button></a>
       </section>
 
      <br/>
      <section class = "cont">        
           <a href = "Cerrarsesion"><button class="Rectanguloperfil">
-              <p><FONT color = "white">Cerrar sesión</FONT></p>
+              <p>Cerrar sesión</p>
           </button></a>
       </section>
      <br/><br/>
@@ -87,6 +87,9 @@ import Header3 from '../components/Header3.vue';
  
 <style scoped>
 
+.cont p{
+    color: white;
+}
 
 .redondacolocacion{
     display: block;

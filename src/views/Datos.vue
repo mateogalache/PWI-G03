@@ -24,9 +24,9 @@ import Header2 from '../components/Header2.vue'
 
         <article class = "cont">
             <section class = "rectangulo5">
-                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</FONT></p>                    
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre</p>                    
                 <nav class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
+                    <p>Editar</p>
                 </nav>
             </section>    
         </article>
@@ -35,9 +35,9 @@ import Header2 from '../components/Header2.vue'
 
         <article class = "cont">
             <section class = "rectangulo5">                
-                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apellidos</FONT></p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apellidos</p>
                 <nav class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
+                    <p>Editar</p>
                 </nav>
             </section>    
         </article>
@@ -46,9 +46,9 @@ import Header2 from '../components/Header2.vue'
 
         <article class = "cont">
             <section class = "rectangulo5">                
-                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</FONT></p>                    
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</p>                    
                 <nav class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
+                    <p>Editar</p>
                 </nav>
             </section>    
         </article>
@@ -57,9 +57,9 @@ import Header2 from '../components/Header2.vue'
 
         <article class = "cont">
             <section class = "rectangulo5">                
-                <p><FONT color = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contraseña</FONT></p>                    
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contraseña</p>                    
                 <nav class = "rectangulo2">
-                    <p><FONT color = "white">Editar</FONT></p>
+                    <p>Editar</p>
                 </nav>
             </section>    
         </article>     
@@ -72,6 +72,13 @@ import Header2 from '../components/Header2.vue'
 
 <style scoped>
 
+.cont .rectangulo5 p{
+    color: grey;
+}
+
+.cont .rectangulo2 p{
+    color: white;
+}
 .margendatos{
     margin-left: 2%;
 }
