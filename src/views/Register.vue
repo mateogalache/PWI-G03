@@ -1,6 +1,41 @@
 <script setup>
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
+
+/*  
+let btn = document.getElementById('registrar');
+
+btn.addEventListener('click',register);
+      
+function register(){
+fetch("http://puigmal.salle.url.edu/api/v2/api/users/login",{
+
+method : "POST",
+    
+
+  body: JSON.stringify({
+      name: '#name',
+      last_name: '#last_name',
+      email: '#email',
+      password:'#password',
+      image:'#image'
+    }),
+
+    headers:{
+      "Content-type" : "aplication/json; charset=UTF=8"
+    }
+  
+
+})
+
+.then(response => response.json())
+.then(json => console.log(json));
+}     
+      
+*/
+
+
+
 </script>
 <template>
     <Header>
@@ -20,23 +55,25 @@ import Header from '../components/Header.vue'
           <section class = "centro1">
             <h2><b>Datos personales</b></h2>                
             <p><label>Nombre*</label></p>
-            <input type="text" class = "texto">
+            <input type="text" class = "texto" id = "name" >
             <p><label>Apellidos*</label></p>
-            <input type="text" class = "texto">
+            <input type="text" class = "texto" id = "last_name" >
             <p><label>Email*</label></p>
-            <input type="text" class = "texto">
+            <input type="text" class = "texto" id = "email" >
             <p><label>Contraseña*</label></p>
-            <input type="password" class = "texto">
+            <input type="password" class = "texto" id = "password" >
             <p><label>Foto de perfil*</label></p>
-            <input type="text" class = "texto">
+            <input type="text" class = "texto" id = "image" >
             <br/><br/>
           </section>
         </article>
     
         <article class="cont">
-        <a href = "Home"><button class="Iniciar">
+        
+        <a href = "Login"><button class="Iniciar" id = "registrar">
             <b><FONT COLOR="white">Registrar</FONT></b>
         </button></a>
+        
       </article>
 
       <section class = "transparent9"></section>
@@ -50,6 +87,10 @@ import Header from '../components/Header.vue'
     </Footer>
 </template>
 <style scoped>
+
+  *{
+    text-decoration: none;
+  }
   .background2{
       position:fixed;
       width: 100%;
@@ -92,7 +133,7 @@ import Header from '../components/Header.vue'
     justify-self: center;
     justify-content: center;
     align-items: center;
-    
+    cursor: pointer;    
   } 
   .cont{
       display: flex;

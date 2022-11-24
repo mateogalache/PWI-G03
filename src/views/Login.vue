@@ -40,7 +40,7 @@ import Header from '../components/Header.vue'
 
             <article class="contlogin">
                 <section class = "center0">
-                    <a HREF="Register"><p class = "ntc"><small>¿No tienes cuenta? Regístrate</small></p></a>
+                    <p class = "ntc">¿No tienes cuenta?<a HREF="Register"> <span> Regístrate</span></a></p>
                 </section>
             </article>
       
@@ -56,10 +56,20 @@ import Header from '../components/Header.vue'
   </template>
 <style scoped>
 
+*{
+    text-decoration: none;
+    
+}
 .ntc{
     display: flex;
     justify-content: end;
-    
+    color: black;
+    margin-bottom: 2px;
+    gap: 5px;
+}
+
+.ntc span{
+    color: var(--main-bg-color);
 }
 .transparent9{
     display:flex;
