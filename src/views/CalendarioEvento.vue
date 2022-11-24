@@ -62,10 +62,14 @@ import Header3 from '../components/Header3.vue'
                 </div>
 
                 <section class="popup2">
-                    <input type="text" class="sinborde" name="Fecha Inicio" placeholder="Fecha Inicio">
-                        <a href = "calendario"><div class="imga">
+                    <div class = "datacontainer">
+                        Fecha inicio
+                        <input type = "date" class = "date">
+                    </div>
+                        <!--<a href = "calendario"><div class="imga">
                             <img src = "src/assets/calendar.png" style="width:20px !important; height:20px !important;">
-                        </div></a>
+                        </div></a>-->
+                        
                 </section>
 
                 <section class="botones2">
@@ -93,6 +97,22 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+
+
+
+.date{
+    width: 50%;
+    height: 50%;
+    background: transparent;
+    border: none;
+}
+
+.datacontainer{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3px;
+}
 
 .popup{
         background-color: white;

@@ -13,7 +13,7 @@ import Header from '../components/Header.vue'
       <body class = "registercentro">
         <br>
         <section class="cont">
-        <img src = "https://i.ibb.co/80sWyBS/sallevents.png" width = "150" height = "75" >
+        <img src = "src/assets/sallevents.png" width = "150" height = "75" >
         </section>
         
         <article class = "cont">

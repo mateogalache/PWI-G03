@@ -8,7 +8,7 @@
     <main>
         <article class = centropantalla> <!--Article para hacer una seccion grande y luego ponemos un section para una parte donde tenemos el contenido-->
             <section class = "imagencentro">
-                <img src = "https://i.ibb.co/80sWyBS/sallevents.png" > <!--Ponemos el tag de img para cargar una imagen-->
+                <img src = "src/assets/sallevents.png" > <!--Ponemos el tag de img para cargar una imagen-->
                 <meta http-equiv="refresh" content="3; url = /Login">  <!--El tag de meta nos servirá para pasar a otra página sin necesidad de clickar nada y pasará a la siguiente página en 3 segundos-->        
             </section>
         </article>   

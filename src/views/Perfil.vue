@@ -87,6 +87,15 @@ import Header3 from '../components/Header3.vue';
  
 <style scoped>
 
+
+.cont .Rectanguloperfil:hover{
+    opacity: 50%;
+}
+
+*{
+    text-decoration: 0;
+}
+
 .cont p{
     color: white;
 }
@@ -111,6 +120,7 @@ import Header3 from '../components/Header3.vue';
     background-color: transparent;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .Rectanguloperfil{
    display: flex;
@@ -121,8 +131,7 @@ import Header3 from '../components/Header3.vue';
    justify-self: center;
    justify-content: center;
    align-items: center;
-
-   
+   transition: all 300ms ease;   
 } 
 .cont{
     display: flex;

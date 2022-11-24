@@ -16,7 +16,7 @@ import Header from '../components/Header.vue'
             </article> 
 
             <article class="contlogin">        
-                <img src = "https://i.ibb.co/80sWyBS/sallevents.png" class= "imglogo">
+                <img src = "src/assets/sallevents.png" class= "imglogo">
             </article>
             <br>
         
