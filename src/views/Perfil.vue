@@ -132,6 +132,7 @@ import Header3 from '../components/Header3.vue';
    justify-content: center;
    align-items: center;
    transition: all 300ms ease;   
+   cursor: pointer;
 } 
 .cont{
     display: flex;
