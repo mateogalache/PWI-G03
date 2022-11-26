@@ -2,35 +2,23 @@
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 
-/*  
-let btn = document.getElementById('registrar');
+/*
+const myForm = document.getElementById('myForm');
 
-btn.addEventListener('click',register);
-      
-function register(){
-fetch("http://puigmal.salle.url.edu/api/v2/api/users/login",{
+myForm.addEventListener('submit',function(e){
+  e.preventDefault();
 
-method : "POST",
-    
+  const formData = new FormData(myForm);
 
-  body: JSON.stringify({
-      name: '#name',
-      last_name: '#last_name',
-      email: '#email',
-      password:'#password',
-      image:'#image'
-    }),
+  fetch('http://puigmal.salle.url.edu/api/v2/api/users/login',{
+      method: 'POST',
+      body: formData,
+  })
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
 
-    headers:{
-      "Content-type" : "aplication/json; charset=UTF=8"
-    }
-  
-
-})
-
-.then(response => response.json())
-.then(json => console.log(json));
-}     
+});
       
 */
 
@@ -53,27 +41,29 @@ method : "POST",
         
         <article class = "cont">
           <section class = "centro1">
-            <h2><b>Datos personales</b></h2>                
+            <h2><b>Datos personales</b></h2>
+            <form id = "myForm">               
             <p><label>Nombre*</label></p>
-            <input type="text" class = "texto" id = "name" >
+            <input type="text" class = "texto" id = "name"  name = "name">
             <p><label>Apellidos*</label></p>
-            <input type="text" class = "texto" id = "last_name" >
+            <input type="text" class = "texto" id = "last_name" name = "last_name">
             <p><label>Email*</label></p>
-            <input type="text" class = "texto" id = "email" >
+            <input type="text" class = "texto" id = "email" name = "email">
             <p><label>Contraseña*</label></p>
-            <input type="password" class = "texto" id = "password" >
+            <input type="password" class = "texto" id = "password" name = "password">
             <p><label>Foto de perfil*</label></p>
-            <input type="text" class = "texto" id = "image" >
+            <input type="text" class = "texto" id = "image" name = "image">
             <br/><br/>
+          </form> 
           </section>
         </article>
     
         <article class="cont">
         
-        <a href = "Login"><button class="Iniciar" id = "registrar">
+        <button class="Iniciar" id = "registrar" type = "submit">
             <b><FONT COLOR="white">Registrar</FONT></b>
-        </button></a>
-        
+        </button>
+          
       </article>
 
       <section class = "transparent9"></section>
