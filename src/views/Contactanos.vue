@@ -350,7 +350,7 @@ import Header3 from '../components/Header3.vue';
 
         #izquierda{
             float: center;
-            margin-left: 330px;
+            margin-left: 150px;
             font-size: 35px ; 
             margin-top: -50px; 
                    

@@ -84,6 +84,10 @@ import Header3 from '../components/Header3.vue'
         flex-direction: row;
     }
 
+    .parejas:hover{
+        filter: brightness(5px);
+    }
+
     .titulo{
         margin-top: 30px;
         display: flex;
