@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 
@@ -22,7 +22,68 @@ myForm.addEventListener('submit',function(e){
       
 */
 
+const baseURL = "http://puigmal.salle.url.edu/api/v2/api";
 
+
+
+export default {
+  name: "App",
+  data() {
+    return {
+      postResult: null
+    }
+  },
+  methods: {
+    fortmatResponse(res) {
+      return JSON.stringify(res, null, 2);
+    },
+
+    async postData() {
+      const postData = {
+        name: this.$refs.post_name.value,
+        last_name: this.$refs.post_last_name.value,
+        email: this.$refs.post_email.value,
+        password: this.$refs.post_password.value,
+        image: this.$refs.post_image.value,
+      };
+
+      try {
+        const res = await fetch(`${baseURL}/users/login`, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            "x-access-token": "token-value",
+          },
+          body: JSON.stringify(postData),
+        });
+
+        if (!res.ok) {
+          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+          throw new Error(message);
+        }
+
+        const data = await res.json();
+
+        const result = {
+          status: res.status + "-" + res.statusText,
+          headers: {
+            "Content-Type": res.headers.get("Content-Type"),
+            "Content-Length": res.headers.get("Content-Length"),
+          },
+          data: data,
+        };
+
+        this.postResult = this.fortmatResponse(result);
+      } catch (err) {
+        this.postResult = err.message;
+      }
+    },
+
+    clearPostOutput() {
+      this.postResult = null;
+    },
+  }
+}
 
 </script>
 <template>
@@ -44,15 +105,15 @@ myForm.addEventListener('submit',function(e){
             <h2><b>Datos personales</b></h2>
             <form id = "myForm">               
             <p><label>Nombre*</label></p>
-            <input type="text" class = "texto" id = "name"  name = "name">
+            <input type="text" class = "texto" id = "name"  name = "name" ref = "post_name">
             <p><label>Apellidos*</label></p>
-            <input type="text" class = "texto" id = "last_name" name = "last_name">
+            <input type="text" class = "texto" id = "last_name" name = "last_name" ref = "post_last_name">
             <p><label>Email*</label></p>
-            <input type="text" class = "texto" id = "email" name = "email">
+            <input type="text" class = "texto" id = "email" name = "email" ref = "post_email">
             <p><label>Contraseña*</label></p>
-            <input type="password" class = "texto" id = "password" name = "password">
+            <input type="password" class = "texto" id = "password" name = "password" ref = "post_password">
             <p><label>Foto de perfil*</label></p>
-            <input type="text" class = "texto" id = "image" name = "image">
+            <input type="text" class = "texto" id = "image" name = "image" ref = "post_image">
             <br/><br/>
           </form> 
           </section>
