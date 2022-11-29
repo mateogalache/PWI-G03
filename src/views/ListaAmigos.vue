@@ -13,7 +13,9 @@ export default {
   },
   methods: {
         getAmigos(id){
-                //Aqui la llamada a la api
+          
+           
+
         },
         getId(){
             //funcion para llamar api y conseguir el id de nuestro person
