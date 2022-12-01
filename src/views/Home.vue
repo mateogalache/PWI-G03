@@ -53,7 +53,9 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
-
+    main{
+        overflow: hidden;
+    }
     .margenhome{
         margin-left: 2%;
     }
