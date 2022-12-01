@@ -1,7 +1,27 @@
-<script setup>
+<script >
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 
+export default {
+  data() {
+    return {
+        amigos:null
+    }
+  },
+  mounted() {
+    var id = this.getId()
+    this.getPeticiones(id)
+  },
+  methods: {
+        getPeticiones(id){
+                //Aqui la llamada a la api
+        },
+        getId(){
+            //funcion para llamar api y conseguir el id de la persona que queremos sus amigos
+        return id
+        }  
+    }
+}
 </script>
 <template>
 
@@ -21,31 +41,18 @@ import Header2 from '../components/Header2.vue'
                 </button>
             </section >
                 
-                
-            <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
-                    <img src="src\assets\tick.png" class = "icon" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon" alt="tick">
-                </aside>
-            </section>
-            <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
-                    <img src="src\assets\tick.png" class = "icon" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon" alt="tick">
-                </aside>
-            </section>
-            <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
-                    <img src="src\assets\tick.png" class = "icon" alt="tick">
-                    <img src="src\assets\cross.png" class = "icon" alt="tick">
-                </aside>
-            </section>
+            <tr v-for="amigo in amigos" :key="amigo.id">   
+                <td>    
+                    <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
+                        <img src={{amigo.image}} class = "perfil">
+                        <a href="PerfilAjeno"><p class = "nombre3">{{amigo.name}}</p></a>
+                        <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
+                            <img src="src\assets\tick.png" class = "icon" alt="tick">
+                            <img src="src\assets\cross.png" class = "icon" alt="tick">
+                        </aside>
+                    </section>
+                </td>
+            </tr>
         </article>
     <div class="transparent6"></div>
     </main>

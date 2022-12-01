@@ -1,7 +1,26 @@
-<script setup>
+<script >
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
-
+export default {
+  data() {
+    return {
+        amigos:null
+    }
+  },
+  mounted() {
+    var id = this.getId()
+    this.getPeticiones(id)
+  },
+  methods: {
+        getPeticiones(id){
+                //Aqui la llamada a la api
+        },
+        getId(){
+            //funcion para llamar api y conseguir el id de la persona que queremos sus amigos
+        return id
+        }  
+    }
+}
 </script>
 <template>
 
@@ -20,28 +39,17 @@ import Header2 from '../components/Header2.vue'
                     <a href = "Pending"><b>Pending request</b></a>
                 </button>
             </section >
-                
-            <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <nav class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
-            <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <nav class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
-            <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil">
-                <a href="PerfilAjeno"><p class = "nombre3">Nombre</p></a>
-                <nav class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
+            <tr v-for="amigo in amigos" :key="amigo.id">   
+                <td>    
+                    <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
+                        <img src={{amigo.image}} class = "perfil">
+                        <a href="PerfilAjeno"><p class = "nombre3">{{amigo.name}}</p></a>
+                        <div class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
+                            <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                        </div>
+                    </section>
+                </td>
+            </tr>    
         </article>
     <div class="transparent6"></div>
     </main>
