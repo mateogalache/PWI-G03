@@ -1,7 +1,26 @@
-<script setup>
+<script >
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
-
+export default {
+  data() {
+    return {
+        amigos:null
+    }
+  },
+  mounted() {
+    var id = this.getId()
+    this.getAmigos(id)
+  },
+  methods: {
+        getAmigos(id){
+                //Aqui la llamada a la api
+        },
+        getId(){
+            //funcion para llamar api y conseguir el id de la persona que queremos sus amigos
+        return id
+        }  
+    }
+}
 </script>
 <template>
 
@@ -12,45 +31,20 @@ import Header2 from '../components/Header2.vue'
     <main>
         <br><h2 class="titulo34">Amigos</h2>
         <article class = "cont6"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
-            <aside class = "BContainer6"><!--Usamos aside ya que no pertence a las secciones, pero si que esta relacionado con la pagina-->
+            <section class = "BContainer6"><!--Usamos aside ya que no pertence a las secciones, pero si que esta relacionado con la pagina-->
                 <p class = "buscar">Busca</p>
-            </aside>
-                
-            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil" >
-                <a href="PerfilAjeno"><p class = "nombre6">Laura</p></a>
-                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
             </section>
-            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil" >
-                <a href="PerfilAjeno"><p class = "nombre6">Javier</p></a>
-                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
-            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil" >
-                <a href="PerfilAjeno"><p class = "nombre6">Antonio</p></a>
-                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
-            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil" >
-                <a href="PerfilAjeno"><p class = "nombre6">Maria</p></a>
-                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
-            <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
-                <img src="src/assets/usuario.png" class = "perfil" >
-                <a href="PerfilAjeno"><p class = "nombre6">Carlos</p></a>
-                <nav class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
-            </section>
+            <tr v-for="amigo in amigos" :key="amigo.id">   
+                <td>
+                    <section class = "PContainer6"><!--Con el secction separamos las secciones que no interesan-->
+                        <img src={{amigo.image}} class = "perfil" >
+                        <a href="PerfilAjeno"><p class = "nombre6">{{amigo.name}}</p></a>
+                        <div class = "Clogo6"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
+                            <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                        </div>
+                    </section>
+                </td>
+            </tr>
         </article>
         <div class="transparent6"></div>
     </main>
