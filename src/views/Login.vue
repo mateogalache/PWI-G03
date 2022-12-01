@@ -1,6 +1,74 @@
-<script setup>
+<script lang = "ts">
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
+
+const baseURL = "http://puigmal.salle.url.edu/api/v2";
+
+
+
+export default {
+  name: "App",
+  data() {
+    return {
+      postResult: null
+    }
+  },
+  methods: {
+    fortmatResponse(res) {
+      return JSON.stringify(res, null, 2);
+    },
+  async postLogin() {
+    
+      const postData = {
+        
+        email: this.$refs.email.value,
+        password: this.$refs.password.value,
+        
+      };
+      
+      try {
+        
+        const res = await fetch(`${baseURL}/users`, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            "x-access-token": "token-value",
+          },
+          body: JSON.stringify(postData),
+        });
+        console.log(res);
+
+        if (!res.ok) {
+          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+          throw new Error(message);
+        }
+
+        const data = await res.json();
+
+        const result = {
+          status: res.status + "-" + res.statusText,
+          headers: {
+            "Content-Type": res.headers.get("Content-Type"),
+            "Content-Length": res.headers.get("Content-Length"),
+          },
+          data: data,
+        };
+
+        this.postResult = this.fortmatResponse(result);
+        
+      } catch (err) {
+        this.postResult = err.message;
+      }
+    }
+    },
+
+    clearPostOutput() {
+      this.postResult = null;
+    }
+  }
+
+
+
 </script>
 <template >
     <Header>
@@ -24,16 +92,16 @@ import Header from '../components/Header.vue'
                 <section class = "center0">
                     <h2><b>Iniciar sesión</b></h2>              
                     <p><label>Email*</label></p>
-                    <input type="text" class = "texto">
+                    <input type="text" class = "texto" ref = "email">
                     <p><label>Contraseña*</label></p>
-                    <input type="password" class = "texto">
+                    <input type="password" class = "texto" ref = "password">
                     <p><small>¿Has olvidado tu contraseña?</small></p>
                 </section>
             </article>
             <br>
     
             <article class="contlogin"> 
-                <a href = "Home"><button class="Iniciar">
+                <a href = "Home"><button v-on:click = "postLogin()" class="Iniciar">
                 <b class = white>Iniciar Sesión</b>
                 </button></a>
             </article>

@@ -37,7 +37,7 @@ export default {
     fortmatResponse(res) {
       return JSON.stringify(res, null, 2);
     },
-  async hola() {
+  async postRegister() {
     
       const postData = {
         name: this.$refs.post_name.value,
@@ -126,7 +126,7 @@ export default {
     
        
         <article class="cont">
-        <button v-on:click = "hola()" class="Iniciar" id = "registrar" type = "submit">
+        <button v-on:click = "postRegister()" class="Iniciar" id = "registrar" type = "submit">
                  <b><FONT COLOR="white">Registrar</FONT></b>
         </button>
         
