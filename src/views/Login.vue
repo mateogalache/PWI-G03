@@ -28,7 +28,7 @@ export default {
       
       try {
         
-        const res = await fetch(`${baseURL}/users`, {
+        const res = await fetch(`${baseURL}/users/login`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -101,9 +101,9 @@ export default {
             <br>
     
             <article class="contlogin"> 
-                <a href = "Home"><button v-on:click = "postLogin()" class="Iniciar">
+                <button v-on:click = "postLogin()" class="Iniciar">
                 <b class = white>Iniciar Sesión</b>
-                </button></a>
+                </button>
             </article>
 
             <article class="contlogin">
