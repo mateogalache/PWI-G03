@@ -1,4 +1,4 @@
-<script>
+<script lang = "ts">
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 
@@ -22,7 +22,7 @@ myForm.addEventListener('submit',function(e){
       
 */
 
-const baseURL = "http://puigmal.salle.url.edu/api/v2/api";
+const baseURL = "http://puigmal.salle.url.edu/api/v2";
 
 
 
@@ -37,8 +37,8 @@ export default {
     fortmatResponse(res) {
       return JSON.stringify(res, null, 2);
     },
-
-    async postData() {
+  async postRegister() {
+    
       const postData = {
         name: this.$refs.post_name.value,
         last_name: this.$refs.post_last_name.value,
@@ -46,9 +46,10 @@ export default {
         password: this.$refs.post_password.value,
         image: this.$refs.post_image.value,
       };
-
+      
       try {
-        const res = await fetch(`${baseURL}/users/login`, {
+        
+        const res = await fetch(`${baseURL}/users`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -56,6 +57,7 @@ export default {
           },
           body: JSON.stringify(postData),
         });
+        console.log(res);
 
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
@@ -74,16 +76,19 @@ export default {
         };
 
         this.postResult = this.fortmatResponse(result);
+        
       } catch (err) {
         this.postResult = err.message;
       }
+    }
     },
 
     clearPostOutput() {
       this.postResult = null;
-    },
+    }
   }
-}
+
+
 
 </script>
 <template>
@@ -119,11 +124,12 @@ export default {
           </section>
         </article>
     
+       
         <article class="cont">
-        
-        <button class="Iniciar" id = "registrar" type = "submit">
-            <b><FONT COLOR="white">Registrar</FONT></b>
+        <button v-on:click = "postRegister()" class="Iniciar" id = "registrar" type = "submit">
+                 <b><FONT COLOR="white">Registrar</FONT></b>
         </button>
+        
           
       </article>
 
