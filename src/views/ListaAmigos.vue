@@ -9,18 +9,20 @@ export default {
   },
   mounted() {
     var id = this.getId()
-    this.getAmigos(id)
+    this.getAmigos()
+    const baseURL = "http://puigmal.salle.url.edu/api/v2/api";
   },
   methods: {
-        getAmigos(id){
-          
-           
-
+        getAmigos(){
+          fetch('https://api.github.com/users/manishmshiva', {
+              method: "GET",
+              headers: { "Authoritzation": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTkzOSwibmFtZSI6Im1hcmlvIiwibGFzdF9uYW1lIjoicm9kcmlndWV6IiwiZW1haWwiOiJtYXJpb0BtYXJpby5jb20iLCJpbWFnZSI6Im5hZGEuanBnIn0.OuINh4wOjLqo4niuu3uiAShfD3JFqPj4YsCd92FGoJ4" }
+          })
+              .then(response => response.json())
+              .then(json => console.log(json)); 
         },
-        getId(){
-            //funcion para llamar api y conseguir el id de nuestro person
-        return id
-        }  
+
+         
     }
 }
     
