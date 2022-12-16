@@ -21,13 +21,13 @@
     justify-content: end;
   }
   .HContainer0{
-  
+      top: 0;
       display:flex;
       align-items: center;
       justify-content: center;
       background-color: var(--main-bg-color);
       width: 100%;
-  
+      position: fixed;
   }
   
   

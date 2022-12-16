@@ -27,7 +27,7 @@
     background-color:var(--main-bg-color);
     align-items: center;
     flex-wrap: wrap;
-    
+    width:100%;
 }
 
 .botones1{

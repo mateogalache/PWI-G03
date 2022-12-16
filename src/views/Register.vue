@@ -149,6 +149,7 @@ export default {
     text-decoration: none;
   }
   .background2{
+      margin-top: -5rem;
       position:fixed;
       width: 100%;
       height: 100%;

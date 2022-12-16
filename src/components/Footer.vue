@@ -33,7 +33,7 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-
+    
 }
 
 .Fright {

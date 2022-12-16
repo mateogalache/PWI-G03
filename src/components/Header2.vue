@@ -19,13 +19,13 @@
 <style>
 
 .HContainer7{
-
+    top:0;
     display:flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--main-bg-color);
     width: 100%;
-
+    position: fixed;
 }
 
 .triangulo{

@@ -1,4 +1,4 @@
-<script lang = "ts">
+<script >
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 
@@ -27,20 +27,23 @@ export default {
       };
       
       try {
-        
-        const res = await fetch(`${baseURL}/users/login`, {
+          const res = await fetch(`${baseURL}/users/login`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
-            "x-access-token": "token-value",
+            "Authorization": "Bearer " + window.localStorage.getItem("accesToken")
           },
           body: JSON.stringify(postData),
         });
+       
         console.log(res);
 
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
           throw new Error(message);
+        }
+        else{
+          this.$router.push({ name: 'Home' });
         }
 
         const data = await res.json();
@@ -50,6 +53,7 @@ export default {
           headers: {
             "Content-Type": res.headers.get("Content-Type"),
             "Content-Length": res.headers.get("Content-Length"),
+
           },
           data: data,
         };
@@ -124,6 +128,7 @@ export default {
   </template>
 <style scoped>
 
+
 *{
     text-decoration: none;
     
@@ -181,8 +186,6 @@ export default {
     display: flex;
     justify-content: center;
    align-items: center;
-   
-
 }
     
 .iniciarsesioncontainer{
@@ -224,9 +227,10 @@ export default {
     
     }
     .background{
+    margin-top: -5rem;
     position:fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url("src/assets/fondo.png");
     z-index: -3;
     }
