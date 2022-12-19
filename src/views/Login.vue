@@ -6,6 +6,7 @@ const baseURL = "http://puigmal.salle.url.edu/api/v2";
 
 
 
+
 export default {
   name: "App",
   data() {

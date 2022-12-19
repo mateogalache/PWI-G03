@@ -1,7 +1,36 @@
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {}
+    }
+  },
+  beforeMount(){
+    this.getEvents();
+  },
+  methods: {
+     getEvents(){
+      
+        fetch ('http://puigmal.salle.url.edu/api/v2/events',{
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + window.localStorage.getItem("accesToken")
+            },
+        })
+            .then(response => response.json())
+            .then(data => this.data = data);
+    },
+    
+  }
+};
+</script>
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header3 from '../components/Header3.vue'
 </script>
+
+
 
 
 <template>
@@ -16,32 +45,22 @@ import Header3 from '../components/Header3.vue'
         <h2>Eventos Destacados</h2>
     </section>
     <br>
-    <div class = "container5">
-              
-        <div class="eventocontainer">
-            <div class = "parejas">
-            <a href="Event"><img src="src/assets/ImagenesEventos/deporte.png" 
-                 alt="Botón atrás"></a>
-                <img src="src/assets/ImagenesEventos/vino.png" 
-                width="35" height="35" alt="Botón atrás">
-            </div>
+    
+        <div class="container">
+            <div class="eventocontainer" id = "app" v-for="events in data" :key="events.id"  >
+                <img  :src=   "events.image" >
+                <div class="eventName">
+                    {{ events.name }} 
+                </div>
+               
+                
+            </div> 
+        </div>     
+        
+    
+    
 
-            <div class = "parejas">
-                <img src="src/assets/ImagenesEventos/teatro.png" 
-                 alt="Botón atrás">
-                <img src="src/assets/ImagenesEventos/libro.png" 
-                alt="Botón atrás">
-            </div>
-
-            <div class = "parejas">
-                <img src="src/assets/ImagenesEventos/comida.png" 
-                alt="Botón atrás">
-                <img src="src/assets/ImagenesEventos/viajes.png" 
-               alt="Botón atrás">
-            </div>
-        </div>
-    </div>
-    <div class="transparent6"></div>
+    
 
 </main>
 
@@ -53,6 +72,18 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+
+    .eventName{
+        margin-top: -0.5rem;
+    }
+    .eventocontainer *{
+        cursor: pointer;
+        
+    }
+
+    *{
+        list-style: none;
+    }
     main{
         overflow: hidden;
     }
@@ -60,20 +91,21 @@ import Header3 from '../components/Header3.vue'
         margin-left: 2%;
     }
 
-    .container5{
-       
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+    .container{
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+        background-color: lightgrey;
+        
     }
 
     .eventocontainer{
-        background-color: lightgrey;
-        display: flex;
-        flex-direction: column;
-        padding: 1em;
-        margin-top: 40px;
+        gap: -0.5rem;
+        justify-content: center;
+        display: flex;  
+        align-items: center;
+        flex-direction: column;     
+       
     }
 
 
@@ -82,14 +114,7 @@ import Header3 from '../components/Header3.vue'
         flex-direction: row;
     }
 
-   .eventocontainer{
-       background-color: lightgrey;
-       display: flex;
-       flex-direction: column;
-       padding: 2em;
-       margin-top: -15px;
-       text-align: center;
-   }
+   
 
    img{
        width: 140px;
@@ -117,22 +142,8 @@ import Header3 from '../components/Header3.vue'
             align-items: center;
         }
 
-       .eventocontainer{
-           background-color: lightgrey;
-           display: flex;
-           flex-direction: column;
-           padding: 1em;
-           width: 95%;
-           
-           
-           
-           text-align: center;
-       }
+       
 
-       .parejas{
-           display: flex;
-           justify-content: space-around;
-           margin-bottom: 50px;
-       }
+       
    }
 </style>
