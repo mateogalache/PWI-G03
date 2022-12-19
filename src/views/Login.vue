@@ -32,7 +32,7 @@ export default {
           method: "post",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + window.localStorage.getItem("accesToken")
+            "Authorization": "Bearer " + window.localStorage.setItem('accesToken','data.accesToken')
           },
           body: JSON.stringify(postData),
         });

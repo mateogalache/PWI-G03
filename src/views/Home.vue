@@ -3,7 +3,8 @@ export default {
   name: "App",
   data() {
     return {
-      data: {}
+      data: {},
+      
     }
   },
   beforeMount(){
@@ -11,15 +12,23 @@ export default {
   },
   methods: {
      getEvents(){
+
+        
       
-        fetch ('http://puigmal.salle.url.edu/api/v2/events',{
+        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events',{
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + window.localStorage.getItem("accesToken")
+                "Authorization": "Bearer " + window.localStorage.getItem('accesToken')
             },
         })
+            
             .then(response => response.json())
             .then(data => this.data = data);
+
+            console.log(response);                    
+            
+            
+           
     },
     
   }
@@ -47,10 +56,10 @@ import Header3 from '../components/Header3.vue'
     <br>
     
         <div class="container">
-            <div class="eventocontainer" id = "app" v-for="events in data" :key="events.id"  >
+            <div class="eventocontainer" id = "event" v-for="events in data" :key="events.id" >
                 <img  :src=   "events.image" >
                 <div class="eventName">
-                    {{ events.name }} 
+                    {{ events.name }}
                 </div>
                
                 

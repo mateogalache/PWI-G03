@@ -1,7 +1,46 @@
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},      
+    }
+  },
+  beforeMount(){
+    this.getProfileImage();
+  },
+  methods: {
+     getProfileImage(){        
+      
+        const response = fetch ('http://puigmal.salle.url.edu/api/v2/users',{
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + window.localStorage.getItem('accesToken')
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+
+            console.log(response);
+                       
+            
+            
+           
+    },
+    
+  }
+};
+
+</script>
+
+
+
+
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
-import Header3 from '../components/Header3.vue';
+import Header3 from '../components/Header3.vue'
 </script>
 
 <template>
