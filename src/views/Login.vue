@@ -4,75 +4,40 @@ import Header from '../components/Header.vue'
 
 const baseURL = "http://puigmal.salle.url.edu/api/v2";
 
-
-
-
 export default {
   name: "App",
   data() {
     return {
-      postResult: null
+      
     }
   },
   methods: {
-    fortmatResponse(res) {
-      return JSON.stringify(res, null, 2);
-    },
-  async postLogin() {
-    
-      const postData = {
-        
-        email: this.$refs.email.value,
-        password: this.$refs.password.value,
-        
-      };
+    async postLogin() {
+      const response = await fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: this.$refs.email.value,
+            password: this.$refs.password.value
+        })
+      });
+      const data = await response.json();
+      // Save the token in local storage
+      localStorage.setItem('accessToken', data.accessToken);
+      localStorage.setItem('id',data.id);
       
-      try {
-          const res = await fetch(`${baseURL}/users/login`, {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + window.localStorage.setItem('accesToken','data.accesToken')
-          },
-          body: JSON.stringify(postData),
-        });
-       
-        console.log(res);
-
-        if (!res.ok) {
+      if (!response.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
           throw new Error(message);
-        }
-        else{
-          this.$router.push({ name: 'Home' });
-        }
+      }
+      else{ this.$router.push({name:'Home'});
 
-        const data = await res.json();
-
-        const result = {
-          status: res.status + "-" + res.statusText,
-          headers: {
-            "Content-Type": res.headers.get("Content-Type"),
-            "Content-Length": res.headers.get("Content-Length"),
-
-          },
-          data: localStorage.setItem('accessToken', data.accessToken),
-        };
-
-        this.postResult = this.fortmatResponse(result);
-        
-      } catch (err) {
-        this.postResult = err.message;
       }
     }
-    },
-
-    clearPostOutput() {
-      this.postResult = null;
-    }
   }
-
-
+}
 
 </script>
 <template >

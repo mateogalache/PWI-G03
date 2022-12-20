@@ -1,9 +1,15 @@
 <script>
+
+const token = localStorage.getItem('accessToken');
+const id = localStorage.getItem('id');
+
 export default {
   name: "App",
   data() {
     return {
-      data: {},      
+      data: {
+        accessToken: 'token'
+      },      
     }
   },
   beforeMount(){
@@ -15,7 +21,7 @@ export default {
         const response = fetch ('http://puigmal.salle.url.edu/api/v2/users',{
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + window.localStorage.getItem('accesToken')
+                'Authorization': `Bearer ${token}`
             },
         })
             
@@ -65,8 +71,9 @@ import Header3 from '../components/Header3.vue'
       </article>
       <br/>
 
-      <section class = "cont">
-          <img src = "src/assets/usuario.png" class = "Redondap">
+      <section class = "cont" v-for="profile in data">
+            
+          <img :src=   "profile.image" class = "Redondap">
       </section>
 
       <p class = cont>Nombre</p>
