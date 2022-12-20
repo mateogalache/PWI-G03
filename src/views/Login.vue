@@ -56,7 +56,7 @@ export default {
             "Content-Length": res.headers.get("Content-Length"),
 
           },
-          data: data,
+          data: localStorage.setItem('accessToken', data.accessToken),
         };
 
         this.postResult = this.fortmatResponse(result);

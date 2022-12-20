@@ -57,10 +57,13 @@ import Header3 from '../components/Header3.vue'
     
         <div class="container">
             <div class="eventocontainer" id = "event" v-for="events in data" :key="events.id" >
-                <img  :src=   "events.image" >
-                <div class="eventName">
-                    {{ events.name }}
+                <div class="evento">
+                    <img  :src=   "events.image" >
+                    <div class="eventName">
+                        {{ events.name }}
+                    </div>
                 </div>
+                
                
                 
             </div> 
