@@ -1,3 +1,53 @@
+<script>
+
+const token = localStorage.getItem('accessToken');
+
+export default {
+  name: "App",
+  data() {
+    return {
+      n_participators: 0
+    }
+  },
+  methods: {
+    async postEvent() {
+      const response = await fetch('http://puigmal.salle.url.edu/api/v2/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+
+        },
+        body: JSON.stringify({
+            name: this.$refs.name.value,
+            image: this.$refs.image.value,
+            location: this.$refs.location.value,
+            description: this.$refs.description.value,
+            eventStart_date: this.$refs.eventStart_date.value,
+            eventEnd_date: this.$refs.eventEnd_date.value,
+            n_participators: this.n_participators,
+            type: this.$refs.type.value,
+            latitude: null,
+            longitude: null
+        })
+      });
+      const data = await response.json();
+      // Save the token in local storage
+      
+      
+      if (!response.ok) {
+            console.log(this.n_participators);
+            const message = `An error has occured: ${response.status} - ${response.statusText}`;
+            throw new Error(message);
+          
+      }
+      
+    }
+  }
+}
+</script>
+
+
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header3 from '../components/Header3.vue'
@@ -20,32 +70,47 @@ import Header3 from '../components/Header3.vue'
             
                 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento">           
+                <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento" ref="name">           
             </div>
 
             <div class = "rectanguloredondeadeo"> 
-                <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento">           
+                <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento" ref="type">           
             </div>
 
             <div class = "rectanguloredondeadeo"> 
-                <input type="text" class="sinborde" name="Dia Evento" placeholder="Dia Evento">                     
+                <p>Día de inicio </p>
+                <input type="date" class="sinborde" name="Día de inicio" placeholder="Día de inicio" ref="eventStart_date">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Localización" placeholder="Localización">                     
+                <p>Día de finalización </p>
+                <input type="date" class="sinborde" name="Día de fin" placeholder="Día de fin" ref="eventEnd_date">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Descripción" placeholder="Descripción">                     
+                
+                <input type="text" class="sinborde" name="Descripción" placeholder="Descripción" ref="description">                     
             </div>
-            <br>
+
+            <div class = "rectanguloredondeadeo">
+                <input type="text" class="sinborde" name="Lugar" placeholder="Lugar" ref="location">                     
+            </div>
+
+            <div class = "rectanguloredondeadeo">
+                <input type="text" class="sinborde" name="Nº de participantes" placeholder="Nº de participantes" ref="n_partipators" v-model="n_participators">                     
+            </div>
+
+            <div class = "rectanguloredondeadeo">
+                <input type="text" class="sinborde" name="Imagen" placeholder="Imagen" ref="image">                     
+            </div>
+            
             <section class="parejabotones">
             </section>
                     <div class = "reiniciar">           
                             <p style="color: black">Reiniciar</p>
                     </div>
 
-                    <div class = "crear">           
+                    <div class = "crear" v-on:click="postEvent()">           
                             <p style="color: black">Crear</p>
                     </div>
         </section> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
@@ -58,7 +123,14 @@ import Header3 from '../components/Header3.vue'
 
 <style scoped>
 
-    
+    input[type="date"]{
+        width: 35%;
+    }
+
+    input{
+        width: 100%;
+        outline: none;
+    }
 
     .container{
         display: flex;
@@ -74,11 +146,11 @@ import Header3 from '../components/Header3.vue'
     border: 1px solid grey;
     display: flex;
     align-items:center;
-    justify-content: left;
+    justify-content: space-between;
     padding: 5px;
-    text-align: center;
     border-radius: 50px;
     margin: 25px;
+    color: gray;
     }
     .reiniciar{
     height: 30px;
@@ -108,6 +180,7 @@ import Header3 from '../components/Header3.vue'
     margin: 25px;
     margin-left: 225px;
     margin-top: -67px;
+    cursor:pointer;
     }
 
     .subtitulo{
@@ -126,6 +199,9 @@ import Header3 from '../components/Header3.vue'
     }
 
     @media (min-width:1080px){
+        input[type="date"]{
+            width:22%;
+        }
         h2{
             font-size: 40px;
         }
@@ -147,7 +223,7 @@ import Header3 from '../components/Header3.vue'
             border: 1px solid grey;
             display: flex;
             align-items:center;
-            justify-content: left;
+            justify-content: space-between;
             padding: 5px;
             text-align: center;
             border-radius: 50px;

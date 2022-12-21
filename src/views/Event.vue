@@ -1,3 +1,52 @@
+<script>
+
+const token = localStorage.getItem('accessToken');
+const event_id = window.localStorage.getItem('event');
+
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},
+      
+    }
+  },
+  beforeMount(){
+    
+    this.getEvents();
+  },
+  methods: {
+     getEvents(){
+
+        
+      
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+
+            console.log(response);                 
+            console.log(event_id);
+            
+           
+    },
+
+    
+  }
+};
+
+</script>
+
+
+
+
+
+
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
@@ -9,20 +58,20 @@ import Header2 from '../components/Header2.vue'
 
     </Header2>
 
-    <main>
+    <main v-for= "event in data">
     <section class = "margenevento">
-    <h2>Nombre del evento</h2></section>
+    <h2>{{event.name}}</h2></section>
     <article class="FCont"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
 
         <section class = "First"><!--Con el secction separamos las secciones que no interesan-->
             
-            <img src="src/assets/ImagenesEventos/deporte.png" alt="Fiesta" width="400" height="300">
+            <img  :src=  "event.image" alt="img">
             <h2>Descripción</h2>
         </section>
 
         <section class = "Second"><!--Con el secction separamos las secciones que no interesan-->
             
-            <p>Competición de atletismo, donde podemos ver a los mejores corredores de catalunya pelear por una posición para los campeonatos de españa.</p>
+            <p>{{event.description}}</p>
         </section >
 
         <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
@@ -57,6 +106,11 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
+
+.First img{
+    aspect-ratio: 1/1;
+    width: 200px;
+}
 .margenevento{
     margin-left: 2%;
     margin-top: 2%;

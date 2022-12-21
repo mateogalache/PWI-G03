@@ -1,3 +1,62 @@
+<script>
+const token = localStorage.getItem('accessToken');
+
+
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},
+      endIndex: 10,
+      savedId: null
+    }
+  },
+  beforeMount(){
+    this.saveEvent();
+    this.getEvents();
+  },
+  
+  methods: {
+     getEvents(){
+
+        
+      
+        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events/search?location=Barcelona',{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+
+            console.log(response);                 
+            
+            
+           
+    },
+    saveEvent(id){
+        this.savedId = id;
+        window.localStorage.setItem('event',this.savedId);
+        console.log(id);     
+    },
+    showMore(){
+        this.endIndex = this.endIndex + 10;
+        
+    },
+    showLess(){
+        this.endIndex  =  this.endIndex - 10;
+        
+    }
+    
+  }
+};
+</script>
+
+
+
+
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header3 from '../components/Header3.vue'
@@ -29,31 +88,29 @@ import Header3 from '../components/Header3.vue'
                 <b>En tu zona</b>
             </div>
 
-            <section class = "parejas">
-                <a href="Event"> <img src="src/assets/ImagenesEventos/deporte.png" 
-                    width="35" height="35" alt="Botón atrás"></a>
-                    <img src="src/assets/ImagenesEventos/vino.png" 
-                    width="35" height="35" alt="Botón atrás">
-            </section>
+            <div class="evento1">
+                <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"   v-on:click="saveEvent(events.id)">
+                        <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
+                        <div class="eventName">
+                            {{events.name}}
+                        </div>
+                </a>
+            </div>
+           
+            <div class="centra">
+               <div class="mostrarMas" v-on:click="showMore()">
+                    <b>Mostrar más</b>
+                </div> 
+                <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
+                    <b>Mostrar menos</b>
+                </div> 
+            </div>
 
-            <section class = "parejas">
-                <img src="src/assets/ImagenesEventos/teatro.png" 
-                width="35" height="35" alt="Botón atrás">
-                <img src="src/assets/ImagenesEventos/libro.png" 
-                width="35" height="35" alt="Botón atrás">
-            </section>
-
-            <section class = "parejas">
-                <img src="src/assets/ImagenesEventos/comida.png" 
-                width="35" height="35" alt="Botón atrás">
-                <img src="src/assets/ImagenesEventos/viajes.png" 
-                width="35" height="35" alt="Botón atrás">
-            </section>
             
         </section>
         
     </section>
-    <div class="transparent6"></div> <!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article--> 
+    
 
 </main>
 
@@ -66,6 +123,44 @@ import Header3 from '../components/Header3.vue'
 
 <style scoped>
 
+    .centra{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+    }
+    
+    .mostrarMas,.mostrarMenos{
+        cursor:pointer;
+        margin-top: 2rem;
+        border-radius: 50px;
+        border: 2px solid black;
+        width: 10rem;
+        transition: all 300ms ease;
+    }
+
+    .mostrarMas:hover,.mostrarMenos:hover{
+        color: white;
+        background: black;
+    }
+
+    input{
+        outline: none;
+        width: 72%;
+    }
+    .evento1{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .evento{
+        width: 50%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
     .container{
        
         display: flex;
@@ -144,7 +239,12 @@ import Header3 from '../components/Header3.vue'
     }
 
     @media (min-width:1080px){
-
+        input{
+            width:90%;
+        }
+        .evento{
+            width: 20%;
+        }
         .container{
             display: flex;
             justify-content: center;
