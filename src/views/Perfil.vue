@@ -1,7 +1,7 @@
 <script>
 
 const token = localStorage.getItem('accessToken');
-const id = localStorage.getItem('id');
+const email = localStorage.getItem('email');
 
 export default {
   name: "App",
@@ -18,7 +18,7 @@ export default {
   methods: {
      getProfileImage(){        
       
-        const response = fetch ('http://puigmal.salle.url.edu/api/v2/users',{
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -76,7 +76,7 @@ import Header3 from '../components/Header3.vue'
           <img :src=   "profile.image" class = "Redondap">
       </section>
 
-      <p class = cont>Nombre</p>
+      <p class = cont v-for="profile in data">{{ profile.name }}</p>
       <br/>
      
       <section  class = "cont">

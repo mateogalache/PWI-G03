@@ -2,7 +2,7 @@
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
 
-const baseURL = "http://puigmal.salle.url.edu/api/v2";
+
 
 export default {
   name: "App",
@@ -26,7 +26,7 @@ export default {
       const data = await response.json();
       // Save the token in local storage
       localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('id',data.id);
+      localStorage.setItem('email',this.$refs.email.value);
       
       if (!response.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
