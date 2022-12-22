@@ -9,7 +9,8 @@ export default {
       data: {},
       imageLoad: true,
       savedId: null,
-      endIndex: 10
+      endIndex: 10,
+      
     }
   },
   beforeMount(){
@@ -121,16 +122,17 @@ import Header3 from '../components/Header3.vue'
         cursor:pointer;
         margin-top: 2rem;
         border-radius: 50px;
-        border: 2px solid black;
+        border: 2px solid var(--main-bg-color);
         width: 10rem;
         transition: all 300ms ease;
         display: flex;
         justify-content: center;
+        
     }
 
     .mostrarMas:hover,.mostrarMenos:hover{
         color: white;
-        background: black;
+        background: var(--main-bg-color);
     }
     .evento{
         width: 20%;
@@ -158,6 +160,7 @@ import Header3 from '../components/Header3.vue'
     }
     main{
         overflow: hidden;
+        background: rgb(173, 216, 230,.5);
     }
     .margenhome{
         margin-left: 2%;
@@ -167,16 +170,10 @@ import Header3 from '../components/Header3.vue'
         margin-left: 2rem;
         margin-bottom: 2rem;
         margin-right: 2rem;
-        background-color: lightgrey;
+        background: rgb(95, 158, 160,.3);
         padding: 1rem;
-    }
-
-    
-
-
-    
-
-   
+        border: 3px solid var(--main-bg-color);
+    }  
 
    img{
        aspect-ratio: 1/1;
@@ -202,6 +199,9 @@ import Header3 from '../components/Header3.vue'
    @media (max-width: 1080px){
         .evento{
             width: 100%;
+        }
+        .centra{
+            gap: 1rem;
         }
 
    }

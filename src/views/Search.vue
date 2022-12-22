@@ -122,7 +122,12 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
-
+    *{
+        text-decoration: none;
+    }
+    b{
+        font-size: 20px;
+    }
     .centra{
         display:flex;
         justify-content: center;
@@ -151,6 +156,7 @@ import Header3 from '../components/Header3.vue'
     .evento1{
         display: flex;
         flex-wrap: wrap;
+        
     }
 
     .evento{
@@ -160,6 +166,7 @@ import Header3 from '../components/Header3.vue'
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
+        color: black;
     }
     .container{
        
@@ -308,6 +315,15 @@ import Header3 from '../components/Header3.vue'
             display: flex;
             justify-content: space-around;
         }
+    }
+    @Media (max-width: 1080px){
+        .centra{
+            gap: 1rem;
+        }
+        .centra *{
+            width: 8rem;
+        }
+        
     }
 
 </style>

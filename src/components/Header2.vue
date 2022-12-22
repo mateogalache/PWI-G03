@@ -26,6 +26,9 @@
     background-color: var(--main-bg-color);
     width: 100%;
     position: fixed;
+    -webkit-box-shadow: 0px 6px 13px 0px rgba(95,158,160,1);
+    -moz-box-shadow: 0px 6px 13px 0px rgba(95,158,160,1);
+    box-shadow: 0px 6px 13px 0px rgba(95,158,160,1);
 }
 
 .triangulo{

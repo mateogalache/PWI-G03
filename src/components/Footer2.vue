@@ -28,6 +28,9 @@
     align-items: center;
     flex-wrap: wrap;
     width:100%;
+    -webkit-box-shadow: 0px -6px 13px 0px rgba(95,158,160,1);
+    -moz-box-shadow: 0px -6px 13px 0px rgba(95,158,160,1);
+    box-shadow: 0px -6px 13px 0px rgba(95,158,160,1);
 }
 
 .botones1{

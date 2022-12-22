@@ -6,7 +6,7 @@ export default {
   name: "App",
   data() {
     return {
-      n_participators: 0
+      
     }
   },
   methods: {
