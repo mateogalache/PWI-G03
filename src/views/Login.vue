@@ -8,7 +8,7 @@ export default {
   name: "App",
   data() {
     return {
-      
+      showError: false,
     }
   },
   methods: {
@@ -29,12 +29,17 @@ export default {
       localStorage.setItem('email',this.$refs.email.value);
       
       if (!response.ok) {
-          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+            this.showError = true;
+          const message = `An error has occured: ${response.status} - ${response.statusText}`;
           throw new Error(message);
+          
       }
       else{ this.$router.push({name:'Home'});
 
       }
+    },
+    exitError(){
+        this.showError = false; 
     }
   }
 }
@@ -45,6 +50,13 @@ export default {
         
     </Header>
     <main id="Login">
+
+       
+
+        <div class ="error" v-if="showError">
+            <b>Email o contraseña incorrectos</b>
+            <button v-on:click="exitError()">ACEPTAR</button>
+        </div>
         
         <picture class = "background"> </picture> <!--Ponemos el tag de picture para definir una imagen-->
 
@@ -82,18 +94,53 @@ export default {
                 </section>
             </article>
       
-            <section class = "transparent9"></section>
+            <section class = "transparent9" ></section>
 
         </body>
 
     </main>
-
+    
     <Footer>
         
     </Footer>
+    <div class="oscuro" v-if="showError"></div>
   </template>
 <style scoped>
 
+
+.oscuro{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    opacity: 70%;
+    bottom: 0;
+}
+
+.error button{
+    border-radius: 50px;
+    background: gray;
+}
+
+.error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 20rem;
+    height: 10rem;
+    border: 2px solid black;
+    gap: 2rem;
+    font-size: 20px;
+    border-radius: 50px;
+    background: white;
+    z-index: 1;
+}
 
 *{
     text-decoration: none;
@@ -199,6 +246,10 @@ export default {
     height: 100vh;
     background-image: url("src/assets/fondo.png");
     z-index: -3;
+    }
+    .error{
+        top: 55%;
+        left: 52.5%;
     }
     
 }

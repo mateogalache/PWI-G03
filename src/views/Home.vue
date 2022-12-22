@@ -134,6 +134,10 @@ import Header3 from '../components/Header3.vue'
         color: white;
         background: var(--main-bg-color);
     }
+
+    .evento img{
+        object-fit: cover;
+    }
     .evento{
         width: 20%;
         justify-content: center;
