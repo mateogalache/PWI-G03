@@ -316,6 +316,7 @@ import Header3 from '../components/Header3.vue'
                         <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
                         <div class="eventName">
                             {{events.name}}
+                            {{events.owner_id}}
                         </div>
                 </a>
             </div>
