@@ -22,7 +22,7 @@ export default {
 
         
       
-        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events',{
+        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events/best',{
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -133,6 +133,10 @@ import Header3 from '../components/Header3.vue'
     .mostrarMas:hover,.mostrarMenos:hover{
         color: white;
         background: var(--main-bg-color);
+    }
+
+    .evento img{
+        object-fit: cover;
     }
     .evento{
         width: 20%;
