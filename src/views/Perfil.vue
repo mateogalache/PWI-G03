@@ -156,6 +156,7 @@ import Header3 from '../components/Header3.vue'
     height: 120px;
     border-radius: 150px;
     border: 1px solid black;
+    object-fit: cover;
     
 }
 .Redondaperfil{
