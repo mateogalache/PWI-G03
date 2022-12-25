@@ -50,6 +50,7 @@ export default {
         this.recAct = true;
     },
     cerrarSesion(){
+        localStorage.removeItem('accessToken');
         this.$router.push({name:'Login'});
     },
     async borrarPefil(){
