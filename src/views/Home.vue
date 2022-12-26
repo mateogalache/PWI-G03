@@ -137,6 +137,21 @@ import Header3 from '../components/Header3.vue'
 
     .evento img{
         object-fit: cover;
+        background: linear-gradient(white,var(--main-bg-color));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--main-bg-color);
+        position: relative;
+    }
+    .evento img:after{            
+            content: "NO IMAGE";
+            position: absolute;
+            transform: translate(-50%,-50%);
+            color: black;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
     }
     .evento{
         width: 20%;
@@ -145,7 +160,16 @@ import Header3 from '../components/Header3.vue'
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
+       position: relative;
+       transition: all 300ms ease;
     }
+
+    .evento:hover img{
+        box-shadow: 0px 10px 10px cadetblue;
+        
+        transform: translateY(-0.25rem);  
+    }
+
     .eventocontainer{
         display: flex;
         flex-wrap: wrap;
