@@ -385,7 +385,7 @@ import Header3 from '../components/Header3.vue'
         background-color: black;
         opacity: 70%;
         bottom: 0;
-        
+        z-index:50;
     }
 
     .botones button:hover{
@@ -417,7 +417,7 @@ import Header3 from '../components/Header3.vue'
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index: 1;
+        z-index: 100;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
