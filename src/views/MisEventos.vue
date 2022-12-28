@@ -18,29 +18,41 @@ export default {
   
   beforeMount(){
     this.saveEvent();
-    this.getEvents();
-    this.getProfileImage();
   },
+  
   methods: {
-     getEvents(){
 
-        
-      
-        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events',{
-            headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            
-            .then(response => response.json())
-            .then(data => this.data = data);
+    async getKey() {     try {       
+            // Make the first fetch request and get the response       
+            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            })
 
-            console.log(response);                 
+            // Extract the id from the response data       
+            const profile = await response.json().id;       
             
-            
-           
+            console.log(profile);
+            // Use the id in the URL of the second fetch request       
+            const response2 = await fetch (`http://puigmal.salle.url.edu/api/v2/users/${profile}/events`,{
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            }) 
+
+            // Do something with the response data 
+            const data = await response2.json();       
+            console.log(data);
+        }
+        catch (error){       
+            console.error(error);     
+        }   
     },
+        
+     
     saveEvent(id){
         this.savedId = id;
         window.localStorage.setItem('event',this.savedId);
@@ -54,24 +66,7 @@ export default {
     showLess(){
         this.endIndex  =  this.endIndex - 10;
         
-    },
-
-    getProfileImage(){        
-      
-      const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
-          headers: {
-              "Content-Type": "application/json",
-              'Authorization': `Bearer ${token}`
-          },
-      })
-          
-          .then(response => response.json())
-          .then(data => this.data2 = data);
-
-          console.log(response);
-    }
-
-    
+    },    
   }
 };
 </script>
@@ -97,11 +92,9 @@ import Header2 from '../components/Header3.vue'
     <section class = "container5">
               
         <section class="eventocontainer5">
-            <div class="eventocontainer" id = "event" v-for="profile in data2">               
+            <div class="eventocontainer" id = "event" >               
                 <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"  v-on:click="saveEvent(events.id)">
-                        {{events.owner_id}}
-                        {{profile.id}}
-                        <div v-if="imageLoad && events.owner_id == profile.id"> <!--Comparacion id personal vs id del creador evento para sacar los eventos-->
+                        <div>
                             <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
                             <div class="eventName">
                              {{events.name}}
