@@ -18,6 +18,7 @@ export default {
     this.getProfileImage();
   },
   methods: {
+    
      getProfileImage(){        
       
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
@@ -30,11 +31,17 @@ export default {
             .then(response => response.json())
             .then(data => this.data = data);
 
-            console.log(response);
-                       
+            console.log(response);            
             
             
            
+    },
+    saveId(){
+        localStorage.setItem('userId',this.data[0].id);
+        console.log(this.data[0].id);
+        this.$router.push({name:'MisEventos'});
+        
+        
     },
     borrarPopup(){
         this.borrar = true;
@@ -133,9 +140,9 @@ import Header3 from '../components/Header3.vue'
 
      <br/>
      <section class = "cont">
-          <a href = "MisEventos"><button class="Rectanguloperfil">
+          <button class="Rectanguloperfil" v-on:click="saveId()">
               <p>Mis eventos</p>
-          </button></a>
+          </button>
       </section>
 
      <br/>

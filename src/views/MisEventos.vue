@@ -2,6 +2,7 @@
 
 const token = localStorage.getItem('accessToken');
 const email = localStorage.getItem('email');
+const id = localStorage.getItem('userId');
 
 export default {
   name: "App",
@@ -18,40 +19,37 @@ export default {
   
   beforeMount(){
     this.saveEvent();
+    this.getEvents();
+    
   },
   
+  
   methods: {
-
-    async getKey() {     try {       
-            // Make the first fetch request and get the response       
-            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
-                headers: {
+    
+    async getEvents(){
+        const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events`;
+        try{
+            const response = await fetch(url,{
+               headers: {
                     "Content-Type": "application/json",
                     'Authorization': `Bearer ${token}`
-                },
+                }, 
             })
-
-            // Extract the id from the response data       
-            const profile = await response.json().id;       
+            .then(response => response.json())
+            .then(data => this.data = data);
+            console.log(id);
             
-            console.log(profile);
-            // Use the id in the URL of the second fetch request       
-            const response2 = await fetch (`http://puigmal.salle.url.edu/api/v2/users/${profile}/events`,{
-                headers: {
-                    "Content-Type": "application/json",
-                    'Authorization': `Bearer ${token}`
-                },
-            }) 
-
-            // Do something with the response data 
-            const data = await response2.json();       
-            console.log(data);
-        }
-        catch (error){       
-            console.error(error);     
-        }   
-    },
+            console.log(response);  
+                        
+        } catch(error){
+            console.error(error);
+        }          
         
+            
+            
+
+            
+    },   
      
     saveEvent(id){
         this.savedId = id;
@@ -93,9 +91,9 @@ import Header2 from '../components/Header3.vue'
               
         <section class="eventocontainer5">
             <div class="eventocontainer" id = "event" >               
-                <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"  v-on:click="saveEvent(events.id)">
+                <a href="Event" class="evento" v-for="events in data"  v-on:click="saveEvent(events.id)">
                         <div>
-                            <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
+                            <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
                              {{events.name}}
                             </div>
