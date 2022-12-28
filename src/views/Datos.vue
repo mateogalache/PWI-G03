@@ -7,9 +7,7 @@ export default {
   name: "App",
   data() {
     return {
-      data: {
-        accessToken: 'token'        
-      },
+      data: {},
       doEditImage: false,
       editDoneImage: true,
       doEditName: false,
