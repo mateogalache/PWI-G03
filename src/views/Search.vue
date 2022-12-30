@@ -3,6 +3,7 @@ const token = localStorage.getItem('accessToken');
 const busqueda = localStorage.getItem('searchEvent');
 
 
+
 export default {
   name: "App",
   data() {
@@ -18,13 +19,23 @@ export default {
       date: '',
       filter: false,
       historial: false,
-      searchHistory:[],
+      records:[],
+      record: null,
     }
   },
   beforeMount(){
     
     
     this.getEvents();
+    
+  },
+  mounted(){
+    try {
+       this.record = JSON.pasrse(localStorage.getItem('record'));
+       this.records.unshift(this.record); 
+    } catch(error){
+
+    }
     
   },
   
@@ -101,6 +112,7 @@ export default {
         .then(data => this.data2 = data);
         
         // do something with the search results
+        
         this.showBusqueda = true;
         this.showZona = false;
       } catch (error) {
@@ -143,6 +155,7 @@ export default {
         .then(data => this.data2 = data);
         
         // do something with the search results
+        
         this.showBusqueda = true;
         this.showZona = false;
       } catch (error) {
@@ -212,7 +225,13 @@ export default {
         console.error(error);
       }
         }
-      
+      if(this.busqueda){
+        
+        this.records.unshift(this.busqueda);
+        localStorage.setItem('record',this.busqueda);
+        
+        console.log(this.record);
+      }
         
     },
     showFilter(){
@@ -231,6 +250,9 @@ export default {
     },
     hideHistorial(){
         this.historial = false;
+    },
+    searchHistorial(){
+        this.busqueda = this.record;
     }
     
     
@@ -271,7 +293,7 @@ import Header3 from '../components/Header3.vue'
     <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
 
         
-        <section class = "rectanguloredondeadeo2">           
+        <section class = "rectanguloredondeadeo2" >           
             <input type="text" class="sinborde" name="Buscar Evento" placeholder="Buscar Evento" v-model="busqueda">
             <div class="busqueda">
                 <div class="element">
@@ -290,9 +312,9 @@ import Header3 from '../components/Header3.vue'
             </div>
         </section>           
         
-        <section class = "rectanguloredondeadeo4" v-if="historial"> 
-            <div type="text" class="sinborde" v-for="historial in searchHistory">
-                {{ historial}}
+        <section class = "rectanguloredondeadeo4 historial" v-if="historial"> 
+            <div type="text" class="sinborde "  v-for="record in records" :key="record" v-on:click="searchHistorial()" >
+                {{record}}
             </div>
         </section>
         <div class="rec" v-if="!historial"></div>
@@ -348,6 +370,12 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+
+    .historial{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
 
     .element{
         border: 2px solid black;
