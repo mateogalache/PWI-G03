@@ -2,13 +2,15 @@
 
 const token = localStorage.getItem('accessToken');
 const event_id = window.localStorage.getItem('event');
+const user_id = localStorage.getItem('userId');
 
 export default {
   name: "App",
   data() {
     return {
       data: {},
-      
+      editing: false,
+      nameediting: false,
     }
   },
   beforeMount(){
@@ -35,6 +37,40 @@ export default {
             
            
     },
+    editMode(){
+        this.editing = true;
+    },
+    editModeOff(){
+        this.editing = false;
+    },
+    editingName(){
+        this.nameediting = true;
+    },
+    editingNameCancel(){
+        this.nameediting = false;
+    },
+    async editName(){
+        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/events/${event_id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            name: this.name,
+            
+        })
+      });
+      if (!response.ok) {
+            console.log(this.image);
+          const message = `An error has occured: ${response.status} - ${response.statusText}`;
+          throw new Error(message);
+      }
+      else{ 
+        this.nameediting = false;
+        location.reload();
+      }
+    }
 
     
   }
@@ -64,20 +100,50 @@ import Header2 from '../components/Header2.vue'
                 <img  :src=  "event.image" alt="img"> 
             </div>
         <section class = "margenevento">
-        <h2>{{event.name}}</h2></section>
+            <h2 v-if="!nameediting">{{event.name}}</h2>
+            <input type="text" v-model="name" v-if="nameediting">
+            <button class = "editar" v-if="editing && !nameediting" v-on:click="editingName()">Editar</button>
+            <button class = "editar" v-if="nameediting" v-on:click="editName()">OK</button>
+            <button class = "editar" v-if="nameediting" v-on:click="editingNameCancel()">CANCEL</button>
+            <button class = "editar0" v-if="!editing && (user_id == event.owner_id)" v-on:click="editMode()">Editar</button>
+            <button class = "editar0" v-if="editing" v-on:click="editModeOff()">OK</button>
+        </section>
         <article class="FCont"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
 
             <div class="datosIm">
 
                 <div class = "datos">
-                    <b>Lugar: </b> {{ event.location }} <br>
-                    <b>Tipo: </b> {{ event.type }} <br>
-                    <b>Descripción: </b> {{ event.description }} <br>
-                    <b>Data de inicio: </b> {{ event.eventStart_date.substring(0,10) }} <br>
-                    <b>Data de fin: </b> {{ event.eventEnd_date.substring(0,10) }} <br>
-                    <b>Numero de partipantes: </b> {{ event.n_participators }} <br>
+                    <div class="lugar">
+                        <b>Lugar: </b> {{ event.location }} 
+                        <button class = "editar" v-if="editing">Editar</button>
+                    </div>
+                    <div class="lugar" v-if = "editLugar">
+                        <b>Lugar: </b> <input type="text" v-model="lugar">
+                        <button class = "editar" v-if="editing">Editar</button>
+                    </div>
+                    <div class="tipo">
+                        <b>Tipo: </b> {{ event.type }} 
+                        <button class = "editar" v-if="editing">Editar</button>
+                    </div>
+                    <div class="descripcion">
+                       <b>Descripción: </b> {{ event.description }} 
+                       <button class = "editar" v-if="editing">Editar</button> 
+                    </div>
+                    <div class="dataInicio">
+                        <b>Data de inicio: </b> {{ event.eventStart_date.substring(0,10) }}
+                        <button class = "editar" v-if="editing">Editar</button>
+                    </div>
+                     <div class="dataFin">
+                        <b>Data de fin: </b> {{ event.eventEnd_date.substring(0,10) }}
+                        <button class = "editar" v-if="editing">Editar</button>
+                     </div>
+                     <div class="nparticipantes">
+                        <b>Numero de partipantes: </b> {{ event.n_participators }}
+                        <button class = "editar" v-if="editing">Editar</button>
+                     </div>
+                     
                 </div>
-
+                
                         
             </div>
         
@@ -119,6 +185,24 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
+
+.editar0{
+    position: absolute;
+    right:1rem;
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: .3rem;
+}
+.editar{
+    border: 1px solid black;
+    border-radius: 50px;
+}
 .background img{
     width: 100%;
     height: 100%;
@@ -153,25 +237,28 @@ import Header2 from '../components/Header2.vue'
     
 }
 .datosIm{
-    display: flex;
-    justify-content: center;
+    display: flex;    
     gap: 20rem;
     font-size: 20px;
     align-items: center;    
     margin-left: 5rem;
     margin-right: 10rem;
-    text-align: center;
-    
+        
 }
 
 b{
     font-size: 30px;
 }
 
-
+.margenevento input{
+    width: 10rem;
+}
 .margenevento{
     margin-left: 2%;
-    margin-top: 2%;
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 .FCont{
     display: flex;
