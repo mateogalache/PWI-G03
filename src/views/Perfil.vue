@@ -36,12 +36,17 @@ export default {
             
            
     },
-    saveId(){
+    misEventos(){
         localStorage.setItem('userId',this.data[0].id);
         console.log(this.data[0].id);
         this.$router.push({name:'MisEventos'});
         
         
+    },
+    estadisticas(){
+        localStorage.setItem('userId',this.data[0].id);
+        console.log(this.data[0].id);
+        this.$router.push({name:'Estadisticas'});
     },
     borrarPopup(){
         this.borrar = true;
@@ -126,7 +131,7 @@ import Header3 from '../components/Header3.vue'
      
      <br/>
      <section class = "cont">
-         <a href = "Estadisticas"><button class="Rectanguloperfil">
+         <a href = "Estadisticas"><button class="Rectanguloperfil" v-on:click="estadisticas()">
               <p>Estadísticas</p>
           </button></a>
       </section>
@@ -140,7 +145,7 @@ import Header3 from '../components/Header3.vue'
 
      <br/>
      <section class = "cont">
-          <button class="Rectanguloperfil" v-on:click="saveId()">
+          <button class="Rectanguloperfil" v-on:click="misEventos()">
               <p>Mis eventos</p>
           </button>
       </section>
