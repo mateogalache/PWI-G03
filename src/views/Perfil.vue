@@ -43,6 +43,13 @@ export default {
         
         
     },
+    eventPart(){
+        localStorage.setItem('userId',this.data[0].id);
+        console.log(this.data[0].id);
+        this.$router.push({name:'EventsPart'});
+        
+        
+    },
     estadisticas(){
         localStorage.setItem('userId',this.data[0].id);
         console.log(this.data[0].id);
@@ -147,6 +154,12 @@ import Header3 from '../components/Header3.vue'
      <section class = "cont">
           <button class="Rectanguloperfil" v-on:click="misEventos()">
               <p>Mis eventos</p>
+          </button>
+      </section>
+      <br/>
+      <section class = "cont">
+          <button class="Rectanguloperfil" v-on:click="eventPart()">
+              <p>Eventos... participo</p>
           </button>
       </section>
 
@@ -315,6 +328,9 @@ import Header3 from '../components/Header3.vue'
 }
 
 @media (min-width:1080px){
+    .evento{
+        width: 50%;
+    }
     h2{
         font-size: 40px;
     }

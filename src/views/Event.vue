@@ -11,6 +11,8 @@ export default {
       data: {},
       editing: false,
       nameediting: false,
+      showPart: false,
+      response: null,
     }
   },
   beforeMount(){
@@ -62,13 +64,31 @@ export default {
         })
       });
       if (!response.ok) {
-            console.log(this.image);
+          
           const message = `An error has occured: ${response.status} - ${response.statusText}`;
           throw new Error(message);
       }
       else{ 
         this.nameediting = false;
         location.reload();
+      }
+    },
+    async participar(){
+        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+            }
+        });
+        if (!response.ok) {
+          console.log(event_id)
+          const message = `An error has occured: ${response.status} - ${response.statusText}`;
+          throw new Error(message);
+      }
+      else{ 
+        this.showPart = true;
+        console.log(response.serverStatus);
       }
     }
 
@@ -95,6 +115,9 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     
     <main v-for= "event in data">
+        <div class="apuntado" v-if="showPart">
+            ¡Te has apuntado correctamente!
+        </div>
         <div class="all">
             <div class="background">
                 <img  :src=  "event.image" alt="img"> 
@@ -141,13 +164,21 @@ import Header2 from '../components/Header2.vue'
                         <b>Numero de partipantes: </b> {{ event.n_participators }}
                         <button class = "editar" v-if="editing">Editar</button>
                      </div>
+                     <br>
+                     <button class="participar" v-on:click="participar()" v-if="!showPart">PARTICIPAR</button> 
                      
                 </div>
                 
-                        
+                     
             </div>
+            
+            
+                
+           
+            
         
             <div class="part">
+                
             <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                     <h2>Puntúalo</h2>
                 </section>
@@ -182,9 +213,53 @@ import Header2 from '../components/Header2.vue'
     <Footer2>
 
     </Footer2>
+    
 </template>
 
 <style scoped>
+
+.apuntado{
+    position: fixed;
+    right:-16rem;
+    bottom: 6rem;
+    background: white;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;    
+    border: 1px solid black;
+    animation: aparecer 4s ease;
+    z-index: 1;
+}
+
+@keyframes aparecer {
+    0%{
+       right: -16rem; 
+    }
+    50%{
+        right: 0;
+    }
+    100%{
+        right: -16rem;
+    }
+}
+
+.rectanguloN{
+        
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    opacity: 70%;
+    bottom: 0;
+    z-index: 6;
+}
+
+.participar{
+    width: 10rem;
+    cursor:pointer;
+}
 
 .editar0{
     position: absolute;
@@ -242,7 +317,7 @@ import Header2 from '../components/Header2.vue'
     font-size: 20px;
     align-items: center;    
     margin-left: 5rem;
-    margin-right: 10rem;
+    
         
 }
 
@@ -264,7 +339,9 @@ b{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 3rem;
+    
+   
     
 }
 .First{
