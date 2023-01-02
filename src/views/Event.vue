@@ -9,20 +9,48 @@ export default {
   data() {
     return {
       data: {},
+      data2: {},
       editing: false,
       nameediting: false,
       showPart: false,
       response: null,
+      participating: false,
     }
   },
   beforeMount(){
-    
+    this.participate();
     this.getEvents();
+    
   },
   methods: {
-     getEvents(){
-
+    async participate(){
+        try{
+            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances/${user_id}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data2 = data);
+           
+            this.participating= true;
+            
+           
+            console.log(this.data2[0].event_id);
+            console.log(this.data2[0].user_id);
+           
+        } catch(error){
+            this.participating = false;
+            console.log(error);
+        }
         
+        
+
+    },
+
+    getEvents(){     
       
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
             headers: {
@@ -88,11 +116,34 @@ export default {
       }
       else{ 
         this.showPart = true;
+        setTimeout(()=>{
+            this.showPart = false;
+            location.reload();
+        },3500);
         console.log(response.serverStatus);
       }
-    }
-
+    },
     
+    async puntuar(){
+       
+      try {
+        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/assistances/${user_id}/${event_id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            puntuation: this.puntuation,
+            comentary: this.comentary,
+            
+        })
+        });
+      location.reload();  
+      } catch (error) {
+        
+      }
+    },
   }
 };
 
@@ -165,8 +216,8 @@ import Header2 from '../components/Header2.vue'
                         <button class = "editar" v-if="editing">Editar</button>
                      </div>
                      <br>
-                     <button class="participar" v-on:click="participar()" v-if="!showPart">PARTICIPAR</button> 
-                     
+                     <button class="participar" v-on:click="participar()" v-if="!participating">PARTICIPAR</button> 
+                     <b v-if="participating">¡Ya estás apuntado!</b>
                 </div>
                 
                      
@@ -177,30 +228,27 @@ import Header2 from '../components/Header2.vue'
            
             
         
-            <div class="part">
+            <div class="part" v-for= "event2 in data2">
                 
             <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                     <h2>Puntúalo</h2>
                 </section>
-
+                
                 <section class = "Four"><!--Con el secction separamos las secciones que no interesan-->
-                    <table> <!--Usamos una tabla ya que queremos listar las 5 estrellas en fila asi que hacemos una tabla de 1 fila y 5 columnas-->
-                        <tr>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                        </tr>
-                    </table>
+                    
+
+                    <input v-model="puntuation" type="number" id="tentacles" name="tentacles"
+                    min="0" max="10">
+                    <button class = "editar" v-on:click="puntuar()" >Puntuar</button>
+                    <h2>Puntuation: </h2>{{ event2.puntuation }}
+                    <h2>Comentary: </h2>{{ event2.comentary }}
+                    <input v-model="comentary">
+                    <button class = "editar" v-on:click="puntuar()" >Enviar</button>
                 </section>
+
             
 
-                <section class ="Last"><!--Con el secction separamos las secciones que no interesan-->
-                    <img class ="IC" src="\src\assets\chat.png" alt="chat" >
-                    <img class ="IC" src="\src\assets\add.png" alt="add" >
-                    <a href="CompartirEventoAmigos"><img src="\src\assets\renviar.png" alt="share" width="45" height="25"></a>
-                </section> 
+                
                 </div>
             
 
@@ -288,7 +336,7 @@ import Header2 from '../components/Header2.vue'
     z-index: -1;
     opacity: 0.3;
     width: 100%;
-    height: 90vh;
+    height: 120%;
     object-fit: cover;
 }
 

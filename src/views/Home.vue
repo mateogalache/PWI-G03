@@ -1,12 +1,14 @@
 <script>
 
 const token = localStorage.getItem('accessToken');
+const email = localStorage.getItem('email');
 
 export default {
   name: "App",
   data() {
     return {
       data: {},
+      data2:{},
       imageLoad: true,
       savedId: null,
       endIndex: 10,
@@ -16,8 +18,25 @@ export default {
   beforeMount(){
     this.saveEvent();
     this.getEvents();
+    this.getUser();
   },
   methods: {
+    
+    async getUser(){
+        const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data2 = data);
+
+            console.log(this.data2[0].id);
+            localStorage.setItem('userId',this.data2[0].id);
+             
+    },
      getEvents(){
 
         

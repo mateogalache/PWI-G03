@@ -1,28 +1,57 @@
 <script>
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
+import axios from 'axios';
 export default {
   data() {
     return {
-        amigos:null
+
     }
   },
   mounted() {
-    var id = this.getId()
-    this.getAmigos()
-    const baseURL = "http://puigmal.salle.url.edu/api/v2/api";
+    this.getfriends()
+      var token = localStorage.getItem('accesToken');
+      const TOKEN = 'Token';
+      const BASEURL = 'https://preview-deliver.kenticocloud.com/PROJECT_ID';
+      const ENDPOINT = '/items/ITEM_NAME';
   },
   methods: {
-        getAmigos(){
-          fetch('https://api.github.com/users/manishmshiva', {
-              method: "GET",
-              headers: { "Authoritzation": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTkzOSwibmFtZSI6Im1hcmlvIiwibGFzdF9uYW1lIjoicm9kcmlndWV6IiwiZW1haWwiOiJtYXJpb0BtYXJpby5jb20iLCJpbWFnZSI6Im5hZGEuanBnIn0.OuINh4wOjLqo4niuu3uiAShfD3JFqPj4YsCd92FGoJ4" }
-          })
-              .then(response => response.json())
-              .then(json => console.log(json)); 
-        },
+      
 
-         
+    axios.create({
+          baseURL: BASEURL,
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + TOKEN
+          }
+      })
+          .get(ENDPOINT)
+          .then(res => {
+              console.log(res);
+          });
+
+    /*metodo fetch
+    async getfriends() {
+          const response = await fetch('http://puigmal.salle.url.edu/api/v2/friends', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTkzOSwibmFtZSI6Im1hcmlvIiwibGFzdF9uYW1lIjoicm9kcmlndWV6IiwiZW1haWwiOiJtYXJpb0BtYXJpby5jb20iLCJpbWFnZSI6Im5hZGEuanBnIn0.OuINh4wOjLqo4niuu3uiAShfD3JFqPj4YsCd92F' 
+            }
+        });
+        const data = await response.json();
+        this.totalVuePackages = data.total;
+
+        if (!response.ok) {
+            const message = `An error has occured: ${response.status} - ${response.statusText}`;
+            throw new Error(message);
+        }
+        else {
+            // aqui guardamos la info
+            console.log(data);
+
+        }
+        }*/
     }
 }
     
