@@ -71,7 +71,7 @@ export default {
     },
 
     show(){
-        
+        this.isshow = this.isshow;
     },
     
     async showFinished(){
@@ -163,11 +163,14 @@ import Header2 from '../components/Header3.vue'
     <section class = "container5">
               
         <section class="eventocontainer5">
-            <div class="botones">
-                <button class = "btn finished" v-on:click="showFinished()">Terminados</button>
-                <button class = "btn future" v-on:click="showFuture()">Próximo</button>
-                <button class = "btn current" v-on:click="showCurrent()">En progreso</button>
+            <div class="eventocontainer2">
+                <div class="botones">
+                    <button class = "btn finished" v-on:click="showFinished()">Terminados</button>
+                    <button class = "btn future" v-on:click="showFuture()">Próximo</button>
+                    <button class = "btn current" v-on:click="showCurrent()">En progreso</button>
+                </div>
             </div>
+            
             <div class="eventocontainer" id = "event" >               
                 <a href="Event" class="evento" v-for="events in data" v-if="!flag && !flag2 && !flag3"  v-on:click="saveEvent(events.id)">
                         <div>
@@ -280,6 +283,12 @@ import Header2 from '../components/Header3.vue'
         margin-top: -0.5rem;
     }
     .eventocontainer *{
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+    }
+
+    .eventocontainer2 *{
         cursor: pointer;
         text-decoration: none;
         color: black;
