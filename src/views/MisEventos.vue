@@ -90,6 +90,11 @@ import Header2 from '../components/Header3.vue'
     <section class = "container5">
               
         <section class="eventocontainer5">
+            <div class="botones">
+                <button class = "btn finished">Terminados</button>
+                <button class = "btn future">Próximo</button>
+                <button class = "btn current">En progreso</button>
+            </div>
             <div class="eventocontainer" id = "event" >               
                 <a href="Event" class="evento" v-for="events in data"  v-on:click="saveEvent(events.id)">
                         <div>
@@ -129,6 +134,14 @@ import Header2 from '../components/Header3.vue'
         justify-content: center;
         align-items: center;
         gap: 5rem;
+    }
+
+    .botones{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 10rem;
     }
     
     .mostrarMas,.mostrarMenos{
