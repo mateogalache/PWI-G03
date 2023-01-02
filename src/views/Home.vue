@@ -1,12 +1,14 @@
 <script>
 
 const token = localStorage.getItem('accessToken');
+const email = localStorage.getItem('email');
 
 export default {
   name: "App",
   data() {
     return {
       data: {},
+      data2:{},
       imageLoad: true,
       savedId: null,
       endIndex: 10,
@@ -16,13 +18,30 @@ export default {
   beforeMount(){
     this.saveEvent();
     this.getEvents();
+    this.getUser();
   },
   methods: {
+    
+    async getUser(){
+        const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data2 = data);
+
+            console.log(this.data2[0].id);
+            localStorage.setItem('userId',this.data2[0].id);
+             
+    },
      getEvents(){
 
         
       
-        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events',{
+        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events/best',{
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -134,6 +153,25 @@ import Header3 from '../components/Header3.vue'
         color: white;
         background: var(--main-bg-color);
     }
+
+    .evento img{
+        object-fit: cover;
+        background: linear-gradient(white,var(--main-bg-color));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--main-bg-color);
+        position: relative;
+    }
+    .evento img:after{            
+            content: "NO IMAGE";
+            position: absolute;
+            transform: translate(-50%,-50%);
+            color: black;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+    }
     .evento{
         width: 20%;
         justify-content: center;
@@ -141,7 +179,16 @@ import Header3 from '../components/Header3.vue'
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
+       position: relative;
+       transition: all 300ms ease;
     }
+
+    .evento:hover img{
+        box-shadow: 0px 10px 10px cadetblue;
+        
+        transform: translateY(-0.25rem);  
+    }
+
     .eventocontainer{
         display: flex;
         flex-wrap: wrap;

@@ -1,3 +1,56 @@
+<script>
+const user_id = localStorage.getItem('userId');
+const token = localStorage.getItem('accessToken');
+
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},
+      data2: {},
+    }
+  },
+  beforeMount(){
+    this.getProfile();
+    this.getStaistics();
+  },
+  methods: {
+    getProfile(){
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${user_id}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+
+            console.log(response);
+    },
+    getStaistics(){
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${user_id}/statistics`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data2 = data);
+
+            console.log(response);
+    },
+
+
+
+  }
+};
+
+
+</script>
+
+
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
@@ -11,53 +64,51 @@ import Header2 from '../components/Header2.vue'
       
   </Header2>
   <!--Otra página con uns estructura muy marcada que se divide en article y section.-->
-  <main>
+  <main >
       <br>
       <section class = margenestadistica>
           <h2>Estadísticas</h2>
       </section>
       <br/><br/>
-      <article class = "cont">
-          <img src = "src/assets/usuario.png" class = "Redondap">
-          
-      </article>
-      <p class = "cont">Nombre</p>
-      <br/>
-      <article class = "cont">
-          <section class = "rectangulo4">
-              <p class = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puntuación</p>
-              <!--En este caso hemos utilizado aside ya que simplemente hemos utilizado este tag para colocar y dimensionar unas imagenes-->
-              <aside class = "estrellas">
-                  <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                  <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                  <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                  <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">
-                  <img src = "https://cdn-icons-png.flaticon.com/512/616/616655.png">            
-              </aside>
-          </section>    
-      </article>
-
-      <br><br/>
-
-      <article class = "cont">
-          <section class = "rectangulo4">                
-                  <p class = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num. comentarios</p>
-                  <p class = "separacion2">156</p>
-          </section>    
-      </article>
       
-      <br><br/>
+        <article class = "cont" v-for = "profile in data">
+            <img :src=  "profile.image" class = "Redondap">
+            
+        </article>
+        <p class = "cont" v-for="profile in data">{{profile.name}}</p>
+      
+      
+      <br/>
+      <div v-for="statistics in data2">
+        <article class = "cont">
+            <section class = "rectangulo4">
+                <p class = "grey">Puntuación</p>
+                <!--En este caso hemos utilizado aside ya que simplemente hemos utilizado este tag para colocar y dimensionar unas imagenes-->
+                <p>{{ statistics.avg_score }}</p>
+            </section>    
+        </article>
 
-      <article class = "cont">
-          <section class = "rectangulo3">                
-              <p class = "grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcentaje <br
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usuarios con menos<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comentarios</p>
-              <aside class = "separacion2">
-              <p>48%</p>
-              </aside>
-          </section>    
-      </article>
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo4">                
+                    <p class = "grey">Num. comentarios</p>
+                    <p class = "separacion2">{{statistics.num_comments}}</p>
+            </section>    
+        </article>
+        
+        <br><br/>
+
+        <article class = "cont">
+            <section class = "rectangulo3">                
+                <p class = "grey">Porcentaje <br>usuarios con menos<br>comentarios</p>
+                <aside class = "separacion2">
+                <p>{{statistics.percentage_commenters_below}}</p>
+                </aside>
+            </section>    
+        </article>
+      </div>
+      
      
 
       
@@ -71,7 +122,17 @@ import Header2 from '../components/Header2.vue'
 </template>
 <style scoped>
 
+.rectangulo3 p:first-child{
+    margin-left: 1rem;
+}
 
+.rectangulo4 p:first-child{
+    margin-left: 1rem;
+}
+
+img{
+    object-fit: cover;
+}
 
 .margenestadistica{
     margin-left: 2%;

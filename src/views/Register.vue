@@ -63,6 +63,9 @@ export default {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
           throw new Error(message);
         }
+        else{
+          this.$router.push({name:'Login'});
+        }
 
         const data = await res.json();
 
