@@ -8,11 +8,18 @@ export default {
   name: "App",
   data() {
     return {
-      data: {},
+      data: {}, 
       data2: {},
+      data3: {},
+      data4: {},
       imageLoad: true,
       savedId: null,
       endIndex: 10,
+      flag: false,
+      flag2: false,
+      flag3: false,
+      isshow: false,
+
       
     }
   },
@@ -44,9 +51,6 @@ export default {
         } catch(error){
             console.error(error);
         }          
-        
-            
-            
 
             
     },   
@@ -64,7 +68,76 @@ export default {
     showLess(){
         this.endIndex  =  this.endIndex - 10;
         
-    },    
+    },
+
+    show(){
+        
+    },
+    
+    async showFinished(){
+        const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/finished`;
+        try{
+            const response = await fetch(url,{
+               headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                }, 
+            })
+            .then(response => response.json())
+            .then(data => this.data2 = data); //La data de la URL lo guarde en la variable auxiliar y copia de data, llamada data2
+            console.log(id);
+            console.log(response);  
+            this.flag = true;
+            this.flag2= false;
+            this.flag3= false;
+            
+        } catch(error){
+            console.error(error);
+        }  
+    },
+
+    async showCurrent(){
+        const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/current`;
+        try{
+            const response = await fetch(url,{
+               headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                }, 
+            })
+            .then(response => response.json())
+            .then(data => this.data3 = data);
+            console.log(id);
+            console.log(response);  
+            this.flag = false;
+            this.flag2= true;
+            this.flag3= false;
+            
+        } catch(error){
+            console.error(error);
+        }  
+    },
+
+    async showFuture(){
+        const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/future`;
+        try{
+            const response = await fetch(url,{
+               headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                }, 
+            })
+            .then(response => response.json())
+            .then(data => this.data4 = data);
+            console.log(id);
+            console.log(response);  
+            this.flag = false;
+            this.flag2= false;
+            this.flag3= true;            
+        } catch(error){
+            console.error(error);
+        }  
+    },
   }
 };
 </script>
@@ -91,22 +164,49 @@ import Header2 from '../components/Header3.vue'
               
         <section class="eventocontainer5">
             <div class="botones">
-                <button class = "btn finished">Terminados</button>
-                <button class = "btn future">Próximo</button>
-                <button class = "btn current">En progreso</button>
+                <button class = "btn finished" v-on:click="showFinished()">Terminados</button>
+                <button class = "btn future" v-on:click="showFuture()">Próximo</button>
+                <button class = "btn current" v-on:click="showCurrent()">En progreso</button>
             </div>
             <div class="eventocontainer" id = "event" >               
-                <a href="Event" class="evento" v-for="events in data"  v-on:click="saveEvent(events.id)">
+                <a href="Event" class="evento" v-for="events in data" v-if="!flag && !flag2 && !flag3"  v-on:click="saveEvent(events.id)">
                         <div>
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
                              {{events.name}}
                             </div>
                         </div>
-                </a>         
+                </a>
+
+                <a href="Event" class="evento" v-for="events in data2" v-if="flag && !flag2 && !flag3" v-on:click="saveEvent(events.id)">
+                        <div>
+                            <img  :src=  "events.image" alt="img" >
+                            <div class="eventName">
+                             {{events.name}}
+                            </div>
+                        </div>
+                </a>
+                
+                <a href="Event" class="evento" v-for="events in data3" v-if="!flag && flag2 && !flag3" v-on:click="saveEvent(events.id)">
+                        <div>
+                            <img  :src=  "events.image" alt="img" >
+                            <div class="eventName">
+                             {{events.name}}
+                            </div>
+                        </div>
+                </a> 
+
+                <a href="Event" class="evento" v-for="events in data4" v-if="!flag && !flag2 && flag3" v-on:click="saveEvent(events.id)">
+                        <div>
+                            <img  :src=  "events.image" alt="img" >
+                            <div class="eventName">
+                             {{events.name}}
+                            </div>
+                        </div>
+                </a> 
             </div>
             <div class="centra">
-               <div class="mostrarMas" v-on:click="showMore()">
+               <div class="mostrarMas" v-on:click="showMore()" v-if="(endIndex < data.length)">
                     <b>Mostrar más</b>
                 </div> 
                 <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
