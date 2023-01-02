@@ -9,20 +9,48 @@ export default {
   data() {
     return {
       data: {},
+      data2: {},
       editing: false,
       nameediting: false,
       showPart: false,
       response: null,
+      participating: false,
     }
   },
   beforeMount(){
-    
+    this.participate();
     this.getEvents();
+    
   },
   methods: {
-     getEvents(){
-
+    async participate(){
+        try{
+            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances/${user_id}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data2 = data);
+           
+            this.participating= true;
+            
+           
+            console.log(this.data2[0].event_id);
+            console.log(this.data2[0].user_id);
+           
+        } catch(error){
+            this.participating = false;
+            console.log(error);
+        }
         
+        
+
+    },
+
+    getEvents(){     
       
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
             headers: {
@@ -88,9 +116,14 @@ export default {
       }
       else{ 
         this.showPart = true;
+        setTimeout(()=>{
+            this.showPart = false;
+            location.reload();
+        },3500);
         console.log(response.serverStatus);
       }
-    }
+    },
+    
 
     
   }
@@ -165,8 +198,8 @@ import Header2 from '../components/Header2.vue'
                         <button class = "editar" v-if="editing">Editar</button>
                      </div>
                      <br>
-                     <button class="participar" v-on:click="participar()" v-if="!showPart">PARTICIPAR</button> 
-                     
+                     <button class="participar" v-on:click="participar()" v-if="!participating">PARTICIPAR</button> 
+                     <b v-if="participating">¡Ya estás apuntado!</b>
                 </div>
                 
                      
