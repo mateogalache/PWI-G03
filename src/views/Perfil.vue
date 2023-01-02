@@ -36,12 +36,24 @@ export default {
             
            
     },
-    saveId(){
+    misEventos(){
         localStorage.setItem('userId',this.data[0].id);
         console.log(this.data[0].id);
         this.$router.push({name:'MisEventos'});
         
         
+    },
+    eventPart(){
+        localStorage.setItem('userId',this.data[0].id);
+        console.log(this.data[0].id);
+        this.$router.push({name:'EventsPart'});
+        
+        
+    },
+    estadisticas(){
+        localStorage.setItem('userId',this.data[0].id);
+        console.log(this.data[0].id);
+        this.$router.push({name:'Estadisticas'});
     },
     borrarPopup(){
         this.borrar = true;
@@ -126,7 +138,7 @@ import Header3 from '../components/Header3.vue'
      
      <br/>
      <section class = "cont">
-         <a href = "Estadisticas"><button class="Rectanguloperfil">
+         <a href = "Estadisticas"><button class="Rectanguloperfil" v-on:click="estadisticas()">
               <p>Estadísticas</p>
           </button></a>
       </section>
@@ -140,8 +152,14 @@ import Header3 from '../components/Header3.vue'
 
      <br/>
      <section class = "cont">
-          <button class="Rectanguloperfil" v-on:click="saveId()">
+          <button class="Rectanguloperfil" v-on:click="misEventos()">
               <p>Mis eventos</p>
+          </button>
+      </section>
+      <br/>
+      <section class = "cont">
+          <button class="Rectanguloperfil" v-on:click="eventPart()">
+              <p>Eventos... participo</p>
           </button>
       </section>
 
@@ -310,6 +328,9 @@ import Header3 from '../components/Header3.vue'
 }
 
 @media (min-width:1080px){
+    .evento{
+        width: 50%;
+    }
     h2{
         font-size: 40px;
     }

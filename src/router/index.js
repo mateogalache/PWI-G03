@@ -28,6 +28,7 @@ import Contactanos from '../views/Contactanos.vue'
 import Calendario from '../views/Calendario.vue'
 import Carga from '../views/Carga.vue'
 import CompartirEventoAmigos from '../views/CompartirEventoAmigos.vue'
+import EventsPart from '../views/EventsPart.vue'
 
 /*Declaramos todas las vistas, para poder navegar por la web sin problemas y les ponemos nombre a las paginas.*/
 const routes = [
@@ -181,6 +182,11 @@ const routes = [
         path: '/',
         name: 'Carga',
         component: Carga
+    },
+    {
+        path: '/EventsPart',
+        name: 'EventsPart',
+        component: EventsPart
     }
     
 
