@@ -124,8 +124,26 @@ export default {
       }
     },
     
-
-    
+    async puntuar(){
+       
+      try {
+        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/assistances/${user_id}/${event_id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            puntuation: this.puntuation,
+            comentary: this.comentary,
+            
+        })
+        });
+      location.reload();  
+      } catch (error) {
+        
+      }
+    },
   }
 };
 
@@ -210,30 +228,27 @@ import Header2 from '../components/Header2.vue'
            
             
         
-            <div class="part">
+            <div class="part" v-for= "event2 in data2">
                 
             <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                     <h2>Puntúalo</h2>
                 </section>
-
+                
                 <section class = "Four"><!--Con el secction separamos las secciones que no interesan-->
-                    <table> <!--Usamos una tabla ya que queremos listar las 5 estrellas en fila asi que hacemos una tabla de 1 fila y 5 columnas-->
-                        <tr>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                            <td><img class="star" src="\src\assets\estrella.png" alt="chat"></td>
-                        </tr>
-                    </table>
+                    
+
+                    <input v-model="puntuation" type="number" id="tentacles" name="tentacles"
+                    min="0" max="10">
+                    <button class = "editar" v-on:click="puntuar()" >Puntuar</button>
+                    <h2>Puntuation: </h2>{{ event2.puntuation }}
+                    <h2>Comentary: </h2>{{ event2.comentary }}
+                    <input v-model="comentary">
+                    <button class = "editar" v-on:click="puntuar()" >Enviar</button>
                 </section>
+
             
 
-                <section class ="Last"><!--Con el secction separamos las secciones que no interesan-->
-                    <img class ="IC" src="\src\assets\chat.png" alt="chat" >
-                    <img class ="IC" src="\src\assets\add.png" alt="add" >
-                    <a href="CompartirEventoAmigos"><img src="\src\assets\renviar.png" alt="share" width="45" height="25"></a>
-                </section> 
+                
                 </div>
             
 
@@ -321,7 +336,7 @@ import Header2 from '../components/Header2.vue'
     z-index: -1;
     opacity: 0.3;
     width: 100%;
-    height: 90vh;
+    height: 120%;
     object-fit: cover;
 }
 
