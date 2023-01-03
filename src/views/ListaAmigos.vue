@@ -1,7 +1,7 @@
 <script>
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
-import axios from 'axios';
+//import axios from 'axios';
 export default {
   data() {
     return {
@@ -18,7 +18,7 @@ export default {
   methods: {
       
 
-    axios.create({
+    /*axios.create({
           baseURL: BASEURL,
           headers: {
               'Content-Type': 'application/json',
