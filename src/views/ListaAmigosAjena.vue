@@ -1,26 +1,7 @@
-<script >
+<script setup >
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
-export default {
-  data() {
-    return {
-        amigos:null
-    }
-  },
-  mounted() {
-    var id = this.getId()
-    this.getAmigos(id)
-  },
-  methods: {
-        getAmigos(id){
-                //Aqui la llamada a la api
-        },
-        getId(){
-            //funcion para llamar api y conseguir el id de la persona que queremos sus amigos
-        return id
-        }  
-    }
-}
+
 </script>
 <template>
 

@@ -1,67 +1,103 @@
+<script>
+
+const token = localStorage.getItem('accessToken');
+const id = localStorage.getItem('friend');
+
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},   
+    }
+  },
+  beforeMount(){
+    
+    this.getData();
+  },
+  methods: {
+     getData(){        
+      
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+            console.log(response);
+            
+        
+    },
+    
+  }
+};
+
+</script>
+
 <script setup>
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
+
 </script>
 <template>
     <Header2>
         
     </Header2>
     <!--Pagina igual que la del perfil amigo pero con el boton de añadir amigo -->
-    <main>
-        <br>
-        <section class = "margenamigo">
-            <h2>Datos</h2>
-        </section>
-       
+    <main v-for="info in data" >
+        <section >
+            <br>
+            <section class = "margenamigo">
+                <h2>Datos</h2>
+            </section>
         
-       
-       <div class = "cont">
-            <img src = "src/assets/usuario.png" class = "Redondap">
+            <div class = "cont">
+                    <img :src = info.image class = "Redondap">
+                    
+            </div>
+            <div class = "cont">
+                <button class = "boton">Añadir amigo</button>  
+            </div>
             
-        </div>
-        <div class = "cont">
-          <button class = "boton">Añadir amigo</button>  
-        </div>
-        
-        <br/>
-        <div class = "cont">
-            
-            <div class = "rectangulo1">
-                                    
-                    <p><FONT color = "grey">Laura</FONT></p>
+            <br/>
+            <div class = "cont">
+                
+                <div class = "rectangulo1">
+                                        
+                    <p><FONT color = "grey">{{info.name}}</FONT></p>
+                        
+                    </div>    
+            </div>
+            <br><br/>
+            <div class = "cont">
+                <div class = "rectangulo1">                
+                        <p><FONT color = "grey">{{info.last_name}}</FONT></p>
+                        
+                </div>    
+            </div>
+            <br><br/>
+            <div class = "cont">
+                <div class = "rectangulo1">                
+                    <p><FONT color = "grey">Amistades</FONT></p>
+                    <div class = "Clogo">
+                        <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+                    </div>
                     
                 </div>    
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
-                    <p><FONT color = "grey">Garcia Cortes</FONT></p>
-                   
+                <div class = "rectangulo1"> 
+                                
+                    <p><FONT color = "grey">Eventos</FONT></p>
+                    <div class = "Clogo">
+                        <a href="Events"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+                    </div>    
                 </div>    
             </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo1">                
-                <p><FONT color = "grey">Amistades</FONT></p>
-                <div class = "Clogo">
-                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>
-                
-            </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
-            <div class = "rectangulo1"> 
-                               
-                <p><FONT color = "grey">Eventos</FONT></p>
-                <div class = "Clogo">
-                    <a href="Events"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>    
-            </div>    
-            </div>
-            
-       
-
+        </section>
   <div class="transparent6"></div>
   </main>
   <Footer2>
