@@ -23,27 +23,7 @@ export default {
   methods: {
     
     //hacer un metodo que mire que son amigos y quita o pone el boton.
-    friends(){
-        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users`,{
-            headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            
-            .then(response => response.json())
-            .then(data => this.data = data);
-            
-            for (var clave in data.id){
-            // Controlando que json realmente tenga esa propiedad
-                if (id == clave) {
-                    // Mostrando en pantalla la clave junto a su valor
-                    console.log("estos dos son amigos "+clave +" y tu mismo");
-                    this.notrequest = false;
-                    
-                }
-            }
-    },   
+       
 
     getData(){        
         

@@ -8,19 +8,21 @@ export default {
   data() {
     return {
       data: {},
+      data2: {},
       notrequest: true,
     }
   },
   beforeMount(){
 
-  
+    
     this.getData();
+    
   },
   methods: {
     
     //hacer un metodo que mire que son amigos y quita o pone el boton.
     friends(){
-        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users`,{
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends`,{
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -28,9 +30,9 @@ export default {
         })
             
             .then(response => response.json())
-            .then(data => this.data = data);
+            .then(data2 => this.data2 = data2);
             
-            for (var clave in data.id){
+            for (var clave in data2.id){
             // Controlando que json realmente tenga esa propiedad
                 if (id == clave) {
                     // Mostrando en pantalla la clave junto a su valor
@@ -39,7 +41,7 @@ export default {
                     
                 }
             }
-    },   
+    },  
 
     getData(){        
         
@@ -53,6 +55,7 @@ export default {
             .then(response => response.json())
             .then(data => this.data = data);
             console.log(response);   
+           
         
     },
     añadirAmigo(){
