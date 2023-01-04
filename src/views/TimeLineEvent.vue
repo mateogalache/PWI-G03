@@ -4,6 +4,24 @@ const event_id = window.localStorage.getItem('event');
 const id = localStorage.getItem('userId');
 export default {
   name: "App",
+  computed:{
+    groupedEvents() {
+        const dataArray = Object.values(this.data);
+      // Group the events by date
+      return dataArray.reduce((acc, event) => {
+        const date = event.eventStart_date;
+        
+       
+        if (!acc[date]) {
+            acc[date] = [];
+        }
+        acc[date].push(event);
+        
+        
+        return acc;
+      }, {});
+    },
+   },
   data() {
     return {
       data: {},
@@ -71,12 +89,15 @@ import Header2 from '../components/Header2.vue'
 <!--Pagina para ver el calendario de eventos-->
     <main >
         <h1>Calendario</h1>
-        <div v-for= "event in data" id="timeline-container">
-            <ul class="timeline">
-                <h2  class="heading">{{event.eventStart_date.substring(0,10)}}</h2>
-                <li  class="timeline-item" >{{event.name}}</li>
+        <div v-for="(events,date) in groupedEvents"> 
+            <h2>{{ date.substring(0,10) }}</h2>
+            <div v-for= "event in events" id="timeline-container">
                 
-            </ul>
+                <ul class="timeline">                    
+                    <li  class="timeline-item" >{{event.name}}</li>
+                    
+                </ul>
+            </div>
         </div>
     </main>
     <Footer2>
