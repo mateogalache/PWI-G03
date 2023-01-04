@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       data: {},
-      doEditImage: false,
+    
       editDoneImage: true,
       doEditName: false,
       editDoneName: true,

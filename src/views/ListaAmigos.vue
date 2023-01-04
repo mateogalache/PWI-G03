@@ -3,6 +3,64 @@ import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
     
 </script>
+<script>
+const token = localStorage.getItem('accessToken');
+
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},
+      
+      endIndex: 10,
+      savedId: null,
+    }
+  },
+  beforeMount(){
+    
+    
+    this.getPeople();
+    
+  },
+  
+ 
+methods: {
+    async getPeople(){
+
+        const response = await fetch (`http://puigmal.salle.url.edu/api/v2/friends`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+            
+            console.log(response);                                  
+           
+    },
+   
+    savePerson(id){
+        this.savedId = id;
+        window.localStorage.setItem('friend',this.savedId);
+        console.log(this.savedId);    
+    
+    },
+    showMore(){
+        this.endIndex = this.endIndex + 10;
+        
+    },
+    showLess(){
+        this.endIndex  =  this.endIndex - 10;
+        
+    },
+    
+        
+    },
+    
+};
+</script>
 <template>
 
     <Header2>
@@ -16,11 +74,11 @@ import Header2 from '../components/Header2.vue'
                 <p class = "buscar">Busca</p>
             </section>
                 
-            <tr v-for="amigo in amigos" :key="amigo.id">
-                <td>
+            <tr v-for="amigo in data.slice(0,endIndex)" :key="amigo.id">
+                <td class="PCont"  >
                     <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                         <img src={{amigo.image}} class = "perfil">
-                        <a href="PerfilAmigo"><p class = "nombre5">{{amigo.name}}</p></a>
+                        <a href="PerfilAmigo" v-on:click="savePerson(amigo.id)"><p class = "nombre5">{{amigo.name}}</p></a>
                         <div class = "Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                             <img src="src\assets\flecha.png" class = "icon" alt="tick">
                         </div>
@@ -57,6 +115,10 @@ import Header2 from '../components/Header2.vue'
     border-radius: 25px;
     width: 100%;
 
+}
+.PCont{
+    width: 100%;
+    display: flex;
 }
 
 .PContainer5{

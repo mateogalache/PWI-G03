@@ -2,12 +2,74 @@
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
+<script>
+
+const token = localStorage.getItem('accessToken');
+const id = localStorage.getItem('friend');
+
+export default {
+  name: "App",
+  data() {
+    return {
+      data: {},
+      notrequest: true,
+    }
+  },
+  beforeMount(){
+
+    console.log(id);
+    this.getData();
+  },
+  methods: {
+    
+    //hacer un metodo que mire que son amigos y quita o pone el boton.
+    friends(){
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+            
+            for (var clave in data.id){
+            // Controlando que json realmente tenga esa propiedad
+                if (id == clave) {
+                    // Mostrando en pantalla la clave junto a su valor
+                    console.log("estos dos son amigos "+clave +" y tu mismo");
+                    this.notrequest = false;
+                    
+                }
+            }
+    },   
+
+    getData(){        
+        
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data => this.data = data);
+            console.log(response);   
+        
+    },
+    
+  }
+};
+
+</script>
 <template>
     <Header2>
         
     </Header2>
     <!--Pagina cuandro entras al perfil de un amigo-->
-    <main>
+    <main  v-for="info in data" >
         <br>
         <section class = "margenamigo">
             <h2>Datos</h2>
@@ -24,14 +86,14 @@ import Header2 from '../components/Header2.vue'
             
             <div class = "rectangulo1">
                                     
-                    <p><FONT color = "grey">Laura</FONT></p>
+                    <p><FONT color = "grey">{{info.name}}</FONT></p>
                     
                 </div>    
             </div>
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo1">                
-                    <p><FONT color = "grey">Garcia Cortes</FONT></p>
+                    <p><FONT color = "grey">{{info.last_name}}</FONT></p>
                    
                 </div>    
             </div>
