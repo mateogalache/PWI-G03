@@ -49,9 +49,10 @@ methods: {
     },
    
     savePerson(id){
-        this.savedId = id.value;
+        this.savedId = id;
         window.localStorage.setItem('friend',this.savedId);
-        
+        console.log(this.savedId);    
+    
     },
     showMore(){
         this.endIndex = this.endIndex + 10;

@@ -7,16 +7,44 @@ export default {
   name: "App",
   data() {
     return {
-      data: {},   
+      data: {},
+      data2: {},
+      notrequest: true,
     }
   },
   beforeMount(){
+
     
     this.getData();
+    
   },
   methods: {
-     getData(){        
-      
+    
+    //hacer un metodo que mire que son amigos y quita o pone el boton.
+    friends(){
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends`,{
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            .then(data2 => this.data2 = data2);
+            
+            for (var clave in data2.id){
+            // Controlando que json realmente tenga esa propiedad
+                if (id == clave) {
+                    // Mostrando en pantalla la clave junto a su valor
+                    console.log("estos dos son amigos "+clave +" y tu mismo");
+                    this.notrequest = false;
+                    
+                }
+            }
+    },  
+
+    getData(){        
+        
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}`,{
             headers: {
                 "Content-Type": "application/json",
@@ -26,9 +54,24 @@ export default {
             
             .then(response => response.json())
             .then(data => this.data = data);
-            console.log(response);
-            
+            console.log(response);   
+           
         
+    },
+    añadirAmigo(){
+
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends/${id}`,{
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            console.log(response);  
+            this.notrequest = false;
+
     },
     
   }
@@ -58,7 +101,7 @@ import Header2 from '../components/Header2.vue'
                     
             </div>
             <div class = "cont">
-                <button class = "boton">Añadir amigo</button>  
+                <button v-if="notrequest" v-on:click = "añadirAmigo()" class = "boton">Añadir amigo</button>  
             </div>
             
             <br/>
