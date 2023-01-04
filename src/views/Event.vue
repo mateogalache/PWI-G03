@@ -160,6 +160,15 @@ export default {
       } catch (error) {
         
       }
+      /*if (puntuation < 0 || puntuation > 10){
+        console.log("La puntuación debe estar entre 0 y 10")
+      }
+      
+      else if (puntuation >= 0 && puntuation <= 5 && comentary != "" && comentary != null && puntuation != "" && puntuation != null)
+        {
+            alert("¡Gracias por tu valoración!");
+
+      }*/
     },
   }
 };
@@ -247,19 +256,36 @@ import Header2 from '../components/Header2.vue'
             <div class="part" v-for= "event2 in data2">
                 
             <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
-                    <h2>Puntúalo</h2>
+                    <h2>Puntúalo y Coméntalo</h2>
                 </section>
                 
                 <section class = "Four"><!--Con el secction separamos las secciones que no interesan-->
                     
 
-                    <input v-model="puntuation" type="number" id="tentacles" name="tentacles"
-                    min="0" max="10">
-                    <button class = "editar" v-on:click="puntuar()" >Puntuar</button>
+                    <input v-model="puntuation" type="number" id="punt" min="0" max="10" placeholder="0 a 10" list="lista">
+                    <datalist id="lista">
+
+                        <option value="0"></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                        <option value="6"></option>
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                        </datalist>
+                    
+                    
+                    
+                    <h2></h2>
+                    <input v-model="comentary" type="text" id="com" placeholder="Comentario">
+                    <button class = "editar" v-on:click="puntuar()" >Enviar</button>
                     <h2>Puntuation: </h2>{{ event2.puntuation }}
                     <h2>Comentary: </h2>{{ event2.comentary }}
-                    <input v-model="comentary">
-                    <button class = "editar" v-on:click="puntuar()" >Enviar</button>
+                    
                 </section>
 
             
@@ -284,6 +310,25 @@ import Header2 from '../components/Header2.vue'
 
 .changeImage{
     margin-left: 0.5rem;
+}
+#punt{
+    width: 4rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 50px;
+    
+}
+#com{
+    width: 8rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.punt{
+    
 }
 .margenevento h2 input{
     width: 15rem;
@@ -452,6 +497,7 @@ b{
     justify-content: center;
 }
 .Four{
+    
     
     padding-bottom: 2%;
 

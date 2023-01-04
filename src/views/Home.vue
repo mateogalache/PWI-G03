@@ -101,6 +101,10 @@ import Header3 from '../components/Header3.vue'
                         <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
                         <div class="eventName">
                             {{events.name}}
+                            
+                        </div>
+                        <div class="puntuation">
+                            {{ parseFloat(events.avg_score).toFixed(2) }}
                         </div>
                 </a>          
             </div> 
@@ -129,6 +133,22 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+
+    
+    .puntuation{
+        position: absolute;
+        right: 4rem;
+        top: 0rem;
+        background: var(--main-bg-color);
+        color: white !important;
+        font-size: 15px;
+        width: 3rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .centra{
         display:flex;
@@ -244,6 +264,10 @@ import Header3 from '../components/Header3.vue'
         }   
    }
    @media (max-width: 1080px){
+
+        .puntuation{
+            right:1.75rem;
+        }
         .evento{
             width: 100%;
         }
