@@ -92,13 +92,17 @@ import Header3 from '../components/Header3.vue'
 <main>
     <br>
     <section class = "margenhome">
-        <h2>Eventos Destacados</h2>
+        <h2></h2>
     </section>
     <br>    
         <div class="container">
             <div class="eventocontainer" id = "event">               
                 <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"  v-if="imageLoad" v-on:click="saveEvent(events.id)">
                         <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
+                        <div class="infoEvent">
+                            <small><span>Lugar:</span> {{events.location}}</small>   
+                            <small><span>Fecha:</span> {{events.eventStart_date.substring(0,10)}}</small> 
+                        </div>
                         <div class="eventName">
                             {{events.name}}
                             
@@ -134,7 +138,92 @@ import Header3 from '../components/Header3.vue'
 
 <style scoped>
 
-    
+    .margenhome{
+        display: flex;
+        margin-left: 2%;
+    }
+
+    .margenhome h2{
+        position: relative;
+        
+    }
+
+    .margenhome h2:after{
+        content:"Eventos destacados";
+        animation: word 10s ease;
+    }
+
+    @keyframes word {
+        0%{
+            content: "Bienvenido/a a SalleEvents"
+        }
+       
+        49%{
+            content: "Bienvenido/a a SaleEvents"
+        }
+        50%{
+            content: "Eventos destacados"
+        }
+        100%{
+            content: "Eventos destacados"
+        }
+    }
+
+
+
+
+
+    .margenhome h2:before{
+        height: 100%;
+        width:  200%;
+        background: rgb(192, 227, 238);
+        content: '';
+        position: absolute;
+        left:100%;
+        animation: show 10s ease-in-out;
+        
+    }
+
+    @keyframes show {
+        0%{
+            left:0;
+        }
+        25%{
+            left:105%;
+        }
+        50%{
+            left:0;
+        }
+        75%{
+            left:105%;
+        }
+        100%{
+            left:105%;
+        }
+    }
+
+
+    small span{
+        font-weight: bold;
+    }
+    small{
+        font-size: 20px;
+        transition: all 300ms ease;
+    }
+
+    .evento:hover .infoEvent{
+        display: flex;
+    }
+    .infoEvent{
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        text-align: center;
+        transition: all 300s ease;
+    }
     .puntuation{
         position: absolute;
         right: 4rem;
@@ -200,13 +289,16 @@ import Header3 from '../components/Header3.vue'
         align-items: center;
         margin-top: 2rem;
        position: relative;
-       transition: all 300ms ease;
+       transition: all 3s ease;
     }
 
+    img{
+        transition: all 300ms ease;
+    }
+    
     .evento:hover img{
-        box-shadow: 0px 10px 10px cadetblue;
-        
-        transform: translateY(-0.25rem);  
+        opacity: .2; 
+         
     }
 
     .eventocontainer{
@@ -227,11 +319,9 @@ import Header3 from '../components/Header3.vue'
     }
     main{
         overflow: hidden;
-        background: rgb(173, 216, 230,.5);
+        background: rgb(192, 227, 238);
     }
-    .margenhome{
-        margin-left: 2%;
-    }
+    
 
     .container{
         margin-left: 2rem;
