@@ -94,7 +94,7 @@ import Header2 from '../components/Header2.vue'
             <div v-for= "event in events" id="timeline-container">
                 
                 <ul class="timeline">                    
-                    <li  class="timeline-item" >{{event.name}}</li>
+                    <li  class="timeline-item" >{{event.name}} <img  :src=  "event.image" alt="img" class="imgcal"> </li>
                     
                 </ul>
             </div>
@@ -131,6 +131,10 @@ body {
     
   
 }
+.imgcal{
+  margin-left:200px;
+  width: 20%;
+}
 
 .timeline {
   margin: 0 auto;
@@ -144,12 +148,15 @@ body {
 
 .timeline-item {
   color: black;
+  text-shadow: 
+    3px 3px 3px rgb(95 158 160);
+    ;
   font-family: var(--font-family-2);
   text-align: center;
   font-size: 1.4rem;
   padding: 1rem 1.5rem 1rem 1.5rem;
-  border-left: 4px solid black;
-  border-bottom: 1px solid black;
+  border-left: 8px solid rgb(95 158 160);
+  border-bottom: 4px solid rgb(95 158 160);
   position: relative;
   list-style-type: none;
   --item-width: calc(100%);
