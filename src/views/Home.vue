@@ -159,7 +159,7 @@ import Header3 from '../components/Header3.vue'
         }
        
         49%{
-            content: "Bienvenido/a a SaleEvents"
+            content: "Bienvenido/a a SalleEvents"
         }
         50%{
             content: "Eventos destacados"
