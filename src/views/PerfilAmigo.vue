@@ -39,7 +39,26 @@ export default {
             console.log(response);   
         
     },
-    
+   
+    eliminarAmigo(id){
+        this.savedId = id;
+        window.localStorage.setItem('friend',this.savedId);
+        console.log("hola")
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends/${id}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        })
+            
+            .then(response => response.json())
+            console.log(response)
+
+            
+        },
+
+        
   }
 };
 
@@ -60,6 +79,11 @@ export default {
             <img src = "src/assets/usuario.png" class = "Redondap">
             
         </div>
+        <br/>
+        <div class = "cont">
+            <a href="PerfilAjeno"> <button v-on:click = "eliminarAmigo(info.id)" class = "boton">Eliminar Amigo</button> </a>
+                
+            </div>
         
         <br/>
         <div class = "cont">

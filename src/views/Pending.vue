@@ -38,6 +38,12 @@ methods: {
             console.log(response);                                  
            
     },
+    savePerson(id){
+        this.savedId = id;
+        window.localStorage.setItem('friend',this.savedId);
+        console.log(this.savedId);    
+    
+    },
     showMore(){
         this.endIndex = this.endIndex + 10;
         
@@ -100,7 +106,7 @@ methods: {
                 <td class="PCont" >    
                     <section class = "PContainer33"><!--Con el secction separamos las secciones que no interesan-->
                         <img src={{amigo.image}} class = "perfil">
-                        <a href="PerfilAjeno"><p class = "nombre3">{{amigo.name}}</p></a>
+                        <a href="PerfilAjeno" v-on:click="savePerson(amigo.id)"><p class = "nombre3">{{amigo.name}}</p></a>
                         <aside class = "Clogo2"><!--Usamos aside aqui,ya que a diferencia de los otros que era para navegar este no nos permite navegar pero si que esta relacionado con la pagina-->
                             <img src="src\assets\tick.png" class = "icon" v-on:click="accept(amigo.id)" alt="tick">
                             <img src="src\assets\cross.png" class = "icon" v-on:click="notaccept(amigo.id)" alt="tick">
