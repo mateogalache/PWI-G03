@@ -29,6 +29,7 @@ import Calendario from '../views/Calendario.vue'
 import Carga from '../views/Carga.vue'
 import CompartirEventoAmigos from '../views/CompartirEventoAmigos.vue'
 import EventsPart from '../views/EventsPart.vue'
+import NewChat from '../views/NewChat.vue'
 
 /*Declaramos todas las vistas, para poder navegar por la web sin problemas y les ponemos nombre a las paginas.*/
 const routes = [
@@ -187,6 +188,11 @@ const routes = [
         path: '/EventsPart',
         name: 'EventsPart',
         component: EventsPart
+    },
+    {
+        path: '/NewChat',
+        name: 'NewChat',
+        component: NewChat
     }
     
 

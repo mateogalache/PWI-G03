@@ -3,6 +3,67 @@ import Footer2 from '../components/Footer2.vue';
 import Header3 from '../components/Header3.vue';
 
 </script>
+<script>
+const token = localStorage.getItem('accessToken');
+
+export default {
+    name: "App",
+    data() {
+        return {
+            data: {},
+            data2:{},
+            endIndex: 10,
+            savedId: null,
+            newChat:false,
+        }
+    },
+    beforeMount() {
+
+
+        this.getChats();
+
+    },
+
+
+    methods: {
+        async getChats() {
+
+            const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages/users`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            })
+
+                .then(response => response.json())
+                .then(data => this.data = data);
+
+            console.log(response);
+
+        },
+    
+
+
+        savePerson(id) {
+            this.savedId = id;
+            window.localStorage.setItem('friend', this.savedId);
+            console.log(this.savedId);
+
+        },
+        showMore() {
+            this.endIndex = this.endIndex + 10;
+
+        },
+        showLess() {
+            this.endIndex = this.endIndex - 10;
+
+        },
+
+
+    },
+
+};
+</script>
 <template>
 
     <Header3>
@@ -12,109 +73,26 @@ import Header3 from '../components/Header3.vue';
     <main>
         <section class = "margenchats">
             <h2>Chats</h2>
+            <a href="NewChat" class="mas"><img  src='src/assets/add.png'  alt="home" width="25" height="25"></a>
         </section>
         <div class = "cont">
             
             <div class = "BContainer">
                 <p class = "buscar">Busca</p>
             </div>
-            <div class = "PContainer">
+            <div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
                 <img src="src/assets/usuario.png" class = "perfil">
                 <div class="chat">
-                    <b class = "nombre">Laura</b>
-                    <p class = "mensaje">Hola Laura vienes al cine hoy?</p>
+                    <b class = "nombre">{{chat.name}}</b>
+                    <p class = "mensaje">por buscar</p>
                 </div>
                 
                 <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                    <img src={{chat.image}} class = "icon" alt="tick">
                 </div>
             </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Antonio</b>
-                    <p class = "mensaje">Me debes una Antonio</p>
-                </div>
-                <div class = "Clogo">
-                    
-                    <a href='Chat'><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Javier</b>
-                    <p class = "mensaje">Ey Javi hemos quedado en media hora</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Maria</b>
-                    <p class = "mensaje">Que tal estas Maria?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Carlos</b>
-                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Carlos</b>
-                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Carlos</b>
-                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Carlos</b>
-                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-            <div class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">Carlos</b>
-                    <p class = "mensaje">Hola Carlos vienes a comer hoy?</p>
-                </div>
-                <div class = "Clogo">
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </div>
-            </div>
-
-            
-
         </div>
-       
+
         
         <div class = "transparent6"></div><!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
         
@@ -126,7 +104,14 @@ import Header3 from '../components/Header3.vue';
 
 <style scoped >
 .margenchats{
+    display:flex;
+    justify-content: space-between;
     margin-left: 2%;
+}
+
+.mas{
+    margin-right: 4%;
+    margin-top: 4%;
 }
 
 .cont{
@@ -172,6 +157,7 @@ import Header3 from '../components/Header3.vue';
     
     
 }
+
 .icon{
     
     width: 16px;
