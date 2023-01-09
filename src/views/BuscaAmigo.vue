@@ -122,7 +122,7 @@ methods: {
                     </div>
                     <nav class = "Clogo4"> 
                     <img src="src\assets\flecha.png" class = "icon" alt="tick">
-                </nav>
+                    </nav>
                 
                 </div>
             </a>
