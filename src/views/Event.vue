@@ -170,6 +170,19 @@ export default {
 
       }*/
     },
+    async deleteevent(){
+        try{
+            await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            this.$router.push({name:'MisEventos'});
+        } catch (error){
+            
+        }
+    }
   }
 };
 
@@ -192,18 +205,22 @@ import Header2 from '../components/Header2.vue'
     </Header2>
     
     <main v-for= "event in data">
+        <div class="background">
+                <img  :src=  "event.image" alt="img"> 
+        </div>
         <div class="apuntado" v-if="showPart">
             ¡Te has apuntado correctamente!
         </div>
         <div class="all">
-            <div class="background">
-                <img  :src=  "event.image" alt="img"> 
-            </div>
+            
         <section class = "margenevento">
             <h2 v-if="!editing">{{event.name}}</h2>
             <h2><input type="text" v-model="name" v-if="editing"></h2> 
+            <div v-if="!editing && (user_id == event.owner_id)" class="rightedit">
+                <button class="deleteevent" v-on:click="deleteevent()">Delete</button>
+               <button class = "editar0" v-on:click="editMode()">Editar</button> 
+            </div>
             
-            <button class = "editar0" v-if="!editing && (user_id == event.owner_id)" v-on:click="editMode()">Editar</button>
             <button class = "editar0" v-if="editing" v-on:click="editEvent()">OK</button>
         </section>
         <div class="changeImage" v-if="editing">
@@ -253,7 +270,7 @@ import Header2 from '../components/Header2.vue'
            
             
         
-            <div class="part" v-for= "event2 in data2">
+            <div class="part" v-for= "event2 in data2.slice(0,1)">
                 
             <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                     <h2>Puntúalo y Coméntalo</h2>
@@ -283,8 +300,13 @@ import Header2 from '../components/Header2.vue'
                     <h2></h2>
                     <input v-model="comentary" type="text" id="com" placeholder="Comentario">
                     <button class = "editar" v-on:click="puntuar()" >Enviar</button>
-                    <h2>Puntuation: </h2>{{ event2.puntuation }}
-                    <h2>Comentary: </h2>{{ event2.comentary }}
+                    <div class="puntuacion">
+                        <h2>Puntuation: </h2><h3>{{ event2.puntuation }}</h3>
+                    </div>
+                    <div class="comentario">
+                        <h2>Comentary: </h2><h3>{{ event2.comentary }}</h3>
+                    </div>
+                    
                     
                 </section>
 
@@ -307,6 +329,29 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
+
+.editar0{
+    background: green;
+    color: white;
+    cursor:pointer;
+}
+.deleteevent{
+    background: red;
+    color: white;
+    cursor:pointer;
+}
+.rightedit{
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+.comentario,.puntuacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
 
 .changeImage{
     margin-left: 0.5rem;
@@ -392,10 +437,8 @@ small{
     cursor:pointer;
 }
 
-.editar0{
-    position: absolute;
-    right:1rem;
-}
+
+
 .datos{
     display: flex;
     flex-direction: column;
@@ -419,7 +462,7 @@ small{
     z-index: -1;
     opacity: 0.3;
     width: 100%;
-    height: 120%;
+    height: 105%;
     object-fit: cover;
 }
 

@@ -251,7 +251,7 @@ import Header3 from '../components/Header3.vue'
     top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
-    z-index: 100;
+    z-index: 501;
 }
 
 .rectanguloN{
@@ -262,7 +262,7 @@ import Header3 from '../components/Header3.vue'
         background-color: black;
         opacity: 70%;
         bottom: 0;
-        z-index: 6;
+        z-index: 500;
     }
 
 .cont .Rectanguloperfil:hover{
