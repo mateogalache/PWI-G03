@@ -1,34 +1,14 @@
-<script lang = "ts">
-import Footer from '../components/Footer.vue'
-import Header from '../components/Header.vue'
+<script>
 
-/*
-const myForm = document.getElementById('myForm');
 
-myForm.addEventListener('submit',function(e){
-  e.preventDefault();
-
-  const formData = new FormData(myForm);
-
-  fetch('http://puigmal.salle.url.edu/api/v2/api/users/login',{
-      method: 'POST',
-      body: formData,
-  })
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
-
-});
-      
-*/
-
-const baseURL = "http://puigmal.salle.url.edu/api/v2";
+const baseURL = "http://puigmal.salle.url.edu/api/v2"; //definimos la url base de la api en una variable para luego utilizar en el FETCH.
 
 
 
 export default {
   name: "App",
   data() {
+    //definimos las variables que utilizaremos, en este caso para subir a la api, estas variables cogen el valor de los input donde hemos puesto v-model para linkearlo con estas.
     return {
       name: '',
       last_name: '',
@@ -38,20 +18,19 @@ export default {
     }
   },
   methods: {
-    
-  async postRegister() {
-    
-     
+    //Iniciamos la funcion para hacer el registro
+    async postRegister() {      
       
-      try {
         
-        const res = await fetch(`${baseURL}/users`, {
-          method: "post",
+        const res = await fetch(`${baseURL}/users`, { //hacemos fetch a la url base de la api + /users para registrar ahi nuestro usuario
+          method: "post", //utilizaremos el metodo de post ya que queremos subir datos a la api
           headers: {
-            "Content-Type": "application/json",
-            "x-access-token": "token-value",
+            "Content-Type": "application/json", //indicamos el tipo de contenido de la api
+           
           },
-          body: JSON.stringify({
+          //aqui pondremos los elementos que queremos subir, para ello ponemos el nombre de la key que tienen en la API y luego lo igualamos a nuestras variables que 
+          //cogemos de los input con v-model.
+          body: JSON.stringify({ 
             name: this.name,
             last_name: this.last_name,
             email: this.email,
@@ -61,36 +40,20 @@ export default {
         })
         });
         console.log(res);
-
+        //Si no se ha podido hacer el registro por algun error, enseñaremos por la consola que error es para poder solucionarlo.
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
           throw new Error(message);
         }
+        //Si no hay ningún error nos enviará a la página de Login.
         else{
           this.$router.push({name:'Login'});
         }
 
-        const data = await res.json();
-
-        const result = {
-          status: res.status + "-" + res.statusText,
-          headers: {
-            "Content-Type": res.headers.get("Content-Type"),
-            "Content-Length": res.headers.get("Content-Length"),
-          },
-          data: data,
-        };
-
-        this.postResult = this.fortmatResponse(result);
         
-      } catch (err) {
-        this.postResult = err.message;
-      }
+        
+      
     }
-    },
-
-    clearPostOutput() {
-      this.postResult = null;
     }
   }
 
@@ -107,37 +70,41 @@ export default {
       <section class = "recuadro2"></section> <!-- Al estar todo dentro de un recuadro lo identificamos como body-->
       <body class = "registercentro">
         <br>
-        <section class="cont">
-        <img src = "src/assets/sallevents.png" width = "150" height = "75" >
-        </section>
+        <div class="cont"> <!--Hacemos un div ya que simplemente queremos colocar una imagen y ponemos class = cont para colocarlo en el centro-->
+          <img src = "src/assets/sallevents.png" width = "150" height = "75" >
+        </div>
         
-        <article class = "cont">
-          <section class = "centro1">
-            <h2><b>Datos personales</b></h2>
-            <form id = "myForm">               
-            <p><label>Nombre*</label></p>
-            <input type="text" class = "texto" id = "name"  name = "name" ref = "post_name" v-model="name">
-            <p><label>Apellidos*</label></p>
-            <input type="text" class = "texto" id = "last_name" name = "last_name" ref = "post_last_name" v-model="last_name">
-            <p><label>Email*</label></p>
-            <input type="text" class = "texto" id = "email" name = "email" ref = "post_email" v-model="email">
-            <p><label>Contraseña*</label></p>
-            <input type="password" class = "texto" id = "password" name = "password" ref = "post_password" v-model="password">
-            <p><label>Foto de perfil*</label></p>
-            <input type="text" class = "texto" id = "image" name = "image" ref = "post_image" v-model="image">
-            <br/><br/>
-          </form> 
+        <article class = "cont"> <!--Utilizamos article ya que dentro pondremos secciones y otros tags para englobar.-->
+          <section class = "centro1"> <!--Utilizamos section para definir una seccion dentro de article donde habrá más tags.-->
+            <h2><b>Datos personales</b></h2> <!--Queremos poner un título en grande y negrito, le ponemos h2 y b-->
+            <form id = "myForm"> <!--Como vamos a poner inputs los englobamos en un form-->   
+              <!--Hacemos inputs con un título cada uno, además como se ha explicado en el script les ponemos un v-model para poderlos utilizarlos en el script y subirlos a la API.-->           
+              <p><label>Nombre*</label></p>
+              <input type="text" class = "texto"  v-model="name">
+              <p><label>Apellidos*</label></p>
+              <input type="text" class = "texto"   v-model="last_name">
+              <p><label>Email*</label></p>
+              <input type="text" class = "texto"  v-model="email">
+              <p><label>Contraseña*</label></p>
+              <input type="password" class = "texto"  v-model="password"> <!--Type password para que en vez de letras se vean puntos cuando se escribe.-->
+              <p><label>Foto de perfil*</label></p>
+              <input type="text" class = "texto"  v-model="image">
+              <br/><br/>
+            </form> 
           </section>
         </article>
     
        
-        <article class="cont">
-        <button v-on:click = "postRegister()" class="Iniciar" id = "registrar" type = "submit">
-                 <b><FONT COLOR="white">Registrar</FONT></b>
-        </button>
+        <div class="cont">
+          <button v-on:click = "postRegister()" class="Iniciar" id = "registrar" type = "submit"> <!--v-on:click para que cuando le demos click al boton de registrar se inicie la funcion que queremos-->
+                  <b>Registrar</b>
+          </button>          
+        </div>
+
+        <aside class="rightcuenta"> <!--Utilizamos aside para un elemento apartado de los demás que cumple otra función distinta-->
+          ¿Ya tienes cuenta? <a href="Login" class="yacuenta">&nbsp;!Inicia sesión!</a>
+        </aside>
         
-          
-      </article>
 
       <section class = "transparent9"></section>
       
@@ -151,6 +118,19 @@ export default {
 </template>
 <style scoped>
 
+  
+  .rightcuenta{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+  }
+  .yacuenta{
+    color: var(--main-bg-color);
+  }
+
+  button b{
+    color: white;
+  }
   *{
     text-decoration: none;
   }
