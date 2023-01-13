@@ -1,27 +1,28 @@
 <script>
-
-const token = localStorage.getItem('accessToken');
+//Guradamos en constantes el token y el mail
+//El token lo necesitamos como header para tener acceso a difrentes sitios de la API
+//El mail lo utilizaremos para coger el id del usuario ya que este es necesario en muchas páginas y el home al ser la primera nos aseguramos de ya tener guardado el id.
+const token = localStorage.getItem('accessToken'); 
 const email = localStorage.getItem('email');
 
 export default {
   name: "App",
   data() {
     return {
-      data: {},
-      data2:{},
-      imageLoad: true,
-      savedId: null,
-      endIndex: 10,
+      data: {}, //Data donde guardaremos los eventos
+      data2:{}, //Data para guardar la información del usuario y así coger el id.
+      savedId: null, //Lo utilizaremos para guardar el id de un evento al que queremos entrar.
+      endIndex: 10, //Varible que define cuantos eventos queremos ver en pantalla.
       
     }
   },
-  beforeMount(){
-    this.saveEvent();
-    this.getEvents();
+  //Funciones que queremos que se hagan cuando se cargue la página, por lo tanto no depende de nada de lo que hagamos en esta 
+  beforeMount(){   
+    this.getEvents(); 
     this.getUser();
   },
   methods: {
-    
+    //Función para coger los datos del usuario
     async getUser(){
         const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
             headers: {
@@ -34,48 +35,46 @@ export default {
             .then(data => this.data2 = data);
 
             console.log(this.data2[0].id);
-            localStorage.setItem('userId',this.data2[0].id);
+            localStorage.setItem('userId',this.data2[0].id); //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
              
     },
-     getEvents(){
-
-        
-      
+    //Función para coger la información de los eventos mejor valorados
+     getEvents(){     
         const response = fetch ('http://puigmal.salle.url.edu/api/v2/events/best',{
             headers: {
                 "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` //Ponemos el token en el header para poder acceder
             },
         })
             
             .then(response => response.json())
-            .then(data => this.data = data);
+            .then(data => this.data = data); //Guardamos la data que nos devuelve en nuestra variable 'data'
 
             console.log(response);                 
             
             
            
     },
+    //Función para guardar en el LocalStorage el id del evento en el que hemos clickado
     saveEvent(id){
-        this.savedId = id;
+        this.savedId = id; //Le pasamos como parametro el id del evento y lo guardamos en la variable 'saveId' que luego la guardamos en el LocalStorage
         window.localStorage.setItem('event',this.savedId);
         console.log(id);
     },
+    //Función para ver más eventos, aumentado endIndex.
     showMore(){
-        this.endIndex = this.endIndex + 10;
-        
-        
+        this.endIndex = this.endIndex + 10;       
     },
+    //Función para ver menos eventos, disminuyendo endIndex.
     showLess(){
-        this.endIndex  =  this.endIndex - 10;
-        
-    }
-
-    
+        this.endIndex  =  this.endIndex - 10;        
+    }    
   }
 };
 </script>
+
 <script setup>
+//Importamos el header y el footer
 import Footer2 from '../components/Footer2.vue'
 import Header3 from '../components/Header3.vue'
 </script>
@@ -91,36 +90,40 @@ import Header3 from '../components/Header3.vue'
 
 <main>
     <br>
-    <section class = "margenhome">
-        <h2></h2>
-    </section>
+    <div class = "margenhome"> <!--Clase para poner margenes al título-->
+        <h2></h2> <!--El título tiene una animación hecha en el css, así que el contenido está explicado en esa sección-->
+    </div>
     <br>    
-        <div class="container">
-            <div class="eventocontainer" id = "event">               
-                <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"  v-if="imageLoad" v-on:click="saveEvent(events.id)">
-                        <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
-                        <div class="infoEvent">
-                            <small><span>Lugar:</span> {{events.location}}</small>   
-                            <small><span>Fecha:</span> {{events.eventStart_date.substring(0,10)}}</small> 
-                        </div>
-                        <div class="eventName">
-                            {{events.name}}
-                            
-                        </div>
-                        <div class="puntuation">
-                            {{ parseFloat(events.avg_score).toFixed(2) }}
-                        </div>
-                </a>          
+    <article class="container">
+        <section class="eventocontainer" id = "event">
+            <!--Utilizamos v-for para mostrar en bucle los la información que queramos de los eventos-->               
+            <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"   v-on:click="saveEvent(events.id)"> <!--Cuando clickemos se guardará el id del evento clickado con la función saveEvent-->
+                    <img  :src=  "events.image" alt="img" v-bind:error="errorImages"> <!--Mostramos la imagen del evento-->
+                    <div class="infoEvent">
+                        <small><span>Lugar:</span> {{events.location}}</small>   
+                        <small><span>Fecha:</span> {{events.eventStart_date.substring(0,10)}}</small> <!--Mostramos la data de cuando empieza el evento, uitilizamos la función de substring para sólo mostrar los diez primeros dígitos ya que son los únicos que nos interesan-->
+                    </div>
+                    <div class="eventName">
+                        {{events.name}}
+                        
+                    </div>
+                    <div class="puntuation">
+                        {{ parseFloat(events.avg_score).toFixed(2) }} 
+                        <!--Qeueremos mostrar la puntuación de cada evento, pero nos devuelve 4 decimales, para sólo mostrar dos utilizamos toFixed(2) 
+                            que para utilizarlo necesitamos que el valor sea un float por lo que utilizamos parseFloat para transformarlo en float-->
+                    </div>
+            </a>          
+        </section> 
+        <section class="centra">
+            <!--Tenemos dos botones que nos permitirán mostrar más o menos eventos (no los tenemos con tag de button ya que nos tranformaba el diseño y no podiamos cambiarlo)-->
+            <div class="mostrarMas" v-on:click="showMore()">
+                <b>Mostrar más</b>
             </div> 
-            <div class="centra">
-               <div class="mostrarMas" v-on:click="showMore()">
-                    <b>Mostrar más</b>
-                </div> 
-                <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
-                    <b>Mostrar menos</b>
-                </div> 
-            </div>
-        </div>     
+            <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)"> <!--Solo se muestra si endIndex es mayor que diez así no se mostrará cuando solo haya diez-->
+                <b>Mostrar menos</b>
+            </div> 
+        </section>
+    </article>             
         
     
     
@@ -148,6 +151,8 @@ import Header3 from '../components/Header3.vue'
         
     }
 
+    /*Para hacer la animación del título ponemos un :after del tag de h2 con el contenido que queremos al final */
+    /*Después inicamos una animación con keyframes y decimos el valor que queremos que tenga el contenido en cada fase */
     .margenhome h2:after{
         content:"Eventos destacados";
         animation: word 10s ease;
@@ -171,7 +176,8 @@ import Header3 from '../components/Header3.vue'
 
 
 
-
+    /*Para hacer que las palabras se vean poco a poco hemos puesto un rectangulo del mismo color que el fondo que se mueve de izquierda a derecha del texto para mostrarlo
+    u ocultarlo */
 
     .margenhome h2:before{
         height: 100%;
