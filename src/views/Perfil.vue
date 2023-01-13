@@ -1,30 +1,31 @@
 <script>
 
-const token = localStorage.getItem('accessToken');
-const email = localStorage.getItem('email');
+const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
+const email = localStorage.getItem('email'); //Cogemos el email del local storage
 
 export default {
   name: "App",
   data() {
     return {
-      data: {},
-      borrar: false,
-      recAct: false,
-      cerrar: false,
+      data: {}, //Data para recoger los datos del usuario
+      borrar: false, //Booleano para enseñar popup de borrar perfil
+      recAct: false, //Booleano para mostrar rectangulo negro de fondo
+      cerrar: false, //Booleano para mostrar popup de cerrar sesion
 
     }
   },
   beforeMount(){
+    //Funciones que queremos cuando cargue la página
     this.getProfileImage();
   },
   methods: {
-    
+    //Función que coge los datos del usuario. En este caso hemos cogido los datos con el email ya que es único, pero también se puede con el id.
      getProfileImage(){        
       
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
             headers: {
                 "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` //Accesstoken para poder acceder
             },
         })
             
@@ -36,51 +37,37 @@ export default {
             
            
     },
-    misEventos(){
-        localStorage.setItem('userId',this.data[0].id);
-        console.log(this.data[0].id);
-        this.$router.push({name:'MisEventos'});
-        
-        
-    },
-    eventPart(){
-        localStorage.setItem('userId',this.data[0].id);
-        console.log(this.data[0].id);
-        this.$router.push({name:'EventsPart'});
-        
-        
-    },
-    estadisticas(){
-        localStorage.setItem('userId',this.data[0].id);
-        console.log(this.data[0].id);
-        this.$router.push({name:'Estadisticas'});
-    },
+    //Función para mostrar el popup de borrar perfil
     borrarPopup(){
         this.borrar = true;
         this.recAct = true;
     },
+    //Función para salir de un popup(borrar perfil/cerrar sesión)
     leavePopup(){
         this.borrar = false;
         this.recAct = false;
         this.cerrar = false;
     },
+    //Función para mostrar el popup de cerrar sesion
     cerrarPopup(){
         this.cerrar = true;
         this.recAct = true;
     },
+    //Función que cierra la sesion: Borramos el accestoken del localstorage y redirigimos al login
     cerrarSesion(){
         localStorage.removeItem('accessToken');
         this.$router.push({name:'Login'});
     },
+    //Función que borra el perfil
     async borrarPefil(){
         try{
             await fetch (`http://puigmal.salle.url.edu/api/v2/users`,{
-                method: 'DELETE',
+                method: 'DELETE', //Utilizamos método DELETE para borrar.
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}` 
                 }
             });
-            this.$router.push({name:'Login'});
+            this.$router.push({name:'Login'}); //Una vez se ha podido borrar redirigimos al login.
         } catch (error){
             
         }
@@ -95,8 +82,8 @@ export default {
 
 
 <script setup>
+//Importamos el header y el footer
 import Footer2 from '../components/Footer2.vue'
-import Header2 from '../components/Header2.vue'
 import Header3 from '../components/Header3.vue'
 </script>
 
@@ -122,12 +109,12 @@ import Header3 from '../components/Header3.vue'
       </article>
       <br/>
 
-      <section class = "cont" v-for="profile in data">
+      <section class = "cont" v-for="profile in data"> <!--Mostramos la imagen del usuario-->
             
           <img :src=   "profile.image" class = "Redondap">
       </section>
 
-      <p class = cont v-for="profile in data">{{ profile.name }}</p>
+      <p class = cont v-for="profile in data">{{ profile.name }}</p> <!--Mostramos nombre del usuario-->
       <br/>
      
       <section  class = "cont">
@@ -138,7 +125,7 @@ import Header3 from '../components/Header3.vue'
      
      <br/>
      <section class = "cont">
-         <a href = "Estadisticas"><button class="Rectanguloperfil" v-on:click="estadisticas()">
+         <a href = "Estadisticas"><button class="Rectanguloperfil">
               <p>Estadísticas</p>
           </button></a>
       </section>
@@ -152,49 +139,49 @@ import Header3 from '../components/Header3.vue'
 
      <br/>
      <section class = "cont">
-          <button class="Rectanguloperfil" v-on:click="misEventos()">
+          <a href="MisEventos"><button class="Rectanguloperfil">
               <p>Mis eventos</p>
-          </button>
+          </button></a>
       </section>
       <br/>
       <section class = "cont">
-          <button class="Rectanguloperfil" v-on:click="eventPart()">
+          <a href="EventsPart"><button class="Rectanguloperfil">
               <p>Eventos... participo</p>
-          </button>
+          </button></a>
       </section>
 
      <br/>
      <section class = "cont">
-          <button class="Rectanguloperfil" v-on:click="borrarPopup()">
+          <button class="Rectanguloperfil" v-on:click="borrarPopup()"> <!--Activa función que hace true el booleano "borrar" para enseñar el popup de borrar perfil-->
               <p>Borrar perfil</p>
           </button>
       </section>
 
-      <div class="borrarPerfil" v-if="borrar">
+      <div class="borrarPerfil" v-if="borrar"> <!--Pop up para borrar el perfil.-->
         <b>¿Seguro que quieres borrar el perfil?</b>
         <div class="botones">
-            <button v-on:click="borrarPefil()">ACEPTAR</button>
-            <button v-on:click="leavePopup()">CANCELAR</button>
+            <button v-on:click="borrarPefil()">ACEPTAR</button> <!--Si aceptamos se borra el perfil-->
+            <button v-on:click="leavePopup()">CANCELAR</button> <!--Si cancelamos simplemente salimos del popup-->
         </div>
       </div>
 
-      <div class="borrarPerfil" v-if="cerrar">
+      <div class="borrarPerfil" v-if="cerrar"> <!--Pop up para cerrar la sesion.-->
         <b>¿Seguro que quieres cerrar la sesión?</b>
         <div class="botones">
-            <button v-on:click="cerrarSesion()">ACEPTAR</button>
-            <button v-on:click="leavePopup()">CANCELAR</button>
+            <button v-on:click="cerrarSesion()">ACEPTAR</button> <!--Si aceptamos se cierra la sesion-->
+            <button v-on:click="leavePopup()">CANCELAR</button> <!--Si cancelamos simplemente salimos del popup-->
         </div>
       </div>
 
      <br/>
      <section class = "cont">        
-          <button class="Rectanguloperfil" v-on:click="cerrarPopup()">
+          <button class="Rectanguloperfil" v-on:click="cerrarPopup()">  <!--Activa función que hace true el booleano "cerrar" para enseñar el popup de cerrar sesion-->
               <p>Cerrar sesión</p>
           </button>
       </section>
      <br/><br/>
 
-     <section class = "transparent6"></section>
+     
       
   </main>
 
@@ -202,7 +189,7 @@ import Header3 from '../components/Header3.vue'
       
   </Footer2>
  
-  <section class = "rectanguloN" v-if="recAct"></section>
+  <section class = "rectanguloN" v-if="recAct"></section> <!--Rectangulo negro para dar contraste entre el popup y el resto-->
 
 
 </template>
@@ -210,10 +197,8 @@ import Header3 from '../components/Header3.vue'
 <style scoped>
 
 
-.botones *:hover{
-    background: black;
-    color: white;
-}
+
+
 
 .botones *{
     background: white;
