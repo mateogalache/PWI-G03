@@ -197,7 +197,10 @@ import Header3 from '../components/Header3.vue'
 <style scoped>
 
 
-
+.botones *:hover{
+    color: white;
+    background: black;
+}
 
 
 .botones *{

@@ -1,6 +1,6 @@
 <script>
-const token = localStorage.getItem('accessToken');
-const busqueda = localStorage.getItem('searchEvent');
+const token = localStorage.getItem('accessToken'); //Cogemos token del local storage
+
 
 
 
@@ -8,41 +8,31 @@ export default {
   name: "App",
   data() {
     return {
-      data: {},
-      data2: {},
-      endIndex: 10,
-      savedId: null,
-      showZona: true,
-      showBusqueda: false,
+      data: [], //Data de los eventos en zona (Barcelona)
+      data2: [], //Data de los eventos buscados
+      endIndex: 10, //Numero de eventos que se pueden ver
+      savedId: null, //Id de el evento clickado
+      showZona: true, //Booleano para saber que eventos mostrar
+      showBusqueda: false, //Booleano para saber que eventos mostrar
+      //Valores de busqueda
       busqueda: '',
       location: '',
       date: '',
+      //Booleano para mostrar popup de filtro
       filter: false,
-      historial: false,
-      records:[],
-      record: null,
+      
     }
   },
-  beforeMount(){
-    
-    
-    this.getEvents();
-    
+  beforeMount(){    
+    //Función que queremos que se haga cuando carga la página
+    this.getEvents();    
   },
-  mounted(){
-    try {
-       this.record = JSON.pasrse(localStorage.getItem('record'));
-       this.records.unshift(this.record); 
-    } catch(error){
-
-    }
-    
-  },
+  
   
  
   methods: {
+    //Función para coger todos los eventos en Barcelona
      async getEvents(){
-
        
             const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/search?location=Barcelona`,{
                         headers: {
@@ -59,20 +49,24 @@ export default {
             
            
     },
-   
+   //Función para guardar el id del evento clickado
     saveEvent(id){
         this.savedId = id;
         window.localStorage.setItem('event',this.savedId);
         console.log(id);     
     },
+    //Función para augmentar cuantos eventos se ven
     showMore(){
         this.endIndex = this.endIndex + 10;
         
     },
+    //Función para disminuir cuantos eventos se ven
     showLess(){
         this.endIndex  =  this.endIndex - 10;
         
     },
+    //Las sisugientes funciones hacen todas lo mismo: coger los eventos según la busqueda del usuario.
+    //El ususario puede buscar por tres filtros por lo que hemos puesto todas las posiibles combinaciones
     async busquedaEventos() {
         
         
@@ -234,27 +228,21 @@ export default {
       }
         
     },
+    //Función para mostrar filtro
     showFilter(){
         this.filter = true;
     },
+    //Función para cerrar filtro
     leaveFilter(){
         this.filter = false;
     },
+    //Función para limpiar el filtro
     clearFilter(){
         this.filter = false;
         this.location = '';
         this.date = '';
     },
-    showHistorial(){
-        this.historial = true;
-    },
-    hideHistorial(){
-        this.historial = false;
-    },
-    searchHistorial(){
-        this.busqueda = this.record;
-    }
-    
+     
     
   }
 };
@@ -264,6 +252,7 @@ export default {
 
 
 <script setup>
+//Importamos header y footer
 import Footer2 from '../components/Footer2.vue'
 import Header3 from '../components/Header3.vue'
 </script>
@@ -300,23 +289,14 @@ import Header3 from '../components/Header3.vue'
                     <img src="src/assets/search.png" alt="img" v-on:click= "busquedaEventos()">
                 </div>
                 
-               <button v-on:click="showFilter()">          
+               <aside class="filtrobutton" v-on:click="showFilter()">          
                     Filtro
-                </button> 
+               </aside> 
             </div>
-            <div class="his" v-if="!historial" v-on:click="showHistorial()">
-                 Ver Historial
-            </div>
-            <div class="his" v-if="historial" v-on:click="hideHistorial()">
-                 Quitar Historial
-            </div>
+            
         </section>           
         
-        <section class = "rectanguloredondeadeo4 historial" v-if="historial"> 
-            <div type="text" class="sinborde "  v-for="record in records" :key="record" v-on:click="searchHistorial()" >
-                {{record}}
-            </div>
-        </section>
+        
         <div class="rec" v-if="!historial"></div>
         <section class="eventocontainer" > <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
             <div class="subtitulo" v-if="showZona">
@@ -371,11 +351,40 @@ import Header3 from '../components/Header3.vue'
 
 <style scoped>
 
-    .historial{
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
+    .barra{
+        border: 3px solid var(--main-bg-color);
     }
+    .evento img{
+        object-fit: cover;
+        background: linear-gradient(white,var(--main-bg-color));
+        border: 1px solid var(--main-bg-color);
+        
+    }
+    .evento img:after{            
+        content: "NO IMAGE";
+        position: absolute;
+        transform: translate(-50%,-50%);
+        color: black;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+    }
+    .filtrobutton:hover{
+        background: var(--main-bg-color);
+        color: white;
+    }
+    .filtrobutton{
+        font-size: 18px;
+        font-weight: bolder;
+        cursor: pointer;
+        border-radius: 50px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        border: 2px solid var(--main-bg-color);
+        color: black;
+        transition: all 300ms ease;
+    }
+    
 
     .element{
         border: 2px solid black;
@@ -390,8 +399,7 @@ import Header3 from '../components/Header3.vue'
 
     .element img{
         width: 18px;
-        height: 18px;
-        
+        height: 18px;        
         object-fit: cover;
     }
     .rec{
@@ -413,18 +421,18 @@ import Header3 from '../components/Header3.vue'
         background-color: black;
         opacity: 70%;
         bottom: 0;
-        z-index:50;
+        z-index:500;
     }
 
     .botones button:hover{
-        background: black;
+        background: var(--main-bg-color);
         color: white;
     }
 
     .botones button{
         border-radius: 20px;
         padding: 5px;
-        border: 1px solid black;
+        border: 1px solid var(--main-bg-color);
         cursor: pointer;
         background: white;
         transition: all 300ms ease;
@@ -445,13 +453,13 @@ import Header3 from '../components/Header3.vue'
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index: 100;
+        z-index: 501;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         background: white;
         padding: 1rem;
-        border: 1px solid black;
+        border: 1px solid var(--main-bg-color);
         border-radius: 20px;
         width: 17rem;
         height: 12rem;
@@ -497,14 +505,14 @@ import Header3 from '../components/Header3.vue'
         cursor:pointer;
         margin-top: 2rem;
         border-radius: 50px;
-        border: 2px solid black;
+        border: 2px solid var(--main-bg-color);
         width: 12rem;
         transition: all 300ms ease;
     }
 
     .mostrarMas:hover,.mostrarMenos:hover{
         color: white;
-        background: black;
+        background: var(--main-bg-color);
     }
 
     input{
@@ -519,6 +527,7 @@ import Header3 from '../components/Header3.vue'
     }
 
     .evento{
+        position: relative;
         width: 50%;
         justify-content: center;
         display: flex;
@@ -536,13 +545,13 @@ import Header3 from '../components/Header3.vue'
     }
 
     .eventocontainer{
-        background-color: lightgrey;
+        background: var(--secundary-bg-color);
         display: flex;
         flex-direction: column;
         padding: 2em;
         margin-top: -15px;
         text-align: center;
-        
+        border: 3px solid var(--main-bg-color);
     }
 
     img{
@@ -558,6 +567,7 @@ import Header3 from '../components/Header3.vue'
 
     .rectanguloredondeadeo2{
         color: gray;
+        
         height: 25px;
         width: 80%;
         background-color: transparent;
@@ -625,7 +635,7 @@ import Header3 from '../components/Header3.vue'
             color: gray;
             height: 25px;
             width: 90%;
-            background-color: transparent;
+            background-color: var(--secundary-bg-color);
             border: 1px solid grey;
             display: flex;
             align-items:center;
@@ -633,6 +643,7 @@ import Header3 from '../components/Header3.vue'
             border-radius: 50px;
             margin: 25px;
             margin-right: 100px;
+            border: 3px solid var(--main-bg-color);
         }
 
         .rectanguloredondeadeo3{
@@ -661,7 +672,7 @@ import Header3 from '../components/Header3.vue'
             margin-top: -10px;
         }
         .eventocontainer{
-            background-color: lightgrey;
+            
             display: flex;
             flex-direction: column;
             margin: 0 auto;

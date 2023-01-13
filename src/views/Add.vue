@@ -1,12 +1,21 @@
 <script>
 
-const token = localStorage.getItem('accessToken');
+const token = localStorage.getItem('accessToken'); //Cogemos el token del localstorage
 
 export default {
   name: "App",
   data() {
     return {
-      
+        //Definimos la variables que pasaremos a la API
+      name:'',
+      image:'',
+      location:'',
+      description:'',
+      eventEnd_date: '',
+      eventStart_date: '',
+      type: '',
+      n_participators: '',
+      goodAdd: false, //Booleano para mostrar notificacion si se ha creado bien el evento
     }
   },
   methods: {
@@ -19,14 +28,15 @@ export default {
 
         },
         body: JSON.stringify({
-            name: this.$refs.name.value,
-            image: this.$refs.image.value,
-            location: this.$refs.location.value,
-            description: this.$refs.description.value,
-            eventStart_date: this.$refs.eventStart_date.value,
-            eventEnd_date: this.$refs.eventEnd_date.value,
+            //Pasamos los valores de los input con v-model
+            name: this.name,
+            image: this.image,
+            location: this.location,
+            description: this.description,
+            eventStart_date: this.eventStart_date,
+            eventEnd_date: this.eventEnd_date,
             n_participators: this.n_participators,
-            type: this.$refs.type.value,
+            type: this.type,
             latitude: null,
             longitude: null
         })
@@ -41,14 +51,32 @@ export default {
             throw new Error(message);
           
       }
+      else{
+        //Si se ha hecho correctamente, mostramos la notificacion y llamamos a la funcion clearEvent
+        this.goodAdd = true;
+        this.clearEvent();
+      }
       
-    }
+    },
+    //Función que limpia todos los valores de los input(ya sea porque se ha creado uno correctamente o porque se ha clickado reiniciar)
+    clearEvent(){
+      this.name ='';
+      this.image ='';
+      this.location ='';
+      this.description ='';
+      this.eventEnd_date = '';
+      this.eventStart_date = '';
+      this.type = '';
+      this. n_participators = '';
+    },
+
   }
 }
 </script>
 
 
 <script setup>
+//Importamos header y footer
 import Footer2 from '../components/Footer2.vue'
 import Header3 from '../components/Header3.vue'
 </script>
@@ -65,48 +93,52 @@ import Header3 from '../components/Header3.vue'
             <h2>Crear Evento</h2>
                 
         </div>
+        <div class="goodAdd" v-if="goodAdd">
+            ¡Evento creado correctamente!
+        </div>
+
         <section class = "container"> <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado-->
 
             
                 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento" ref="name">           
+                <input type="text" class="sinborde" name="Nombre Evento" placeholder="Nombre Evento" v-model="name">           
             </div>
 
             <div class = "rectanguloredondeadeo"> 
-                <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento" ref="type">           
+                <input type="text" class="sinborde" name="Tipo Evento" placeholder="Tipo Evento" v-model="type">           
             </div>
 
             <div class = "rectanguloredondeadeo"> 
                 <p>Día de inicio </p>
-                <input type="date" class="sinborde" name="Día de inicio" placeholder="Día de inicio" ref="eventStart_date">                     
+                <input type="date" class="sinborde" name="Día de inicio" placeholder="Día de inicio" v-model="eventStart_date">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
                 <p>Día de finalización </p>
-                <input type="date" class="sinborde" name="Día de fin" placeholder="Día de fin" ref="eventEnd_date">                     
+                <input type="date" class="sinborde" name="Día de fin" placeholder="Día de fin" v-model="eventEnd_date">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
                 
-                <input type="text" class="sinborde" name="Descripción" placeholder="Descripción" ref="description">                     
+                <input type="text" class="sinborde" name="Descripción" placeholder="Descripción" v-model="description">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Lugar" placeholder="Lugar" ref="location">                     
+                <input type="text" class="sinborde" name="Lugar" placeholder="Lugar" v-model="location">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Nº de participantes" placeholder="Nº de participantes" ref="n_partipators" v-model="n_participators">                     
+                <input type="text" class="sinborde" name="Nº de participantes" placeholder="Nº de participantes"  v-model="n_participators">                     
             </div>
 
             <div class = "rectanguloredondeadeo">
-                <input type="text" class="sinborde" name="Imagen" placeholder="Imagen" ref="image">                     
+                <input type="text" class="sinborde" name="Imagen" placeholder="Imagen" v-model="image">                     
             </div>
             
             <section class="parejabotones">
             </section>
-                    <div class = "reiniciar">           
+                    <div class = "reiniciar" v-on:click="clearEvent()">           
                             <p style="color: black">Reiniciar</p>
                     </div>
 
@@ -122,6 +154,24 @@ import Header3 from '../components/Header3.vue'
 </template>
 
 <style scoped>
+
+    .goodAdd{
+        position: fixed;
+        bottom: 10rem;
+        right: -16rem;
+        padding: 1.5rem;
+        border: 2px solid var(--main-bg-color);
+        background: var(--secundary-bg-color);
+        animation: good 3s ease;
+    }
+    @keyframes good{
+        0%,100%{
+            right: '';
+        }
+        50%{
+            right:0;
+        }
+    }
 
     input[type="date"]{
         width: 35%;
@@ -165,6 +215,7 @@ import Header3 from '../components/Header3.vue'
     border-radius: 50px;
     margin: 25px;
     margin-right: 225px;
+    cursor:pointer;
     }
     .crear{
     height: 30px;

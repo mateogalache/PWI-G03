@@ -8,9 +8,9 @@ export default {
   name: "App",
   data() {
     return {
-      data: {},
-      data2: {},
-      data3: {},
+      data: [],
+      data2: [],
+      data3: [],
       imageLoad: true,
       savedId: null,
       endIndex: 10,
@@ -167,28 +167,28 @@ import Header2 from '../components/Header3.vue'
         <section class="eventocontainer5">
             <div class="eventocontainer" id = "event" >               
                 <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)"  v-on:click="saveEvent(events.id)" v-if="!showAcabado && !showEmpezar">
-                        <div>
+                        
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
                              {{events.name}}
                             </div>
-                        </div>
+                        
                 </a>
                 <a href="Event" class="evento" v-for="events in data2.slice(0,endIndex)"  v-on:click="saveEvent(events.id)" v-if="showAcabado">
-                        <div>
+                        
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
                              {{events.name}}
                             </div>
-                        </div>
+                        
                 </a>  
                 <a href="Event" class="evento" v-for="events in data3.slice(0,endIndex)"  v-on:click="saveEvent(events.id)" v-if="showEmpezar">
-                        <div>
+                        
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
                              {{events.name}}
                             </div>
-                        </div>
+                        
                 </a>           
             </div>
             <div class="centra" v-if="!showAcabado && !showEmpezar">
@@ -231,7 +231,25 @@ import Header2 from '../components/Header3.vue'
 
 <style scoped>
 
+   
 
+    .evento img{
+        object-fit: cover;
+        background: linear-gradient(white,var(--main-bg-color));
+        border: 1px solid var(--main-bg-color);
+        width: 10rem;
+        aspect-ratio: 1/1;
+        
+    }
+    .evento img:after{            
+        content: "NO IMAGE";
+        position: absolute;
+        transform: translate(-50%,-50%);
+        color: black;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+    }
     .subtitulo  {
         margin-left: .5rem;        
     }
@@ -315,18 +333,22 @@ import Header2 from '../components/Header3.vue'
         object-fit: cover;
     }
     .evento{
+        position: relative;
         width: 50%;
         justify-content: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
+        color: black;
+        gap: 1rem;
     }
     .eventocontainer{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
+
     }
     .eventName{
         margin-top: -0.5rem;
@@ -381,7 +403,8 @@ import Header2 from '../components/Header3.vue'
     }
 
     .eventocontainer5{
-        background-color: lightgrey;
+        background-color: var(--secundary-bg-color);
+        border: 3px solid var(--main-bg-color);
         display: flex;
         flex-direction: column;
         padding-left: 1em;
@@ -391,11 +414,7 @@ import Header2 from '../components/Header3.vue'
         flex-wrap: wrap;
     }
 
-    img{
-        width: 140px;
-        height: 140px;
-        margin: 1em;
-    }
+    
 
     .parejas{
         display: flex;
@@ -448,7 +467,7 @@ import Header2 from '../components/Header3.vue'
         }
        
         .eventocontainer5{
-            background-color: lightgrey;
+            
             display: flex;
             flex-direction: column;
             width: 90%;

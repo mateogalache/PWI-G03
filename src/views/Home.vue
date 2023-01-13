@@ -9,7 +9,7 @@ export default {
   name: "App",
   data() {
     return {
-      data: {}, //Data donde guardaremos los eventos
+      data: [], //Data donde guardaremos los eventos
       data2:{}, //Data para guardar la información del usuario y así coger el id.
       savedId: null, //Lo utilizaremos para guardar el id de un evento al que queremos entrar.
       endIndex: 10, //Varible que define cuantos eventos queremos ver en pantalla.
@@ -98,7 +98,7 @@ import Header3 from '../components/Header3.vue'
         <section class="eventocontainer" id = "event">
             <!--Utilizamos v-for para mostrar en bucle los la información que queramos de los eventos-->               
             <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"   v-on:click="saveEvent(events.id)"> <!--Cuando clickemos se guardará el id del evento clickado con la función saveEvent-->
-                    <img  :src=  "events.image" alt="img" v-bind:error="errorImages"> <!--Mostramos la imagen del evento-->
+                    <img  :src=  "events.image" alt="img"> <!--Mostramos la imagen del evento-->
                     <div class="infoEvent">
                         <small><span>Lugar:</span> {{events.location}}</small>   
                         <small><span>Fecha:</span> {{events.eventStart_date.substring(0,10)}}</small> <!--Mostramos la data de cuando empieza el evento, uitilizamos la función de substring para sólo mostrar los diez primeros dígitos ya que son los únicos que nos interesan-->
@@ -182,7 +182,7 @@ import Header3 from '../components/Header3.vue'
     .margenhome h2:before{
         height: 100%;
         width:  200%;
-        background: rgb(192, 227, 238);
+        background: var(--secundary-bg-color);
         content: '';
         position: absolute;
         left:100%;
@@ -325,7 +325,7 @@ import Header3 from '../components/Header3.vue'
     }
     main{
         overflow: hidden;
-        background: rgb(192, 227, 238);
+        background: var(--secundary-bg-color);
     }
     
 
@@ -333,7 +333,7 @@ import Header3 from '../components/Header3.vue'
         margin-left: 2rem;
         margin-bottom: 2rem;
         margin-right: 2rem;
-        background: rgb(95, 158, 160,.3);
+        background: var(--third-bg-color);
         padding: 1rem;
         border: 3px solid var(--main-bg-color);
     }  

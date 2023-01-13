@@ -2,6 +2,8 @@
 Tambien algunos diseños estandard para todas las pagina los hacemos aqui, asi podemos acceder desde cualquier .vue*/
 :root {
     --main-bg-color: cadetblue;
+    --secundary-bg-color: rgb(192, 227, 238);
+    --third-bg-color: rgb(95, 158, 160,.3);
   }
 
 .perfil{
