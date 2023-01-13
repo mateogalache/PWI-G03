@@ -30,22 +30,18 @@ export default {
   name: "App",
   data() {
     return {
-      postResult: null
+      name: '',
+      last_name: '',
+      email: '',
+      password: '',
+      image: '',
     }
   },
   methods: {
-    fortmatResponse(res) {
-      return JSON.stringify(res, null, 2);
-    },
+    
   async postRegister() {
     
-      const postData = {
-        name: this.$refs.post_name.value,
-        last_name: this.$refs.post_last_name.value,
-        email: this.$refs.post_email.value,
-        password: this.$refs.post_password.value,
-        image: this.$refs.post_image.value,
-      };
+     
       
       try {
         
@@ -55,7 +51,14 @@ export default {
             "Content-Type": "application/json",
             "x-access-token": "token-value",
           },
-          body: JSON.stringify(postData),
+          body: JSON.stringify({
+            name: this.name,
+            last_name: this.last_name,
+            email: this.email,
+            password: this.password,
+            image: this.image,
+
+        })
         });
         console.log(res);
 
@@ -113,15 +116,15 @@ export default {
             <h2><b>Datos personales</b></h2>
             <form id = "myForm">               
             <p><label>Nombre*</label></p>
-            <input type="text" class = "texto" id = "name"  name = "name" ref = "post_name">
+            <input type="text" class = "texto" id = "name"  name = "name" ref = "post_name" v-model="name">
             <p><label>Apellidos*</label></p>
-            <input type="text" class = "texto" id = "last_name" name = "last_name" ref = "post_last_name">
+            <input type="text" class = "texto" id = "last_name" name = "last_name" ref = "post_last_name" v-model="last_name">
             <p><label>Email*</label></p>
-            <input type="text" class = "texto" id = "email" name = "email" ref = "post_email">
+            <input type="text" class = "texto" id = "email" name = "email" ref = "post_email" v-model="email">
             <p><label>Contraseña*</label></p>
-            <input type="password" class = "texto" id = "password" name = "password" ref = "post_password">
+            <input type="password" class = "texto" id = "password" name = "password" ref = "post_password" v-model="password">
             <p><label>Foto de perfil*</label></p>
-            <input type="text" class = "texto" id = "image" name = "image" ref = "post_image">
+            <input type="text" class = "texto" id = "image" name = "image" ref = "post_image" v-model="image">
             <br/><br/>
           </form> 
           </section>
