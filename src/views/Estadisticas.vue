@@ -1,25 +1,27 @@
 <script>
-const user_id = localStorage.getItem('userId');
-const token = localStorage.getItem('accessToken');
+const user_id = localStorage.getItem('userId'); //Cogemos el id del usuario del local storage
+const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
 
 export default {
   name: "App",
   data() {
     return {
-      data: {},
-      data2: {},
+      data: {}, //Data del usuario
+      data2: {}, //Data de las estadisticas del usuario
     }
   },
+  //Funciones que queremos cuando cargue la página
   beforeMount(){
     this.getProfile();
     this.getStaistics();
   },
   methods: {
+    //Función para coger la información de el usuario según su id.
     getProfile(){
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${user_id}`,{
             headers: {
                 "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` //Accestoken para acceder a la información
             },
         })
             
@@ -52,13 +54,11 @@ export default {
 
 
 <script setup>
+//Importamos header y footer
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
-<template>
-  <head>
-      
-  </head>
+<template> 
   
   <Header2>
       
@@ -66,12 +66,12 @@ import Header2 from '../components/Header2.vue'
   <!--Otra página con uns estructura muy marcada que se divide en article y section.-->
   <main >
       <br>
-      <section class = margenestadistica>
+      <div class = "margenestadistica"> <!--Ponemos margen al título-->
           <h2>Estadísticas</h2>
-      </section>
+        </div>
       <br/><br/>
       
-        <article class = "cont" v-for = "profile in data">
+        <article class = "cont" v-for = "profile in data"> <!--Mostramos los datos del perfil(Foto y el nombre)-->
             <img :src=  "profile.image" class = "Redondap">
             
         </article>
@@ -79,12 +79,13 @@ import Header2 from '../components/Header2.vue'
       
       
       <br/>
-      <div v-for="statistics in data2">
+      <div v-for="statistics in data2"> <!--Mostramos las estadísticas del usuario-->
+        <!--Hemos separado los tres apartados en articles que colocan el rectangulo en el centro y después en section definimos el rectangulo con la información de las
+        estadísticas dentro-->
         <article class = "cont">
             <section class = "rectangulo4">
                 <p class = "grey">Puntuación</p>
-                <!--En este caso hemos utilizado aside ya que simplemente hemos utilizado este tag para colocar y dimensionar unas imagenes-->
-                <p>{{ statistics.avg_score }}</p>
+                <p class="separacion2">{{ statistics.avg_score }}</p>
             </section>    
         </article>
 
@@ -101,10 +102,9 @@ import Header2 from '../components/Header2.vue'
 
         <article class = "cont">
             <section class = "rectangulo3">                
-                <p class = "grey">Porcentaje <br>usuarios con menos<br>comentarios</p>
-                <aside class = "separacion2">
-                <p>{{statistics.percentage_commenters_below}}</p>
-                </aside>
+                <p class = "grey">Porcentaje <br>usuarios con menos<br>comentarios</p>                
+                <p class="separacion2">{{statistics.percentage_commenters_below}}%</p>
+                
             </section>    
         </article>
       </div>
@@ -113,8 +113,8 @@ import Header2 from '../components/Header2.vue'
 
       
   </main>
-    <div class="transparent6"></div>
-    <!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
+    
+    
 
   <Footer2>
       
