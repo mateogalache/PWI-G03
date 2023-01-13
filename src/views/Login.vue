@@ -1,43 +1,50 @@
-<script >
-import Footer from '../components/Footer.vue'
-import Header from '../components/Header.vue'
-
-
-
+<script>
+//El funcionamiento del login será parecido al register.
 export default {
   name: "App",
   data() {
+    //Definimos variables
     return {
-      showError: false,
+      showError: false, //booleano para mostrar mensaje de error.
+      //inputs para hacer post.
+      email: '',
+      password: '',
     }
   },
   methods: {
     async postLogin() {
-      const response = await fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
-        method: 'POST',
+      const response = await fetch('http://puigmal.salle.url.edu/api/v2/users/login', { //Hacemos fetch a la url correcta de la API
+        method: 'POST', //Utilizaremos post para subir elementos a la API
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json' //Tipo de contenido de la API
         },
+        //Valores que subiremos
         body: JSON.stringify({
-            email: this.$refs.email.value,
-            password: this.$refs.password.value
+            email: this.email,
+            password: this.password,
         })
       });
+      //Cogemos la data que devuelve la API, en este caso devolverá el accesToken
       const data = await response.json();
-      // Save the token in local storage
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('email',this.$refs.email.value);
+      
+      
       
       if (!response.ok) {
+        //Si no se puede hacer login el booleano será true y esto activará el popup de error.
             this.showError = true;
           const message = `An error has occured: ${response.status} - ${response.statusText}`;
           throw new Error(message);
           
       }
-      else{ this.$router.push({name:'Home'});
-
+      else{ 
+        //Si el login se ha hecho correctamente guardamos el accesToken y el mail(que utilizaremos para entrar al perfil) en el LocalStorage
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('email',this.email);
+        //La página se redirigirá al home.
+        this.$router.push({name:'Home'});
       }
     },
+    //Función para salir del popup de error.
     exitError(){
         this.showError = false; 
     }
@@ -49,21 +56,21 @@ export default {
     <Header>
         
     </Header>
-    <main id="Login">
+    <main id="Login">     
 
-       
-
-        <div class ="error" v-if="showError">
+        <div class ="error" v-if="showError"> <!--Popup de error que solo aparece cuando showError es true que es cuando no se ha podido hacer login-->
             <b>Email o contraseña incorrectos</b>
-            <button v-on:click="exitError()">ACEPTAR</button>
+            <button v-on:click="exitError()">ACEPTAR</button> <!--Para salir del popup activamos una función que devuelve el booleano a false.-->
         </div>
         
         <picture class = "background"> </picture> <!--Ponemos el tag de picture para definir una imagen-->
 
         <body class = "iniciarsesioncontainer"> <!-- Al estar todo dentro de un recuadro lo identificamos como body-->
-            <article class = "recuadrocentro">
+            <article class = "recuadrocentro"> <!--Recuadro que solo aparece en pantalla grande-->
                 <section class = "recuadro"></section>
             </article> 
+
+            <!--Seguimos una estructura parecida al register-->
 
             <article class="contlogin">        
                 <img src = "src/assets/sallevents.png" class= "imglogo">
@@ -71,30 +78,30 @@ export default {
             <br>
         
             <article class="contlogin">        
-                <section class = "center0">
+                <form class = "center0">
                     <h2><b>Iniciar sesión</b></h2>              
                     <p><label>Email*</label></p>
                     <input type="text" class = "texto" ref = "email">
                     <p><label>Contraseña*</label></p>
                     <input type="password" class = "texto" ref = "password">
                     <p><small>¿Has olvidado tu contraseña?</small></p>
-                </section>
+                </form>
             </article>
             <br>
     
             <article class="contlogin"> 
-                <button v-on:click = "postLogin()" class="Iniciar">
+                <button v-on:click = "postLogin()" class="Iniciar"> <!--Cuando se clicke a iniciar sesión se activará la funcion de postLogin-->
                 <b class = white>Iniciar Sesión</b>
                 </button>
             </article>
 
-            <article class="contlogin">
+            <aside class="contlogin">
                 <section class = "center0">
                     <p class = "ntc">¿No tienes cuenta?<a HREF="Register"> <span> Regístrate</span></a></p>
                 </section>
-            </article>
+            </aside>
       
-            <section class = "transparent9" ></section>
+            <div class = "transparent9" ></div> <!--Ponemos un elemento para que quede mejor ordenado el diseño-->
 
         </body>
 
@@ -103,8 +110,11 @@ export default {
     <Footer>
         
     </Footer>
-    <div class="oscuro" v-if="showError"></div>
+    <!--Ponemos un rectangulo negro encima de todo menos del popup(utilizando z-index en el css) y se muestra solo cuando showError es true para que se vea mejor 
+    el popup por encima del resto.-->
+    <div class="oscuro" v-if="showError"></div> 
   </template>
+  
 <style scoped>
 
 
