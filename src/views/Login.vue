@@ -30,6 +30,7 @@ export default {
       
       
       if (!response.ok) {
+        
         //Si no se puede hacer login el booleano será true y esto activará el popup de error.
             this.showError = true;
           const message = `An error has occured: ${response.status} - ${response.statusText}`;
@@ -81,9 +82,9 @@ export default {
                 <form class = "center0">
                     <h2><b>Iniciar sesión</b></h2>              
                     <p><label>Email*</label></p>
-                    <input type="text" class = "texto" ref = "email">
+                    <input type="text" class = "texto" v-model = "email">
                     <p><label>Contraseña*</label></p>
-                    <input type="password" class = "texto" ref = "password">
+                    <input type="password" class = "texto" v-model = "password">
                     <p><small>¿Has olvidado tu contraseña?</small></p>
                 </form>
             </article>
@@ -114,7 +115,7 @@ export default {
     el popup por encima del resto.-->
     <div class="oscuro" v-if="showError"></div> 
   </template>
-  
+
 <style scoped>
 
 
