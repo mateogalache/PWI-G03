@@ -6,9 +6,10 @@ export default{
 
     },
     mounted(){
+        //En la página de carga cogemos el token del localStorage, si este existe directamente iremos al home, si no existe iremos al Login
         const token = localStorage.getItem('accessToken');
         if(token){
-            setTimeout(() =>{
+            setTimeout(() =>{ //Utilizamos setTimeout para que tarde 3 segundos en realizarse así le damos un efecto de carga.
                 this.$router.push('/Home');
             },3000);
         }
@@ -25,18 +26,14 @@ export default{
 
 <template>
     
-    <main>
-            
-                <img class="img" src = "src/assets/sallevents.png" > <!--Ponemos el tag de img para cargar una imagen-->
-                <div class="loadline"></div>
-        
+    <main>            
+        <img class="img" src = "src/assets/sallevents.png" > <!--Ponemos el tag de img para cargar una imagen-->
+        <div class="loadline"></div> <!--Linea para ahcer la animación de carga-->        
     </main>
     
 </template>
 
 <style scoped>
-
-
 
 img{
     width: 15rem;
@@ -78,9 +75,5 @@ img{
         top: calc(50% + 50rem/4);
     }
 }
-
-
-
-
 
 </style>
