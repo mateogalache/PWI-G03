@@ -6,28 +6,30 @@ import Header2 from '../components/Header2.vue'
 <script>
 
 const token = localStorage.getItem('accessToken');
-const id = localStorage.getItem('friend');
+const friendId = localStorage.getItem('friend');
+const userId = window.localStorage.getItem('userId');
+console.log(userId);
+console.log(friendId);
 
 export default {
 	name: "App",
 	data() {
 		return {
-			data: {},
+			data: [],
 			data2: {},
+			content: '',
+			send_id: '',
+			receiver_id: '',
 		}
 	},
 	beforeMount() {
-
-
 		this.getMessages();
 		this.getInfo();
-
 	},
 	methods: {
-
 		async getMessages() {
-
-			const response = fetch(`http://puigmal.salle.url.edu/api/v2/messages/${id}`, {
+			try{
+				const response = fetch(`http://puigmal.salle.url.edu/api/v2/messages/${friendId}`, {
 				headers: {
 					"Content-Type": "application/json",
 					'Authorization': `Bearer ${token}`
@@ -37,13 +39,18 @@ export default {
 				.then(response => response.json())
 				.then(data => this.data = data);
 			console.log(response);
+			} catch(error){
+				console.error(error);
+			}
+			
+			
 
 
 		},
 
 		async getInfo(){
 
-			const response = fetch(`http://puigmal.salle.url.edu/api/v2/users/${id}`, {
+			const response = fetch(`http://puigmal.salle.url.edu/api/v2/users/${friendId}`, {
 				headers: {
 					"Content-Type": "application/json",
 					'Authorization': `Bearer ${token}`
@@ -56,8 +63,30 @@ export default {
 
 
 		},
+		async enviarMensaje(){
+			this.send_id = userId;
+			this.receiver_id = friendId;
+			try {
+				const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
+					method: 'POST',
+					headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${token}`
+					},
+					body: JSON.stringify({
+						content: this.content,
+						user_id_send: this.send_id,
+						user_id_recived: this.receiver_id,					
+					})
+				});
+				this.getMessages();
+				this.content = '';
+			} catch (error) {
+				console.error(error);
+      }
+		}
 
-	}
+	},
 };
 
 </script>
@@ -67,33 +96,31 @@ export default {
     </Header2>
 	<!--Chat con una persona-->
     <main>
-        <div  v-for="profile in data2" class="nomchat">
-            <img class="header-img" src={{profile.image}} />
-            <h2>{{ profile.name }}</h2>
-        </div>
-        
-        <div class="box"><!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article-->
-			<div class="item left">
-				
-				<span class = "message"> Que me cuentas </span>
-			</div>
-			<div class="chart-timer">
-				2022-10-17
-			</div>
-			<div class="item right">
-				<div class="col">
-					<p>tu</p>
-					<span class = "message"> Jajajajaja </span>
+		<body>
+			<div class="container">
+				<div  v-for="profile in data2" class="nomchat">
+					<img class="header-img" :src=profile.image />
+					<h2>{{ profile.name }}</h2>
 				</div>
-			</div>
-            
-		</div>
+					<div class="containermessage" ref="myDiv">
+						<div class="messagesBox" ><!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article-->
+							<div class="messagein" v-for="messages in data">
+								
+									<p>{{messages.content}}</p>
+													
+							</div>           
+					</div>
+				</div>
 
-		<div class="input-box">
-			<input type="text" />
-			 <button> Enviar </button>
-		</div>
-		<div class="transparent6"></div>
+				<div class="input-box">
+					<input type="text" v-model="content"/>
+					<button v-on:click="enviarMensaje()"> Enviar </button>
+				</div>
+				<div class="transparent6"></div>
+			</div>
+		</body>
+		
+        
     </main>
 	<Footer2>
 
@@ -102,15 +129,53 @@ export default {
     
 </template>
 <style scoped>
-.box{
-    margin-top: 10%;
+
+.containermessage{
+	display: flex;
+	justify-content: end;
+	width: 100%;
+	
 }
+.messagein:after{
+	content:'';
+	border-left: 15px solid transparent;
+    border-right: 15px solid transparent;    
+    border-bottom: 15px solid lightgray;
+	width: 0rem;
+	right: -1rem;
+	top: 1rem;
+	transform: rotate(90deg);
+	position: absolute;
+}
+.messagein{
+	position: relative;
+	background: lightgray;
+	padding: 1rem;
+	border-radius: 20px;
+	width: 5rem;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+.messagesBox{	
+	display: flex;
+	flex-direction: column;
+	bottom: 8rem;	
+	gap: 1rem;
+	margin-right: 2rem;
+	
+}
+
 h3{
     margin-left: 5%;
 }
 .nomchat{
+	position: fixed;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+	gap: .5rem;
     margin-top: 5%;
     margin-left: 5%;
 	margin-right: 5%;
@@ -166,11 +231,10 @@ h3{
 	color: #222121;
 }
 
-.input-box {
-	
-	
-	left: 0;
-	right: 0;
+.input-box {	
+	position: fixed;
+	width: 100%;
+	bottom: 5rem;	
 	display: flex;
 	padding: 4px 6px;
 	box-sizing: border-box;
@@ -194,7 +258,7 @@ h3{
 	margin: 0px 6px;
 	outline: none;
 }
-button:active{}
+
 
 .chart-timer{
 	text-align: center;

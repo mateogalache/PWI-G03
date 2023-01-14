@@ -5,6 +5,9 @@ import Header2 from '../components/Header2.vue'
 </script>
 <script>
 const token = localStorage.getItem('accessToken');
+const message = localStorage.getItem('shareEvent');
+const userId = localStorage.getItem('userId');
+console.log(message);
 
 export default {
     name: "App",
@@ -13,7 +16,8 @@ export default {
             data: {},
             data2: {},
             endIndex: 10,
-            savedId: null,
+            sendId: '',
+            receiver_id: '',
             showZona: true,
             showBusqueda: false,
             name: '',
@@ -21,13 +25,11 @@ export default {
             historial: false,
             records: [],
             record: null,
+            content:'',
         }
     },
     beforeMount() {
-
-
         this.getPeople();
-
     },
 
 
@@ -48,10 +50,30 @@ export default {
 
         },
 
-        savePerson(id) {
-            this.savedId = id;
-            window.localStorage.setItem('friend', this.savedId);
-            console.log(this.savedId);
+        shareEvent(id) {
+            this.receiver_id = id;
+            this.content = message;
+            this.sendId = userId;
+            console.log(this.receiver_id);
+            console.log(this.content);
+            console.log(this.sendId);
+            try {
+				const response = fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
+					method: 'POST',
+					headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${token}`
+					},
+					body: JSON.stringify({
+						content: this.content,
+						user_id_send: this.sendId,
+						user_id_recived: this.receiver_id,					
+					})
+				});
+				
+			} catch (error) {
+				console.error(error);
+            }
         },
         showMore() {
             this.endIndex = this.endIndex + 10;
@@ -101,7 +123,7 @@ export default {
     <main>
         <article class="cont4">
             <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
-            <h2 class="titulo4">Chat Nuevo</h2>
+            <h2 class="titulo4">Compartir evento</h2>
 
             <!--Esto se ha de convertir en un input
             -->
@@ -114,7 +136,7 @@ export default {
                 </div>
             </section>
             <a href="Chat" v-for="people in data.slice(0, endIndex)" :key="people.id"
-                v-on:click="savePerson(people.id)" v-if="showZona">
+                v-on:click="shareEvent(people.id)" v-if="showZona">
                 <div class="PContainer4">
 
                     <img :src="people.image" class="perfil" alt="img" v-bind:error="errorImages">
@@ -127,8 +149,8 @@ export default {
 
                 </div>
             </a>
-            <a href="Chat" v-for="people in data2.slice(0, endIndex)" :key="people.id"
-                v-on:click="savePerson(people.id)" v-if="showBusqueda">
+            <a  href="Chat" v-for="people in data2.slice(0, endIndex)" :key="people.id"
+                v-on:click="shareEvent(people.id)" v-if="showBusqueda">
                 <div class="PContainer4">
 
                     <img :src="people.image" class="perfil" alt="img" v-bind:error="errorImages">

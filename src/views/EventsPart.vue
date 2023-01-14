@@ -1,34 +1,31 @@
 <script>
 
-const token = localStorage.getItem('accessToken');
-const email = localStorage.getItem('email');
-const id = localStorage.getItem('userId');
-
+const token = localStorage.getItem('accessToken'); //Cogemos token del local storage
+const id = localStorage.getItem('userId'); //Cogemos id del usuario del local storage
+ 
 export default {
   name: "App",
   data() {
     return {
-      data: [],
-      data2: [],
-      data3: [],
-      imageLoad: true,
-      savedId: null,
-      endIndex: 10,
-      showF: false,
-      showAcabado: false,
-      showEmpezar: false,
+      data: [], //Data de los eventos que participo (todos)
+      data2: [], //Data de los eventos que participo (acabados)
+      data3: [], //Data de los eventos que participo (futuros)
+      savedId: null, //Varibale para guardar id del evento clickado
+      endIndex: 10, //Eventos que se muestran
+      showF: false, //Booleano para mostrar filtro
+      showAcabado: false, //Booleano para mostrar los eventos acabados
+      showEmpezar: false, //Booleano para mostrar los eventos futuros
     }
   },
   
   beforeMount(){
-    this.saveEvent();
-    this.getEvents();
-    
+    //Funciones que queremos cuando se cargue la página
+    this.getEvents();    
   },
   
   
   methods: {
-    
+    //Función para coger todos los eventos en los que participa el usuario
     async getEvents(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/assistances`;
         try{
@@ -53,21 +50,24 @@ export default {
 
             
     },   
-     
+     //Función para coger el id del evento clickado
     saveEvent(id){
         this.savedId = id;
         window.localStorage.setItem('event',this.savedId);
         console.log(id);
     },
+    //Función para mostrar más eventos
     showMore(){
         this.endIndex = this.endIndex + 10;
         
         
     },
+    //Función para mostrar menos eventos
     showLess(){
         this.endIndex  =  this.endIndex - 10;
         
     }, 
+    //Función para mostrar y quitar el filtro
     async showFilter(){
         if (this.showF == true){
             this.showF = false;
@@ -76,6 +76,7 @@ export default {
         }
         
     },
+    //Función para coger los eventos en los que el usuario ha participado
     async getAcabado(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/assistances/finished`;
         try{
@@ -97,6 +98,7 @@ export default {
             console.error(error);
         } 
     },
+    //Función para coger los eventos en los que el usuario participará
     async getEmpezar(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/assistances/future`;
         try{
@@ -123,6 +125,7 @@ export default {
 </script>
 
 <script setup>
+//Importamos header y footer
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header3.vue'
 </script>
@@ -148,10 +151,9 @@ import Header2 from '../components/Header3.vue'
                 <small v-on:click="getAcabado()">Acabados</small>
                 <small v-on:click="getEmpezar()">Por empezar</small>
             </div>
-        </div>
-        
-        
+        </div>       
     </section>
+    
     <div class="subtitulo" v-if="!showAcabado && !showEmpezar">
         <h3>Todos</h3> 
     </div>

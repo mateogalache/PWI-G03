@@ -182,6 +182,9 @@ export default {
         } catch (error){
             
         }
+    },
+    shareEvent(name, location, type, startDate){
+        localStorage.setItem('shareEvent',`${name} - ${location} - ${startDate.substring(0,10)}`);
     }
   }
 };
@@ -260,8 +263,9 @@ import Header2 from '../components/Header2.vue'
                      <br>
                      <button class="participar" v-on:click="participar()" v-if="!participating">PARTICIPAR</button> 
                      <b v-if="participating">¡Ya estás apuntado!</b>
+                     <a href="ShareEvent"><button class="share" v-on:click="shareEvent(event.name, event.location, event.type, event.eventStart_date)">COMPARTIR</button></a>
                 </div>
-                
+                    
                      
             </div>
             
@@ -372,9 +376,7 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
     margin-right: 20px;
 }
-.punt{
-    
-}
+
 .margenevento h2 input{
     width: 15rem;
 }

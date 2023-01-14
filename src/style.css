@@ -47,3 +47,8 @@ Tambien algunos diseños estandard para todas las pagina los hacemos aqui, asi p
 .white{
     color: white;
 }
+@Media (min-width: 1080px){
+    h2{
+        font-size: 40px;
+    }
+}

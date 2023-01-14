@@ -77,7 +77,7 @@ methods: {
             <tr v-for="amigo in data.slice(0,endIndex)" :key="amigo.id">
                 <td class="PCont"  >
                     <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
-                        <img src={{amigo.image}} class = "perfil">
+                        <img :src=amigo.image class = "perfil">
                         <a href="PerfilAmigo" v-on:click="savePerson(amigo.id)"><p class = "nombre5">{{amigo.name}}</p></a>
                         <div class = "Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
                             <img src="src\assets\flecha.png" class = "icon" alt="tick">

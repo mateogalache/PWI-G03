@@ -80,17 +80,17 @@ export default {
             <div class = "BContainer">
                 <p class = "buscar">Busca</p>
             </div>
-            <div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
-                <img src="src/assets/usuario.png" class = "perfil">
+            <a href="Chat"><div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
+                <img :src="chat.image" class = "perfil">
                 <div class="chat">
                     <b class = "nombre">{{chat.name}}</b>
                     <p class = "mensaje">por buscar</p>
                 </div>
                 
                 <div class = "Clogo">
-                    <img src={{chat.image}} class = "icon" alt="tick">
+                    <img src="src/assets/flecha.png" class = "icon" alt="tick">
                 </div>
-            </div>
+            </div></a>
         </div>
 
         
