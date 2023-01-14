@@ -50,7 +50,7 @@ export default {
 
         },
 
-        shareEvent(id) {
+        async shareEvent(id) {
             this.receiver_id = id;
             this.content = message;
             this.sendId = userId;
@@ -58,7 +58,7 @@ export default {
             console.log(this.content);
             console.log(this.sendId);
             try {
-				const response = fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
+				const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
 					method: 'POST',
 					headers: {
 					'Content-Type': 'application/json',

@@ -8,8 +8,10 @@ import Header2 from '../components/Header2.vue'
 const token = localStorage.getItem('accessToken');
 const friendId = localStorage.getItem('friend');
 const userId = window.localStorage.getItem('userId');
+const eventmessage = localStorage.getItem('shareEvent');
 console.log(userId);
 console.log(friendId);
+console.log(eventmessage);
 
 export default {
 	name: "App",
@@ -130,6 +132,9 @@ export default {
 </template>
 <style scoped>
 
+.messagein p{
+	overflow: hidden;
+}
 .containermessage{
 	display: flex;
 	justify-content: end;

@@ -184,7 +184,7 @@ export default {
         }
     },
     shareEvent(name, location, type, startDate){
-        localStorage.setItem('shareEvent',`${name} - ${location} - ${startDate.substring(0,10)}`);
+        localStorage.setItem('shareEvent',`Evento: ${name} - ${location} - ${startDate.substring(0,10)}`);
     }
   }
 };
