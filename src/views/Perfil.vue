@@ -56,6 +56,7 @@ export default {
     //Función que cierra la sesion: Borramos el accestoken del localstorage y redirigimos al login
     cerrarSesion(){
         localStorage.removeItem('accessToken');
+        localStorage.clear();
         this.$router.push({name:'Login'});
     },
     //Función que borra el perfil
