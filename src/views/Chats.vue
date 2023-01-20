@@ -5,27 +5,47 @@ import Header3 from '../components/Header3.vue';
 </script>
 <script>
 const token = localStorage.getItem('accessToken');
+const email = localStorage.getItem('email');
 
 export default {
     name: "App",
     data() {
         return {
-            data: {},
+            data: [],
             data2:{},
             endIndex: 10,
             savedId: null,
             newChat:false,
+
         }
     },
     beforeMount() {
 
 
         this.getChats();
+        this.getUser();
 
     },
 
 
     methods: {
+        async getUser() {
+            const response = await fetch(`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            })
+
+                .then(response => response.json())
+                .then(data => this.data2 = data);
+
+
+            localStorage.setItem('userId', this.data2[0].id);
+            console.log(this.data2[0].id);
+            //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
+
+        },
         async getChats() {
 
             const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages/users`, {

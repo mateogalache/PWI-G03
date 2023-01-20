@@ -10,8 +10,6 @@ export default {
   data() {
     return {
       data: [], //Data donde guardaremos los eventos
-      data2:{}, //Data para guardar la información del usuario y así coger el id.
-      savedId: null, //Lo utilizaremos para guardar el id de un evento al que queremos entrar.
       endIndex: 10, //Varible que define cuantos eventos queremos ver en pantalla.
       
     }
@@ -19,25 +17,11 @@ export default {
   //Funciones que queremos que se hagan cuando se cargue la página, por lo tanto no depende de nada de lo que hagamos en esta 
   beforeMount(){   
     this.getEvents(); 
-    this.getUser();
+    
   },
+  
     methods: {
-    //Función para coger los datos del usuario
-    async getUser(){
-        const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
-            headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            
-            .then(response => response.json())
-            .then(data => this.data2 = data);
-
-            console.log(this.data2[0].id);
-            localStorage.setItem('userId',this.data2[0].id); //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
-             
-    },
+    
     //Función para coger la información de los eventos mejor valorados
      async getEvents(){     
         const response = await fetch ('http://puigmal.salle.url.edu/api/v2/events/best',{
@@ -55,6 +39,7 @@ export default {
             
            
     },
+    
     //Función para guardar en el LocalStorage el id del evento en el que hemos clickado
     saveEvent(id){
         this.savedId = id; //Le pasamos como parametro el id del evento y lo guardamos en la variable 'saveId' que luego la guardamos en el LocalStorage
