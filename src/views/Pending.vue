@@ -23,6 +23,8 @@ export default {
   
  
 methods: {
+
+    //Funcion que hace la llamada que nos devuelve todas las solicitudes pendientes
     async getRequest(){
 
         const response = await fetch (`http://puigmal.salle.url.edu/api/v2/friends/requests`,{
@@ -38,24 +40,28 @@ methods: {
             console.log(response);                                  
            
     },
-    savePerson(id){
-        this.savedId = id;
-        window.localStorage.setItem('friend',this.savedId);
-        console.log(this.savedId);    
     
+    //funcion para guardar el id del usuario que queremos ver su información
+    savePerson(id) {
+        this.savedId = id;
+        window.localStorage.setItem('friend', this.savedId);
+
     },
-    showMore(){
+
+    //funcion para ampliar el rango de usuarios
+    showMore() {
         this.endIndex = this.endIndex + 10;
-        
+
     },
-    showLess(){
-        this.endIndex  =  this.endIndex - 10;
-        
+    //funcion para reducir el rando de usuarios
+    showLess() {
+        this.endIndex = this.endIndex - 10;
+
     },
     async accept(id){
 
         //hay que mirar que cuando acceptas o rechazas se refresque
-        console.log(id);
+        //Llamada que guarda que hemos acceptado la solicitud de amistad
         const response = await fetch(`http://puigmal.salle.url.edu/api/v2/friends/${id}`, {
             method: 'PUT',
             headers: {
@@ -67,7 +73,8 @@ methods: {
             this.getRequest(); 
     },
     async notaccept(id){
-        console.log(id);
+        //Llamada que guarda que hemos rechazado la solicitud de amistad
+        //quiza esto no hace falta
         const response = await fetch(`http://puigmal.salle.url.edu/api/v2/friends/${id}`, {
             method: 'DELETE',
             headers: {
@@ -116,6 +123,7 @@ methods: {
             </tr>
         </article>
         <div class="centra" >
+            <!--Dos botonoes que nos permiten aumentar o disminuir la cantidad de usuarios que mostrar-->
                <div class="mostrarMas" v-on:click="showMore()"  v-if="!(endIndex > data.length)">
                     <b>Mostrar más</b>
                 </div> 

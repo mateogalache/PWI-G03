@@ -32,6 +32,7 @@ export default {
 
 
     methods: {
+        //Funcion para obtener todos los usuarios
         async getPeople() {
 
             const response = await fetch(`http://puigmal.salle.url.edu/api/v2/users`, {
@@ -48,21 +49,26 @@ export default {
 
         },
 
+        //funcion para guardar el id del usuario que queremos ver su información
         savePerson(id) {
             this.savedId = id;
             window.localStorage.setItem('friend', this.savedId);
-            console.log(this.savedId);
+
         },
+
+        //funcion para ampliar el rango de usuarios
         showMore() {
             this.endIndex = this.endIndex + 10;
 
         },
+        //funcion para reducir el rando de usuarios
         showLess() {
             this.endIndex = this.endIndex - 10;
 
         },
         async busquedaFriend() {
 
+            //Funcion que nos permite obtener usuarios con una condicion determinada, en este caso con un nombre
             const url = `http://puigmal.salle.url.edu/api/v2/users/search?s=${this.name}`;
             try {
                 const response = await fetch(url, {
@@ -103,8 +109,6 @@ export default {
             <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
             <h2 class="titulo4">Chat Nuevo</h2>
 
-            <!--Esto se ha de convertir en un input
-            -->
             <section class="BContainer4">
                 <input type="text" class="sinborde" name="Buscar persona" placeholder="Buscar persona" v-model="name">
                 <div class="busqueda">
@@ -113,6 +117,7 @@ export default {
                     </div>
                 </div>
             </section>
+            <!--Mostramos la informacion de los usuarios que nos devuelve la llamada, en este caso la llamda general-->
             <a href="Chat" v-for="people in data.slice(0, endIndex)" :key="people.id"
                 v-on:click="savePerson(people.id)" v-if="showZona">
                 <div class="PContainer4">
@@ -127,6 +132,7 @@ export default {
 
                 </div>
             </a>
+            <!--Mostramos la informacion de los usuarios, pero solo los que cumplan con la condición de busqueda-->
             <a href="Chat" v-for="people in data2.slice(0, endIndex)" :key="people.id"
                 v-on:click="savePerson(people.id)" v-if="showBusqueda">
                 <div class="PContainer4">
@@ -142,6 +148,7 @@ export default {
                 </div>
             </a>
 
+            <!--Dos botonoes que nos permiten aumentar o disminuir la cantidad de usuarios que mostrar-->
             <div class="centra">
                 <div class="mostrarMas" v-on:click="showMore()" v-if="!((endIndex > data2.length) && showBusqueda)">
                     <b>Mostrar más</b>
