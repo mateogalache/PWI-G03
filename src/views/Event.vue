@@ -204,7 +204,20 @@ export default {
     },
     shareEvent(name, location, type, startDate){
         localStorage.setItem('shareEvent',`Evento: ${name} - ${location} - ${startDate.substring(0,10)}`);
-    }
+    },
+    async desapuntar(){
+        try{
+            await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            location.reload();
+        } catch (error){
+            
+        }
+    },
   }
 };
 
@@ -281,8 +294,11 @@ import Header2 from '../components/Header2.vue'
                      </div>
                      <br>
                      <button class="participar" v-on:click="participar()" v-if="!participating">PARTICIPAR</button> 
-                     <b v-if="participating">¡Ya estás apuntado!</b>
+                     <b v-if="participating" class="apuntado1">¡Ya estás apuntado!</b>
                      <a href="ShareEvent"><button class="share" v-on:click="shareEvent(event.name, event.location, event.type, event.eventStart_date)">COMPARTIR</button></a>
+                     <button class="desapuntar" v-if="participating" v-on:click="desapuntar()">
+                        DESAPUNTARSE
+                    </button>
                 </div>
                     
                      
@@ -293,9 +309,9 @@ import Header2 from '../components/Header2.vue'
            
             
         
-            <div class="part" v-for= "event2 in data2.slice(0,1)">
+            <div class="part" v-if= "participating">
                 
-            <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
+                <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                     <h2>Puntúalo y Coméntalo</h2>
                 </section>
                 
@@ -316,19 +332,10 @@ import Header2 from '../components/Header2.vue'
                         <option value="8"></option>
                         <option value="9"></option>
                         <option value="10"></option>
-                        </datalist>
-                    
-                    
-                    
-                    <h2></h2>
+                    </datalist>
                     <input v-model="comentary" type="text" id="com" placeholder="Comentario">
-                    <button class = "editar" v-on:click="puntuar()" >Enviar</button>
-                    <div class="puntuacion">
-                        <h2>Puntuation: </h2><h3>{{ event2.puntuation }}</h3>
-                    </div>
-                    <div class="comentario">
-                        <h2>Comentary: </h2><h3>{{ event2.comentary }}</h3>
-                    </div>
+                    <button class = "enviar" v-on:click="puntuar()" >Enviar</button>
+                    
                     
                     
                 </section>
@@ -353,8 +360,39 @@ import Header2 from '../components/Header2.vue'
 
 <style scoped>
 
-
-.share{
+.desapuntar{
+    border-radius: 10px;
+    width: 12rem;
+    color: white;
+    border: 2px solid red;
+    background: rgb(255,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+.Four input{
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    width: 100%;
+}
+.Third{
+    margin-top: -2rem;
+}
+.Four{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.apuntado1{
+    color: var(--main-bg-color);
+   font-size: 30px;
+}
+.share,.enviar{
     margin-top: 1rem;
     cursor: pointer;
     border-radius: 10px;
@@ -486,6 +524,7 @@ small{
     text-align: center;
     justify-content: center;
     gap: .3rem;
+    margin-top: -2rem;
 }
 .editar{
     border: 1px solid black;
@@ -578,12 +617,7 @@ b{
     display:flex;
     justify-content: center;
 }
-.Four{
-    
-    
-    padding-bottom: 2%;
 
-}
 
 @Media (min-width: 1080px){
     h2{
