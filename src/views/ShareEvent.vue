@@ -7,7 +7,7 @@ import Header2 from '../components/Header2.vue'
 const token = localStorage.getItem('accessToken');
 const message = localStorage.getItem('shareEvent');
 const userId = localStorage.getItem('userId');
-console.log(message);
+
 
 export default {
     name: "App",

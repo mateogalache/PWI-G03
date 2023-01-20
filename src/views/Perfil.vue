@@ -8,17 +8,37 @@ export default {
   data() {
     return {
       data: {}, //Data para recoger los datos del usuario
+      data2:{},
       borrar: false, //Booleano para enseñar popup de borrar perfil
       recAct: false, //Booleano para mostrar rectangulo negro de fondo
       cerrar: false, //Booleano para mostrar popup de cerrar sesion
+      
 
     }
   },
   beforeMount(){
     //Funciones que queremos cuando cargue la página
     this.getProfileImage();
+    this.getUser();
   },
   methods: {
+      async getUser() {
+          const response = await fetch(`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`, {
+              headers: {
+                  "Content-Type": "application/json",
+                  'Authorization': `Bearer ${token}`
+              },
+          })
+
+              .then(response => response.json())
+              .then(data => this.data2 = data);
+
+
+          localStorage.setItem('userId', this.data2[0].id);
+          console.log(this.data2[0].id);
+          //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
+
+      },
     //Función que coge los datos del usuario. En este caso hemos cogido los datos con el email ya que es único, pero también se puede con el id.
      getProfileImage(){        
       

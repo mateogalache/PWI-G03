@@ -2,6 +2,7 @@
 const token = localStorage.getItem('accessToken');
 const event_id = window.localStorage.getItem('event');
 const id = localStorage.getItem('userId');
+const email = localStorage.getItem('email');
 export default {
   name: "App",
   computed:{
@@ -42,13 +43,31 @@ export default {
     }
   },
   beforeMount(){
-    
+    this.getUser();
     this.getEvents();
+    
     
   },
 
 methods: {
-getEvents(){     
+  async getUser() {
+    const response = await fetch(`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`, {
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`
+      },
+    })
+
+      .then(response => response.json())
+      .then(data => this.data2 = data);
+
+
+    localStorage.setItem('userId', this.data2[0].id);
+    console.log(this.data2[0].id);
+    //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
+
+  },
+  async getEvents(){     
       
       const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}/assistances/future`,{
         method: 'GET',

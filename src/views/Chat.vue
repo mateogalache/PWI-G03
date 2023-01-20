@@ -9,9 +9,7 @@ const token = localStorage.getItem('accessToken');
 const friendId = localStorage.getItem('friend');
 const userId = window.localStorage.getItem('userId');
 const eventmessage = localStorage.getItem('shareEvent');
-console.log("yo soy"+userId);
-console.log("el amigo es"+friendId);
-console.log(eventmessage);
+
 
 export default {
 	name: "App",
