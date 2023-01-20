@@ -21,7 +21,7 @@ export default {
     this.getEvents(); 
     this.getUser();
   },
-  methods: {
+    methods: {
     //Función para coger los datos del usuario
     async getUser(){
         const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
@@ -39,8 +39,8 @@ export default {
              
     },
     //Función para coger la información de los eventos mejor valorados
-     getEvents(){     
-        const response = fetch ('http://puigmal.salle.url.edu/api/v2/events/best',{
+     async getEvents(){     
+        const response = await fetch ('http://puigmal.salle.url.edu/api/v2/events/best',{
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}` //Ponemos el token en el header para poder acceder
