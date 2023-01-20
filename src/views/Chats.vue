@@ -39,11 +39,11 @@ export default {
                 .then(data => this.data = data);
 
             console.log(response);
-
+        
         },
     
 
-
+    
         savePerson(id) {
             this.savedId = id;
             window.localStorage.setItem('friend', this.savedId);
@@ -80,17 +80,16 @@ export default {
             <div class = "BContainer">
                 <p class = "buscar">Busca</p>
             </div>
-            <a href="Chat"><div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
+            <div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
                 <img :src="chat.image" class = "perfil">
                 <div class="chat">
                     <b class = "nombre">{{chat.name}}</b>
-                    <p class = "mensaje">por buscar</p>
+                    <p class = "mensaje">Enter chat</p>
                 </div>
-                
                 <div class = "Clogo">
-                    <img src="src/assets/flecha.png" class = "icon" alt="tick">
+                    <a href="Chat"><img src="src/assets/flecha.png" class = "icon" alt="tick" v-on:click="savePerson(chat.id)" ></a>
                 </div>
-            </div></a>
+            </div>
         </div>
 
         

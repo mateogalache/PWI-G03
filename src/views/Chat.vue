@@ -9,8 +9,8 @@ const token = localStorage.getItem('accessToken');
 const friendId = localStorage.getItem('friend');
 const userId = window.localStorage.getItem('userId');
 const eventmessage = localStorage.getItem('shareEvent');
-console.log(userId);
-console.log(friendId);
+console.log("yo soy"+userId);
+console.log("el amigo es"+friendId);
 console.log(eventmessage);
 
 export default {
@@ -66,8 +66,11 @@ export default {
 
 		},
 		async enviarMensaje(){
+			console.log("yo soy" + userId);
+			console.log("el amigo es" + friendId);
 			this.send_id = userId;
 			this.receiver_id = friendId;
+			
 			try {
 				const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
 					method: 'POST',
@@ -107,7 +110,9 @@ export default {
 					<div class="containermessage" ref="myDiv">
 						<div class="messagesBox" ><!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article-->
 							<div class="messagein" v-for="messages in data">
-								
+
+									<p>{{messages.user_id_send}}<br></p>
+									
 									<p>{{messages.content}}</p>
 													
 							</div>           
@@ -161,6 +166,7 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	
 	
 }
