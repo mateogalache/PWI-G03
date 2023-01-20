@@ -15,6 +15,7 @@ export default {
             data2:{},
             endIndex: 10,
             savedId: null,
+            savedName:null,
             newChat:false,
 
         }
@@ -42,7 +43,8 @@ export default {
 
 
             localStorage.setItem('userId', this.data2[0].id);
-            console.log(this.data2[0].id);
+            localStorage.setItem('userName',this.data2[0].name);
+            
             //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
         },
@@ -64,10 +66,13 @@ export default {
     
 
     
-        savePerson(id) {
+        savePerson(id,name) {
             this.savedId = id;
+            this.savedName = name;
             window.localStorage.setItem('friend', this.savedId);
+            window.localStorage.setItem('chatName',this.savedName)
             console.log(this.savedId);
+            console.log(this.savedName);
 
         },
         showMore() {
@@ -107,7 +112,7 @@ export default {
                     <p class = "mensaje">Enter chat</p>
                 </div>
                 <div class = "Clogo">
-                    <a href="Chat"><img src="src/assets/flecha.png" class = "icon" alt="tick" v-on:click="savePerson(chat.id)" ></a>
+                    <a href="Chat"><img src="src/assets/flecha.png" class = "icon" alt="tick" v-on:click="savePerson(chat.id,chat.name)" ></a>
                 </div>
             </div>
         </div>

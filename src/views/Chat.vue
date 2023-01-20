@@ -9,6 +9,8 @@ const token = localStorage.getItem('accessToken');
 const friendId = localStorage.getItem('friend');
 const userId = window.localStorage.getItem('userId');
 const eventmessage = localStorage.getItem('shareEvent');
+const chatName = localStorage.getItem('chatName');
+const myName = localStorage.getItem('userName');
 
 
 export default {
@@ -20,13 +22,22 @@ export default {
 			content: '',
 			send_id: '',
 			receiver_id: '',
+			chatname:null,
+			myname:'',
 		}
 	},
 	beforeMount() {
 		this.getMessages();
 		this.getInfo();
+		this.getName();
 	},
 	methods: {
+		getName(){
+			this.chatname = chatName;
+			this.myname = myName;
+			console.log(this.chatname);
+			console.log(this.myname);
+		},
 		async getMessages() {
 			try{
 				const response = fetch(`http://puigmal.salle.url.edu/api/v2/messages/${friendId}`, {
@@ -105,17 +116,7 @@ export default {
 					<img class="header-img" :src=profile.image />
 					<h2>{{ profile.name }}</h2>
 				</div>
-					<div class="containermessage" ref="myDiv">
-						<div class="messagesBox" ><!-- Usamos div de manera "tonta", hace referencia a un elemento o conjunto de elementos pero podriamos usar article-->
-							<div class="messagein" v-for="messages in data">
-
-									<p>{{messages.user_id_send}}<br></p>
-									
-									<p>{{messages.content}}</p>
-													
-							</div>           
-					</div>
-				</div>
+				
 
 				<div class="input-box">
 					<input type="text" v-model="content"/>
@@ -135,47 +136,7 @@ export default {
 </template>
 <style scoped>
 
-.messagein p{
-	overflow: hidden;
-}
-.containermessage{
-	display: flex;
-	justify-content: end;
-	width: 100%;
-	
-}
-.messagein:after{
-	content:'';
-	border-left: 15px solid transparent;
-    border-right: 15px solid transparent;    
-    border-bottom: 15px solid lightgray;
-	width: 0rem;
-	right: -1rem;
-	top: 1rem;
-	transform: rotate(90deg);
-	position: absolute;
-}
-.messagein{
-	position: relative;
-	background: lightgray;
-	padding: 1rem;
-	border-radius: 20px;
-	width: 5rem;	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	
-	
-}
-.messagesBox{	
-	display: flex;
-	flex-direction: column;
-	bottom: 8rem;	
-	gap: 1rem;
-	margin-right: 2rem;
-	
-}
+
 
 h3{
     margin-left: 5%;
