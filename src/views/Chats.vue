@@ -30,6 +30,8 @@ export default {
 
 
     methods: {
+
+        //usamos la funcion para hacer la llamada de nuestro usuario, para asi guardar nuesto id y nuestro nombre en el localStorage
         async getUser() {
             const response = await fetch(`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`, {
                 headers: {
@@ -45,9 +47,10 @@ export default {
             localStorage.setItem('userId', this.data2[0].id);
             localStorage.setItem('userName',this.data2[0].name);
             
-            //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
         },
+
+        //Otenemos los chats que tenemos 
         async getChats() {
 
             const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages/users`, {
@@ -60,25 +63,27 @@ export default {
                 .then(response => response.json())
                 .then(data => this.data = data);
 
-            console.log(response);
+            
         
         },
     
 
-    
+        
+        //Guardamos el nombre y el id de la persona a la que queremos ver la conversacion
         savePerson(id,name) {
             this.savedId = id;
             this.savedName = name;
             window.localStorage.setItem('friend', this.savedId);
             window.localStorage.setItem('chatName',this.savedName)
-            console.log(this.savedId);
-            console.log(this.savedName);
+            
 
         },
+        //funcion para ampliar el rango de usuarios
         showMore() {
             this.endIndex = this.endIndex + 10;
 
         },
+        //funcion para reducir el rando de usuarios
         showLess() {
             this.endIndex = this.endIndex - 10;
 

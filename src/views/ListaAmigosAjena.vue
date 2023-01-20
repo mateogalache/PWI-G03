@@ -25,35 +25,39 @@ export default {
   
  
 methods: {
-    async getPeople(){
+    //funcion para hacer la llamada que nos da todos los usuarios
+    async getPeople() {
 
-        const response = await fetch (`http://puigmal.salle.url.edu/api/v2/friends`,{
+        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/friends`, {
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
             },
         })
-            
+
             .then(response => response.json())
             .then(data => this.data = data);
-            
-            console.log(response);                                  
-           
+
+        console.log(response);
+
     },
-   
-    savePerson(id){
+
+    //funcion para guardar el id del usuario que queremos ver su información
+    savePerson(id) {
         this.savedId = id;
-        window.localStorage.setItem('friend',this.savedId);
-        console.log(this.savedId);    
-    
+        window.localStorage.setItem('friend', this.savedId);
+
     },
-    showMore(){
+
+    //funcion para ampliar el rango de usuarios
+    showMore() {
         this.endIndex = this.endIndex + 10;
-        
+
     },
-    showLess(){
-        this.endIndex  =  this.endIndex - 10;
-        
+    //funcion para reducir el rando de usuarios
+    showLess() {
+        this.endIndex = this.endIndex - 10;
+
     },
     
         

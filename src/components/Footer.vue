@@ -53,7 +53,7 @@
     
 }
 
-@media (min-width: 850px){
+@media (min-width: 550px){
     .FContainer{
         height: 80px;
     }

@@ -20,10 +20,11 @@ export default {
 			data: [],
 			data2: {},
 			content: '',
-			send_id: '',
-			receiver_id: '',
-			chatname:null,
+			
+			chatname:'',
 			myname:'',
+			myid:'',
+			chatid:'',
 		}
 	},
 	beforeMount() {
@@ -32,12 +33,23 @@ export default {
 		this.getName();
 	},
 	methods: {
+
+		//Guardamos el id de la persona a la que queremos acceder a su perfil
+		savePerson(id) {
+			this.savedId = id;
+			window.localStorage.setItem('friend', this.savedId);
+		},
+
+		//guardamos las variables del localStorage en una variable
 		getName(){
 			this.chatname = chatName;
 			this.myname = myName;
-			console.log(this.chatname);
-			console.log(this.myname);
+			this.myid = userId;
+			this.chatid = friendId;
+			
 		},
+
+		//Funcio que llama a la api para obtener todos los mensajes entre tu y el usuario deseado
 		async getMessages() {
 			try{
 				const response = fetch(`http://puigmal.salle.url.edu/api/v2/messages/${friendId}`, {
@@ -49,7 +61,7 @@ export default {
 
 				.then(response => response.json())
 				.then(data => this.data = data);
-			console.log(response);
+			
 			} catch(error){
 				console.error(error);
 			}
@@ -58,7 +70,7 @@ export default {
 
 
 		},
-
+		//Llamada que nos da la informacion del usuario con el que conversamos
 		async getInfo(){
 
 			const response = fetch(`http://puigmal.salle.url.edu/api/v2/users/${friendId}`, {
@@ -70,15 +82,12 @@ export default {
 
 				.then(response => response.json())
 				.then(data2 => this.data2 = data2);
-			console.log(response);
+		
 
 
 		},
+		//Llamada que nos permite escribir los mensajes y subirlos a la api para guardar la conversación
 		async enviarMensaje(){
-			console.log("yo soy" + userId);
-			console.log("el amigo es" + friendId);
-			this.send_id = userId;
-			this.receiver_id = friendId;
 			
 			try {
 				const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
@@ -89,8 +98,8 @@ export default {
 					},
 					body: JSON.stringify({
 						content: this.content,
-						user_id_send: this.send_id,
-						user_id_recived: this.receiver_id,					
+						user_id_send: this.myid,
+						user_id_recived: this.friendId,					
 					})
 				});
 				this.getMessages();
@@ -112,12 +121,30 @@ export default {
     <main>
 		<body>
 			<div class="container">
-				<div  v-for="profile in data2" class="nomchat">
+				<!--Creamos un banner donde vemos la foto y el nombre del usuario con el que hablamos-->
+				<a href="PerfilAmigo" v-on:click=savePerson(this.friendId)><div  v-for="profile in data2" class="nomchat">
 					<img class="header-img" :src=profile.image />
 					<h2>{{ profile.name }}</h2>
-				</div>
-				
+				</div></a>
 
+				<!--Con el div creamos el espacio donde mostraremos los mensajes-->
+				<div class="conversation" >
+					<div class="conversation-container" v-for="messages in data" >
+					
+
+						<!--Hacemos un v-if para seleccionar la forma de mostrar los mensajes en funcion de quien lo ha escrito-->
+						<div class="message sent" v-if="messages.user_id_send == this.myid" >
+							<p>{{messages.content }}</p>
+						</div>	
+
+						<div class = "message recived" v-if="messages.user_id_send == this.friendId">
+							<p>{{messages.content }}</p>
+						</div>	
+
+					</div>   
+				</div>
+
+				<!--Creamos un input que nos permite escribir los mensajes-->
 				<div class="input-box">
 					<input type="text" v-model="content"/>
 					<button v-on:click="enviarMensaje()"> Enviar </button>
@@ -135,53 +162,127 @@ export default {
     
 </template>
 <style scoped>
+.conversation {
+	height: calc(100% - 12px);
+	position: relative;
+	z-index: 0;
+}
+
+.conversation ::-webkit-scrollbar {
+	transition: all .5s;
+	width: 5px;
+	height: 1px;
+	z-index: 10;
+}
+
+.conversation ::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.conversation ::-webkit-scrollbar-thumb {
+	background: #b3ada7;
+}
+
+.conversation .conversation-container {
+	height: calc(100% - 68px);
+	
+	overflow-x: hidden;
+	padding: 0 16px;
+	margin-bottom: 5px;
+}
+
+.conversation .conversation-container:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.message {
+	color: #000;
+	clear: both;
+	line-height: 18px;
+	font-size: 15px;
+	padding: 8px;
+	position: relative;
+	margin: 8px 0;
+	max-width: 85%;
+	word-wrap: break-word;
+	z-index: -1;
+}
+
+.message:after {
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	
+}
+
+
+
+.message:first-child {
+	margin: 16px 0 8px;
+}
+
+.message.received {
+	background: #fff;
+	border-radius: 0px 5px 5px 5px;
+	float: left;
+}
+
+.message.received {
+	padding: 0 0 0 16px;
+}
+
+.message.received:after {
+	border-width: 0px 10px 10px 0;
+	border-color: transparent #fff transparent transparent;
+	top: 0;
+	left: -10px;
+}
+
+.message.sent {
+	background: #e1ffc7;
+	border-radius: 5px 0px 5px 5px;
+	float: right;
+}
+
+.message.sent:after {
+	border-width: 0px 0 10px 10px;
+	border-color: transparent transparent transparent #e1ffc7;
+	top: 0;
+	right: -10px;
+}
 
 
 
 h3{
     margin-left: 5%;
 }
+.user-bar {
+	height: 55px;
+	color: #fff;
+	padding: 0 8px;
+	font-size: 24px;
+	z-index: 1;
+}
+
+
 .nomchat{
 	position: fixed;
     display: flex;
     align-items: center;
 	gap: .5rem;
-    margin-top: 5%;
-    margin-left: 5%;
-	margin-right: 5%;
     
+	background:white;
+	padding:2%;
+	z-index: 1;
+	width:100%;
 }
-.col{
-	display:flex;
-	flex-direction:column;
-	text-align:end;
-	
-}
-.col p{
-	margin-right: 10px;
-	color:grey;
-}
-.item {
-	display: flex;
-	margin-bottom: 10px;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.left {
-	flex-direction: row;
-}
-
-.right {
-	flex-direction: row-reverse;
-}
-
-.right .message {
-	margin-right: 10px;
-}
-.left .message{
-	margin-left: 10px;
+.nomchat:after{
+content: "";
+	display: table;
+	clear: both;
 }
 
 
@@ -207,6 +308,7 @@ h3{
 	bottom: 5rem;	
 	display: flex;
 	padding: 4px 6px;
+
 	box-sizing: border-box;
     margin-top: 10%;
 }
@@ -230,16 +332,9 @@ h3{
 }
 
 
-.chart-timer{
-	text-align: center;
-    color: #616161;
-    font-size: 13px;
-}
 
 @media (min-width: 1080px){
-	.box{
-		margin-top: 5%;
-	}
+	
 	.nomchat{
 		margin-top: 2%;
 	}
@@ -262,11 +357,7 @@ h3{
 		font-size: 30px;
 		width: 150px;
 	}
-	.chart-timer{
-	text-align: center;
-    color: #616161;
-    font-size: 20px;
-}
+	
 
 
 }

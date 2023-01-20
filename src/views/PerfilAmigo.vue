@@ -26,7 +26,7 @@ export default {
        
 
     getData(){        
-        
+        //Nos devuelve la informacion de un usuario en funcion de una id
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}`,{
             headers: {
                 "Content-Type": "application/json",
@@ -40,6 +40,7 @@ export default {
         
     },
    
+    //Hacemos la llamada que elimina el usuario seleccionado de nuestros amigos
     eliminarAmigo(id){
         this.savedId = id;
         window.localStorage.setItem('friend',this.savedId);

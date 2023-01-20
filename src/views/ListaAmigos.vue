@@ -10,7 +10,7 @@ export default {
   name: "App",
   data() {
     return {
-      data: {},
+      data: [],
       
       endIndex: 10,
       savedId: null,
@@ -25,6 +25,8 @@ export default {
   
  
 methods: {
+
+    //funcion para hacer la llamada que nos da todos los usuarios
     async getPeople(){
 
         const response = await fetch (`http://puigmal.salle.url.edu/api/v2/friends`,{
@@ -41,19 +43,22 @@ methods: {
            
     },
    
-    savePerson(id){
+    //funcion para guardar el id del usuario que queremos ver su información
+    savePerson(id) {
         this.savedId = id;
-        window.localStorage.setItem('friend',this.savedId);
-        console.log(this.savedId);    
-    
+        window.localStorage.setItem('friend', this.savedId);
+
     },
-    showMore(){
+
+    //funcion para ampliar el rango de usuarios
+    showMore() {
         this.endIndex = this.endIndex + 10;
-        
+
     },
-    showLess(){
-        this.endIndex  =  this.endIndex - 10;
-        
+    //funcion para reducir el rando de usuarios
+    showLess() {
+        this.endIndex = this.endIndex - 10;
+
     },
     
         
@@ -74,6 +79,7 @@ methods: {
                 <p class = "buscar">Busca</p>
             </section>
                 
+            <!--V-for para mostrar todos los amigos recorriendo la array de inforamcion obtenida-->
             <tr v-for="amigo in data.slice(0,endIndex)" :key="amigo.id">
                 <td class="PCont"  >
                     <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->

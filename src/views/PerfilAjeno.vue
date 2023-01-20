@@ -45,6 +45,7 @@ export default {
 
     getData(){        
         
+        //Nos devuelve la informacion del usuario en funcion de una id
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}`,{
             headers: {
                 "Content-Type": "application/json",
@@ -60,6 +61,7 @@ export default {
     },
     añadirAmigo(){
 
+        //Llamada que permite enviar una solicitud de amistad a otro usuario, con su id
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends/${id}`,{
             method: "post",
             headers: {

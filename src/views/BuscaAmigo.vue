@@ -25,15 +25,16 @@ export default {
   },
   beforeMount(){
     
-    
+    //llamamos a la funcion que nos devuelve todos los usuarios
     this.getPeople();
     
   },
   
  
 methods: {
+    
     async getPeople(){
-
+        //hacemos la llamada para obetener los usuarios
         const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users`,{
             headers: {
                 "Content-Type": "application/json",
@@ -44,24 +45,29 @@ methods: {
             .then(response => response.json())
             .then(data => this.data = data);
             
-            console.log(response);                                  
+                                              
            
     },
-   
+    
+    //funcion para guardar el id del usuario que queremos ver su información
     savePerson(id){
         this.savedId = id;
-        window.localStorage.setItem('friend',this.savedId);
-        console.log(this.savedId);    
+        window.localStorage.setItem('friend',this.savedId);   
     
     },
+
+    //funcion para ampliar el rango de usuarios
     showMore(){
         this.endIndex = this.endIndex + 10;
         
     },
+    //funcion para reducir el rando de usuarios
     showLess(){
         this.endIndex  =  this.endIndex - 10;
         
     },
+
+    //Llamada para obener los usuarios que cumplan la condicion del nombre dado
     async busquedaFriend() {
         
         const url = `http://puigmal.salle.url.edu/api/v2/users/search?s=${this.name}`;
@@ -76,16 +82,12 @@ methods: {
         .then(response => response.json())
         .then(data => this.data2 = data);
         
-        // do something with the search results
+        //muestra la busqueda y no todos los usuarios
         this.showBusqueda = true;
         this.showZona = false;
         } catch (error) {
         console.error(error);
         }
-    
-        // do something with the search results
-        this.showBusqueda = true;
-        this.showZona = false;
       
     } 
         
@@ -103,8 +105,8 @@ methods: {
         <article class = "cont4"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
             <h2 class = "titulo4">Buscar Amigos</h2>
             
-            <!--Esto se ha de convertir en un input
-            -->
+        
+            <!--Usamos section y input para hacer la parte del buscador, con una imagen para hacer el buscador que llame a la funcion de busqueda-->
             <section class = "BContainer4" >           
             <input type="text" class="sinborde" name="Buscar persona" placeholder="Buscar persona" v-model="name">
                 <div class="busqueda">
@@ -113,6 +115,8 @@ methods: {
                     </div>
                 </div>
             </section>
+            <!--Nos muestra esta llamada al abrir la pagina sin ningun tipo de filtro-->
+            <!--Muestra todos los usuarios que obtenemos de la llamada a la api y mostramos su imagen y su nombre y si clicamos nos envia al perfil de la persona-->
             <a href="PerfilAjeno"  v-for="people in data.slice(0,endIndex)" :key="people.id"   v-on:click="savePerson(people.id)" v-if="showZona" >
                 <div class="PContainer4">
                     
@@ -126,6 +130,8 @@ methods: {
                 
                 </div>
             </a>
+
+            <!--El mismo caso anterior pero este solo se muestra cuando hacemos la llamada de la busqueda por nombre-->
             <a href="PerfilAjeno"  v-for="people in data2.slice(0,endIndex)" :key="people.id"   v-on:click="savePerson(people.id)" v-if="showBusqueda" >
                 <div class="PContainer4">
                     
@@ -140,6 +146,7 @@ methods: {
                 </div>
             </a>
             
+            <!--Dos botones que nos permiten navegar entre la cantidad de usuarios-->
             <div class="centra" >
                <div class="mostrarMas" v-on:click="showMore()"  v-if="!((endIndex > data2.length) && showBusqueda)">
                     <b>Mostrar más</b>
