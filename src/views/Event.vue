@@ -334,6 +334,27 @@ import Header2 from '../components/Header2.vue'
 
 <style scoped>
 
+
+.share{
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var(--main-bg-color);
+    color: black;
+    background: var(--secundary-bg-color);
+    transition: all 300ms ease;
+}
+
+
+.participar{
+    color: white;
+    border-radius: 10px;
+    border: 2px solid var(--main-bg-color);
+    background: var(--main-bg-color);
+    width: 10rem;
+    cursor:pointer;
+    transition: all 300ms ease;
+}
 .editar0{
     background: green;
     color: white;
@@ -434,10 +455,7 @@ small{
     z-index: 6;
 }
 
-.participar{
-    width: 10rem;
-    cursor:pointer;
-}
+
 
 
 
