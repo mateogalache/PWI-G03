@@ -15,10 +15,14 @@ export default {
       imageLoad: true,
       savedId: null,
       endIndex: 10,
-      flag: false,
-      flag2: false,
-      flag3: false,
+      flag: false, //Booleano para mostrar los eventos acabados
+      flag2: false, //Booleano para mostrar los eventos en progueso
+      flag3: false, //Booleano para mostrar los eventos futuros
       isshow: false,
+      showF: false, //Booleano para mostrar filtro
+       
+       
+       
 
       
     }
@@ -70,9 +74,6 @@ export default {
         
     },
 
-    show(){
-        this.isshow = this.isshow;
-    },
     
     async showFinished(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/finished`;
@@ -90,7 +91,8 @@ export default {
             this.flag = true;
             this.flag2= false;
             this.flag3= false;
-            
+
+           
         } catch(error){
             console.error(error);
         }  
@@ -112,6 +114,7 @@ export default {
             this.flag = false;
             this.flag2= true;
             this.flag3= false;
+
             
         } catch(error){
             console.error(error);
@@ -133,10 +136,22 @@ export default {
             console.log(response);  
             this.flag = false;
             this.flag2= false;
-            this.flag3= true;            
+            this.flag3= true;
+            
+        
         } catch(error){
             console.error(error);
         }  
+    },
+
+    //Función para mostrar y quitar el filtro
+    async showFilter(){
+        if (this.showF == true){
+            this.showF = false;
+        } else{
+            this.showF = true;
+        }
+        
     },
   }
 };
@@ -159,20 +174,36 @@ import Header2 from '../components/Header3.vue'
     <br>
     <section class = "margenmis">
         <h2>Mis Eventos </h2>
-    </section>
-    <section class = "container5">
-              
-        <section class="eventocontainer5">
-            <div class="eventocontainer2">
-                <div class="botones">
-                    <button class = "btn finished" v-on:click="showFinished()">Terminados</button>
-                    <button class = "btn future" v-on:click="showFuture()">Próximo</button>
-                    <button class = "btn current" v-on:click="showCurrent()">En progreso</button>
-                </div>
+        <div class = "orden">
+            <div class="ordenar" v-on:click="showFilter()">
+                    <p>Ordenar por...</p>
+                    <div class="triangulo"></div> 
+                </div>    
+            <div class="eventocontainer2" v-if="showF">
+                    <small v-on:click="showFinished()">Terminados</small>
+                    <small v-on:click="showFuture()">Próximos</small>
+                    <small v-on:click="showCurrent()">En progreso</small>
             </div>
+        </div>
+    </section>
+    <div class="subtitulo" v-if="!flag && !flag2 && !flag3">
+                <h3>Todos</h3> 
+            </div>
+            <div class="subtitulo" v-if="flag">
+                <h3>Eventos acabados</h3> 
+            </div>
+            <div class="subtitulo" v-if="flag3">
+                <h3>Eventos por empezar</h3> 
+            </div>
+            <div class="subtitulo" v-if="flag2">
+                <h3>Eventos en progreso</h3> 
+            </div>
+    <section class = "container5">
             
+        <section class="eventocontainer5">
+           
             <div class="eventocontainer" id = "event" >               
-                <a href="Event" class="evento" v-for="events in data" v-if="!flag && !flag2 && !flag3"  v-on:click="saveEvent(events.id)">
+                <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" v-if="!flag && !flag2 && !flag3"  v-on:click="saveEvent(events.id)">
                         <div>
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
@@ -181,7 +212,7 @@ import Header2 from '../components/Header3.vue'
                         </div>
                 </a>
 
-                <a href="Event" class="evento" v-for="events in data2" v-if="flag && !flag2 && !flag3" v-on:click="saveEvent(events.id)">
+                <a href="Event" class="evento" v-for="events in data2.slice(0,endIndex)" v-if="flag && !flag2 && !flag3" v-on:click="saveEvent(events.id)">
                         <div>
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
@@ -190,7 +221,7 @@ import Header2 from '../components/Header3.vue'
                         </div>
                 </a>
                 
-                <a href="Event" class="evento" v-for="events in data3" v-if="!flag && flag2 && !flag3" v-on:click="saveEvent(events.id)">
+                <a href="Event" class="evento" v-for="events in data3.slice(0,endIndex)" v-if="!flag && flag2 && !flag3" v-on:click="saveEvent(events.id)">
                         <div>
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
@@ -199,7 +230,7 @@ import Header2 from '../components/Header3.vue'
                         </div>
                 </a> 
 
-                <a href="Event" class="evento" v-for="events in data4" v-if="!flag && !flag2 && flag3" v-on:click="saveEvent(events.id)">
+                <a href="Event" class="evento" v-for="events in data4.slice(0,endIndex)" v-if="!flag && !flag2 && flag3" v-on:click="saveEvent(events.id)">
                         <div>
                             <img  :src=  "events.image" alt="img" >
                             <div class="eventName">
@@ -208,8 +239,32 @@ import Header2 from '../components/Header3.vue'
                         </div>
                 </a> 
             </div>
-            <div class="centra">
-               <div class="mostrarMas" v-on:click="showMore()" v-if="(endIndex < data.length)">
+            <div class="centra" v-if="!flag && !flag2 && !flag3">
+               <div class="mostrarMas" v-on:click="showMore()" v-if="(endIndex < data.length) && (endIndex + 1 <= data.length)">
+                    <b>Mostrar más</b>
+                </div> 
+                <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
+                    <b>Mostrar menos</b>
+                </div> 
+            </div>
+            <div class="centra" v-if="flag">
+               <div class="mostrarMas" v-on:click="showMore()" v-if="(endIndex < data2.length) && (endIndex + 1 <= data2.length)">
+                    <b>Mostrar más</b>
+                </div> 
+                <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
+                    <b>Mostrar menos</b>
+                </div> 
+            </div>
+            <div class="centra" v-if="flag2">
+               <div class="mostrarMas" v-on:click="showMore()" v-if="(endIndex < data3.length) && (endIndex + 1 <= data3.length)">
+                    <b>Mostrar más</b>
+                </div> 
+                <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
+                    <b>Mostrar menos</b>
+                </div> 
+            </div>
+            <div class="centra" v-if="flag3">
+               <div class="mostrarMas" v-on:click="showMore()" v-if="(endIndex < data4.length) && (endIndex + 1 <= data4.length)">
                     <b>Mostrar más</b>
                 </div> 
                 <div class="mostrarMenos" v-on:click="showLess()" v-if="(endIndex > 10)">
@@ -232,6 +287,36 @@ import Header2 from '../components/Header3.vue'
 
 <style scoped>
 
+    .orden{
+        position: relative;
+    }
+
+    .triangulo{        
+        transform: rotate(270deg) scale(.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: .1rem;
+    }
+   
+    .ordenar{
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 50px;
+        position: relative;
+        height: 1rem;
+        padding-left: .5rem;
+        width: 7rem;
+        cursor: pointer;
+        background: white;
+       z-index: 1;
+       margin-top: 0.5rem;
+    }
+
+    
+
     .centra{
         display:flex;
         justify-content: center;
@@ -239,14 +324,7 @@ import Header2 from '../components/Header3.vue'
         gap: 5rem;
     }
 
-    .botones{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        gap: 10rem;
-    }
-    
+
     .mostrarMas,.mostrarMenos{
         cursor:pointer;
         margin-top: 2rem;
@@ -268,7 +346,7 @@ import Header2 from '../components/Header3.vue'
         object-fit: cover;
     }
     .evento{
-        width: 20%;
+        width: 50%;
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -296,6 +374,9 @@ import Header2 from '../components/Header3.vue'
 
     .margenmis{
         margin-left: 2%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
 
     .container5{
@@ -334,6 +415,32 @@ import Header2 from '../components/Header3.vue'
        
     }
 
+    .eventocontainer2 smallv:hover{
+        background: var(--main-bg-color);
+    }
+
+    .eventocontainer2 small{
+        border: 1px solid black;
+        background: lightgray;
+    
+    }
+
+
+    .eventocontainer2{
+        
+        position: absolute;
+        top: 1.3rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;        
+        width: 7rem;   
+        margin-top: 0.5rem;
+        
+        padding-top: .5rem;
+        padding-left: .5rem;
+        padding-bottom: .1rem;
+    }
+
 
     @media (min-width:1080px){
         h2{
@@ -360,6 +467,10 @@ import Header2 from '../components/Header3.vue'
             justify-content: space-around;
         }
 
+        .evento{
+            width: 100%;
+          
+        }
 
 }
 </style>
