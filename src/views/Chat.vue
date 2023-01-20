@@ -22,8 +22,10 @@ export default {
 			content: '',
 			send_id: '',
 			receiver_id: '',
-			chatname:null,
+			chatname:'',
 			myname:'',
+			myid:'',
+			chatid:'',
 		}
 	},
 	beforeMount() {
@@ -35,8 +37,10 @@ export default {
 		getName(){
 			this.chatname = chatName;
 			this.myname = myName;
+			this.myid = userId;
+			this.chatid = friendId;
 			console.log(this.chatname);
-			console.log(this.myname);
+			console.log(this.myname)
 		},
 		async getMessages() {
 			try{
@@ -116,7 +120,15 @@ export default {
 					<img class="header-img" :src=profile.image />
 					<h2>{{ profile.name }}</h2>
 				</div>
-				
+				<div class="" >
+					<div class="chats" v-for="messages in data" >
+						<div  v-if="messages.user_id_send === this.myid" >
+							<p>{{this.myname}}<br></p>
+
+							<p>{{messages.content}}</p>	
+						</div>				
+					</div>   
+				</div>
 
 				<div class="input-box">
 					<input type="text" v-model="content"/>
