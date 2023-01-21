@@ -195,12 +195,14 @@ import Header2 from '../components/Header2.vue'
                     <div class="triangulo"></div>
                 </div>
                 <div class="eventocontainer2" v-if="showF">
+                    <!--Hacemos un v-on para mostrar una función en caso de que se clique sobre un término-->
                     <small v-on:click="showFinished()">Terminados</small>
                     <small v-on:click="showFuture()">Próximos</small>
                     <small v-on:click="showCurrent()">En progreso</small>
                 </div>
             </div>
         </section>
+        <!--Hacemos un v-if para mostrar filtro en caso de que sea true-->
         <div class="subtitulo" v-if="!flag && !flag2 && !flag3">
             <h3>Todos</h3>
         </div>
@@ -218,6 +220,7 @@ import Header2 from '../components/Header2.vue'
             <section class="eventocontainer5">
 
                 <div class="eventocontainer" id="event">
+                     <!--Hacemos un v-for para recorrer un array-->   
                     <a href="Event" class="evento" v-for="events in data.slice(0, endIndex)"
                         v-if="!flag && !flag2 && !flag3" v-on:click="saveEvent(events.id)">
                         <div>

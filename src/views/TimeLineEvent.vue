@@ -26,13 +26,15 @@ export default {
    },
   data() {
     return {
-      data: {},
-      data2: {},
-      editing: false,
+      data: {}, //array de eventos
+      data2: {}, //array de usuarios
+      //booleanos auxiliares para comprobar diferentes condiciones
+      editing: false, 
       savedId: null,
       showPart: false,
       response: null,
       participating: false,
+      //variables donde guardamos los diferentes id's
       location: '',
       npart: '',
       type:'',
