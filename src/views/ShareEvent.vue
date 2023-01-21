@@ -13,16 +13,16 @@ export default {
     name: "App",
     data() {
         return {
-            data: {},
-            data2: {},
-            endIndex: 10,
-            sendId: '',
-            receiver_id: '',
-            showZona: true,
-            showBusqueda: false,
+            data: {}, //Data de los eventos en zona (Barcelona)
+            data2: {}, //Data de los eventos buscados
+            endIndex: 10,  //Numero de eventos que se pueden ver
+            sendId: '', //id del que lo envia
+            receiver_id: '', //id del que lo recibe
+            showZona: true, //Booleano para saber que eventos mostrar
+            showBusqueda: false, //Booleano para saber que eventos mostrar
             name: '',
-            filter: false,
-            historial: false,
+            filter: false, //Booleano para mostrar popup de filtro
+            historial: false, //Booleano para mostrar popup de historial
             records: [],
             record: null,
             content:'',
@@ -49,7 +49,7 @@ export default {
             console.log(response);
 
         },
-
+        //Funcion para compartir evento
         async shareEvent(id) {
             this.receiver_id = id;
             this.content = message;
@@ -75,14 +75,17 @@ export default {
 				console.error(error);
             }
         },
+        //Función para augmentar cuantos eventos se ven
         showMore() {
             this.endIndex = this.endIndex + 10;
 
         },
+        //Función para disminuir cuantos eventos se ven
         showLess() {
             this.endIndex = this.endIndex - 10;
 
         },
+        //Funcion para buscar amigo
         async busquedaFriend() {
 
             const url = `http://puigmal.salle.url.edu/api/v2/users/search?s=${this.name}`;
