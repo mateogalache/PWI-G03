@@ -582,7 +582,7 @@ small{
     text-align: center;
     justify-content: center;
     gap: .3rem;
-    margin-top: -2rem;
+    
 }
 .editar{
     border: 1px solid black;
