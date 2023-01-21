@@ -1,15 +1,14 @@
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header3 from '../components/Header3.vue';
-
+import Header2 from '../components/Header2.vue'
 </script>
 
 
 <template>
     
-    <Header3> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
+    <Header2> <!--Nos permite identificar la cabecera de la página (que no forma parte del contenido único)--> 
             
-    </Header3>
+    </Header2>
 
     <main> <!--Estamos indicando que esa etiqueta es un contenido principal-->
 

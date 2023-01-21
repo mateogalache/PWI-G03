@@ -12,8 +12,8 @@ export default {
       data: {},
       data2: {},
       data3:{},
-      editing: false,
-      
+      data4:{},
+      editing: false,      
       showPart: false,
       response: null,
       participating: false,
@@ -25,12 +25,13 @@ export default {
       startDate:'',
       description: '',
       image: '',
+      showValoracion: false,
     }
   },
   beforeMount(){
     this.participate();
     this.getEvents();
-    
+    this.getValoraciones();
   },
   methods: {
       async getUser() {
@@ -46,7 +47,7 @@ export default {
 
 
           localStorage.setItem('userId', this.data3[0].id);
-          console.log(this.data3[0].id);
+          
           //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
       },
@@ -90,8 +91,7 @@ export default {
             .then(response => response.json())
             .then(data => this.data = data);
 
-            console.log(response);                 
-            console.log(event_id);
+            
             
            
     },
@@ -146,7 +146,7 @@ export default {
             }
         });
         if (!response.ok) {
-          console.log(event_id)
+          
           const message = `An error has occured: ${response.status} - ${response.statusText}`;
           throw new Error(message);
       }
@@ -179,15 +179,6 @@ export default {
       } catch (error) {
         
       }
-      /*if (puntuation < 0 || puntuation > 10){
-        console.log("La puntuación debe estar entre 0 y 10")
-      }
-      
-      else if (puntuation >= 0 && puntuation <= 5 && comentary != "" && comentary != null && puntuation != "" && puntuation != null)
-        {
-            alert("¡Gracias por tu valoración!");
-
-      }*/
     },
     async deleteevent(){
         try{
@@ -218,7 +209,24 @@ export default {
             
         }
     },
-  }
+    async getValoraciones(){
+            const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            })
+                
+                .then(response => response.json())
+                .then(data => this.data4 = data);
+
+                
+    },
+    showValoraciones(){
+        this.showValoracion = true;
+    }
+    }
+    
 };
 
 </script>
@@ -243,6 +251,9 @@ import Header2 from '../components/Header2.vue'
         <div class="background">
                 <img  :src=  "event.image" alt="img"> 
         </div>
+        <div class="background2" v-if="showValoracion">
+                <img  :src=  "event.image" alt="img"> 
+        </div>
         <div class="apuntado" v-if="showPart">
             ¡Te has apuntado correctamente!
         </div>
@@ -264,7 +275,7 @@ import Header2 from '../components/Header2.vue'
         </div>
         <article class="FCont"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
 
-            <div class="datosIm">
+            
 
                 <div class = "datos">
                     <div class="lugar">
@@ -302,7 +313,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
                     
                      
-            </div>
+            
             
             
                 
@@ -340,10 +351,24 @@ import Header2 from '../components/Header2.vue'
                     
                 </section>
 
-            
+                
 
                 
                 </div>
+                
+                
+                    <button class="valoraciones" v-on:click="showValoraciones()">VALORACIONES</button>
+
+                    <section class="five">
+                        
+                        <div v-for="valoraciones in data4" v-if="showValoracion" class="valoracion">
+                            <h4>{{ valoraciones.name }} {{ valoraciones.last_name }}: </h4>                        
+                            <p><b>Puntuación: </b> {{ valoraciones.puntuation }}</p>
+                            <p><b>Comentario: </b> {{ valoraciones.comentary }}</p>
+                        </div>
+                    </section>
+               
+                
             
 
         </article>
@@ -360,6 +385,38 @@ import Header2 from '../components/Header2.vue'
 
 <style scoped>
 
+
+.valoraciones{
+    border: 2px solid orange;
+    background: rgb(255, 165, 0,.2);
+    border-radius: 10px;
+    width: 10rem;
+    cursor: pointer;
+}
+.five{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.valoracion b{
+    font-size: 15px;
+}
+.valoracion *{
+    margin-left: .5rem;
+}
+.valoracion *:not(:last-child){
+    margin-bottom: -.1rem;
+}
+.valoracion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid orange;
+    
+}
+
 .desapuntar{
     border-radius: 10px;
     width: 12rem;
@@ -371,6 +428,7 @@ import Header2 from '../components/Header2.vue'
     align-items: center;
     font-size: 20px;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .Four input{
     display: flex;
@@ -530,20 +588,23 @@ small{
     border: 1px solid black;
     border-radius: 50px;
 }
-.background img{
+.background img,.background2 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.background{
+.background,.background2{
     position: absolute;
     z-index: -1;
     opacity: 0.3;
     width: 100%;
-    height: 105%;
+    height: 100%;
     object-fit: cover;
 }
-
+.background2 {
+    top: 109.4%;
+    height: 80%;
+}
 .all{
     position: relative;
     width: 100%;
@@ -592,8 +653,8 @@ b{
     flex-direction: column;
     flex-wrap: wrap;
     gap: 3rem;
-    
-   
+    align-items: center;
+    justify-content: center;
     
 }
 .First{
@@ -637,6 +698,17 @@ b{
     }
     .changeImage input{
         width: 30rem;
+    }
+    .background2{
+        top: 108.3%;
+        height: 100%;
+    }
+    .valoracion p{
+        font-size: 20px;
+    }
+    .valoracion{
+        margin-left: 35%;
+        width: 30%;
     }
 }
 
