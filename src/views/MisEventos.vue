@@ -1,20 +1,20 @@
 <script>
 
-const token = localStorage.getItem('accessToken');
-const email = localStorage.getItem('email');
-const id = localStorage.getItem('userId');
+const token = localStorage.getItem('accessToken'); //Cogemos token del local storage
+const email = localStorage.getItem('email'); //Cogemos email del usuario del local storage
+const id = localStorage.getItem('userId'); //Cogemos id del usuario del local storage
 
 export default {
   name: "App",
   data() {
     return {
-      data: [], 
-      data2: [],
-      data3: [],
-      data4: [],
-      imageLoad: true,
-      savedId: null,
-      endIndex: 10,
+      data: [], //Data de los eventos que participo (todos)
+      data2: [], //Data de los eventos que participo (acabados)
+      data3: [], //Data de los eventos que participo (en progreso)
+      data4: [], //Data de los eventos que participo (por empezar)
+      imageLoad: true, //Varibale para mostrar o no la imagen
+      savedId: null, //Varibale para guardar id del evento clickado
+      endIndex: 10, //Num Eventos que se muestran
       flag: false, //Booleano para mostrar los eventos acabados
       flag2: false, //Booleano para mostrar los eventos en progueso
       flag3: false, //Booleano para mostrar los eventos futuros
@@ -29,6 +29,7 @@ export default {
   },
   
   beforeMount(){
+    //Funciones que queremos que cargen antes de que se cargue la página
     this.saveEvent();
     this.getEvents();
     
@@ -36,7 +37,7 @@ export default {
   
   
   methods: {
-    
+    //Función para coger todos los eventos en los que participa el usuario
     async getEvents(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events`;
         try{
@@ -55,22 +56,28 @@ export default {
 
             
     },   
-     
+
+    //Función para coger el id del evento clickado
     saveEvent(id){
         this.savedId = id;
         window.localStorage.setItem('event',this.savedId);
     },
+
+    //Función para mostrar más eventos
     showMore(){
         this.endIndex = this.endIndex + 10;
         
         
     },
+
+    //Función para mostrar menos eventos
     showLess(){
         this.endIndex  =  this.endIndex - 10;
         
     },
 
     
+    //Función para coger los eventos en los que el usuario ha participado y acabado
     async showFinished(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/finished`;
         try{
@@ -93,6 +100,7 @@ export default {
         }  
     },
 
+    //Función para coger los eventos en los que el usuario está participando acutalmente (fecha)
     async showCurrent(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/current`;
         try{
@@ -115,6 +123,7 @@ export default {
         }  
     },
 
+    //Función para coger los eventos en los que el usuario participará
     async showFuture(){
         const url = `http://puigmal.salle.url.edu/api/v2/users/${id}/events/future`;
         try{
@@ -151,6 +160,7 @@ export default {
 </script>
 
 <script setup>
+//Importamos header y footer
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header3.vue'
 </script>
