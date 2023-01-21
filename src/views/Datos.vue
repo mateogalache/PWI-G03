@@ -1,53 +1,48 @@
 <script>
 
-const token = localStorage.getItem('accessToken');
-const email = localStorage.getItem('email');
+const token = localStorage.getItem('accessToken'); //Cogemos token del localstorage para utilizarlo como header en el fetch
+const email = localStorage.getItem('email'); //Cogemos el email para coger la inforamacion de un usuario ya que el email es unico
 
 export default {
   name: "App",
   data() {
     return {
-      data: {},
-    
-      editDoneImage: true,
-      doEditName: false,
-      editDoneName: true,
-      doEditLast: false,
-      editDoneLast: true,
-      doEditEmail: false,
-      editDoneEmail: true,
-      doEditPassword: false,
-      editDonePassword: true,     
+      data: {},  //Data del usuario 
+      doEditImage: false,  //Booleano para mostrar o no input para editar la imagen
+      editDoneImage: true, //Booleano para mostrar o no input para editar la imagen
+      doEditName: false, //Booleano para editar el nombre
+      editDoneName: true, //Booleano para editar el nombre
+      doEditLast: false, //Booleano para editar apellidos
+      editDoneLast: true, //Booleano para editar apellidos
+      doEditEmail: false, //Booleano para editar email
+      editDoneEmail: true, //Booleano para editar email
+      doEditPassword: false, //Booleano para editar contraseña
+      editDonePassword: true,  //Booleano para editar contraseña
     }
   },
   beforeMount(){
-    
-    this.getData();
+    //Funciones que queremos cuando cargue la página
+    this.getData(); 
   },
   methods: {
+    //Función para coger la informacion del usuario
      getData(){        
-      
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`,{
             headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
+                "Content-Type": "application/json", //Tipo de data
+                'Authorization': `Bearer ${token}` //Token para tener acceso
             },
-        })
-            
+        })            
             .then(response => response.json())
-            .then(data => this.data = data);
-
-            
-                       
-            
-            
-           
+            .then(data => this.data = data);  //Ponemos la data en nuestra variable    
     },
+    //Funcion para mostrar input para cambiar la imagen
     changeImage(){
         this.doEditImage = true;
         this.editDoneImage = false;
     },
     async postImage(){
+      //Función que cambia la imagen en la API
         const response = await fetch('http://puigmal.salle.url.edu/api/v2/users', {
         method: 'PUT',
         headers: {
@@ -65,11 +60,13 @@ export default {
           throw new Error(message);
       }
       else{ 
+        //Si se hace correctamente se cierra el input y recarga la página para actualizar la información
         this.doEditImage = false;
         this.editDoneImage = true;
         location.reload();
       }
     },
+    //Función para editar nombre en la API
     async postName(){
         const response = await fetch('http://puigmal.salle.url.edu/api/v2/users', {
         method: 'PUT',
@@ -93,10 +90,12 @@ export default {
         location.reload();
       }
     },
+    //Función para mostrar input para editar el nombre
     changeName(){
         this.doEditName = true;
         this.editDoneName = false;
     },
+    //Función para subir el apellido
     async postLast(){
         const response = await fetch('http://puigmal.salle.url.edu/api/v2/users', {
         method: 'PUT',
@@ -120,10 +119,12 @@ export default {
         location.reload();
       }
     },
+    //Función para mostrar input para editar apellido
     changeLast(){
         this.doEditLast = true;
         this.editDoneLast = false;
     },
+    //Función para editar email en la API
     async postEmail(){
         const response = await fetch('http://puigmal.salle.url.edu/api/v2/users', {
         method: 'PUT',
@@ -148,10 +149,12 @@ export default {
         location.reload();
       }
     },
+    //Función para mostrar el input para mostrar input para cambiar el email
     changeEmail(){
         this.doEditEmail = true;
         this.editDoneEmail = false;
     },
+    //Función para editar el password en la API
     async postPassword(){
         const response = await fetch('http://puigmal.salle.url.edu/api/v2/users', {
         method: 'PUT',
@@ -175,6 +178,7 @@ export default {
         location.reload();
       }
     },
+    //Función para mostrar input para editar la contraseña
     changePassword(){
         this.doEditPassword = true;
         this.editDonePassword = false;
@@ -182,7 +186,7 @@ export default {
     
   }
 };
-
+//Para editar la información, en este caso lo hemos hecho individualmente por cada información porque creiamos que quedaba mejor, en cambio en eventos con un solo click se puede editar todo.
 </script>
 
 <script setup>
@@ -197,26 +201,25 @@ import Header2 from '../components/Header2.vue'
         ya que nos servirá para poder navegar por las diferentes opciones de cada dato-->
     <main>
         <br>
-        <section class = margendatos>
+        <div class = margendatos>
             <h2>Datos</h2>
-        </section>
+        </div>
         
-        <section class = "datos" v-for="info in data">
-            <div class = foto>
+        <article class = "datos" v-for="info in data"> <!--v-for para mostrar en loop la información que hay en data-->
+            <section class = foto>
                 <img :src=   "info.image" >
                 <button class = "editar" v-on:click="changeImage()" v-if="editDoneImage"><b>Editar</b></button>
                 <div class="editImage" v-if="doEditImage">
                     <input type="text" ref="image" v-model="image">
                     <button class = "editConfirm" v-on:click="postImage()">OK</button>
-                </div>
-                
-            </div>
-
+                </div>                
+              </section>
+              <!--Estructura de section con div dentro para dividir de elementos generales a más pequeños-->
             <section class = info>
                 <div class="name info1">
-                    <h3 v-if="editDoneName">{{info.name}}</h3>
-                    <input type="text" placeholder="Nuevo nombre" v-model="name" v-if="doEditName">
-                    <button class = "editar" v-if="editDoneName" v-on:click="changeName()"><b>Editar</b></button>
+                    <h3 v-if="editDoneName">{{info.name}}</h3> <!--h3 para poner letra un poco más grande que p-->
+                    <input type="text" placeholder="Nuevo nombre" v-model="name" v-if="doEditName"> <!---v-model para subir el contenido del input al script y ese subirlo a la api-->
+                    <button class = "editar" v-if="editDoneName" v-on:click="changeName()"><b>Editar</b></button> <!--v-on:click para iniciar función / v-if para mostrar solo si el booleano es true-->
                     <button class = "editConfirm" v-on:click="postName()" v-if="doEditName">OK</button>
                 </div>
                 <div class="last_name info1">
@@ -237,16 +240,9 @@ import Header2 from '../components/Header2.vue'
                     <button class = "editar" v-if="editDonePassword" v-on:click="changePassword()"><b>Editar</b></button>
                     <button class = "editConfirm" v-on:click="postPassword()" v-if="doEditPassword">OK</button>
                 </div>
-
             </section>
-        </section>
-
-        
-        
-
-
-    </main>
-
+        </article>
+      </main>
     <Footer2>
         
     </Footer2>

@@ -18,13 +18,7 @@ export default {
       flag: false, //Booleano para mostrar los eventos acabados
       flag2: false, //Booleano para mostrar los eventos en progueso
       flag3: false, //Booleano para mostrar los eventos futuros
-      isshow: false,
-      showF: false, //Booleano para mostrar filtro
-       
-       
-       
-
-      
+      showF: false, //Booleano para mostrar filtro    
     }
   },
   
