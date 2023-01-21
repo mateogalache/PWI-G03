@@ -70,7 +70,7 @@ export default {
         
         
         if (!this.busqueda && this.location && this.date){
-            console.log('0');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?location=${this.location}&date=${this.date}`;
             try {
         const response = await fetch(url,{
@@ -91,7 +91,7 @@ export default {
       }
         }
         else if (!this.location && this.date && this.busqueda){
-            console.log('1');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?keyword=${this.busqueda}&date=${this.date}`;
             try {
         const response = await fetch(url,{
@@ -113,7 +113,7 @@ export default {
       }
         } 
         else if (!this.date && this.busqueda && this.location){
-            console.log('2');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?keyword=${this.busqueda}&location=${this.location}`;
             try {
         const response = await fetch(url,{
@@ -134,7 +134,7 @@ export default {
       }
         }
         else if (!this.date && !this.location){
-            console.log('3');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?keyword=${this.busqueda}`;
             try {
         const response = await fetch(url,{
@@ -156,7 +156,7 @@ export default {
       }
         }
         else if (!this.date && !this.busqueda){
-            console.log('4');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?location=${this.location}`;
             try {
         const response = await fetch(url,{
@@ -177,7 +177,7 @@ export default {
       }
         } 
         else if (!this.buqueda && !this.location){
-            console.log('5');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?date=${this.date}`;
             try {
         const response = await fetch(url,{
@@ -198,7 +198,7 @@ export default {
       }
         }
         else{
-            console.log('6');
+            
             const url = `http://puigmal.salle.url.edu/api/v2/events/search?keyword=${this.busqueda}&location=${this.location}&date=${this.date}`;
             try {
         const response = await fetch(url,{
@@ -218,13 +218,6 @@ export default {
         console.error(error);
       }
         }
-      if(this.busqueda){
-        
-        this.records.unshift(this.busqueda);
-        localStorage.setItem('record',this.busqueda);
-        
-        console.log(this.record);
-      }
         
     },
     //Función para mostrar filtro

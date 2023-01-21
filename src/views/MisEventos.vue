@@ -152,7 +152,7 @@ export default {
 
 <script setup>
 import Footer2 from '../components/Footer2.vue'
-import Header2 from '../components/Header3.vue'
+import Header2 from '../components/Header2.vue'
 </script>
 
 
@@ -319,7 +319,7 @@ import Header2 from '../components/Header3.vue'
         display:flex;
         justify-content: center;
         align-items: center;
-        gap: 5rem;
+        gap: 1rem;
     }
 
 

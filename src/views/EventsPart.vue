@@ -37,9 +37,7 @@ export default {
             })
             .then(response => response.json())
             .then(data => this.data = data);
-            console.log(id);
-            
-            console.log(response);  
+             
                         
         } catch(error){
             console.error(error);
@@ -233,7 +231,7 @@ import Header2 from '../components/Header3.vue'
 
 <style scoped>
 
-   
+  
 
     .evento img{
         object-fit: cover;
@@ -311,7 +309,7 @@ import Header2 from '../components/Header3.vue'
         display:flex;
         justify-content: center;
         align-items: center;
-        gap: 5rem;
+        gap: 1rem;
     }
     
     .mostrarMas,.mostrarMenos{
