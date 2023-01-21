@@ -304,10 +304,10 @@ import Header2 from '../components/Header2.vue'
                         <input type="number" v-model="npart" v-if = "editing">
                      </div>
                      <br>
-                     <button class="participar" v-on:click="participar()" v-if="!participating">PARTICIPAR</button> 
-                     <b v-if="participating" class="apuntado1">¡Ya estás apuntado!</b>
-                     <a href="ShareEvent"><button class="share" v-on:click="shareEvent(event.name, event.location, event.type, event.eventStart_date)">COMPARTIR</button></a>
-                     <button class="desapuntar" v-if="participating" v-on:click="desapuntar()">
+                     <button class="participar" v-on:click="participar()" v-if="!participating && !editing">PARTICIPAR</button> 
+                     <b v-if="participating && !editing" class="apuntado1">¡Ya estás apuntado!</b>
+                     <a href="ShareEvent"><button class="share" v-on:click="shareEvent(event.name, event.location, event.type, event.eventStart_date)" v-if="!editing">COMPARTIR</button></a>
+                     <button class="desapuntar" v-if="participating && !editing" v-on:click="desapuntar()">
                         DESAPUNTARSE
                     </button>
                 </div>
@@ -320,7 +320,7 @@ import Header2 from '../components/Header2.vue'
            
             
         
-            <div class="part" v-if= "participating">
+            <div class="part" v-if= "participating && !editing">
                 
                 <section class = "Third"><!--Con el secction separamos las secciones que no interesan-->
                     <h2>Puntúalo y Coméntalo</h2>
@@ -357,7 +357,7 @@ import Header2 from '../components/Header2.vue'
                 </div>
                 
                 
-                    <button class="valoraciones" v-on:click="showValoraciones()">VALORACIONES</button>
+                    <button class="valoraciones" v-on:click="showValoraciones()" v-if="!editing">VALORACIONES</button>
 
                     <section class="five">
                         
