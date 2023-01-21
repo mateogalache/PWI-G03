@@ -44,8 +44,9 @@ export default {
     eliminarAmigo(id){
         this.savedId = id;
         window.localStorage.setItem('friend',this.savedId);
-        console.log("hola")
-        const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends/${id}`,{
+        console.log(id)
+        console.log(this.savedId)
+        const response = fetch (`http://puigmal.salle.url.edu/api/v2/friends/${this.savedId}`,{
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -58,7 +59,12 @@ export default {
 
             
         },
+      //funcion para guardar el id del usuario que queremos ver su información
+      savePerson(id) {
+          this.savedId = id;
+          window.localStorage.setItem('friend', this.savedId);
 
+      },
         
   }
 };
@@ -77,12 +83,12 @@ export default {
        
        
        <div class = "cont">
-            <img src = "src/assets/usuario.png" class = "Redondap">
+            <img :src=info.image class = "Redondap">
             
         </div>
         <br/>
         <div class = "cont">
-            <a href="PerfilAjeno"> <button v-on:click = "eliminarAmigo(info.id)" class = "boton">Eliminar Amigo</button> </a>
+             <button v-on:click = "eliminarAmigo(info.id)" class = "boton">Eliminar Amigo</button>
                 
             </div>
         
@@ -104,21 +110,11 @@ export default {
             </div>
             <br><br/>
             <div class = "cont">
-            <div class = "rectangulo1">                
-                <p><FONT color = "grey">Amistades</FONT></p>
-                <div class = "Clogo">
-                    <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                </div>
-                
-            </div>    
-            </div>
-            <br><br/>
-            <div class = "cont">
             <div class = "rectangulo1"> 
                                
                 <p><FONT color = "grey">Eventos</FONT></p>
                 <div class = "Clogo">
-                    <a href="Events"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+                    <a href="Events"><img src="src\assets\flecha.png" v-on:click="savePerson(info.id)" class = "icon" alt="tick"></a>
                 </div>    
             </div>    
             </div>

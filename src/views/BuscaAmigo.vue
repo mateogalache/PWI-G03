@@ -228,15 +228,16 @@ methods: {
 .BContainer4{
     color: gray;
     height: 25px;
-    width: 80%;
+    
     background-color: transparent;
     border: 1px solid grey;
     display: flex;
     align-items:center;
     padding: 5px;
     border-radius: 50px;
-    margin: 5%;
-    margin-top: 5%;
+    
+    margin-bottom:5%;
+    
     justify-content: space-between;
     position: relative;
 }

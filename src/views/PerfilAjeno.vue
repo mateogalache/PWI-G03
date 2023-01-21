@@ -123,22 +123,13 @@ import Header2 from '../components/Header2.vue'
                 </div>    
             </div>
             <br><br/>
-            <div class = "cont">
-                <div class = "rectangulo1">                
-                    <p><FONT color = "grey">Amistades</FONT></p>
-                    <div class = "Clogo">
-                        <a href="ListaAmigosAjena"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
-                    </div>
-                    
-                </div>    
-            </div>
-            <br><br/>
+            
             <div class = "cont">
                 <div class = "rectangulo1"> 
                                 
                     <p><FONT color = "grey">Eventos</FONT></p>
                     <div class = "Clogo">
-                        <a href="Events"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
+                        <a href="Events"><img src="src\assets\flecha.png" v-on:click="savePerson(info.id)"  class = "icon" alt="tick"></a>
                     </div>    
                 </div>    
             </div>

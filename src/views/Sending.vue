@@ -20,17 +20,19 @@ import Header2 from '../components/Header2.vue'
                     <a href = "Pending"><b>Pending request</b></a>
                 </button>
             </section >
-            <tr v-for="amigo in amigos" :key="amigo.id">   
+
+            <h1>Pagina en desarrollo de API</h1>
+           <!-- <tr v-for="amigo in amigos" :key="amigo.id">   
                 <td>    
-                    <section class = "PContainer22"><!--Con el secction separamos las secciones que no interesan-->
+                    <section class = "PContainer22"> Con el secction separamos las secciones que no interesan
                         <img src={{amigo.image}} class = "perfil">
                         <a href="PerfilAjeno"><p class = "nombre3">{{amigo.name}}</p></a>
-                        <div class = "Clogo2"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
+                        <div class = "Clogo2"> Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas
                             <img src="src\assets\flecha.png" class = "icon" alt="tick">
                         </div>
                     </section>
                 </td>
-            </tr>    
+            </tr> -->
         </article>
     <div class="transparent6"></div>
     </main>

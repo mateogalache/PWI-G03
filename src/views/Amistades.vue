@@ -2,22 +2,65 @@
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 </script>
+
+<script>
+
+const token = localStorage.getItem('accessToken');
+const id = localStorage.getItem('userId');
+
+export default {
+    name: "App",
+    data() {
+        return {
+            data: {},
+            data2: {},
+            notrequest: true,
+        }
+    },
+    beforeMount() {
+
+
+        this.getData();
+
+    },
+    methods: {
+        getData() {
+
+            //Nos devuelve la informacion del usuario en funcion de una id
+            const response = fetch(`http://puigmal.salle.url.edu/api/v2/users/${id}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            })
+
+                .then(response => response.json())
+                .then(data => this.data = data);
+            console.log(response);
+
+
+        },
+
+    }
+};
+
+</script>
 <template>
     <Header2>
 
     </Header2>
 <!--Pagina para las amistades del usuario -->
-    <main>
+    <main v-for= "info in data">
         <section class = "margenamistades">
            <h2>Amistades</h2> 
         </section>
+        <section class = "cont"> <!--Mostramos la imagen del usuario-->
+            
+          <img :src= "info.image" class = "Redondap">
+      </section>
         
-        <div class="foto1">
-            <img src='src/assets/FRENTE-NITIDA.webp' class="imgredonda">
-        </div>
-        
-            <div class="botones">
-                <p>Antonio</p>
+            <div  class="botones">
+                <p>{{ info.name }}</p>
                 <a href="ListaAmigos"><button class="boton1">Lista ></button></a> 
                 <a href="SearchFriend"><button class="boton1">Añadir amigos ></button></a>
                 <a href="Pending"><button class="boton1">Request ></button></a>
@@ -29,7 +72,7 @@ import Header2 from '../components/Header2.vue'
     </Footer2>
 </template>
 <style scoped>
-    .margenamistades{
+.margenamistades{
         margin-left: 2%;
     }
     .imgredonda{        
@@ -38,13 +81,21 @@ import Header2 from '../components/Header2.vue'
     border-radius:150px;
     
     }
-    .foto1{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-    }
+ .Redondap {
+     display: flex;
+     width: 120px;
+     height: 120px;
+     border-radius: 150px;
+     border: 1px solid black;
+     object-fit: cover;
+
+ }
+ .cont {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+ }
     .botones{
         display: flex;
         flex-direction: column;
@@ -109,9 +160,9 @@ import Header2 from '../components/Header2.vue'
 
 
     }
+        .Redondap {
+            height: 200px;
+            width: 200px;
+        }
 }
-    
-   
-
-
 </style>

@@ -106,10 +106,7 @@ export default {
             <a href="NewChat" class="mas"><img  src='src/assets/add.png'  alt="home" width="25" height="25"></a>
         </section>
         <div class = "cont">
-            
-            <div class = "BContainer">
-                <p class = "buscar">Busca</p>
-            </div>
+
             <div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
                 <img :src="chat.image" class = "perfil">
                 <div class="chat">
@@ -178,11 +175,14 @@ export default {
     border-radius: 25px;
     width: 100%;
     justify-content:space-between;
-    margin-right:2%;
+    
    
     
     
 
+}
+.Clogo{
+    margin-right:10%;
 }
 
 .icon{
@@ -235,9 +235,7 @@ export default {
         margin-right: 5%;
         
     }
-    .Clogo{
-        margin-right: 40%;
-    }
+    
     .icon{
         
         width: 20px;

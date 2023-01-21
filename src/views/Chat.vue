@@ -120,13 +120,13 @@ export default {
 	<!--Chat con una persona-->
     <main>
 		<body>
-			<div class="container">
+			<div>
 				<!--Creamos un banner donde vemos la foto y el nombre del usuario con el que hablamos-->
 				<a href="PerfilAmigo" v-on:click=savePerson(this.friendId)><div  v-for="profile in data2" class="nomchat">
 					<img class="header-img" :src=profile.image />
 					<h2>{{ profile.name }}</h2>
 				</div></a>
-
+				<div class="transparent1"></div>
 				<!--Con el div creamos el espacio donde mostraremos los mensajes-->
 				<div class="conversation" >
 					<div class="conversation-container" v-for="messages in data" >
@@ -135,10 +135,12 @@ export default {
 						<!--Hacemos un v-if para seleccionar la forma de mostrar los mensajes en funcion de quien lo ha escrito-->
 						<div class="message sent" v-if="messages.user_id_send == this.myid" >
 							<p>{{messages.content }}</p>
+							<p class="hora">{{ messages.timeStamp.substring(11, 19) }}</p>
 						</div>	
 
 						<div class = "message recived" v-if="messages.user_id_send == this.friendId">
 							<p>{{messages.content }}</p>
+							<p class="hora">{{ messages.timeStamp.substring(11, 19) }}</p>
 						</div>	
 
 					</div>   
@@ -162,6 +164,15 @@ export default {
     
 </template>
 <style scoped>
+.hora{
+	font-size:15px;
+}
+.transparent1 {
+	
+	width: 100%;
+	height: 80px;
+	background-color: white;
+}
 .conversation {
 	height: calc(100% - 12px);
 	position: relative;
@@ -198,6 +209,7 @@ export default {
 }
 
 .message {
+	display:flex;
 	color: #000;
 	clear: both;
 	line-height: 18px;
@@ -208,6 +220,8 @@ export default {
 	max-width: 85%;
 	word-wrap: break-word;
 	z-index: -1;
+	flex-direction:column;
+	
 }
 
 .message:after {
@@ -217,9 +231,6 @@ export default {
 	height: 0;
 	
 }
-
-
-
 .message:first-child {
 	margin: 16px 0 8px;
 }
@@ -267,7 +278,8 @@ h3{
     align-items: center;
 	gap: .5rem;
 	background:white;
-	padding :2%;
+	padding-left:2%;
+	padding-top:2%;
 	z-index: 1;
 	width:100%;
 }
@@ -290,7 +302,7 @@ content: "";
 	background: #efefef;
 	min-height: 25px;
 	padding: 9px 10px;
-	align-items: center;
+	
 	color: #222121;
 }
 
@@ -326,6 +338,13 @@ content: "";
 
 
 @media (min-width: 1080px){
+
+	.transparent1 {
+	
+		
+		height: 125px;
+		
+		}
 	
 	
 	.input-box{
@@ -337,6 +356,9 @@ content: "";
 	}
 	.message{
 		font-size: 20px;
+	}
+	.hora{
+		font-size:15px;
 	}
 	.input-box input{
 		font-size: 30px;

@@ -74,9 +74,7 @@ methods: {
     <main>
         <br><h2 class="titulo34">Amigos</h2>
         <article class = "cont5"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
-            <section class = "BContainer5"> <!--Usamos aside ya que no pertence a las secciones, pero si que esta relacionado con la pagina-->
-                <p class = "buscar">Busca</p>
-            </section>
+        
                 
             <tr v-for="amigo in data.slice(0,endIndex)" :key="amigo.id">
                 <td class="PCont"  >

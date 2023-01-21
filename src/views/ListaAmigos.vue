@@ -75,18 +75,15 @@ methods: {
     <main>
         <br><h2 class="titulo34">Amigos</h2>
         <article class = "cont5"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
-            <section class = "BContainer5"> <!--Usamos aside ya que no pertence a las secciones, pero si que esta relacionado con la pagina-->
-                <p class = "buscar">Busca</p>
-            </section>
                 
             <!--V-for para mostrar todos los amigos recorriendo la array de inforamcion obtenida-->
             <tr v-for="amigo in data.slice(0,endIndex)" :key="amigo.id">
                 <td class="PCont"  >
-                    <section class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
+                    <section  class = "PContainer5"><!--Con el secction separamos las secciones que no interesan-->
                         <img :src=amigo.image class = "perfil">
-                        <a href="PerfilAmigo" v-on:click="savePerson(amigo.id)"><p class = "nombre5">{{amigo.name}}</p></a>
+                        <p class = "nombre5">{{amigo.name}}</p>
                         <div class = "Clogo5"><!--Usamos este tag ya que es un elemnto que nos permite navegar entre las paginas-->
-                            <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                            <a href="PerfilAmigo" v-on:click="savePerson(amigo.id)"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                         </div>
                     </section>
                 </td>
