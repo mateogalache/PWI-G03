@@ -13,8 +13,8 @@ export default {
     name: "App",
     data() {
         return {
-            data: {}, //Data de los eventos en zona (Barcelona)
-            data2: {}, //Data de los eventos buscados
+            data: [], //Data de los eventos en zona (Barcelona)
+            data2: [], //Data de los eventos buscados
             endIndex: 10,  //Numero de eventos que se pueden ver
             sendId: '', //id del que lo envia
             receiver_id: '', //id del que lo recibe
@@ -26,6 +26,7 @@ export default {
             records: [],
             record: null,
             content:'',
+            chatName: '',
         }
     },
     beforeMount() {
@@ -46,17 +47,17 @@ export default {
                 .then(response => response.json())
                 .then(data => this.data = data);
 
-            console.log(response);
+           
 
         },
         //Funcion para compartir evento
-        async shareEvent(id) {
+        async shareEvent(id,name) {
             this.receiver_id = id;
             this.content = message;
             this.sendId = userId;
-            console.log(this.receiver_id);
-            console.log(this.content);
-            console.log(this.sendId);
+            this.chatName = name;
+            window.localStorage.setItem('friend', this.receiver_id);
+            window.localStorage.setItem('chatName',this.savedName);
             try {
 				const response = await fetch(`http://puigmal.salle.url.edu/api/v2/messages`, {
 					method: 'POST',
@@ -139,7 +140,7 @@ export default {
                 </div>
             </section>
             <a href="Chat" v-for="people in data.slice(0, endIndex)" :key="people.id"
-                v-on:click="shareEvent(people.id)" v-if="showZona">
+                v-on:click="shareEvent(people.id,people.name)" v-if="showZona">
                 <div class="PContainer4">
 
                     <img :src="people.image" class="perfil" alt="img" v-bind:error="errorImages">
@@ -184,6 +185,14 @@ export default {
 </template>
 
 <style scoped>
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.perfil{
+    border-radius: 50%;
+}
 .cont4 {
     margin-top: 1%;
     padding-left: 2%;
@@ -221,10 +230,12 @@ export default {
 
 .mostrarMas,
 .mostrarMenos {
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     margin-top: 2rem;
     border-radius: 50px;
-    border: 2px solid black;
+    border: 2px solid var(--main-bg-color);
     width: 12rem;
     transition: all 300ms ease;
 }
@@ -232,7 +243,7 @@ export default {
 .mostrarMas:hover,
 .mostrarMenos:hover {
     color: white;
-    background: black;
+    background: var(--main-bg-color);
 }
 
 input {
