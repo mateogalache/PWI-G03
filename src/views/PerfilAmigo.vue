@@ -97,14 +97,14 @@ export default {
             
             <div class = "rectangulo1">
                                     
-                    <p><FONT color = "grey">{{info.name}}</FONT></p>
+                    <p class="gray">{{info.name}}</p>
                     
                 </div>    
             </div>
             <br><br/>
             <div class = "cont">
             <div class = "rectangulo1">                
-                    <p><FONT color = "grey">{{info.last_name}}</FONT></p>
+                    <p class="gray">{{info.last_name}}</p>
                    
                 </div>    
             </div>
@@ -112,7 +112,7 @@ export default {
             <div class = "cont">
             <div class = "rectangulo1"> 
                                
-                <p><FONT color = "grey">Eventos</FONT></p>
+                <p class="gray">Eventos</p>
                 <div class = "Clogo">
                     <a href="Events"><img src="src\assets\flecha.png" v-on:click="savePerson(info.id)" class = "icon" alt="tick"></a>
                 </div>    
@@ -128,6 +128,10 @@ export default {
   </Footer2>
 </template>
 <style scoped>
+
+.gray{
+    color: gray;
+}
 .boton{
     display: flex;
         width: 120px;
