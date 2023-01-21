@@ -6,6 +6,7 @@ const email = localStorage.getItem('email');
 export default {
   name: "App",
   computed:{
+    //funcion para agrupar los eventos por fecha
     groupedEvents() {
         const dataArray = Object.values(this.data);
       // Group the events by date
@@ -64,6 +65,7 @@ methods: {
     //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
   },
+  //funcion para coger todos los eventos a los que te has apuntado y aun no han ocurrido
   async getEvents(){     
       
       const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${this.data2[0].id}/assistances/future`,{
