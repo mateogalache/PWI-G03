@@ -5,6 +5,7 @@
 const token = localStorage.getItem('accessToken'); 
 const email = localStorage.getItem('email');
 
+
 export default {
   name: "App",
   data() {
@@ -16,8 +17,24 @@ export default {
   },
   //Funciones que queremos que se hagan cuando se cargue la página, por lo tanto no depende de nada de lo que hagamos en esta 
   beforeMount(){   
-    this.getEvents(); 
-    
+    this.getEvents();     
+  },
+  mounted(){
+    //La primera vez que entras a la página no se conecta bien a la API para coger los eventos (desconocemos porque) entonces hacemos una función para recragar la página 
+    //si es la primera vez que entra a la página.
+    (function()
+        {
+        if( window.localStorage )
+        {
+            if( !localStorage.getItem('firstLoad') )
+            {
+            localStorage['firstLoad'] = true;
+            window.location.reload();
+            }  
+            else
+            localStorage.removeItem('firstLoad');
+        }
+        })();
   },
   
     methods: {

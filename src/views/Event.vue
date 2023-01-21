@@ -9,14 +9,14 @@ export default {
   name: "App",
   data() {
     return {
-      data: {},
-      data2: {},
-      data3:{},
-      data4:{},
-      editing: false,      
-      showPart: false,
-      response: null,
-      participating: false,
+      data: {},//Data of the event
+      data2: {}, //Data of the assitance
+      data3:{}, //Data to get usre
+      data4:{}, //Data to show puntuation and comments
+      editing: false,   //Boolean to activate edit mode   
+      showPart: false, //Boolean to show notifiaction
+      participating: false, //Boolean is true if user is participating in the event
+      //Iniciating values of the information to post edit
       location: '',
       npart: '',
       type:'',
@@ -25,15 +25,17 @@ export default {
       startDate:'',
       description: '',
       image: '',
-      showValoracion: false,
+      showValoracion: false, //Boolean to show the puntuation and comments
     }
   },
   beforeMount(){
-    this.participate();
+    //Functions to be done before the page loads.
+    this.getUser();
     this.getEvents();
     this.getValoraciones();
   },
   methods: {
+    //Function to get the user id
       async getUser() {
           const response = await fetch(`http://puigmal.salle.url.edu/api/v2/users/search?s=${email}`, {
               headers: {
@@ -47,170 +49,14 @@ export default {
 
 
           localStorage.setItem('userId', this.data3[0].id);
-          
+          this.participate();
           //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
       },
-    async participate(){
-        try{
-            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances/${user_id}`,{
-            headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            
-            .then(response => response.json())
-            .then(data => this.data2 = data);
-           
-            this.participating= true;
-            
-           
-            console.log(this.data2[0].event_id);
-            console.log(this.data2[0].user_id);
-           
-           
-        } catch(error){
-            this.participating = false;
-            console.log(error);
-        }
-        
-        
-
-    },
-
-    getEvents(){     
-      
-        const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
-            headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            
-            .then(response => response.json())
-            .then(data => this.data = data);
-
-            
-            
-           
-    },
-    editMode(){
-        this.editing = true;
-        this.location = this.data[0].location;
-        this.type = this.data[0].type;
-        this.description = this.data[0].description;
-        this.startDate = this.data[0].eventStart_date.substring(0,10);
-        this.endDate = this.data[0].eventEnd_date.substring(0,10);
-        this.name = this.data[0].name;
-        this.npart = this.data[0].n_participators;
-        this.image = this.data[0].image;
-    },
-    
-   
-    async editEvent(){
-        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/events/${event_id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({
-            name: this.name,
-            location: this.location,
-            image: this.image,
-            n_participators: this.npart,
-            eventEnd_date: this.endDate,
-            eventStart_date: this.startDate,
-            description: this.description,
-            type: this.type,
-
-        })
-      });
-      if (!response.ok) {
-          
-          const message = `An error has occured: ${response.status} - ${response.statusText}`;
-          throw new Error(message);
-      }
-      else{ 
-        this.editing = false;
-        location.reload();
-      }
-    },
-    async participar(){
-        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-            }
-        });
-        if (!response.ok) {
-          
-          const message = `An error has occured: ${response.status} - ${response.statusText}`;
-          throw new Error(message);
-      }
-      else{ 
-        this.showPart = true;
-        setTimeout(()=>{
-            this.showPart = false;
-            location.reload();
-        },3500);
-        console.log(response.serverStatus);
-      }
-    },
-    
-    async puntuar(){
-       
-      try {
-        const response = await fetch(`http://puigmal.salle.url.edu/api/v2/assistances/${user_id}/${event_id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({
-            puntuation: this.puntuation,
-            comentary: this.comentary,
-            
-        })
-        });
-      location.reload();  
-      } catch (error) {
-        
-      }
-    },
-    async deleteevent(){
-        try{
-            await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
-                method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            this.$router.push({name:'MisEventos'});
-        } catch (error){
-            
-        }
-    },
-    shareEvent(name, location, type, startDate){
-        localStorage.setItem('shareEvent',`Evento: ${name} - ${location} - ${startDate.substring(0,10)}`);
-    },
-    async desapuntar(){
-        try{
-            await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
-                method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            location.reload();
-        } catch (error){
-            
-        }
-    },
-    async getValoraciones(){
-            const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+      //Function to know if the user is participating or not
+        async participate(){
+            try{
+                const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances/${this.data3[0].id}`,{
                 headers: {
                     "Content-Type": "application/json",
                     'Authorization': `Bearer ${token}`
@@ -218,13 +64,175 @@ export default {
             })
                 
                 .then(response => response.json())
-                .then(data => this.data4 = data);
+                .then(data => this.data2 = data);
+            
+                this.participating= true; //If he participates then the boolean becomes true
+                
+            
+                console.log(this.data2[0].event_id);
+                console.log(this.data2[0].user_id);
+            
+            
+            } catch(error){
+                this.participating = false;
+                console.log(error);
+            }     
+        
+
+        },
+        //Function to show the event's information
+        getEvents(){     
+        
+            const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
+                },
+            })
+                
+                .then(response => response.json())
+                .then(data => this.data = data);
 
                 
-    },
-    showValoraciones(){
-        this.showValoracion = true;
-    }
+                
+            
+        },
+        //Function to activate the edit mode
+        editMode(){
+            this.editing = true;
+            this.location = this.data[0].location;
+            this.type = this.data[0].type;
+            this.description = this.data[0].description;
+            this.startDate = this.data[0].eventStart_date.substring(0,10);
+            this.endDate = this.data[0].eventEnd_date.substring(0,10);
+            this.name = this.data[0].name;
+            this.npart = this.data[0].n_participators;
+            this.image = this.data[0].image;
+        },
+        
+        //Function to edit the event information with the values we pass withj v-model
+        async editEvent(){
+            const response = await fetch(`http://puigmal.salle.url.edu/api/v2/events/${event_id}`, {
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                name: this.name,
+                location: this.location,
+                image: this.image,
+                n_participators: this.npart,
+                eventEnd_date: this.endDate,
+                eventStart_date: this.startDate,
+                description: this.description,
+                type: this.type,
+
+            })
+        });
+        if (!response.ok) {
+            
+            const message = `An error has occured: ${response.status} - ${response.statusText}`;
+            throw new Error(message);
+        }
+        else{ 
+            this.editing = false; //If the fetch put is done correctly then go out of the edit mode and reload the page to see the new values
+            location.reload();
+        }
+        },
+        //Function to participate in the event with a post to the API
+        async participar(){
+            const response = await fetch(`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+                }
+            });
+            if (!response.ok) {
+            
+            const message = `An error has occured: ${response.status} - ${response.statusText}`;
+            throw new Error(message);
+        }
+        else{ 
+            this.showPart = true; //If the post is done correctly then show the notification and reload the page to update
+            setTimeout(()=>{
+                this.showPart = false;
+                location.reload();
+            },3500);
+            console.log(response.serverStatus);
+        }
+        },
+        //Function to put a puntuation and commentary to the event
+        async puntuar(){
+        
+        try {
+            const response = await fetch(`http://puigmal.salle.url.edu/api/v2/assistances/${user_id}/${event_id}`, {
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                puntuation: this.puntuation,
+                comentary: this.comentary,
+                
+            })
+            });
+        location.reload();  
+        } catch (error) {
+            
+        }
+        },
+        //Function to delete the event (only available if the events is yours)
+        async deleteevent(){
+            try{
+                await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}`,{
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                this.$router.push({name:'MisEventos'});
+            } catch (error){
+                
+            }
+        },
+        shareEvent(name, location, type, startDate){
+            localStorage.setItem('shareEvent',`Evento: ${name} - ${location} - ${startDate.substring(0,10)}`);
+        },
+        //Function to delete the assistance from the event
+        async desapuntar(){
+            try{
+                await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                location.reload();
+            } catch (error){
+                
+            }
+        },
+        //Function to get th puntuation and comments from the event
+        async getValoraciones(){
+                const response = fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances`,{
+                    headers: {
+                        "Content-Type": "application/json",
+                        'Authorization': `Bearer ${token}`
+                    },
+                })
+                    
+                    .then(response => response.json())
+                    .then(data => this.data4 = data);
+
+                    
+        },
+        //Function to show the puntuation and comments
+        showValoraciones(){
+            this.showValoracion = true;
+        }
     }
     
 };
@@ -237,6 +245,7 @@ export default {
 
 
 <script setup>
+//Import the footer and header
 import Footer2 from '../components/Footer2.vue'
 import Header2 from '../components/Header2.vue'
 
@@ -247,11 +256,11 @@ import Header2 from '../components/Header2.vue'
 
     </Header2>
     
-    <main v-for= "event in data">
+    <main v-for= "event in data"> <!--v-for to show event information-->
         <div class="background">
                 <img  :src=  "event.image" alt="img"> 
         </div>
-        <div class="background2" v-if="showValoracion">
+        <div class="background2" v-if="showValoracion"> <!--Only show the element if the 'if' is true-->
                 <img  :src=  "event.image" alt="img"> 
         </div>
         <div class="apuntado" v-if="showPart">
@@ -267,11 +276,11 @@ import Header2 from '../components/Header2.vue'
                <button class = "editar0" v-on:click="editMode()">Editar</button> 
             </div>
             
-            <button class = "editar0" v-if="editing" v-on:click="editEvent()">OK</button>
+            <button class = "editar0" v-if="editing" v-on:click="editEvent()">OK</button> <!--click to activate the function-->
         </section>
         <div class="changeImage" v-if="editing">
             <b>Cambia la imagen: </b> 
-            <input type="text" v-model="image">
+            <input type="text" v-model="image"> <!--v-model to pass value of the input to the script-->
         </div>
         <article class="FCont"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
 
@@ -292,11 +301,11 @@ import Header2 from '../components/Header2.vue'
                        <input type="text" v-model="description" v-if = "editing">
                     </div>
                     <div class="dataInicio">
-                        <b>Data de inicio: </b> <small v-if="!editing">{{ event.eventStart_date.substring(0,10) }}</small>
+                        <b>Data de inicio: </b> <small v-if="!editing">{{ event.eventStart_date.substring(0,10) }}</small> <!--Substring to only show the first 10 letters-->
                         <input type="date" v-model="startDate" v-if = "editing">
                     </div>
                      <div class="dataFin"> 
-                        <b>Data de fin: </b> <small v-if="!editing">{{ event.eventEnd_date.substring(0,10) }}</small>
+                        <b>Data de fin: </b> <small v-if="!editing">{{ event.eventEnd_date.substring(0,10) }}</small> 
                         <input type="date" v-model="endDate" v-if = "editing">
                      </div>
                      <div class="nparticipantes">

@@ -125,7 +125,7 @@ export default {
 <script setup>
 //Importamos header y footer
 import Footer2 from '../components/Footer2.vue'
-import Header2 from '../components/Header3.vue'
+import Header2 from '../components/Header2.vue'
 </script>
 
 
