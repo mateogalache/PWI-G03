@@ -164,8 +164,6 @@ methods: {
 </template>
 
 <style scoped>
-
-
 .cont4{
     margin-top: 1%;
     padding-left: 2%;
@@ -199,19 +197,24 @@ methods: {
         gap: 4rem;
     }
     
-    .mostrarMas,.mostrarMenos{
-        cursor:pointer;
-        margin-top: 2rem;
-        border-radius: 50px;
-        border: 2px solid black;
-        width: 12rem;
-        transition: all 300ms ease;
-    }
-
-    .mostrarMas:hover,.mostrarMenos:hover{
-        color: white;
-        background: black;
-    }
+        .mostrarMas,
+        .mostrarMenos {
+            cursor: pointer;
+            margin-top: 2rem;
+            border-radius: 50px;
+            border: 2px solid var(--main-bg-color);
+            width: 10rem;
+            transition: all 300ms ease;
+            display: flex;
+            justify-content: center;
+    
+        }
+    
+        .mostrarMas:hover,
+        .mostrarMenos:hover {
+            color: white;
+            background: var(--main-bg-color);
+        }
 
     input{
         outline: none;
@@ -283,6 +286,4 @@ methods: {
         font-size: 40px;
     }
 }
-
-
 </style>
