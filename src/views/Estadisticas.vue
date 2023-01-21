@@ -30,6 +30,7 @@ export default {
 
             
     },
+    //Funcio que coge las estadisticcas de un usuarios en funcion de su ID
     getStaistics(){
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${user_id}/statistics`,{
             headers: {
