@@ -62,7 +62,7 @@ methods: {
 
     localStorage.setItem('userId', this.data2[0].id);
     this.getEvents();
-    //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
+    
 
   },
   //funcion para coger todos los eventos a los que te has apuntado y aun no han ocurrido

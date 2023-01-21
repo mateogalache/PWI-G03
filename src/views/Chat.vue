@@ -259,13 +259,6 @@ export default {
 h3{
     margin-left: 5%;
 }
-.user-bar {
-	height: 55px;
-	color: #fff;
-	padding: 0 8px;
-	font-size: 24px;
-	z-index: 1;
-}
 
 
 .nomchat{
@@ -273,9 +266,8 @@ h3{
     display: flex;
     align-items: center;
 	gap: .5rem;
-    
 	background:white;
-	padding:2%;
+	padding :2%;
 	z-index: 1;
 	width:100%;
 }
@@ -335,9 +327,7 @@ content: "";
 
 @media (min-width: 1080px){
 	
-	.nomchat{
-		margin-top: 2%;
-	}
+	
 	.input-box{
 		margin-top: 5%;
 	}

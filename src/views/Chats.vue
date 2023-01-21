@@ -114,7 +114,7 @@ export default {
                 <img :src="chat.image" class = "perfil">
                 <div class="chat">
                     <b class = "nombre">{{chat.name}}</b>
-                    <p class = "mensaje">Enter chat</p>
+                   
                 </div>
                 <div class = "Clogo">
                     <a href="Chat"><img src="src/assets/flecha.png" class = "icon" alt="tick" v-on:click="savePerson(chat.id,chat.name)" ></a>
@@ -162,6 +162,7 @@ export default {
     border: 1px solid black;
     border-radius: 25px;
     width: 100%;
+    
 
 }
 .buscar{
@@ -176,15 +177,12 @@ export default {
     border: 1px solid black;
     border-radius: 25px;
     width: 100%;
+    justify-content:space-between;
+    margin-right:2%;
+   
     
     
 
-}
-.Clogo{
-    position:absolute;
-    right: 10%;
-    
-    
 }
 
 .icon{
@@ -196,8 +194,8 @@ export default {
 }
 
 .perfil{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-left: 5%;
     
@@ -206,6 +204,7 @@ export default {
     display: flex;
     margin-right: 20%;
     margin-top: 5%;
+    
     
 }
 @media (min-width: 1080px){
@@ -219,24 +218,22 @@ export default {
         
         font-size: 20px;
     }
-    .cont{
-        width: 50%;
-        
-    }
+    
     .buscar{
         width: 100%;
         margin-left: 5%;
         margin-right: 5%;
     }
     .BContainer{
-        width: 600PX;
+        width: 90%;
         margin-left: 5%;
         margin-right: 5%;
     }
     .PContainer{
-       width: 100%;
+       width: 90%;
         margin-left: 5%;
         margin-right: 5%;
+        
     }
     .Clogo{
         margin-right: 40%;
@@ -247,8 +244,8 @@ export default {
         height: 20px;
     }
     .perfil{
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
     }
     .nombre{
         margin-right: 10%;
