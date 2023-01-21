@@ -8,10 +8,11 @@ const token = localStorage.getItem('accessToken');
 
 export default {
   name: "App",
+  
   data() {
     return {
-      data: {},
-      data2: {},
+      data: [],
+      data2: [],
       endIndex: 10,
       savedId: null,
       showZona: true,
@@ -21,8 +22,11 @@ export default {
       historial: false,
       records:[],
       record: null,
+      
+        example: "Hello world",
     }
   },
+    
   beforeMount(){
     
     //llamamos a la funcion que nos devuelve todos los usuarios
@@ -32,7 +36,9 @@ export default {
   
  
 methods: {
-    
+    handleClick() {
+        
+    },
     async getPeople(){
         //hacemos la llamada para obetener los usuarios
         const response = await fetch (`http://puigmal.salle.url.edu/api/v2/users`,{
@@ -83,8 +89,7 @@ methods: {
         .then(data => this.data2 = data);
         
         //muestra la busqueda y no todos los usuarios
-        this.showBusqueda = true;
-        this.showZona = false;
+            this.$emit("click", this.showBusqueda = true, this.showZona = false);
         } catch (error) {
         console.error(error);
         }
@@ -102,6 +107,7 @@ methods: {
     </Header2>
 
     <main>
+        
         <article class = "cont4"> <!--Usamos article ya que el contnido estará relacionado, y lo queremos separar en secciones-->
             <h2 class = "titulo4">Buscar Amigos</h2>
             
@@ -111,25 +117,25 @@ methods: {
             <input type="text" class="sinborde" name="Buscar persona" placeholder="Buscar persona" v-model="name">
                 <div class="busqueda">
                     <div class="element">
-                        <img src="src/assets/search.png" alt="img" v-on:click= "busquedaFriend()">
+                        <img src="src/assets/search.png" alt="img" @click= "busquedaFriend()">
                     </div>
                 </div>
             </section>
             <!--Nos muestra esta llamada al abrir la pagina sin ningun tipo de filtro-->
             <!--Muestra todos los usuarios que obtenemos de la llamada a la api y mostramos su imagen y su nombre y si clicamos nos envia al perfil de la persona-->
-            <a href="PerfilAjeno"  v-for="people in data.slice(0,endIndex)" :key="people.id"   v-on:click="savePerson(people.id)" v-if="showZona" >
+            <div  v-for="people in data.slice(0,endIndex)" :key="people.id"   v-on:click="savePerson(people.id)" v-if="showZona" >
                 <div class="PContainer4">
                     
-                    <img  :src=  "people.image" class="perfil" alt="img" v-bind:error="errorImages">
+                    <img  :src=  "people.image" class="perfil" alt="img" v-bind:error="errorImages" >
                     <div class ="nombre4">
                                 {{people.name}}
                     </div>
                     <nav class = "Clogo4"> 
-                    <img src="src\assets\flecha.png" class = "icon" alt="tick">
+                    <a href="PerfilAjeno"><img src="src\assets\flecha.png" class = "icon" alt="tick"></a>
                     </nav>
                 
                 </div>
-            </a>
+            </div>
 
             <!--El mismo caso anterior pero este solo se muestra cuando hacemos la llamada de la busqueda por nombre-->
             <a href="PerfilAjeno"  v-for="people in data2.slice(0,endIndex)" :key="people.id"   v-on:click="savePerson(people.id)" v-if="showBusqueda" >
@@ -172,6 +178,9 @@ methods: {
     flex-direction: column;
     
     
+}
+.perfil{
+    border-radius: 50%;
 }
 .element{
         border: 2px solid black;

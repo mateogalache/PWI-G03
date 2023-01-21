@@ -88,7 +88,7 @@ export default {
         </div>
         <br/>
         <div class = "cont">
-             <button v-on:click = "eliminarAmigo(info.id)" class = "boton">Eliminar Amigo</button>
+             <a href="PerfilAjeno"><button v-on:click = "eliminarAmigo(info.id)" class = "boton">Eliminar Amigo</button></a>
                 
             </div>
         
@@ -128,6 +128,21 @@ export default {
   </Footer2>
 </template>
 <style scoped>
+.boton{
+    display: flex;
+        width: 120px;
+        height: 20px;
+        background-color: rgb(104, 100, 100);
+        border-radius: 22px;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 5%;
+}
 
 .margenamigo{
     margin-left: 2%;
@@ -200,6 +215,4 @@ export default {
 
     }
 }
-
-
 </style>

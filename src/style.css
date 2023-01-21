@@ -11,6 +11,10 @@ Tambien algunos diseños estandard para todas las pagina los hacemos aqui, asi p
     height:35px;
     padding-left: 2%;
 }
+
+button{
+    cursor: pointer;
+}
 .icon{
     
     width: 16px;

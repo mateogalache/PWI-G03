@@ -124,7 +124,7 @@ export default {
 				<!--Creamos un banner donde vemos la foto y el nombre del usuario con el que hablamos-->
 				<a href="PerfilAmigo" v-on:click=savePerson(this.friendId)><div  v-for="profile in data2" class="nomchat">
 					<img class="header-img" :src=profile.image />
-					<h2>{{ profile.name }}</h2>
+					<h2 class="nom">{{ profile.name }}</h2>
 				</div></a>
 				<div class="transparent1"></div>
 				<!--Con el div creamos el espacio donde mostraremos los mensajes-->
@@ -164,6 +164,10 @@ export default {
     
 </template>
 <style scoped>
+.nom{
+	text-decoration: none;
+	color:#000;
+}
 .hora{
 	font-size:15px;
 }
