@@ -29,7 +29,7 @@ export default {
     }
   },
   beforeMount(){
-    this.participate();
+    this.getUser();
     this.getEvents();
     this.getValoraciones();
   },
@@ -47,13 +47,13 @@ export default {
 
 
           localStorage.setItem('userId', this.data3[0].id);
-          
+          this.participate();
           //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
       },
     async participate(){
         try{
-            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances/${user_id}`,{
+            const response = await fetch (`http://puigmal.salle.url.edu/api/v2/events/${event_id}/assistances/${this.data3[0].id}`,{
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
