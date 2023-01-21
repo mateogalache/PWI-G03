@@ -105,19 +105,21 @@ export default {
             <h2>Chats</h2>
             <a href="NewChat" class="mas"><img  src='src/assets/add.png'  alt="home" width="25" height="25"></a>
         </section>
-        <div class = "cont">
+        <ul class = "cont">
 
-            <div v-for="chat in data.slice(0, endIndex)" :key="chat.id" class = "PContainer">
-                <img :src="chat.image" class = "perfil">
-                <div class="chat">
-                    <b class = "nombre">{{chat.name}}</b>
-                   
+            <li v-for="chat in data.slice(0, endIndex)" :key="chat.id" >
+                <div class = "PContainer">
+                    <img :src="chat.image" class = "perfil">
+                    <div class="chat">
+                        <b class = "nombre">{{chat.name}}</b>
+                    
+                    </div>
+                    <div class = "Clogo">
+                        <a href="Chat"><img src="src/assets/flecha.png" class = "icon" alt="tick" v-on:click="savePerson(chat.id,chat.name)" ></a>
+                    </div>
                 </div>
-                <div class = "Clogo">
-                    <a href="Chat"><img src="src/assets/flecha.png" class = "icon" alt="tick" v-on:click="savePerson(chat.id,chat.name)" ></a>
-                </div>
-            </div>
-        </div>
+            </li>
+        </ul>
 
         
         <div class = "transparent6"></div><!--usamos este div para poder hacer scroll por la pagina y no se quede cortado la informacion-->
@@ -146,6 +148,7 @@ export default {
     padding-right: 2%;
     display: flex;
     flex-direction: column;
+    list-style: none
     
 }
 .chat{
