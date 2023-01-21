@@ -34,7 +34,7 @@ export default {
             .then(response => response.json())
             .then(data => this.data = data); //Guardamos la data que nos devuelve en nuestra variable 'data'
 
-            console.log(response);                 
+                            
             
             
            

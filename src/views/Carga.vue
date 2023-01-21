@@ -2,9 +2,6 @@
 
 export default{
     name: "app",
-    data(){
-
-    },
     mounted(){
         //En la página de carga cogemos el token del localStorage, si este existe directamente iremos al home, si no existe iremos al Login
         const token = localStorage.getItem('accessToken');

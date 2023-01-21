@@ -44,7 +44,6 @@ export default {
                         .then(response => response.json())
                         .then(data => this.data = data);
                         
-                        console.log(response);                         
             
             
            
@@ -297,7 +296,7 @@ import Header3 from '../components/Header3.vue'
         </section>           
         
         
-        <div class="rec" v-if="!historial"></div>
+       
         <section class="eventocontainer" > <!--Usamos section porque su contenido está relacionado y forma parte de un mismo significado aunque podriamos usar article-->
             <div class="subtitulo" v-if="showZona">
                 <b>En tu zona</b>
@@ -309,13 +308,13 @@ import Header3 from '../components/Header3.vue'
 
             <div class="evento1">
                 <a href="Event" class="evento" v-for="events in data.slice(0,endIndex)" :key="events.id"   v-on:click="saveEvent(events.id)" v-if="showZona" >
-                        <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
+                        <img  :src=  "events.image" alt="img" >
                         <div class="eventName">
                             {{events.name}}
                         </div>
                 </a>
                 <a href="Event" class="evento" v-for="events in data2.slice(0,endIndex)" :key="events.id"   v-on:click="saveEvent(events.id)" v-if = "showBusqueda" >
-                        <img  :src=  "events.image" alt="img" v-bind:error="errorImages">
+                        <img  :src=  "events.image" alt="img" >
                         <div class="eventName">
                             {{events.name}}
                             {{events.owner_id}}

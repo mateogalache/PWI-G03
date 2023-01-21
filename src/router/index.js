@@ -2,8 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Perfil from '../views/Perfil.vue'
-import Borrarperfil from '../views/Borrarperfil.vue'
-import Cerrarsesion from '../views/Cerrarsesion.vue'
 import Estadisticas from '../views/Estadisticas.vue'
 import Pending from '../views/Pending.vue'
 import Datos from '../views/Datos.vue'
@@ -21,13 +19,10 @@ import Add from '../views/Add.vue'
 import Search from '../views/Search.vue'
 import Home from '../views/Home.vue'
 import TimeLineEvent from '../views/TimeLineEvent.vue'
-import CalendarioEvento from '../views/CalendarioEvento.vue'
 import MisEventos from '../views/MisEventos.vue'
 import Events from '../views/Events.vue'
 import Contactanos from '../views/Contactanos.vue'
-import Calendario from '../views/Calendario.vue'
 import Carga from '../views/Carga.vue'
-import CompartirEventoAmigos from '../views/CompartirEventoAmigos.vue'
 import EventsPart from '../views/EventsPart.vue'
 import NewChat from '../views/NewChat.vue'
 import ShareEvent from '../views/ShareEvent.vue'
@@ -49,16 +44,6 @@ const routes = [
         path: '/Perfil',
         name: 'Perfil',
         component: Perfil
-    },
-    {
-        path: '/Borrarperfil',
-        name: 'Borrarperfil',
-        component: Borrarperfil
-    },
-    {
-        path: '/Cerrarsesion',
-        name: 'Cerrarsesion',
-        component: Cerrarsesion
     },
     {
         path: '/Estadisticas',
@@ -147,11 +132,6 @@ const routes = [
         component: TimeLineEvent
     },
     {
-        path: '/CalendarioEvento',
-        name: 'CalendarioEvento',
-        component: CalendarioEvento
-    },
-    {
         path: '/Events',
         name: 'Events',
         component: Events
@@ -167,18 +147,6 @@ const routes = [
         path: '/Contactanos',
         name: 'Contactanos',
         component: Contactanos
-    },
-
-    {
-        path: '/Calendario',
-        name: 'Calendario',
-        component: Calendario
-    },
-
-    {
-        path: '/CompartirEventoAmigos',
-        name: 'CompartirEventoAmigos',
-        component: CompartirEventoAmigos
     },
     {
         path: '/',

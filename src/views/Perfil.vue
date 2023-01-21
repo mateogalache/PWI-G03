@@ -35,7 +35,7 @@ export default {
 
 
           localStorage.setItem('userId', this.data2[0].id);
-          console.log(this.data2[0].id);
+          
           //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
       },
@@ -52,7 +52,7 @@ export default {
             .then(response => response.json())
             .then(data => this.data = data);
 
-            console.log(response);            
+                      
             
             
            

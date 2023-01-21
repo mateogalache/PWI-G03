@@ -28,7 +28,7 @@ export default {
             .then(response => response.json())
             .then(data => this.data = data);
 
-            console.log(response);
+            
     },
     getStaistics(){
         const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${user_id}/statistics`,{
@@ -41,7 +41,7 @@ export default {
             .then(response => response.json())
             .then(data => this.data2 = data);
 
-            console.log(response);
+            
     },
 
 

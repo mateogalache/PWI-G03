@@ -8,10 +8,10 @@ export default {
   name: "App",
   data() {
     return {
-      data: {}, 
-      data2: {},
-      data3: {},
-      data4: {},
+      data: [], 
+      data2: [],
+      data3: [],
+      data4: [],
       imageLoad: true,
       savedId: null,
       endIndex: 10,
@@ -48,9 +48,6 @@ export default {
             })
             .then(response => response.json())
             .then(data => this.data = data);
-            console.log(id);
-            
-            console.log(response);  
                         
         } catch(error){
             console.error(error);
@@ -62,7 +59,6 @@ export default {
     saveEvent(id){
         this.savedId = id;
         window.localStorage.setItem('event',this.savedId);
-        console.log(id);
     },
     showMore(){
         this.endIndex = this.endIndex + 10;
@@ -86,8 +82,7 @@ export default {
             })
             .then(response => response.json())
             .then(data => this.data2 = data); //La data de la URL lo guarde en la variable auxiliar y copia de data, llamada data2
-            console.log(id);
-            console.log(response);  
+             
             this.flag = true;
             this.flag2= false;
             this.flag3= false;
@@ -109,8 +104,7 @@ export default {
             })
             .then(response => response.json())
             .then(data => this.data3 = data);
-            console.log(id);
-            console.log(response);  
+             
             this.flag = false;
             this.flag2= true;
             this.flag3= false;
@@ -132,8 +126,7 @@ export default {
             })
             .then(response => response.json())
             .then(data => this.data4 = data);
-            console.log(id);
-            console.log(response);  
+              
             this.flag = false;
             this.flag2= false;
             this.flag3= true;
@@ -287,8 +280,13 @@ import Header2 from '../components/Header3.vue'
 
 <style scoped>
 
+    
+    h3{
+        margin-left: 1rem;
+    }
     .orden{
         position: relative;
+        display: flex;
     }
 
     .triangulo{        
@@ -342,8 +340,21 @@ import Header2 from '../components/Header3.vue'
         background: var(--main-bg-color);
     }
 
+
+    .evento img:after{
+        position: absolute;
+        content:'NO IMAGE';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
     .evento img{
         object-fit: cover;
+        position: relative;
+        border: 2px solid var(--main-bg-color);
+        background: linear-gradient(white,var(--main-bg-color));
+        display: flex;
+        justify-content: center;
     }
     .evento{
         width: 50%;
@@ -353,9 +364,18 @@ import Header2 from '../components/Header3.vue'
         align-items: center;
         margin-top: 2rem;
     }
+    .evento div{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .eventocontainer{
         display: flex;
+        justify-content: center;
+        align-self: center;
         flex-wrap: wrap;
+        width: 100%;
     }
     .eventName{
         margin-top: -0.5rem;
@@ -366,17 +386,13 @@ import Header2 from '../components/Header3.vue'
         color: black;
     }
 
-    .eventocontainer2 *{
-        cursor: pointer;
-        text-decoration: none;
-        color: black;
-    }
+    
 
     .margenmis{
         margin-left: 2%;
         display: flex;
-        align-items: center;
-        gap: 2rem;
+        justify-content: center;
+        flex-direction: column;
     }
 
     .container5{
@@ -387,11 +403,15 @@ import Header2 from '../components/Header3.vue'
     }
 
     .eventocontainer5{
-        background-color: lightgrey;
+        background-color: var(--secundary-bg-color);
+        border: 3px solid var(--main-bg-color);
         display: flex;
         flex-direction: column;
-        padding: 1em;
-        margin-top: 50px;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     img{
@@ -415,7 +435,7 @@ import Header2 from '../components/Header3.vue'
        
     }
 
-    .eventocontainer2 smallv:hover{
+    .eventocontainer2 small:hover{
         background: var(--main-bg-color);
     }
 
@@ -425,24 +445,48 @@ import Header2 from '../components/Header3.vue'
     
     }
 
+    .eventocontainer2 small{
+        transition: all 300ms ease;
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+        padding: .5rem;
+        width: 100%;
+    }
 
-    .eventocontainer2{
-        
+    .eventocontainer2{        
         position: absolute;
         top: 1.3rem;
         display: flex;
         justify-content: center;
         flex-direction: column;        
-        width: 7rem;   
-        margin-top: 0.5rem;
-        
-        padding-top: .5rem;
-        padding-left: .5rem;
-        padding-bottom: .1rem;
+        width: 6.5rem;  
     }
 
 
     @media (min-width:1080px){
+        .eventocontainer{
+            justify-content: start;
+        }
+        .subtitulo{
+            margin-left: 2.5rem;
+            font-size: 20px;
+        }
+        .filtros{
+            margin-top: -.5rem;
+        }
+        .ordenar{
+            margin-top:.5rem;
+        }
+        .margenmis{
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+            gap: 2rem;
+        }
+        .evento{
+            width: 20%;
+        }
         h2{
             font-size: 40px;
         }
@@ -456,20 +500,16 @@ import Header2 from '../components/Header3.vue'
         }
        
         .eventocontainer5{
-            background-color: lightgrey;
+            
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 90%;
+            justify-content: start;
         }
 
         .parejas{
             display: flex;
             justify-content: space-around;
-        }
-
-        .evento{
-            width: 100%;
-          
         }
 
 }

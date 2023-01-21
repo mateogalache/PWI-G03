@@ -28,7 +28,7 @@ export default {
       data: {},
       data2: {},
       editing: false,
-      
+      savedId: null,
       showPart: false,
       response: null,
       participating: false,
@@ -43,10 +43,7 @@ export default {
     }
   },
   beforeMount(){
-    this.getUser();
-    this.getEvents();
-    
-    
+    this.getUser(); 
   },
 
 methods: {
@@ -63,13 +60,13 @@ methods: {
 
 
     localStorage.setItem('userId', this.data2[0].id);
-    console.log(this.data2[0].id);
+    this.getEvents();
     //Guardamos el id del usuario en el LocalStorage para luego utilizarlo en otras páginas
 
   },
   async getEvents(){     
       
-      const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${id}/assistances/future`,{
+      const response = fetch (`http://puigmal.salle.url.edu/api/v2/users/${this.data2[0].id}/assistances/future`,{
         method: 'GET',
           headers: {
               "Content-Type": "application/json",
@@ -85,12 +82,14 @@ methods: {
                         return dateA - dateB;
                     });
                     this.data = data;
-                });
-
-          console.log(response);                 
-          console.log(event_id);
-          
+                });  
          
+  },
+  //Función para guardar en el LocalStorage el id del evento en el que hemos clickado
+  saveEvent(id){
+        this.savedId = id; //Le pasamos como parametro el id del evento y lo guardamos en la variable 'saveId' que luego la guardamos en el LocalStorage
+        window.localStorage.setItem('event',this.savedId);
+        console.log(id);
   },
 }
 };
@@ -107,17 +106,21 @@ import Header2 from '../components/Header2.vue'
     </Header2>
 <!--Pagina para ver el calendario de eventos-->
     <main >
+      
         <h1>Calendario</h1>
-        <div v-for="(events,date) in groupedEvents"> 
-            <h2>{{ date.substring(0,10) }}</h2>
-            <div v-for= "event in events" id="timeline-container">
-                
-                <ul class="timeline">                    
-                    <li  class="timeline-item" >{{event.name}} <img  :src=  "event.image" alt="img" class="imgcal"> </li>
-                    
-                </ul>
-            </div>
+        <div class="groupcenter">
+          <div v-for="(events,date) in groupedEvents" class="groupevents">
+            <div class="line"></div>
+              <h3>{{ date.substring(0,10) }}</h3>
+              <a href="Event"><div v-for= "event in events" id="timeline-container" v-on:click="saveEvent(event.id)">                                    
+                <div  class="timeline-item" >
+                  <b>{{event.name}} </b>
+                  <img  :src=  "event.image" alt="img" class="imgcal"> 
+                </div>            
+              </div></a>
+          </div>
         </div>
+        
     </main>
     <Footer2>
 
@@ -125,6 +128,61 @@ import Header2 from '../components/Header2.vue'
 </template>
 
 <style scoped>
+
+h3{
+  margin-left: -3rem;
+}
+.groupcenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+h1{
+  margin-left: 1rem;
+}
+
+.imgcal{
+  position: relative;
+  width: 8rem;
+  height: 6rem;
+  object-fit: cover;
+  border: 1px solid var(--main-bg-color);
+  background: linear-gradient(white,var(--main-bg-color));
+}
+.imgcal:after{
+  width: 80%;
+  content: 'NO IMAGE';
+  position: absolute;
+  top: 50%;
+  left: 57%;
+  transform: translate(-50%,-50%);
+}
+.timeline-item{
+  display: flex;
+  justify-content: center;
+  margin-left: 5rem;
+  margin-top: -3rem;
+  flex-direction: column;
+  gap: .5rem;
+  width: 10rem;
+}
+
+.groupevents:last-child .line{
+  height: 40%;
+}
+.line{
+  position: absolute;
+  left: 35%;
+  width: .3rem;
+  height: 100%;
+  background: var(--main-bg-color);
+}
 
 * {
   box-sizing: border-box;
@@ -150,10 +208,7 @@ body {
     
   
 }
-.imgcal{
-  margin-left:200px;
-  width: 20%;
-}
+
 
 .timeline {
   margin: 0 auto;
@@ -165,21 +220,7 @@ body {
   margin-left: 5%;
 }
 
-.timeline-item {
-  color: black;
-  text-shadow: 
-    3px 3px 3px rgb(95 158 160);
-    ;
-  font-family: var(--font-family-2);
-  text-align: center;
-  font-size: 1.4rem;
-  padding: 1rem 1.5rem 1rem 1.5rem;
-  border-left: 8px solid rgb(95 158 160);
-  border-bottom: 4px solid rgb(95 158 160);
-  position: relative;
-  list-style-type: none;
-  --item-width: calc(100%);
-}
+
   
 
   
@@ -202,6 +243,19 @@ body {
 @Media (min-width: 1080px){
     h2{
         font-size: 40px;
+    }
+    
+    
+    h3{
+      margin-left: 5rem;
+    }
+    .timeline-item{
+      margin-left: 15rem;
+    }
+    
+    .line{
+      left: 50%;
+      
     }
 }
 
