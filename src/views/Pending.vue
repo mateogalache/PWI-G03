@@ -9,7 +9,7 @@ export default {
   id:"",
   data() {
     return {
-      data: {},
+      data: [],
       endIndex: 10,
     
     }
