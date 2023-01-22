@@ -4,7 +4,7 @@ import Header2 from '../components/Header2.vue'
 
 </script>
 <script>
-const token = localStorage.getItem('accessToken');
+const token = localStorage.getItem('accessToken'); //Cogemos el email para coger la informacion de un usuario ya que el email es unico
 
 export default {
   name: "App",

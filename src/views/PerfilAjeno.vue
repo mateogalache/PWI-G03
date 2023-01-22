@@ -1,7 +1,7 @@
 <script>
 
-const token = localStorage.getItem('accessToken');
-const id = localStorage.getItem('friend');
+const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
+const id = localStorage.getItem('friend'); 
 
 export default {
   name: "App",

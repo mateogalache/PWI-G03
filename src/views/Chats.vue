@@ -4,8 +4,8 @@ import Header3 from '../components/Header3.vue';
 
 </script>
 <script>
-const token = localStorage.getItem('accessToken');
-const email = localStorage.getItem('email');
+const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
+const email = localStorage.getItem('email'); //Cogemos el email para coger la informacion de un usuario ya que el email es unico
 
 export default {
     name: "App",

@@ -5,8 +5,8 @@ import Header2 from '../components/Header2.vue'
 
 <script>
 
-const token = localStorage.getItem('accessToken');
-const id = localStorage.getItem('userId');
+const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
+const id = localStorage.getItem('userId'); //Cogemos el token del local storage
 
 export default {
     name: "App",
