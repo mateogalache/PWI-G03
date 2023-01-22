@@ -54,10 +54,7 @@ export default {
         <section class = "margenamistades">
            <h2>Amistades</h2> 
         </section>
-        <section class = "cont"> <!--Mostramos la imagen del usuario-->
-            
-          <img :src= "info.image" class = "Redondap">
-      </section>
+        
         
             <div  class="botones">
                 <p>{{ info.name }}</p>
