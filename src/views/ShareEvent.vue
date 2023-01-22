@@ -4,9 +4,9 @@ import Header2 from '../components/Header2.vue'
 
 </script>
 <script>
-const token = localStorage.getItem('accessToken');
+const token = localStorage.getItem('accessToken'); //Cogemos token del local storage
 const message = localStorage.getItem('shareEvent');
-const userId = localStorage.getItem('userId');
+const userId = localStorage.getItem('userId'); //Cogemos el id del usuario del local storage
 
 
 export default {

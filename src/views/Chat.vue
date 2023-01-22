@@ -6,11 +6,11 @@ import Header2 from '../components/Header2.vue'
 <script>
 
 const token = localStorage.getItem('accessToken'); //Cogemos token del local storage
-const friendId = localStorage.getItem('friend');
+const friendId = localStorage.getItem('friend'); //Cogemos id del amigo del local storage
 const userId = window.localStorage.getItem('userId'); //Cogemos id del usuario del local storage
 const eventmessage = localStorage.getItem('shareEvent');
 const chatName = localStorage.getItem('chatName');
-const myName = localStorage.getItem('userName');
+const myName = localStorage.getItem('userName'); //Cogemos el nombre del local storage
 
 
 export default {
