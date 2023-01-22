@@ -1,7 +1,7 @@
 <script>
 
 const token = localStorage.getItem('accessToken'); //Cogemos token del localstorage para utilizarlo como header en el fetch
-const email = localStorage.getItem('email'); //Cogemos el email para coger la inforamacion de un usuario ya que el email es unico
+const email = localStorage.getItem('email'); //Cogemos el email para coger la informacion de un usuario ya que el email es unico
 
 export default {
   name: "App",

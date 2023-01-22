@@ -2,8 +2,8 @@
 //Guradamos en constantes el token y el mail
 //El token lo necesitamos como header para tener acceso a difrentes sitios de la API
 //El mail lo utilizaremos para coger el id del usuario ya que este es necesario en muchas páginas y el home al ser la primera nos aseguramos de ya tener guardado el id.
-const token = localStorage.getItem('accessToken'); 
-const email = localStorage.getItem('email');
+const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
+const email = localStorage.getItem('email'); //Cogemos el email para coger la informacion de un usuario ya que el email es unico
 
 
 export default {

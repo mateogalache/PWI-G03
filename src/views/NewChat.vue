@@ -4,7 +4,7 @@ import Header2 from '../components/Header2.vue'
 
 </script>
 <script>
-const token = localStorage.getItem('accessToken');
+const token = localStorage.getItem('accessToken'); //Cogemos token del localstorage para utilizarlo como header en el fetch
 
 export default {
     name: "App",
