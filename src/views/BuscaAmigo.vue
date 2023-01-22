@@ -4,7 +4,7 @@ import Header2 from '../components/Header2.vue'
 
 </script>
 <script>
-const token = localStorage.getItem('accessToken');
+const token = localStorage.getItem('accessToken'); //Cogemos token del local storage
 
 export default {
   name: "App",

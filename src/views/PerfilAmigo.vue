@@ -5,7 +5,7 @@ import Header2 from '../components/Header2.vue'
 <script>
 
 const token = localStorage.getItem('accessToken'); //Cogemos el email para coger la informacion de un usuario ya que el email es unico
-const id = localStorage.getItem('friend');
+const id = localStorage.getItem('friend'); //Cogemos el id del amigo del local storage
 
 export default {
   name: "App",

@@ -1,6 +1,6 @@
 <script>
 const token = localStorage.getItem('accessToken'); //Cogemos el token del local storage
-const event_id = window.localStorage.getItem('event'); 
+const event_id = window.localStorage.getItem('event'); //Cogemos el id del evento del local storage
 const id = localStorage.getItem('userId'); //Cogemos el id del usuario del local storage
 const email = localStorage.getItem('email'); //Cogemos el email para coger la informacion de un usuario ya que el email es unico
 export default {

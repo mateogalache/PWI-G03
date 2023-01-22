@@ -4,7 +4,7 @@ export default{
     name: "app",
     mounted(){
         //En la página de carga cogemos el token del localStorage, si este existe directamente iremos al home, si no existe iremos al Login
-        const token = localStorage.getItem('accessToken');
+        const token = localStorage.getItem('accessToken'); 
         if(token){
             setTimeout(() =>{ //Utilizamos setTimeout para que tarde 3 segundos en realizarse así le damos un efecto de carga.
                 this.$router.push('/Home');
